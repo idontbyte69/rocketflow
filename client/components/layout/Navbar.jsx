@@ -19,8 +19,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-2xl font-bold text-gray-800">
-              RocketFlow
+            <a href="/" className="flex items-center">
+              <img src="/logo.png" alt="RocketFlow Logo" className="h-8 w-auto" />
             </a>
           </div>
 
