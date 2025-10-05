@@ -164,21 +164,21 @@ export default function EducationPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Content - Order fixed for mobile */}
-            <div className="order-1">
+            <div className="order-1 text-center">
               <div className="animate-fadeIn">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  <ShinyText className="bg-gradient-to-r from-primary-dark via-primary to-secondary bg-clip-text text-black">
+                  <ShinyText className="bg-gradient-to-r from-primary-dark via-primary to-secondary text-black">
                     Transforming Education with Technology
                   </ShinyText>
                 </h1>
-                <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed mx-auto max-w-3xl">
                   Empower educational institutions with cutting-edge digital solutions that enhance learning experiences, 
                   streamline operations, and drive student success in the digital age.
                 </p>
               </div>
               
               {/* Key Stats - Enhanced with animations */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-2 gap-4 mb-8 max-w-md mx-auto">
                 <div className="text-center p-5 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                   <div className="text-3xl font-bold text-primary-dark">500+</div>
                   <div className="text-sm text-gray-600">Institutions Served</div>
@@ -189,7 +189,7 @@ export default function EducationPage() {
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary-600 hover:to-secondary-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-xl">
                   Get Started Today
                 </Button>
@@ -315,7 +315,7 @@ export default function EducationPage() {
             <div className="absolute -top-6 right-1/3 w-12 h-12 rounded-full bg-secondary-50 filter blur-lg opacity-70"></div>
             
             <h2 className="relative text-4xl font-bold text-gray-900 mb-6 inline-block">
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Comprehensive</span> Educational Solutions
+              <span className="bg-gradient-to-r from-primary to-secondary text-black">Comprehensive</span> Educational Solutions
               <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -335,15 +335,15 @@ export default function EducationPage() {
               onMouseEnter={() => setHoveredSolution('student-portal')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
-              <div className="relative">
+              <div className="relative flex justify-center">
                 <div className="absolute -top-3 -left-3 w-24 h-24 bg-blue-100 rounded-full opacity-30 filter blur-xl"></div>
                 <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
                   <AcademicCapIcon className="w-10 h-10" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">AI-Powered Student Portal</h3>
-              <p className="text-gray-600 mb-6 text-lg">Intelligent student management systems with automated enrollment, grade tracking, and personalized learning paths</p>
-              <div className="space-y-3">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">AI-Powered Student Portal</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Intelligent student management systems with automated enrollment, grade tracking, and personalized learning paths</p>
+              <div className="space-y-3 flex flex-col w-full px-4">
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
                   <span className="group-hover:text-blue-700 transition-colors">Automated enrollment</span>
@@ -371,15 +371,15 @@ export default function EducationPage() {
               onMouseEnter={() => setHoveredSolution('virtual-assistant')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
-              <div className="relative">
+              <div className="relative flex justify-center">
                 <div className="absolute -top-3 -left-3 w-24 h-24 bg-red-100 rounded-full opacity-30 filter blur-xl"></div>
                 <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
                   <ChatBubbleLeftRightIcon className="w-10 h-10" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Educational Chatbots</h3>
-              <p className="text-gray-600 mb-6 text-lg">24/7 AI assistants to answer student queries, provide course information, and guide through admission processes</p>
-              <div className="space-y-3">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Educational Chatbots</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">24/7 AI assistants to answer student queries, provide course information, and guide through admission processes</p>
+              <div className="space-y-3 flex flex-col w-full px-4">
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-red-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
                   <span className="group-hover:text-red-700 transition-colors">Instant query resolution</span>
@@ -407,15 +407,15 @@ export default function EducationPage() {
               onMouseEnter={() => setHoveredSolution('lms-platform')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
-              <div className="relative">
+              <div className="relative flex justify-center">
                 <div className="absolute -top-3 -left-3 w-24 h-24 bg-yellow-100 rounded-full opacity-30 filter blur-xl"></div>
                 <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
                   <BookOpenIcon className="w-10 h-10" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Learning Management System</h3>
-              <p className="text-gray-600 mb-6 text-lg">Comprehensive digital learning platforms with video streaming, assignment management, and progress tracking</p>
-              <div className="space-y-3">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Learning Management System</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Comprehensive digital learning platforms with video streaming, assignment management, and progress tracking</p>
+              <div className="space-y-3 flex flex-col w-full px-4">
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-yellow-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
                   <span className="group-hover:text-yellow-700 transition-colors">Video lectures</span>
@@ -437,99 +437,108 @@ export default function EducationPage() {
 
             {/* Mobile Learning Apps */}
             <Card
-              className={`p-6 rounded-xl border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
-                hoveredSolution === 'mobile-learning' ? 'shadow-2xl' : ''
+              className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
+                hoveredSolution === 'mobile-learning' ? 'shadow-2xl border-green-200 bg-green-50/30' : ''
               }`}
               onMouseEnter={() => setHoveredSolution('mobile-learning')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
-              <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center text-white mb-4">
-                <DevicePhoneMobileIcon className="w-8 h-8" />
+              <div className="relative flex justify-center">
+                <div className="absolute -top-3 -left-3 w-24 h-24 bg-green-100 rounded-full opacity-30 filter blur-xl"></div>
+                <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
+                  <DevicePhoneMobileIcon className="w-10 h-10" />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Mobile Learning Apps</h3>
-              <p className="text-gray-600 mb-4">Engaging mobile applications for students to access courses, submit assignments, and connect with peers</p>
-              <div className="space-y-2">
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Offline learning
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Mobile Learning Apps</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Engaging mobile applications for students to access courses, submit assignments, and connect with peers</p>
+              <div className="space-y-3 flex flex-col w-full px-4">
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-green-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-green-700 transition-colors">Offline learning</span>
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Interactive content
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-green-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-green-700 transition-colors">Interactive content</span>
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Peer collaboration
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-green-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-green-700 transition-colors">Peer collaboration</span>
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Push notifications
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-green-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-green-700 transition-colors">Push notifications</span>
                 </div>
               </div>
             </Card>
 
             {/* Administrative Automation */}
             <Card
-              className={`p-6 rounded-xl border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
-                hoveredSolution === 'admin-automation' ? 'shadow-2xl' : ''
+              className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
+                hoveredSolution === 'admin-automation' ? 'shadow-2xl border-purple-200 bg-purple-50/30' : ''
               }`}
               onMouseEnter={() => setHoveredSolution('admin-automation')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
-              <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center text-white mb-4">
-                <CogIcon className="w-8 h-8" />
+              <div className="relative flex justify-center">
+                <div className="absolute -top-3 -left-3 w-24 h-24 bg-purple-100 rounded-full opacity-30 filter blur-xl"></div>
+                <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
+                  <CogIcon className="w-10 h-10" />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Administrative Automation</h3>
-              <p className="text-gray-600 mb-4">Streamlined administrative processes including fee management, attendance tracking, and report generation</p>
-              <div className="space-y-2">
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Fee management
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Administrative Automation</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Streamlined administrative processes including fee management, attendance tracking, and report generation</p>
+              <div className="space-y-3 flex flex-col w-full px-4">
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-purple-700 transition-colors">Fee management</span>
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Attendance tracking
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-purple-700 transition-colors">Attendance tracking</span>
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Report generation
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-purple-700 transition-colors">Report generation</span>
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Staff management
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-purple-700 transition-colors">Staff management</span>
                 </div>
               </div>
             </Card>
 
             {/* Virtual Classroom Solutions */}
             <Card
-              className={`p-6 rounded-xl border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
-                hoveredSolution === 'virtual-classroom' ? 'shadow-2xl' : ''
+              className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
+                hoveredSolution === 'virtual-classroom' ? 'shadow-2xl border-indigo-200 bg-indigo-50/30' : ''
               }`}
               onMouseEnter={() => setHoveredSolution('virtual-classroom')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
-              <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 flex items-center justify-center text-white mb-4">
-                <ComputerDesktopIcon className="w-8 h-8" />
+              <div className="relative flex justify-center">
+                <div className="absolute -top-3 -left-3 w-24 h-24 bg-indigo-100 rounded-full opacity-30 filter blur-xl"></div>
+                <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
+                  <ComputerDesktopIcon className="w-10 h-10" />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Virtual Classroom Solutions</h3>
-              <p className="text-gray-600 mb-4">Interactive online learning environments with live streaming, screen sharing, and collaborative tools</p>
-              <div className="space-y-2">
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Live streaming
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Virtual Classroom Solutions</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Interactive online learning environments with live streaming, screen sharing, and collaborative tools</p>
+              <div className="space-y-3 flex flex-col w-full px-4">
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-indigo-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-indigo-700 transition-colors">Live streaming</span>
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Screen sharing
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-indigo-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-indigo-700 transition-colors">Screen sharing</span>
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Interactive whiteboards
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-indigo-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-indigo-700 transition-colors">Interactive whiteboards</span>
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-                  Recording capabilities
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-indigo-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-indigo-700 transition-colors">Recording capabilities</span>
                 </div>
               </div>
             </Card>
@@ -547,7 +556,7 @@ export default function EducationPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
               Why Educational Institutions 
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Choose Us</span>
+              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Choose Us</span>
               <div className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -566,15 +575,15 @@ export default function EducationPage() {
                 onMouseEnter={() => setHoveredBenefit(index)}
                 onMouseLeave={() => setHoveredBenefit(null)}
               >
-                <div className="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-lg mx-auto md:mx-0">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-lg mb-4">
                     <benefit.icon className="w-8 h-8" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center md:text-left">{benefit.title}</h3>
-                    <p className="text-gray-600 mb-5 text-lg text-center md:text-left">{benefit.description}</p>
-                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-4 shadow-inner">
-                      <span className="text-base font-bold text-primary-dark flex justify-center md:justify-start items-center">
+                  <div className="w-full">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
+                    <p className="text-gray-600 mb-5 text-lg">{benefit.description}</p>
+                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-4 shadow-inner mx-auto">
+                      <span className="text-base font-bold text-primary-dark flex justify-center items-center">
                         <span className="w-3 h-3 bg-secondary rounded-full mr-2"></span>
                         {benefit.metrics}
                       </span>
@@ -593,7 +602,7 @@ export default function EducationPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
               We Serve All Types of 
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Educational Institutions</span>
+              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Educational Institutions</span>
               <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -628,7 +637,7 @@ export default function EducationPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
               Success Stories from 
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Educational Leaders</span>
+              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Educational Leaders</span>
               <div className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -681,7 +690,7 @@ export default function EducationPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
               What Our 
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Clients Say</span>
+              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Clients Say</span>
               <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -696,8 +705,8 @@ export default function EducationPage() {
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-radial from-secondary-100 to-transparent opacity-30 rounded-full"></div>
               
               <div className="relative">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl mr-5 shadow-md">
+                <div className="flex flex-col items-center mb-6 text-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-black font-bold text-xl shadow-md mb-3">
                     SM
                   </div>
                   <div>
@@ -705,14 +714,14 @@ export default function EducationPage() {
                     <div className="text-gray-600">Dean, Metro University</div>
                   </div>
                 </div>
-                <div className="relative">
-                  <div className="text-4xl text-primary-500 absolute -top-5 -left-2 opacity-40">"</div>
-                  <p className="text-gray-700 italic text-lg relative z-10 mb-5 pl-4">
+                <div className="relative text-center">
+                  <div className="text-4xl text-primary-500 absolute -top-5 left-0 opacity-40">"</div>
+                  <p className="text-gray-700 italic text-lg relative z-10 mb-5 px-6">
                     The AI-powered student portal has revolutionized our enrollment process. What used to take weeks now happens in days, with 95% accuracy improvement.
                   </p>
                   <div className="text-4xl text-primary-500 absolute bottom-0 right-0 opacity-40">"</div>
                 </div>
-                <div className="flex text-secondary mt-4">
+                <div className="flex justify-center text-secondary mt-4">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon key={i} className="w-6 h-6 fill-current text-yellow-500" />
                   ))}
@@ -726,8 +735,8 @@ export default function EducationPage() {
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-radial from-primary-100 to-transparent opacity-30 rounded-full"></div>
               
               <div className="relative">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-white font-bold text-xl mr-5 shadow-md">
+                <div className="flex flex-col items-center mb-6 text-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-black font-bold text-xl shadow-md mb-3">
                     MP
                   </div>
                   <div>
@@ -735,14 +744,14 @@ export default function EducationPage() {
                     <div className="text-gray-600">Principal, International School</div>
                   </div>
                 </div>
-                <div className="relative">
-                  <div className="text-4xl text-secondary-500 absolute -top-5 -left-2 opacity-40">"</div>
-                  <p className="text-gray-700 italic text-lg relative z-10 mb-5 pl-4">
+                <div className="relative text-center">
+                  <div className="text-4xl text-secondary-500 absolute -top-5 left-0 opacity-40">"</div>
+                  <p className="text-gray-700 italic text-lg relative z-10 mb-5 px-6">
                     Parent engagement has increased by 85% since implementing the mobile communication platform. It's been a game-changer for our school community.
                   </p>
                   <div className="text-4xl text-secondary-500 absolute bottom-0 right-0 opacity-40">"</div>
                 </div>
-                <div className="flex text-secondary mt-4">
+                <div className="flex justify-center text-secondary mt-4">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon key={i} className="w-6 h-6 fill-current text-yellow-500" />
                   ))}
@@ -768,7 +777,7 @@ export default function EducationPage() {
         </div>
         
         <Container className="relative z-10">
-          <div className="text-center text-white">
+          <div className="text-center text-Text">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-fadeIn">
               Ready to Transform Your Educational Institution?
             </h2>
