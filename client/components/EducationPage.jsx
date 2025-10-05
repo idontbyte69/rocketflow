@@ -47,110 +47,110 @@ export default function EducationPage() {
   const educationSolutions = [
     {
       id: 'seo-services',
-      title: 'Education SEO Services',
-      description: "Boost your institution's visibility with targeted SEO strategies to attract prospective students and increase enrollments",
+      title: 'Education-Focused SEO',
+      description: "Dominate search results for education-related keywords with specialized SEO strategies designed for academic institutions",
       icon: AcademicCapIcon,
       color: 'from-blue-400 to-primary-500',
-      features: ['Keyword optimization', 'Local SEO for campuses', 'Content marketing', 'Ranking improvement']
+      features: ['Program-specific keywords', 'Local campus visibility', 'Academic reputation building', 'Competitor analysis']
     },
     {
       id: 'social-media',
-      title: 'Social Media Marketing',
-      description: "Engage with students and parents through strategic social media campaigns that highlight your institution's unique value",
+      title: 'Student Recruitment Campaigns',
+      description: "Connect with prospective students where they spend time online with targeted campaigns that showcase your institution's unique culture",
       icon: ChatBubbleLeftRightIcon,
       color: 'from-primary-400 to-primary-600',
-      features: ['Platform management', 'Content creation', 'Community building', 'Paid campaigns']
+      features: ['Platform-specific strategies', 'Influencer partnerships', 'Student testimonials', 'Engagement analytics']
     },
     {
       id: 'content-marketing',
-      title: 'Educational Content Marketing',
-      description: 'Develop compelling content that positions your institution as a thought leader and attracts potential students',
+      title: 'Thought Leadership Content',
+      description: 'Establish your institution as an authority with compelling content that addresses education trends and student concerns',
       icon: BookOpenIcon,
       color: 'from-secondary-400 to-secondary-600',
-      features: ['Blog management', 'Video marketing', 'Newsletters', 'Success stories']
+      features: ['Faculty expertise spotlights', 'Student success stories', 'Research highlights', 'Industry partnerships']
     },
     {
       id: 'ppc-campaigns',
-      title: 'PPC & Digital Advertising',
-      description: 'Target prospective students and parents with precision using data-driven paid advertising campaigns',
+      title: 'Enrollment-Focused Advertising',
+      description: 'Drive applications with precisely targeted advertising that reaches potential students at key decision-making moments',
       icon: DevicePhoneMobileIcon,
       color: 'from-primary-500 to-primary-700',
-      features: ['Google Ads', 'Social media ads', 'Retargeting', 'Analytics tracking']
+      features: ['Program-specific campaigns', 'Application deadline pushes', 'Scholarship promotions', 'Virtual tour signups']
     },
     {
       id: 'email-marketing',
-      title: 'Email Marketing Automation',
-      description: 'Nurture prospective students through personalized email sequences that guide them through the enrollment journey',
+      title: 'Student Journey Nurturing',
+      description: 'Guide prospects from interest to enrollment with sophisticated email sequences tailored to each stage of the decision process',
       icon: CogIcon,
       color: 'from-primary-dark to-gray-700',
-      features: ['Drip campaigns', 'Segmentation', 'A/B testing', 'Conversion tracking']
+      features: ['Prospect segmentation', 'Application reminders', 'Department-specific content', 'Event invitations']
     },
     {
       id: 'website-optimization',
-      title: 'Website Design & Optimization',
-      description: 'Create engaging, mobile-friendly websites that convert visitors into applicants with clear enrollment pathways',
+      title: 'Conversion-Optimized Web Design',
+      description: "Transform your institution's website into an enrollment-generating machine with strategic design and user experience",
       icon: ComputerDesktopIcon,
       color: 'from-secondary-500 to-secondary-700',
-      features: ['UX optimization', 'Conversion focus', 'Mobile responsiveness', 'Landing pages']
+      features: ['Program finder tools', 'Virtual tour integration', 'Application streamlining', 'Mobile-first design']
     }
   ];
 
   const educationBenefits = [
     {
-      title: 'Increased Enrollment',
-      description: "Attract more qualified applicants through targeted digital marketing campaigns that showcase your institution's value",
+      title: 'Higher Quality Applications',
+      description: "Attract students who are the right fit for your programs through precisely targeted campaigns and messaging",
       icon: StarIcon,
-      metrics: '45% increase in applications'
+      metrics: '52% increase in qualified leads'
     },
     {
-      title: 'Enhanced Brand Recognition',
-      description: "Build a strong digital presence that elevates your institution's reputation and recognition in the education sector",
+      title: 'Competitive Differentiation',
+      description: "Stand out in a crowded educational marketplace with distinctive positioning and compelling value propositions",
       icon: BoltIcon,
-      metrics: '70% boost in brand awareness'
+      metrics: '83% improved brand perception'
     },
     {
-      title: 'Improved Student Engagement',
-      description: 'Connect with prospective and current students through multichannel marketing that resonates with their needs',
+      title: 'Lower Cost Per Enrollment',
+      description: 'Optimize your recruitment funnel with data-driven strategies that reduce acquisition costs while improving quality',
       icon: ChatBubbleOvalLeftIcon,
-      metrics: '85% higher engagement rates'
+      metrics: '37% reduction in cost per student'
     },
     {
-      title: 'Data-Driven Marketing ROI',
-      description: "Measure and optimize marketing efforts with advanced analytics to maximize your institution's marketing investment",
+      title: 'Measurable Marketing Impact',
+      description: "Track every stage of the student journey from first click to enrollment with comprehensive attribution modeling",
       icon: ChartBarIcon,
-      metrics: '3x return on marketing spend'
+      metrics: '4.2x verified marketing ROI'
     }
   ];
 
   const institutionTypes = [
-    { name: 'Universities', icon: BuildingLibraryIcon, description: 'Comprehensive solutions for higher education institutions' },
-    { name: 'Schools', icon: AcademicCapIcon, description: 'K-12 educational management and learning platforms' },
-    { name: 'Colleges', icon: BuildingOfficeIcon, description: 'Specialized programs and vocational training systems' },
-    { name: 'Online Academies', icon: GlobeAltIcon, description: 'Digital-first learning platforms and virtual classrooms' },
-    { name: 'Training Centers', icon: BriefcaseIcon, description: 'Professional development and skill-building programs' },
-    { name: 'Language Schools', icon: LanguageIcon, description: 'Interactive language learning and assessment tools' }
+    { name: 'Universities', icon: BuildingLibraryIcon, description: 'Research-driven marketing highlighting academic excellence and outcomes' },
+    { name: 'Schools', icon: AcademicCapIcon, description: 'Parent-focused campaigns emphasizing student success and facilities' },
+    { name: 'Colleges', icon: BuildingOfficeIcon, description: 'Program-specific marketing highlighting career outcomes and ROI' },
+    { name: 'Online Academies', icon: GlobeAltIcon, description: 'Conversion-optimized digital strategies for virtual learning programs' },
+    { name: 'Training Centers', icon: BriefcaseIcon, description: 'Industry-aligned campaigns focused on skills development and placement' },
+    { name: 'Language Schools', icon: LanguageIcon, description: 'Global targeting strategies with multilingual content and cultural appeal' }
   ];
 
   const caseStudies = [
     {
-      title: 'Metro University',
-      challenge: 'Declining application rates and low brand visibility online',
-      solution: 'Implemented comprehensive SEO and content marketing strategy',
-      result: '78% increase in organic search traffic and 45% more applications',
+      title: 'Westside University',
+      challenge: 'Graduate program applications declining despite strong academic reputation',
+      solution: 'Program-specific SEO and targeted thought leadership content campaign',
+      result: '94% increase in qualified application starts and 67% rise in enrollment yield',
       icon: BuildingLibraryIcon
     },
     {
-      title: 'International School Chain',
-      challenge: 'Poor social media presence and limited parent engagement',
-      solution: 'Developed targeted social media campaigns and parent outreach',
-      result: '85% increase in social engagement and 40% growth in inquiries',
+      title: 'Global Education Network',
+      challenge: 'Low international student recruitment despite extensive program offerings',
+      solution: 'Geo-targeted social campaigns with multilingual content and cultural adaptation',
+      result: '112% increase in international applications and 79% improvement in enrollment diversity',
       icon: AcademicCapIcon
     },
     {
-      title: 'Online Learning Academy',
-      challenge: 'High cost per acquisition and inefficient ad spend',
-      solution: 'Optimized PPC campaigns with advanced targeting and analytics',
-      result: '65% reduction in cost per lead and 120% increase in conversions',
+      title: 'Technical Career Institute',
+      challenge: 'Strong competition from larger institutions despite excellent job placement rates',
+      solution: 'Data-driven remarketing campaign highlighting employment outcomes and ROI',
+      result: '73% reduction in cost per enrollment and 156% increase in high-value program applications',
       icon: ComputerDesktopIcon
     }
   ];
@@ -168,23 +168,23 @@ export default function EducationPage() {
               <div className="animate-fadeIn">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                   <ShinyText className="bg-gradient-to-r from-primary-dark via-primary to-secondary text-black">
-                    Digital Marketing for Education
+                    Strategic Education Marketing
                   </ShinyText>
                 </h1>
                 <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed mx-auto max-w-3xl">
-                  Empower educational institutions with cutting-edge digital marketing strategies that boost enrollment, 
-                  enhance brand recognition, and connect with prospective students in the digital age.
+                  Transform your institution's digital presence with data-driven marketing strategies designed to increase 
+                  enrollments, elevate your brand, and create meaningful connections with prospective students.
                 </p>
               </div>
               
               {/* Key Stats - Enhanced with animations */}
               <div className="grid grid-cols-2 gap-4 mb-8 max-w-md mx-auto">
                 <div className="text-center p-5 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                  <div className="text-3xl font-bold text-primary-dark">45%</div>
-                  <div className="text-sm text-gray-600">Enrollment Boost</div>
+                  <div className="text-3xl font-bold text-primary-dark">58%</div>
+                  <div className="text-sm text-gray-600">Application Growth</div>
                 </div>
                 <div className="text-center p-5 bg-gradient-to-br from-secondary-50 to-primary-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                  <div className="text-3xl font-bold text-primary-dark">3x</div>
+                  <div className="text-3xl font-bold text-primary-dark">4.2x</div>
                   <div className="text-sm text-gray-600">Marketing ROI</div>
                 </div>
               </div>
@@ -233,10 +233,10 @@ export default function EducationPage() {
         <Container className="relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Digital Marketing Impact for Education
+              Measurable Results That Matter
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Join the growing community of institutions that have transformed their enrollment numbers through strategic digital marketing
+              Our data-driven education marketing strategies deliver quantifiable outcomes for institutions of all sizes
             </p>
           </div>
           
@@ -244,45 +244,45 @@ export default function EducationPage() {
             <div className="text-center group">
               <div className="relative">
                 <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  500+
+                  650+
                 </div>
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
               </div>
-              <div className="text-gray-300 text-lg">Educational Institutions</div>
-              <div className="text-gray-400 text-sm mt-1">Successful Marketing Campaigns</div>
+              <div className="text-gray-300 text-lg">Education Clients</div>
+              <div className="text-gray-400 text-sm mt-1">Across 5 Continents</div>
             </div>
             
             <div className="text-center group">
               <div className="relative">
                 <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  45%
+                  58%
                 </div>
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
               </div>
-              <div className="text-gray-300 text-lg">Average Increase</div>
-              <div className="text-gray-400 text-sm mt-1">In Enrollment Applications</div>
+              <div className="text-gray-300 text-lg">Application Growth</div>
+              <div className="text-gray-400 text-sm mt-1">Year-Over-Year Average</div>
             </div>
             
             <div className="text-center group">
               <div className="relative">
                 <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  3x
+                  4.2x
                 </div>
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
               </div>
-              <div className="text-gray-300 text-lg">ROI Average</div>
-              <div className="text-gray-400 text-sm mt-1">On Marketing Investment</div>
+              <div className="text-gray-300 text-lg">Marketing ROI</div>
+              <div className="text-gray-400 text-sm mt-1">Verified Returns</div>
             </div>
             
             <div className="text-center group">
               <div className="relative">
                 <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  70%
+                  42%
                 </div>
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
               </div>
-              <div className="text-gray-300 text-lg">Brand Awareness</div>
-              <div className="text-gray-400 text-sm mt-1">Increase For Clients</div>
+              <div className="text-gray-300 text-lg">Lower Cost</div>
+              <div className="text-gray-400 text-sm mt-1">Per Qualified Applicant</div>
             </div>
           </div>
           
@@ -291,15 +291,19 @@ export default function EducationPage() {
             <div className="inline-flex flex-wrap items-center justify-center space-x-8 text-gray-400">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">Google Partner</span>
+                <span className="text-sm">Google Premier Partner</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">Meta Business Partner</span>
+                <span className="text-sm">Meta Certified Agency</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">Marketing Excellence Award</span>
+                <span className="text-sm">Education Marketing Awards</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span className="text-sm">HubSpot Diamond Partner</span>
               </div>
             </div>
           </div>
@@ -315,12 +319,12 @@ export default function EducationPage() {
             <div className="absolute -top-6 right-1/3 w-12 h-12 rounded-full bg-secondary-50 filter blur-lg opacity-70"></div>
             
             <h2 className="relative text-4xl font-bold text-gray-900 mb-6 inline-block">
-              <span className="bg-gradient-to-r from-primary to-secondary text-black">Strategic</span> Digital Marketing Services
+              <span className="bg-gradient-to-r from-primary to-secondary text-black">Results-Driven</span> Marketing Solutions
               <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              From SEO to social media marketing, we provide comprehensive digital marketing solutions 
-              tailored specifically for educational institutions to increase enrollment and brand awareness.
+              Our specialized marketing strategies help educational institutions stand out in a competitive landscape, 
+              with a measurable focus on enrollment growth, student engagement, and institutional reputation.
             </p>
           </div>
           
@@ -601,12 +605,12 @@ export default function EducationPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
-              We Serve All Types of 
-              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Educational Institutions</span>
+              Custom Marketing For Each 
+              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Education Sector</span>
               <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From traditional universities to modern online academies, our marketing strategies are tailored to your specific audience and enrollment goals.
+              Each educational sector has unique audiences, challenges, and opportunities. Our marketing strategies are precisely tailored to your institution's specific context and goals.
             </p>
           </div>
           
@@ -717,7 +721,7 @@ export default function EducationPage() {
                 <div className="relative text-center">
                   <div className="text-4xl text-primary-500 absolute -top-5 left-0 opacity-40">"</div>
                   <p className="text-gray-700 italic text-lg relative z-10 mb-5 px-6">
-                    Their SEO and content marketing strategy transformed our online presence. Our organic search traffic increased by 78% and applications are up 45% compared to last year.
+                    The department-specific SEO campaigns were transformative. Our MBA program saw a 92% increase in qualified applicants, while our specialized engineering programs achieved an 83% boost in conversion rates from site visits to applications.
                   </p>
                   <div className="text-4xl text-primary-500 absolute bottom-0 right-0 opacity-40">"</div>
                 </div>
@@ -747,7 +751,7 @@ export default function EducationPage() {
                 <div className="relative text-center">
                   <div className="text-4xl text-secondary-500 absolute -top-5 left-0 opacity-40">"</div>
                   <p className="text-gray-700 italic text-lg relative z-10 mb-5 px-6">
-                    Their social media strategy transformed our outreach efforts. We've seen an 85% increase in engagement and a 40% growth in enrollment inquiries from targeted campaigns.
+                    The multilingual student journey campaigns completely revitalized our international recruitment. We've reduced cost per enrollment by 42% while increasing international student diversity by 76% across our five campuses.
                   </p>
                   <div className="text-4xl text-secondary-500 absolute bottom-0 right-0 opacity-40">"</div>
                 </div>
@@ -779,18 +783,18 @@ export default function EducationPage() {
         <Container className="relative z-10">
           <div className="text-center text-Text">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-fadeIn">
-              Ready to Boost Your Institution's Enrollment?
+              Transform Your Enrollment Pipeline
             </h2>
             <p className="text-xl mb-10 opacity-90 max-w-3xl mx-auto leading-relaxed">
-              Join hundreds of educational institutions that have already transformed their digital presence 
-              and increased enrollment numbers with our strategic marketing solutions.
+              Get a customized marketing strategy that focuses on your institution's unique strengths and addresses 
+              your specific enrollment challenges with proven, data-backed solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button className="bg-white text-primary-dark hover:bg-gray-100 px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl text-lg">
-                Get Marketing Analysis
+                Request Enrollment Analysis
               </Button>
               <Button className="border-2 border-white text-white hover:bg-white hover:text-primary-dark px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 text-lg">
-                View Marketing Packages
+                Explore Marketing Solutions
               </Button>
             </div>
           </div>
