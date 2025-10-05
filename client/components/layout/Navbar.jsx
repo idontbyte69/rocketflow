@@ -1,8 +1,12 @@
 'use client'
 
 import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Button } from '../ui/Button';
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] = useState(false);
@@ -45,9 +49,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <img src="/logo.png" alt="RocketFlow Logo" className="h-8 w-auto" />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -118,13 +122,32 @@ const Navbar = () => {
           </div>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="text-gray-600 hover:text-coral-500 px-4 py-2 text-sm font-medium transition-colors duration-200">
-              Sign In
-            </button>
-            <button className="bg-coral-500 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-coral-600 transition-all duration-200 hover:scale-105">
-              Get Started
-            </button>
+          <div className="hidden md:flex items-center space-x-3">
+            <Link href="/signin">
+              <button 
+                className={`group relative px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-105
+                  ${pathname === '/signin'
+                    ? 'text-white bg-coral-500 shadow-lg ring-2 ring-coral-400 ring-opacity-50'
+                    : 'text-coral-600 bg-transparent border-2 border-coral-500 hover:bg-coral-500 hover:text-white hover:shadow-md'}`}
+              >
+                <span className="relative z-10">Sign In</span>
+              </button>
+            </Link>
+            <Link href="/signup">
+              <button 
+                className={`group relative px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-105
+                  ${pathname === '/signup'
+                    ? 'text-white bg-coral-500 shadow-lg ring-2 ring-coral-400 ring-opacity-50 scale-105'
+                    : 'text-white bg-coral-500  hover:from-coral-600 hover:to-red-500 shadow-lg hover:shadow-xl'}`}
+              >
+                <span className="relative z-10 flex items-center">
+                  Get Started
+                  <svg className="w-4 h-4 ml-1.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -204,13 +227,36 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <div className="pt-4 pb-2 space-y-2">
-              <button className="w-full text-left text-gray-600 hover:text-coral-500 px-3 py-2 text-base font-medium transition-colors duration-200">
-                Sign In
-              </button>
-              <button className="w-full bg-coral-500 text-white px-3 py-2 rounded-full text-base font-medium hover:bg-coral-600 transition-all duration-200">
-                Get Started
-              </button>
+            <div className="pt-4 pb-2 space-y-3">
+              <Link href="/signin" className="block">
+                <button 
+                  className={`w-full px-4 py-3 text-base font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-[1.02]
+                    ${pathname === '/signin'
+                      ? 'text-white bg-coral-500 shadow-lg ring-2 ring-coral-400 ring-opacity-50'
+                      : 'text-coral-600 bg-white border-2 border-coral-500 hover:bg-coral-500 hover:text-white hover:shadow-md'}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="flex items-center justify-center">
+                    Sign In
+                  </span>
+                </button>
+              </Link>
+              <Link href="/signup" className="block">
+                <button 
+                  className={`w-full px-4 py-3 text-base font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-[1.02]
+                    ${pathname === '/signup'
+                      ? 'text-white bg-gradient-to-r from-coral-600 to-red-500 shadow-xl ring-2 ring-coral-400 ring-opacity-50'
+                      : 'text-white bg-gradient-to-r from-coral-500 to-red-400 hover:from-coral-600 hover:to-red-500 shadow-lg hover:shadow-xl'}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="flex items-center justify-center">
+                    Sign Up
+                    <svg className="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
