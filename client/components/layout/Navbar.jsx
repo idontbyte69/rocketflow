@@ -33,6 +33,7 @@ const Navbar = () => {
       dropdownItems: [
         { name: 'Education', href: '/education' },
         { name: 'Healthcare', href: '#healthcare' },
+        { name: 'Hotel & Resort', href: '/hotel-and-resort' },
         { name: 'Retail', href: '#retail' },
         { name: 'Finance', href: '#finance' },
         { name: 'Manufacturing', href: '#manufacturing' },

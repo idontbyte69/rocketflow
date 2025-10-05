@@ -8,9 +8,9 @@ import {
   Card,
   Section,
   Container,
-} from "../../components";
+} from ".";
 
-export default function HotelsResortsPage() {
+export default function HotelandResort() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
@@ -23,9 +23,9 @@ export default function HotelsResortsPage() {
   ];
 
   const rooms = [
-    { img: "https://i.ibb.co/Y7YJkYm4/the-anam-J9-O3-Wc-J5-N74-unsplash.jpg", name: "Deluxe Ocean Suite", price: "$199/night", desc: "Spacious suite with private balcony and ocean view." },
-    { img: "https://i.ibb.co/DPBDt8H9/sasha-kaunas-TAg-GZWz6-Qg8-unsplash.jpg", name: "Luxury King Room", price: "$149/night", desc: "Elegant room with king-sized bed and breakfast included." },
-    { img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", name: "Garden Villa", price: "$259/night", desc: "Private villa surrounded by tropical gardens." },
+    { img: "/logo.png", name: "Deluxe Ocean Suite", price: "$199/night", desc: "Spacious suite with private balcony and ocean view." },
+    { img: "/logo.png", name: "Luxury King Room", price: "$149/night", desc: "Elegant room with king-sized bed and breakfast included." },
+    { img: "/logo.png", name: "Garden Villa", price: "$259/night", desc: "Private villa surrounded by tropical gardens." },
   ];
 
   const testimonials = [
@@ -41,15 +41,15 @@ export default function HotelsResortsPage() {
   ];
 
   const integrations = [
-    { name: "POS Provider", logo: "https://i.ibb.co/2FqGvHR/pos-logo.png", description: "Seamless point-of-sale integration." },
-    { name: "Payment Gateway", logo: "https://i.ibb.co/yQvQ6VZ/payment-logo.png", description: "Secure and fast payment processing." },
-    { name: "CRM System", logo: "https://i.ibb.co/HhXxF8H/crm-logo.png", description: "Manage your customer relationships efficiently." },
+    { name: "POS Provider", logo: "/logo.png", description: "Seamless point-of-sale integration." },
+    { name: "Payment Gateway", logo: "/logo.png", description: "Secure and fast payment processing." },
+    { name: "CRM System", logo: "/logo.png", description: "Manage your customer relationships efficiently." },
   ];
 
   const awards = [
-    { name: "Best Hotel Automation 2024", logo: "https://i.ibb.co/z8k2RZ1/award1.png" },
-    { name: "Security Certified", logo: "https://i.ibb.co/3N0L2pF/award2.png" },
-    { name: "Top Hospitality Software", logo: "https://i.ibb.co/Bz6NhLZ/award3.png" },
+    { name: "Best Hotel Automation 2024", logo: "/logo.png" },
+    { name: "Security Certified", logo: "/logo.png" },
+    { name: "Top Hospitality Software", logo: "/logo.png" },
   ];
 
   const faqs = [
@@ -141,7 +141,7 @@ export default function HotelsResortsPage() {
       <Section background="white">
         <Container>
           <div className="flex flex-col md:flex-row items-center gap-10">
-            <img src="https://i.ibb.co/Y7YJkYm4/the-anam-J9-O3-Wc-J5-N74-unsplash.jpg" alt="Resort" className="rounded-2xl shadow-lg md:w-1/2 cursor-pointer" />
+            <img src="/logo.png" alt="Resort" className="rounded-2xl shadow-lg md:w-1/2 cursor-pointer" />
             <div className="flex-1">
               <h2 className="text-3xl font-bold mb-4">Why Choose Our Automation</h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
