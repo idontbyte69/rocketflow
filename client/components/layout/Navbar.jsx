@@ -6,9 +6,9 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#' },
-    { name: 'Services', href: '#services' },
-    { name: 'Industries', href: '#industries' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Industries', href: '/#industries' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -19,8 +19,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
-              <img src="/logo.png" alt="RocketFlow Logo" className="h-8 w-auto" />
+            <a href="/" className="text-2xl font-bold text-gray-800">
+              RocketFlow
             </a>
           </div>
 

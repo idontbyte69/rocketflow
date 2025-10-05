@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Navbar, Footer, Button, Card, Section, Container } from '../components';
+import Link from 'next/link';
 
 export default function Home() {
   const [hoveredService, setHoveredService] = useState(null);
@@ -98,7 +99,7 @@ export default function Home() {
           </div>
         </Container>
       </Section>
-
+np
       {/* Mobile Device Showcase Section */}
       <Section background="white" className="relative overflow-hidden">
         <Container>
@@ -366,23 +367,35 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
-            {sectors.map((sector, index) => (
-              <div
-                key={sector.name}
-                className="group relative"
-                onMouseEnter={() => setHoveredSector(sector.name)}
-                onMouseLeave={() => setHoveredSector(null)}
-              >
-                <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-white transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
-                  <div className="text-center">
-                    <div className="text-3xl mb-3">{sector.icon}</div>
-                    <h3 className="text-sm font-semibold text-gray-700">{sector.name}</h3>
+            {sectors.map((sector, index) => {
+              const isStudyAbroad = sector.name === 'Study Abroad';
+              const sectorContent = (
+                <div
+                  className="group relative"
+                  onMouseEnter={() => setHoveredSector(sector.name)}
+                  onMouseLeave={() => setHoveredSector(null)}
+                >
+                  <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-white transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className="text-center">
+                      <div className="text-3xl mb-3">{sector.icon}</div>
+                      <h3 className="text-sm font-semibold text-gray-700">{sector.name}</h3>
+                    </div>
+                    
+                    <div className="absolute inset-0 bg-gradient-to-t from-coral-100/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  
-                  <div className="absolute inset-0 bg-gradient-to-t from-coral-100/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-              </div>
-            ))}
+              );
+
+              return isStudyAbroad ? (
+                <Link key={sector.name} href="/study-abroad/studyabroad">
+                  {sectorContent}
+                </Link>
+              ) : (
+                <div key={sector.name}>
+                  {sectorContent}
+                </div>
+              );
+            })}
           </div>
         </Container>
       </Section>
