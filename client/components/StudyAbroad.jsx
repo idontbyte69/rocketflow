@@ -166,7 +166,7 @@ export default function StudyAbroad() {
             <div className="order-1">
               <div className="animate-fadeIn">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  <ShinyText className="text-red-600 bg-clip-text">
+                  <ShinyText className="text-red-500 bg-clip-text">
                     Study Abroad Made Simple
                   </ShinyText>
                 </h1>
