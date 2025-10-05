@@ -4,10 +4,23 @@ import { useState } from 'react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
   const navItems = [
     { name: 'Home', href: '#' },
-    { name: 'Services', href: '#services' },
+    { 
+      name: 'Services', 
+      href: '#services',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Digital Transformation', href: '#digital-transformation' },
+        { name: 'Cloud Solutions', href: '#cloud-solutions' },
+        { name: 'Data Analytics', href: '#data-analytics' },
+        { name: 'AI & Machine Learning', href: '#ai-ml' },
+        { name: 'Cybersecurity', href: '#cybersecurity' },
+        { name: 'Software Development', href: '#software-development' }
+      ]
+    },
     { name: 'Industries', href: '#industries' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
@@ -28,13 +41,54 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-600 hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors duration-200"
-                >
-                  {item.name}
-                </a>
+                <div key={item.name} className="relative">
+                  {item.hasDropdown ? (
+                    <div 
+                      className="relative"
+                      onMouseEnter={() => setIsServicesDropdownOpen(true)}
+                      onMouseLeave={() => setIsServicesDropdownOpen(false)}
+                    >
+                      <a
+                        href={item.href}
+                        className="text-gray-600 hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center"
+                      >
+                        {item.name}
+                        <svg 
+                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`}
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </a>
+                      
+                      {/* Dropdown Menu */}
+                      {isServicesDropdownOpen && (
+                        <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                          <div className="py-2">
+                            {item.dropdownItems.map((dropdownItem) => (
+                              <a
+                                key={dropdownItem.name}
+                                href={dropdownItem.href}
+                                className="block px-4 py-2 text-sm text-gray-600 hover:text-coral-500 hover:bg-gray-50 transition-colors duration-200"
+                              >
+                                {dropdownItem.name}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="text-gray-600 hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                    >
+                      {item.name}
+                    </a>
+                  )}
+                </div>
               ))}
             </div>
           </div>
@@ -75,14 +129,48 @@ const Navbar = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-b border-gray-200">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-600 hover:text-coral-500 block px-3 py-2 text-base font-medium transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
+              <div key={item.name}>
+                {item.hasDropdown ? (
+                  <div>
+                    <button
+                      className="w-full text-left text-gray-600 hover:text-coral-500 px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center justify-between"
+                      onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                    >
+                      {item.name}
+                      <svg 
+                        className={`h-4 w-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`}
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {isServicesDropdownOpen && (
+                      <div className="pl-6 space-y-1">
+                        {item.dropdownItems.map((dropdownItem) => (
+                          <a
+                            key={dropdownItem.name}
+                            href={dropdownItem.href}
+                            className="block text-gray-500 hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {dropdownItem.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <a
+                    href={item.href}
+                    className="text-gray-600 hover:text-coral-500 block px-3 py-2 text-base font-medium transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                )}
+              </div>
             ))}
             <div className="pt-4 pb-2 space-y-2">
               <button className="w-full text-left text-gray-600 hover:text-coral-500 px-3 py-2 text-base font-medium transition-colors duration-200">
