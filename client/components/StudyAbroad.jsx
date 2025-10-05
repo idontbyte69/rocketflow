@@ -166,7 +166,7 @@ export default function StudyAbroad() {
             <div className="order-1">
               <div className="animate-fadeIn">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  <ShinyText className="bg-gradient-to-r from-primary-dark via-primary to-secondary bg-clip-text text-black">
+                  <ShinyText className="text-red-600 bg-clip-text">
                     Study Abroad Made Simple
                   </ShinyText>
                 </h1>
@@ -278,7 +278,7 @@ export default function StudyAbroad() {
                 <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
                   24/7
                 </div>
-                
+
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
               </div>
               <div className="text-gray-300 text-lg">Support Available</div>
@@ -449,20 +449,20 @@ export default function StudyAbroad() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">AI Integration Platform</h3>
               <p className="text-gray-600 mb-4">Comprehensive AI solutions that integrate with your existing systems to provide intelligent assistance throughout the student journey</p>
               <div className="space-y-2">
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
                   Profile matching
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
                   Scholarship recommendations
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
                   Career path analysis
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
                   Success prediction
                 </div>
               </div>
@@ -482,20 +482,20 @@ export default function StudyAbroad() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Document Processing System</h3>
               <p className="text-gray-600 mb-4">Automated document verification and processing system that speeds up application reviews and reduces manual workload</p>
               <div className="space-y-2">
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                   Document validation
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                   Auto-categorization
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                   Missing document alerts
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                   Digital signature
                 </div>
               </div>
@@ -515,20 +515,20 @@ export default function StudyAbroad() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Application Tracking Portal</h3>
               <p className="text-gray-600 mb-4">Comprehensive portal for students to track their application progress, upload documents, and communicate with consultants</p>
               <div className="space-y-2">
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
                   Real-time status updates
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
                   Document upload
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
                   Milestone tracking
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <span className="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+                <div className="flex items-center text-sm text-gray-700">
+                  <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
                   In-app messaging
                 </div>
               </div>
@@ -547,8 +547,8 @@ export default function StudyAbroad() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
               Why Study Abroad Consultancies 
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Choose Us</span>
-              <div className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Choose Us</span>
+              <div className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our solutions deliver measurable improvements in student placements, operational efficiency, 
@@ -574,8 +574,8 @@ export default function StudyAbroad() {
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center md:text-left">{benefit.title}</h3>
                     <p className="text-gray-600 mb-5 text-lg text-center md:text-left">{benefit.description}</p>
                     <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-4 shadow-inner">
-                      <span className="text-base font-bold text-primary-dark flex justify-center md:justify-start items-center">
-                        <span className="w-3 h-3 bg-secondary rounded-full mr-2"></span>
+                      <span className="text-base font-bold text-indigo-700 flex justify-center md:justify-start items-center">
+                        <span className="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
                         {benefit.metrics}
                       </span>
                     </div>
@@ -593,8 +593,8 @@ export default function StudyAbroad() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
               We Support All Types of 
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Study Programs</span>
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Study Programs</span>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From undergraduate degrees to language courses, our solutions adapt to your specific service offerings.
@@ -608,7 +608,7 @@ export default function StudyAbroad() {
                 className="p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 text-center hover:border-primary transform hover:-translate-y-2 bg-white"
               >
                 <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center shadow-md">
-                  <category.icon className="w-8 h-8 text-primary-dark" />
+                  <category.icon className="w-8 h-8 text-indigo-700" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{category.name}</h3>
                 <p className="text-gray-600">{category.description}</p>
@@ -628,8 +628,8 @@ export default function StudyAbroad() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
               Success Stories from 
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Industry Leaders</span>
-              <div className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Industry Leaders</span>
+              <div className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               See how we've helped study abroad consultancies transform their operations and improve student outcomes.
@@ -681,8 +681,8 @@ export default function StudyAbroad() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
               What Our 
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Clients Say</span>
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Clients Say</span>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Hear from study abroad consultants who have transformed their businesses with our solutions
@@ -768,7 +768,7 @@ export default function StudyAbroad() {
         </div>
         
         <Container className="relative z-10">
-          <div className="text-center text-white">
+          <div className="text-center text-">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-fadeIn">
               Ready to Transform Your Study Abroad Consultancy?
             </h2>
@@ -777,10 +777,10 @@ export default function StudyAbroad() {
               and enhanced student experiences with our cutting-edge solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button className="bg-white text-primary-dark hover:bg-gray-100 px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl text-lg">
+              <Button className="bg-white text-indigo-700 hover:bg-gray-100 px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl text-lg">
                 Schedule a Demo
               </Button>
-              <Button className="border-2 border-white text-white hover:bg-white hover:text-primary-dark px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 text-lg">
+              <Button className="border-2 border-white text-white hover:bg-white hover:text-indigo-700 px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 text-lg">
                 Download Brochure
               </Button>
             </div>
