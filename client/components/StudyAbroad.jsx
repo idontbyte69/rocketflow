@@ -278,6 +278,7 @@ export default function StudyAbroad() {
                 <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
                   24/7
                 </div>
+                
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
               </div>
               <div className="text-gray-300 text-lg">Support Available</div>
