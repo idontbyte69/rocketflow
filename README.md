@@ -19,7 +19,7 @@ Before you begin, ensure you have the following installed:
 ### Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/idontbyte69/rocketflow.git
 cd rocketflow
 ```
 
@@ -52,12 +52,12 @@ The client application will be available at [http://localhost:3000](http://local
 
 #### Server
 
+*Note: The server is currently in development and doesn't have a dev script configured yet.*
+
 ```bash
 cd Server
-npm run dev
+# Server setup is in progress
 ```
-
-The server will start on the configured port (typically 5000 or 8000).
 
 ### Production Mode
 
@@ -71,11 +71,7 @@ npm start
 
 #### Server
 
-```bash
-cd Server
-npm run build
-npm start
-```
+*Note: Production scripts for the server are currently being set up.*
 
 ## Features
 
@@ -100,13 +96,14 @@ npm start
 ## Technology Stack
 
 ### Frontend
-- Next.js
-- React
-- TailwindCSS
+- Next.js 15.5.4 (with Turbopack)
+- React 19.1.0
+- TailwindCSS 4.x
+- ESLint for code quality
 
 ### Backend
 - Node.js
-- Express (assumed)
+- *Backend framework to be determined*
 
 ## Contributing
 
@@ -120,6 +117,35 @@ npm start
 
 This project is licensed under the [MIT License](LICENSE).
 
+## Project Status
+
+- ✅ Client: Next.js application with modern React and TailwindCSS
+- 🚧 Server: Backend development in progress
+- 🚧 API endpoints: To be implemented
+- 🚧 Database integration: To be implemented
+
+## Available Scripts
+
+### Client Scripts
+- `npm run dev`: Start development server with Turbopack
+- `npm run build`: Build the application for production
+- `npm start`: Start the production server
+- `npm run lint`: Run ESLint for code quality checks
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Port already in use**: If port 3000 is already in use, Next.js will automatically use the next available port.
+2. **Node version compatibility**: Ensure you're using Node.js 18.0.0 or higher for optimal compatibility.
+3. **Clear cache**: If you encounter build issues, try deleting `node_modules` and running `npm install` again.
+
+```bash
+# Clear cache and reinstall
+rm -rf node_modules package-lock.json
+npm install
+```
+
 ## Contact
 
-Project Link: [https://github.com/yourusername/rocketflow](https://github.com/yourusername/rocketflow)
+Project Link: [https://github.com/idontbyte69/rocketflow](https://github.com/idontbyte69/rocketflow)
