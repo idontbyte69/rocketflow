@@ -5,9 +5,10 @@ import { useState } from 'react';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', href: '/' },
     { 
       name: 'Services', 
       href: '#services',
@@ -21,7 +22,19 @@ const Navbar = () => {
         { name: 'Software Development', href: '#software-development' }
       ]
     },
-    { name: 'Industries', href: '#industries' },
+    { 
+      name: 'Industries', 
+      href: '#industries',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Education', href: '/education' },
+        { name: 'Healthcare', href: '#healthcare' },
+        { name: 'Retail', href: '#retail' },
+        { name: 'Finance', href: '#finance' },
+        { name: 'Manufacturing', href: '#manufacturing' },
+        { name: 'Real Estate', href: '#real-estate' }
+      ]
+    },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -45,8 +58,14 @@ const Navbar = () => {
                   {item.hasDropdown ? (
                     <div 
                       className="relative"
-                      onMouseEnter={() => setIsServicesDropdownOpen(true)}
-                      onMouseLeave={() => setIsServicesDropdownOpen(false)}
+                      onMouseEnter={() => {
+                        if (item.name === 'Services') setIsServicesDropdownOpen(true);
+                        if (item.name === 'Industries') setIsIndustriesDropdownOpen(true);
+                      }}
+                      onMouseLeave={() => {
+                        if (item.name === 'Services') setIsServicesDropdownOpen(false);
+                        if (item.name === 'Industries') setIsIndustriesDropdownOpen(false);
+                      }}
                     >
                       <a
                         href={item.href}
@@ -54,7 +73,11 @@ const Navbar = () => {
                       >
                         {item.name}
                         <svg 
-                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`}
+                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                            (item.name === 'Services' && isServicesDropdownOpen) || 
+                            (item.name === 'Industries' && isIndustriesDropdownOpen) 
+                              ? 'rotate-180' : ''
+                          }`}
                           fill="none" 
                           viewBox="0 0 24 24" 
                           stroke="currentColor"
@@ -64,7 +87,8 @@ const Navbar = () => {
                       </a>
                       
                       {/* Dropdown Menu */}
-                      {isServicesDropdownOpen && (
+                      {((item.name === 'Services' && isServicesDropdownOpen) || 
+                        (item.name === 'Industries' && isIndustriesDropdownOpen)) && (
                         <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
                           <div className="py-2">
                             {item.dropdownItems.map((dropdownItem) => (
@@ -134,11 +158,18 @@ const Navbar = () => {
                   <div>
                     <button
                       className="w-full text-left text-gray-600 hover:text-coral-500 px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center justify-between"
-                      onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                      onClick={() => {
+                        if (item.name === 'Services') setIsServicesDropdownOpen(!isServicesDropdownOpen);
+                        if (item.name === 'Industries') setIsIndustriesDropdownOpen(!isIndustriesDropdownOpen);
+                      }}
                     >
                       {item.name}
                       <svg 
-                        className={`h-4 w-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`}
+                        className={`h-4 w-4 transition-transform duration-200 ${
+                          (item.name === 'Services' && isServicesDropdownOpen) || 
+                          (item.name === 'Industries' && isIndustriesDropdownOpen) 
+                            ? 'rotate-180' : ''
+                        }`}
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -146,7 +177,8 @@ const Navbar = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </button>
-                    {isServicesDropdownOpen && (
+                    {((item.name === 'Services' && isServicesDropdownOpen) || 
+                      (item.name === 'Industries' && isIndustriesDropdownOpen)) && (
                       <div className="pl-6 space-y-1">
                         {item.dropdownItems.map((dropdownItem) => (
                           <a

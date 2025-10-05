@@ -7,3 +7,7 @@ export { default as Button } from './ui/Button';
 export { default as Card } from './ui/Card';
 export { default as Section } from './ui/Section';
 export { default as Container } from './ui/Container';
+export { default as ShinyText } from './ui/ShinyText';
+
+// Page Components
+export { default as EducationPage } from './EducationPage';

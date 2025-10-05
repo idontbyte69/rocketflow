@@ -2,55 +2,88 @@
 
 import { useState } from "react";
 import { Navbar, Footer, Button, Card, Section, Container } from '.';
+import {
+  ChatBubbleLeftRightIcon,
+  BoltIcon,
+  GlobeAltIcon,
+  DevicePhoneMobileIcon,
+  CameraIcon,
+  AcademicCapIcon,
+  BuildingOffice2Icon,
+  ShoppingBagIcon,
+  PaperAirplaneIcon,
+  BuildingOfficeIcon,
+  TicketIcon,
+  SparklesIcon,
+  ShoppingCartIcon,
+  ComputerDesktopIcon,
+  PlayIcon
+} from '@heroicons/react/24/outline';
 
 export default function LandingPage() {
   const [hoveredService, setHoveredService] = useState(null);
   const [hoveredSector, setHoveredSector] = useState(null);
+
+  // Function to render service icon
+  const renderServiceIcon = (service) => {
+    switch (service.id) {
+      case 'chatbot':
+        return <ChatBubbleLeftRightIcon className="w-8 h-8" />;
+      case 'auto-reply':
+        return <BoltIcon className="w-8 h-8" />;
+      case 'websites':
+        return <GlobeAltIcon className="w-8 h-8" />;
+      case 'mobile-apps':
+        return <DevicePhoneMobileIcon className="w-8 h-8" />;
+      default:
+        return <ChatBubbleLeftRightIcon className="w-8 h-8" />;
+    }
+  };
 
   const services = [
     {
       id: 'chatbot',
       title: 'AI Chatbots',
       description: 'Intelligent conversational AI to engage your customers 24/7 with automated responses',
-      icon: '🤖',
-      color: 'from-coral-400 to-coral-500'
+      icon: ChatBubbleLeftRightIcon,
+      color: 'from-primary to-primary-600'
     },
     {
       id: 'auto-reply',
       title: 'Auto Reply Systems',
       description: 'Automated response systems for seamless customer communication across all platforms',
-      icon: '⚡',
-      color: 'from-blue-400 to-blue-500'
+      icon: BoltIcon,
+      color: 'from-secondary to-secondary-600'
     },
     {
       id: 'websites',
       title: 'Website Development',
       description: 'Modern, responsive websites tailored to your business needs and brand identity',
-      icon: '🌐',
-      color: 'from-purple-400 to-purple-500'
+      icon: GlobeAltIcon,
+      color: 'from-primary-dark to-gray-700'
     },
     {
       id: 'mobile-apps',
       title: 'Mobile Applications',
       description: 'Native and cross-platform mobile solutions to reach your customers anywhere',
-      icon: '📱',
-      color: 'from-green-400 to-green-500'
+      icon: DevicePhoneMobileIcon,
+      color: 'from-primary-500 to-secondary-500'
     }
   ];
 
   const sectors = [
-    { name: 'Photography', icon: '📸', color: 'bg-gradient-to-br from-pink-100 to-pink-200' },
-    { name: 'Education', icon: '🎓', color: 'bg-gradient-to-br from-blue-100 to-blue-200' },
-    { name: 'Hotels & Resorts', icon: '🏨', color: 'bg-gradient-to-br from-emerald-100 to-emerald-200' },
-    { name: 'Restaurants', icon: '🍽️', color: 'bg-gradient-to-br from-orange-100 to-orange-200' },
-    { name: 'Study Abroad', icon: '✈️', color: 'bg-gradient-to-br from-cyan-100 to-cyan-200' },
-    { name: 'Corporate Office', icon: '🏢', color: 'bg-gradient-to-br from-gray-100 to-gray-200' },
-    { name: 'Travel Booking', icon: '🎫', color: 'bg-gradient-to-br from-violet-100 to-violet-200' },
-    { name: 'Event Management', icon: '🎉', color: 'bg-gradient-to-br from-yellow-100 to-yellow-200' },
-    { name: 'Salon & Parlor', icon: '💄', color: 'bg-gradient-to-br from-fuchsia-100 to-fuchsia-200' },
-    { name: 'E-commerce', icon: '🛒', color: 'bg-gradient-to-br from-green-100 to-green-200' },
-    { name: 'Organic Products', icon: '🌱', color: 'bg-gradient-to-br from-lime-100 to-lime-200' },
-    { name: 'Gadget Shops', icon: '📱', color: 'bg-gradient-to-br from-indigo-100 to-indigo-200' }
+    { name: 'Photography', icon: CameraIcon, color: 'bg-gradient-to-br from-primary-50 to-primary-100' },
+    { name: 'Education', icon: AcademicCapIcon, color: 'bg-gradient-to-br from-secondary-50 to-secondary-100' },
+    { name: 'Hotels & Resorts', icon: BuildingOffice2Icon, color: 'bg-gradient-to-br from-primary-100 to-secondary-100' },
+    { name: 'Restaurants', icon: ShoppingBagIcon, color: 'bg-gradient-to-br from-secondary-100 to-primary-100' },
+    { name: 'Study Abroad', icon: PaperAirplaneIcon, color: 'bg-gradient-to-br from-primary-50 to-secondary-50' },
+    { name: 'Corporate Office', icon: BuildingOfficeIcon, color: 'bg-gradient-to-br from-gray-100 to-primary-50' },
+    { name: 'Travel Booking', icon: TicketIcon, color: 'bg-gradient-to-br from-secondary-50 to-primary-100' },
+    { name: 'Event Management', icon: SparklesIcon, color: 'bg-gradient-to-br from-primary-100 to-secondary-50' },
+    { name: 'Salon & Parlor', icon: SparklesIcon, color: 'bg-gradient-to-br from-primary-50 to-primary-100' },
+    { name: 'E-commerce', icon: ShoppingCartIcon, color: 'bg-gradient-to-br from-secondary-100 to-secondary-50' },
+    { name: 'Organic Products', icon: ShoppingBagIcon, color: 'bg-gradient-to-br from-secondary-50 to-secondary-100' },
+    { name: 'Gadget Shops', icon: ComputerDesktopIcon, color: 'bg-gradient-to-br from-primary-100 to-primary-50' }
   ];
 
   return (
@@ -60,9 +93,9 @@ export default function LandingPage() {
 
       {/* Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-coral-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-40 left-40 w-80 h-80 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
       {/* Hero Section */}
@@ -72,9 +105,9 @@ export default function LandingPage() {
             <div className="mb-8">
               <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-gray-800 leading-tight mb-6">
                 One Solution To{' '}
-                <span className="text-coral-500">Optimize</span>{' '}
+                <span className="text-primary">Optimize</span>{' '}
                 Your<br />
-                <span className="text-coral-500">Social Media</span>
+                <span className="text-primary">Social Media</span>
               </h1>
               <div className="mt-6 text-xl sm:text-2xl text-gray-600 font-light max-w-4xl mx-auto leading-relaxed">
                 Level up your campaigns, business, marketing and social reach using our 
@@ -83,14 +116,14 @@ export default function LandingPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">
-              <Button size="lg" className="flex items-center gap-2">
-                <span className="text-white">📹</span>
+              <Button size="lg" className="flex items-center gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary-600 hover:to-secondary-600">
+                <PlayIcon className="w-5 h-5 text-white" />
                 How It Works
               </Button>
               
               <div className="flex items-center gap-2 text-gray-600">
                 <span>Or</span>
-                <button className="text-coral-500 font-semibold hover:text-coral-600 transition-colors">
+                <button className="text-primary font-semibold hover:text-primary-600 transition-colors">
                   Try It For Free →
                 </button>
               </div>
@@ -104,7 +137,7 @@ export default function LandingPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-800">
-              Our <span className="text-coral-500">Services</span>
+              Our <span className="text-primary">Services</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive digital solutions designed to accelerate your business growth
@@ -112,21 +145,65 @@ export default function LandingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={service.id}
-                className="group relative"
-                onMouseEnter={() => setHoveredService(service.id)}
-                onMouseLeave={() => setHoveredService(null)}
-                padding="lg"
-              >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-3 text-gray-800">{service.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-                
-                <div className="absolute inset-0 bg-gradient-to-br from-coral-50 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Card>
-            ))}
+            {/* AI Chatbots Card */}
+            <Card
+              className="group relative"
+              onMouseEnter={() => setHoveredService('chatbot')}
+              onMouseLeave={() => setHoveredService(null)}
+              padding="lg"
+            >
+              <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center text-white mb-4">
+                <ChatBubbleLeftRightIcon className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-800">AI Chatbots</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Intelligent conversational AI to engage your customers 24/7 with automated responses</p>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Card>
+
+            {/* Auto Reply Systems Card */}
+            <Card
+              className="group relative"
+              onMouseEnter={() => setHoveredService('auto-reply')}
+              onMouseLeave={() => setHoveredService(null)}
+              padding="lg"
+            >
+              <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-yellow-500 to-yellow-600 flex items-center justify-center text-white mb-4">
+                <BoltIcon className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-800">Auto Reply Systems</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Automated response systems for seamless customer communication across all platforms</p>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Card>
+
+            {/* Website Development Card */}
+            <Card
+              className="group relative"
+              onMouseEnter={() => setHoveredService('websites')}
+              onMouseLeave={() => setHoveredService(null)}
+              padding="lg"
+            >
+              <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center text-white mb-4">
+                <GlobeAltIcon className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-800">Website Development</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Modern, responsive websites tailored to your business needs and brand identity</p>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Card>
+
+            {/* Mobile Applications Card */}
+            <Card
+              className="group relative"
+              onMouseEnter={() => setHoveredService('mobile-apps')}
+              onMouseLeave={() => setHoveredService(null)}
+              padding="lg"
+            >
+              <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center text-white mb-4">
+                <DevicePhoneMobileIcon className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-800">Mobile Applications</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Native and cross-platform mobile solutions to reach your customers anywhere</p>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Card>
           </div>
         </Container>
       </Section>
@@ -136,7 +213,7 @@ export default function LandingPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-800">
-              Industries We <span className="text-coral-500">Serve</span>
+              Industries We <span className="text-primary">Serve</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Tailored solutions for diverse business sectors
@@ -151,14 +228,31 @@ export default function LandingPage() {
                 onMouseEnter={() => setHoveredSector(sector.name)}
                 onMouseLeave={() => setHoveredSector(null)}
               >
-                <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-white transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
-                  <div className="text-center">
-                    <div className="text-3xl mb-3">{sector.icon}</div>
-                    <h3 className="text-sm font-semibold text-gray-700">{sector.name}</h3>
+                {sector.name === 'Education' ? (
+                  <a href="/education" className="block">
+                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-white transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                      <div className="text-center">
+                        <div className="w-8 h-8 mx-auto mb-3 text-primary-dark">
+                          <sector.icon className="w-full h-full" />
+                        </div>
+                        <h3 className="text-sm font-semibold text-gray-700">{sector.name}</h3>
+                      </div>
+                      
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary-100/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </a>
+                ) : (
+                  <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-white transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className="text-center">
+                      <div className="w-8 h-8 mx-auto mb-3 text-primary-dark">
+                        <sector.icon className="w-full h-full" />
+                      </div>
+                      <h3 className="text-sm font-semibold text-gray-700">{sector.name}</h3>
+                    </div>
+                    
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-100/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  
-                  <div className="absolute inset-0 bg-gradient-to-t from-coral-100/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
+                )}
               </div>
             ))}
           </div>
@@ -169,7 +263,7 @@ export default function LandingPage() {
       <Section background="white">
         <Container size="lg">
           <div className="text-center">
-            <Card padding="lg" className="bg-gradient-to-r from-coral-50 to-blue-50 border-coral-100" hover={false}>
+            <Card padding="lg" className="bg-gradient-to-r from-primary-50 to-secondary-50 border-primary-100" hover={false}>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-800">
                 Ready to Transform Your Business?
               </h2>
@@ -178,10 +272,10 @@ export default function LandingPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg">
+                <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary-600 hover:to-secondary-600">
                   Start Your Project
                 </Button>
-                <Button variant="secondary" size="lg">
+                <Button variant="secondary" size="lg" className="border-primary-dark text-primary-dark hover:bg-primary-dark hover:text-white">
                   Schedule Consultation
                 </Button>
               </div>
