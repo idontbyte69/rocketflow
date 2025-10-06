@@ -37,6 +37,7 @@ const Navbar = () => {
         { name: 'Retail', href: '#retail' },
         { name: 'Finance', href: '#finance' },
         { name: 'Manufacturing', href: '#manufacturing' },
+        { name: 'Photography', href: '/photography' },
         { name: 'Real Estate', href: '#real-estate' }
       ]
     },
