@@ -697,7 +697,7 @@ export default function StudyAbroad() {
               
               <div className="relative">
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl mr-5 shadow-md">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-black font-bold text-xl mr-5 shadow-md">
                     JD
                   </div>
                   <div>
@@ -727,7 +727,7 @@ export default function StudyAbroad() {
               
               <div className="relative">
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-white font-bold text-xl mr-5 shadow-md">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-Black font-bold text-xl mr-5 shadow-md">
                     AP
                   </div>
                   <div>
