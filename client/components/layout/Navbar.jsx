@@ -36,6 +36,7 @@ const Navbar = () => {
         { name: 'Hotel & Resort', href: '/hotel-and-resort' },
         { name: 'Restaurants', href: '/restaurants' },
         { name: 'Study Abroad', href: '/study-abroad' },
+        { name: 'Event', href: '/event' },
         { name: 'Corporate Office', href: '/corporate-office' },
         { name: 'Travel Booking', href: '/travel-booking' },
         { name: 'Event Management', href: '/event-management' },
