@@ -14,7 +14,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { 
-      name: 'Services', 
+      name: 'Features', 
       href: '#services',
       hasDropdown: true,
       dropdownItems: [
@@ -36,10 +36,10 @@ const Navbar = () => {
         { name: 'Hotel & Resort', href: '/hotel-and-resort' },
         { name: 'Restaurants', href: '/restaurants' },
         { name: 'Study Abroad', href: '/study-abroad' },
-        { name: 'Event', href: '/event' },
+        // { name: 'Event', href: '/event' },
         { name: 'Corporate Office', href: '/corporate-office' },
         { name: 'Travel Booking', href: '/travel-booking' },
-        { name: 'Event Management', href: '/event-management' },
+        { name: 'Event Management', href: '/event' },
         { name: 'Salon & Parlor', href: '/salon-and-parlor' },
         { name: 'E-commerce', href: '/e-commerce' },
         { name: 'Organic Products', href: '/organic-products' },
@@ -130,18 +130,9 @@ const Navbar = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            <Link href="/signin">
-              <button 
-                className={`group relative px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-105
-                  ${pathname === '/signin'
-                    ? 'text-white bg-coral-500 shadow-lg ring-2 ring-coral-400 ring-opacity-50'
-                    : 'text-coral-600 bg-transparent border-2 border-coral-500 hover:bg-coral-500 hover:text-white hover:shadow-md'}`}
-              >
-                <span className="relative z-10">Sign In</span>
-              </button>
-            </Link>
-            <Link href="/signup">
-              <button 
+
+            <Link href="https://rocketflow.biz/create_account/selected_package">
+              <button
                 className={`group relative px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-105
                   ${pathname === '/signup'
                     ? 'text-white bg-coral-500 shadow-lg ring-2 ring-coral-400 ring-opacity-50 scale-105'
