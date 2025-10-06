@@ -122,8 +122,8 @@ export default function PhotographyPage() {
       <Section className="py-20 bg-gradient-to-r from-primary-dark via-primary to-secondary text-white">
         <Container>
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to streamline your photography business?</h2>
-            <p className="max-w-2xl mx-auto mb-6">Book a demo and see how our tools reduce manual work, speed up client delivery, and help you sell more.</p>
+            <h2 className="text-3xl font-bold mb-4 text-black">Ready to streamline your photography business?</h2>
+            <p className="max-w-2xl mx-auto mb-6 text-black">Book a demo and see how our tools reduce manual work, speed up client delivery, and help you sell more.</p>
             <div className="flex gap-4 justify-center">
               <Button className="bg-white text-primary-dark px-6 py-3 rounded-lg">Schedule a Demo</Button>
               <Button className="border border-white text-white px-6 py-3 rounded-lg">Start Free Trial</Button>
