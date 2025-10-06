@@ -1,37 +1,171 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import {
-  Navbar,
-  Footer,
-  Button,
-  Card,
-  Section,
-  Container,
-} from ".";
+import { Navbar, Footer, Button, Card, Section, Container } from ".";
 
 export default function HotelandResort() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
 
-  const features = [
-    { icon: "🏊", title: "Infinity Pool", desc: "Relax with ocean views and luxurious poolside service." },
-    { icon: "🍽️", title: "Fine Dining", desc: "Taste exquisite local and international cuisines." },
-    { icon: "🧘", title: "Spa & Wellness", desc: "Rejuvenate your body and mind with world-class treatments." },
-    { icon: "🚗", title: "Free Parking", desc: "Secure and convenient on-site parking for all guests." },
+  // Services with SVG icons (black)
+  const services = [
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-12 h-12 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 3v18h18" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l3 3 3-3" />
+        </svg>
+      ),
+      title: "SEO Optimization",
+      desc: "Improve your website ranking on search engines and attract more guests organically.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-12 h-12 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M2 17l10 5 10-5" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M2 12l10 5 10-5" />
+        </svg>
+      ),
+      title: "Brand & Reputation",
+      desc: "Enhance your hotel/resort brand identity and manage online reviews.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-12 h-12 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 8v10H3V8" />
+        </svg>
+      ),
+      title: "Email Marketing",
+      desc: "Send promotional offers, seasonal deals, and personalized emails to your guests.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-12 h-12 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      ),
+      title: "SMS Campaigns",
+      desc: "Reach your guests directly via SMS for special promotions and updates.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-12 h-12 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A2 2 0 0121 9.618v4.764a2 2 0 01-1.447 1.894L15 14M4 6h7v12H4V6z" />
+        </svg>
+      ),
+      title: "Social Media Marketing",
+      desc: "Boost engagement and bookings through Instagram, Facebook, and TikTok campaigns.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-12 h-12 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      ),
+      title: "Booking & Revenue Strategy",
+      desc: "Smart pricing, packages, and loyalty programs to increase reservations and revenue.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-12 h-12 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M20 12a8 8 0 11-16 0 8 8 0 0116 0z" />
+        </svg>
+      ),
+      title: "Operational Efficiency",
+      desc: "Automate check-ins, guest management, and staff workflows to save time and costs.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-12 h-12 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M7 8h10M7 12h10M7 16h10" />
+        </svg>
+      ),
+      title: "Customer Engagement",
+      desc: "Build long-term relationships with personalized offers, loyalty programs, and feedback.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-12 h-12 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-6h6v6H9z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18" />
+        </svg>
+      ),
+      title: "Analytics & Insights",
+      desc: "Track website, social media, and booking data to make informed business decisions.",
+    },
   ];
 
-  const rooms = [
-    { img: "/logo.png", name: "Deluxe Ocean Suite", price: "$199/night", desc: "Spacious suite with private balcony and ocean view." },
-    { img: "/logo.png", name: "Luxury King Room", price: "$149/night", desc: "Elegant room with king-sized bed and breakfast included." },
-    { img: "/logo.png", name: "Garden Villa", price: "$259/night", desc: "Private villa surrounded by tropical gardens." },
-  ];
-
-  const testimonials = [
-    { name: "Sarah, USA", text: "An unforgettable stay! Everything was perfect from check-in to checkout.", rating: 5 },
-    { name: "David, UK", text: "Amazing hospitality and breathtaking views — we’ll be back soon!", rating: 5 },
-    { name: "Aisha, UAE", text: "Loved the spa experience and gourmet dining!", rating: 4 },
+  const faqs = [
+    { q: "How long does integration take?", a: "Integration is quick and typically takes less than 48 hours." },
+    { q: "Is my customer data secure?", a: "Yes! We follow strict security protocols and data encryption." },
+    { q: "Can this system handle multiple branches?", a: "Absolutely, our platform supports multi-location operations." },
   ];
 
   const caseStudies = [
@@ -46,30 +180,12 @@ export default function HotelandResort() {
     { name: "CRM System", logo: "/logo.png", description: "Manage your customer relationships efficiently." },
   ];
 
-  const awards = [
-    { name: "Best Hotel Automation 2024", logo: "/logo.png" },
-    { name: "Security Certified", logo: "/logo.png" },
-    { name: "Top Hospitality Software", logo: "/logo.png" },
-  ];
-
-  const faqs = [
-    { q: "How long does integration take?", a: "Integration is quick and typically takes less than 48 hours." },
-    { q: "Is my customer data secure?", a: "Yes! We follow strict security protocols and data encryption." },
-    { q: "Can this system handle multiple branches?", a: "Absolutely, our platform supports multi-location operations." },
-  ];
-
   // Video Controls
   const togglePlay = () => {
     if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
+    if (videoRef.current.paused) { videoRef.current.play(); setIsPlaying(true); } 
+    else { videoRef.current.pause(); setIsPlaying(false); }
   };
-
   const toggleMute = () => {
     if (!videoRef.current) return;
     videoRef.current.muted = !videoRef.current.muted;
@@ -80,96 +196,52 @@ export default function HotelandResort() {
     <div className="min-h-screen bg-gradient-to-br from-white to-gray-50 text-gray-800">
       <Navbar />
 
-      {/* 🌅 HERO SECTION WITH VIDEO & GLASS EFFECT */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden text-black bg-white">
-        <div className="relative z-10 container mx-auto flex justify-center px-6">
-          <div className="flex w-full max-w-8xl rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white/10 backdrop-blur-md">
-            {/* LEFT SIDE CONTENT */}
-            <div className="flex-1 p-8 md:p-12 flex flex-col justify-center text-left">
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
-                Automate Your <span className="text-[#dc2626]">Hospitality</span> Business
-              </h1>
-              <p className="text-gray-700 mb-8 text-lg md:text-xl leading-relaxed max-w-lg">
-                Smart solutions for restaurants, hotels, and resorts — from automated calls to booking management.
-              </p>
-              <div className="flex gap-4">
-                <Button size="lg" className="bg-[#F87171] text-white transition-all duration-300">
-                  Request Demo
-                </Button>
-                <Button variant="secondary" size="lg" className="border-[#F87171] text-[#dc2626] transition-all duration-300">
-                  Learn More
-                </Button>
-              </div>
+      {/* HERO */}
+      <section className="relative w-full my-14 bg-white text-black">
+        <div className="relative z-10 container mx-auto px-6 py-12 flex flex-col md:flex-row items-start md:items-center gap-8">
+          <div className="flex-1 flex flex-col justify-start text-left">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
+              Automate Your <span className="text-[#dc2626]">Hospitality</span> Business
+            </h1>
+            <p className="text-gray-700 mb-8 text-lg md:text-xl leading-relaxed max-w-lg">
+              Smart solutions for restaurants, hotels, and resorts — from automated calls to booking management.
+            </p>
+            <div className="flex gap-4 flex-wrap">
+              <Button size="lg" className="bg-[#F87171] text-white transition-all duration-300">Request Demo</Button>
+              <Button variant="secondary" size="lg" className="border-[#F87171] text-[#dc2626] transition-all duration-300">Learn More</Button>
             </div>
+          </div>
 
-            {/* RIGHT SIDE VIDEO */}
-            <div className="flex-1 relative px-5 py-8">
-              <video
-                ref={videoRef}
-                className="w-full h-full object-cover rounded-2xl cursor-pointer"
-                src="https://www.w3schools.com/html/mov_bbb.mp4"
-                autoPlay
-                muted={isMuted}
-                loop
-                playsInline
-                onClick={togglePlay}
-              />
-              <div className="absolute inset-0 bg-gradient-to-br pointer-events-none rounded-2xl" />
-
-              {/* Mute/Unmute Button */}
-              <button
-                onClick={toggleMute}
-                className="absolute bottom-5 left-5 text-white bg-black/50 p-2 rounded-full hover:bg-black/70 transition"
-              >
-                {isMuted ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H2v6h4l5 4V5z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 9l6 6M21 9l-6 6" />
-                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H2v6h4l5 4V5z" />
-                  </svg>
-                )}
-              </button>
-            </div>
+          <div className="flex-1 w-full md:w-auto mt-8 md:mt-0 relative">
+            <video ref={videoRef} className="w-full h-full object-cover rounded-2xl cursor-pointer"
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              autoPlay muted={isMuted} loop playsInline onClick={togglePlay} />
+            <div className="absolute inset-0 bg-gradient-to-br pointer-events-none rounded-2xl" />
+            <button onClick={toggleMute} className="absolute bottom-5 left-5 text-white bg-black/50 p-2 rounded-full hover:bg-black/70 transition">
+              {isMuted ? "🔇" : "🔊"}
+            </button>
           </div>
         </div>
       </section>
 
-      {/* 🏨 ABOUT SECTION */}
-      <Section background="white">
+      {/* SERVICES */}
+      <section className="bg-white py-16">
         <Container>
-          <div className="flex flex-col md:flex-row items-center gap-10">
-            <img src="/logo.png" alt="Resort" className="rounded-2xl shadow-lg md:w-1/2 cursor-pointer" />
-            <div className="flex-1">
-              <h2 className="text-3xl font-bold mb-4">Why Choose Our Automation</h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Our platform helps restaurants, hotels, and resorts save time, reduce no-shows, and engage customers effortlessly.
-              </p>
-              <Button className="bg-[#F87171] text-white">About Us</Button>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* 💻 FEATURES / SERVICES */}
-      <Section background="gradient">
-        <Container>
-          <h2 className="text-3xl font-bold text-center mb-10">Our Services</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {features.map((f, idx) => (
-              <Card key={idx} padding="md" className="text-center">
-                <div className="text-4xl mb-3">{f.icon}</div>
-                <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
-                <p className="text-sm text-gray-600">{f.desc}</p>
-              </Card>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {services.map((service, i) => (
+              <div key={i} className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                <div className="mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">{service.title}</h3>
+                <p className="text-gray-600 mb-4">{service.desc}</p>
+                <Button className="bg-[#F87171] text-white hover:bg-[#dc2626] transition-all">Learn More</Button>
+              </div>
             ))}
           </div>
         </Container>
-      </Section>
+      </section>
 
-      {/* ❓ FAQ SECTION */}
+      {/* FAQ */}
       <Section background="gradient">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
@@ -184,7 +256,7 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* 📈 CASE STUDIES SECTION */}
+      {/* CASE STUDIES */}
       <Section background="white">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-10">Success Stories</h2>
@@ -196,45 +268,12 @@ export default function HotelandResort() {
                   <p className="text-3xl font-bold text-[#F87171] mb-2">{c.stat}</p>
                   <p className="text-gray-600 mb-4">{c.desc}</p>
                 </div>
-                <Button className="bg-[#F87171] text-white">{c.cta}</Button>
+                <Button className="bg-[#F87171] text-white hover:bg-[#dc2626] transition-all">{c.cta}</Button>
               </Card>
             ))}
           </div>
         </Container>
       </Section>
-
-      {/* 🤝 PARTNERS / INTEGRATIONS */}
-      <Section background="gradient">
-        <Container>
-          <h2 className="text-3xl font-bold text-center mb-4">Partners & Integrations</h2>
-          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-            We collaborate with top industry providers to bring you seamless integrations and best-in-class services.
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            {integrations.map((i, idx) => (
-              <div key={idx} className="relative flex flex-col items-center cursor-pointer bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl group">
-                <img src={i.logo} alt={i.name} className="h-16 object-contain mb-2" />
-                <p className="text-gray-800 font-medium text-sm text-center">{i.name}</p>
-                <span className="absolute bottom-full mb-2 px-3 py-1 text-xs bg-black text-white rounded opacity-0 group-hover:opacity-100 transition-opacity text-center w-max max-w-xs">
-                  {i.description}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex justify-center mt-8">
-            <Button className="bg-[#F87171] text-white hover:bg-[#dc2626] transition-all">
-              Become a Partner
-            </Button>
-          </div>
-        </Container>
-      </Section>
-
-      {/* 📢 CTA BANNER / STICKY FOOTER */}
-      <div className="fixed bottom-0 left-0 w-full bg-[#F87171] text-white py-4 px-6 shadow-xl flex justify-between items-center z-50">
-        <p className="font-semibold text-lg">Ready to boost your bookings?</p>
-        <Button className="bg-white text-[#F87171]">Book a Demo</Button>
-      </div>
 
       <Footer />
     </div>
