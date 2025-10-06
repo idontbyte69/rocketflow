@@ -40,7 +40,7 @@ const Navbar = () => {
         { name: 'Corporate Office', href: '/corporate-office' },
         { name: 'Travel Booking', href: '/travel-booking' },
         { name: 'Event Management', href: '/event-management' },
-        { name: 'Salon & Parlor', href: '/salon-and-parlor' },
+  { name: 'Salon & Parlor', href: '/salon' },
         { name: 'E-commerce', href: '/e-commerce' },
         { name: 'Organic Products', href: '/organic-products' },
         { name: 'Gadget Shops', href: '/gadget-shops' }
