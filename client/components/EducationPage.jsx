@@ -160,7 +160,7 @@ export default function EducationPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <Section className="pt-24 pb-16">
+      <Section className="pt-24 pb-16 bg-gradient-to-br from-coral-50 via-orange-50 to-red-50">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Content - Order fixed for mobile */}

@@ -100,7 +100,7 @@ export default function LandingPage() {
       </div>
 
       {/* Hero Section */}
-      <Section background="gradient" className="min-h-screen flex items-center justify-center pt-16">
+      <Section className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-br from-coral-50 via-orange-50 to-red-50">
         <Container>
           <div className="text-center">
             <div className="mb-8">
