@@ -43,7 +43,7 @@ const Navbar = () => {
         { name: 'Salon & Parlor', href: '/salon-and-parlor' },
         { name: 'E-commerce', href: '/e-commerce' },
         { name: 'Organic Products', href: '/organic-products' },
-        { name: 'Gadget Shops', href: '/gadget-shops' }
+        { name: 'Gadget Shops', href: '/gadget-shop' }
       ]
     },
     { name: 'About', href: '#about' },
