@@ -31,14 +31,18 @@ const Navbar = () => {
       href: '#industries',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Education', href: '/education' },
-        { name: 'Healthcare', href: '#healthcare' },
-        { name: 'Hotel & Resort', href: '/hotel-and-resort' },
-        { name: 'Retail', href: '#retail' },
-        { name: 'Finance', href: '#finance' },
-        { name: 'Manufacturing', href: '#manufacturing' },
         { name: 'Photography', href: '/photography' },
-        { name: 'Real Estate', href: '#real-estate' }
+        { name: 'Education', href: '/education' },
+        { name: 'Hotel & Resort', href: '/hotel-and-resort' },
+        { name: 'Restaurants', href: '/restaurants' },
+        { name: 'Study Abroad', href: '/study-abroad' },
+        { name: 'Corporate Office', href: '/corporate-office' },
+        { name: 'Travel Booking', href: '/travel-booking' },
+        { name: 'Event Management', href: '/event-management' },
+        { name: 'Salon & Parlor', href: '/salon-and-parlor' },
+        { name: 'E-commerce', href: '/e-commerce' },
+        { name: 'Organic Products', href: '/organic-products' },
+        { name: 'Gadget Shops', href: '/gadget-shops' }
       ]
     },
     { name: 'About', href: '#about' },

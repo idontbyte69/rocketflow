@@ -166,7 +166,7 @@ export default function StudyAbroad() {
             <div className="order-1">
               <div className="animate-fadeIn">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  <ShinyText className="text-red-500 bg-clip-text">
+                  <ShinyText className="text-black">
                     Study Abroad Made Simple
                   </ShinyText>
                 </h1>
@@ -315,7 +315,7 @@ export default function StudyAbroad() {
             <div className="absolute -top-6 right-1/3 w-12 h-12 rounded-full bg-secondary-50 filter blur-lg opacity-70"></div>
             
             <h2 className="relative text-4xl font-bold text-gray-900 mb-6 inline-block">
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Comprehensive</span> Study Abroad Solutions
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-black">Comprehensive</span> Study Abroad Solutions
               <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -697,7 +697,7 @@ export default function StudyAbroad() {
               
               <div className="relative">
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl mr-5 shadow-md">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-black font-bold text-xl mr-5 shadow-md">
                     JD
                   </div>
                   <div>
@@ -727,7 +727,7 @@ export default function StudyAbroad() {
               
               <div className="relative">
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-white font-bold text-xl mr-5 shadow-md">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-Black font-bold text-xl mr-5 shadow-md">
                     AP
                   </div>
                   <div>
