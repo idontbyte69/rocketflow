@@ -16,6 +16,17 @@ export default function SignIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Sign in:', formData);
+    // Add your sign-in logic here
+  };
+
+  const handleGoogleLogin = () => {
+    console.log('Google login clicked');
+    // Add your Google OAuth logic here
+  };
+
+  const handleFacebookLogin = () => {
+    console.log('Facebook login clicked');
+    // Add your Facebook OAuth logic here
   };
 
   const handleChange = (e) => {
@@ -129,7 +140,11 @@ export default function SignIn() {
               </div>
 
               <div className="mt-4 grid grid-cols-2 gap-3">
-                <button className="w-full inline-flex justify-center py-2.5 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200">
+                <button 
+                  type="button"
+                  onClick={handleGoogleLogin}
+                  className="w-full inline-flex justify-center py-2.5 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
+                >
                   <span className="sr-only">Sign in with Google</span>
                   <svg className="w-5 h-5" viewBox="0 0 24 24">
                     <path
@@ -138,7 +153,11 @@ export default function SignIn() {
                     />
                   </svg>
                 </button>
-                <button className="w-full inline-flex justify-center py-2.5 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200">
+                <button 
+                  type="button"
+                  onClick={handleFacebookLogin}
+                  className="w-full inline-flex justify-center py-2.5 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
+                >
                   <span className="sr-only">Sign in with Facebook</span>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
