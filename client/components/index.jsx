@@ -21,3 +21,4 @@ export { default as PhotographyPage } from './PhotographyPage';
 export { default as GadgetShopLanding } from './GadgetShopLanding';
 export { default as OrganicProductsPage } from './OrganicProductsPage';
 export { default as CorporateOfficePage } from './CorporateOfficePage';
+export { default as TravelBooking } from './TravelBooking';

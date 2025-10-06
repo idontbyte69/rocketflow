@@ -1,4 +1,4 @@
-import TravelBooking from '../../components/TravelBooking';
+import { TravelBooking } from '../../components';
 
 export default function TravelBookingPage() {
   return <TravelBooking />;
