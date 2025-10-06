@@ -14,7 +14,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { 
-      name: 'Services', 
+      name: 'Features', 
       href: '#services',
       hasDropdown: true,
       dropdownItems: [
