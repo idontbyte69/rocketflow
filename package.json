@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "framer-motion": "^12.23.22",
+    "react-parallax-tilt": "^1.7.309"
+  }
+}
