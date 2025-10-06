@@ -124,18 +124,9 @@ const Navbar = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            <Link href="/signin">
-              <button 
-                className={`group relative px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-105
-                  ${pathname === '/signin'
-                    ? 'text-white bg-coral-500 shadow-lg ring-2 ring-coral-400 ring-opacity-50'
-                    : 'text-coral-600 bg-transparent border-2 border-coral-500 hover:bg-coral-500 hover:text-white hover:shadow-md'}`}
-              >
-                <span className="relative z-10">Sign In</span>
-              </button>
-            </Link>
-            <Link href="/signup">
-              <button 
+
+            <Link href="https://rocketflow.biz/create_account/selected_package">
+              <button
                 className={`group relative px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-105
                   ${pathname === '/signup'
                     ? 'text-white bg-coral-500 shadow-lg ring-2 ring-coral-400 ring-opacity-50 scale-105'
