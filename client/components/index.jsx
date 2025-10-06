@@ -14,3 +14,5 @@ export { default as EducationPage } from './EducationPage';
 export { default as StudyAbroad } from './StudyAbroad';
 export { default as HotelandResort } from './HotelandResortPage';
 export { default as PhotographyPage } from './PhotographyPage';
+export { default as OrganicProductsPage } from './OrganicProductsPage';
+export { default as CorporateOfficePage } from './CorporateOfficePage';
