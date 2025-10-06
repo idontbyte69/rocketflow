@@ -19,6 +19,7 @@ export default function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Sign up:', formData);
+    // Add your sign-up logic here
   };
 
   const handleChange = (e) => {
@@ -26,6 +27,16 @@ export default function SignUp() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleGoogleSignUp = () => {
+    console.log('Google signup clicked');
+    // Add your Google OAuth logic here
+  };
+
+  const handleFacebookSignUp = () => {
+    console.log('Facebook signup clicked');
+    // Add your Facebook OAuth logic here
   };
 
   return (

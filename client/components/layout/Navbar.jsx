@@ -249,15 +249,15 @@ const Navbar = () => {
                       ? 'text-white bg-gradient-to-r from-coral-600 to-red-500 shadow-xl ring-2 ring-coral-400 ring-opacity-50'
                       : 'text-white bg-gradient-to-r from-coral-500 to-red-400 hover:from-coral-600 hover:to-red-500 shadow-lg hover:shadow-xl'}`}
                   onClick={() => setIsMenuOpen(false)}
-                >
-                  <span className="flex items-center justify-center">
-                    Sign Up
-                    <svg className="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </span>
-                </button>
-              </Link>
+                    >
+                      <span className="flex items-center justify-center">
+                        Sign Up
+                        <svg className="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </span>
+                    </button>
+                  </Link>
             </div>
           </div>
         </div>
