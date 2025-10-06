@@ -12,12 +12,80 @@ import {
   MegaphoneIcon,
   CameraIcon,
   BuildingStorefrontIcon,
-  HeartIcon
+  HeartIcon,
+  ClockIcon,
+  InboxIcon,
+  InformationCircleIcon,
+  MapIcon,
+  ArrowPathRoundedSquareIcon,
+  UserPlusIcon,
+  TrophyIcon,
+  ChatBubbleBottomCenterTextIcon
 } from '@heroicons/react/24/outline';
 
 export default function EventPage() {
   const [hoveredSolution, setHoveredSolution] = useState(null);
   const [hoveredBenefit, setHoveredBenefit] = useState(null);
+  const [hoveredAutomation, setHoveredAutomation] = useState(null);
+
+  const automationServices = [
+    {
+      id: 'instant-reply',
+      title: '24/7 Instant Reply',
+      description: 'Automated response system ensuring immediate engagement with your audience at any time',
+      icon: ClockIcon,
+      features: ['Round-the-clock availability', 'Customized responses', 'Multi-language support']
+    },
+    {
+      id: 'comment-inbox',
+      title: 'Comment-to-Inbox Transfer',
+      description: 'Automatically convert social media comments into organized inbox messages for better management',
+      icon: InboxIcon,
+      features: ['Instant notification', 'Priority sorting', 'Threading support']
+    },
+    {
+      id: 'event-info',
+      title: 'Automated Event Information',
+      description: 'Provide instant access to event details, schedules, and updates automatically',
+      icon: InformationCircleIcon,
+      features: ['Schedule updates', 'FAQ automation', 'Custom event alerts']
+    },
+    {
+      id: 'location-share',
+      title: 'Location Share',
+      description: 'Automated location sharing system with real-time updates and directions',
+      icon: MapIcon,
+      features: ['Real-time tracking', 'Direction assistance', 'Venue details']
+    },
+    {
+      id: 'smart-transfer',
+      title: 'Smart Human Transfer',
+      description: 'Intelligent system to seamlessly transfer queries to human agents when needed',
+      icon: ArrowPathRoundedSquareIcon,
+      features: ['Priority routing', 'Context preservation', 'Seamless handover']
+    },
+    {
+      id: 'contact-collection',
+      title: 'Contact Collection',
+      description: 'Automated system for gathering and organizing attendee contact information',
+      icon: UserPlusIcon,
+      features: ['Data validation', 'GDPR compliance', 'Integration ready']
+    },
+    {
+      id: 'vip-assistance',
+      title: 'VIP Assistance',
+      description: 'Premium automated service handling for VIP guests and special requests',
+      icon: TrophyIcon,
+      features: ['Priority handling', 'Exclusive access', 'Personalized service']
+    },
+    {
+      id: 'comment-sensor',
+      title: 'Comment Sensor & Feedback',
+      description: 'Advanced sentiment analysis and automated feedback collection system',
+      icon: ChatBubbleBottomCenterTextIcon,
+      features: ['Sentiment analysis', 'Automated surveys', 'Real-time insights']
+    }
+  ];
 
   // Function to render event solution icon
   const renderSolutionIcon = (solutionId) => {
@@ -103,7 +171,7 @@ export default function EventPage() {
     },
     {
       title: 'Professional Documentation',
-      description: 'Capture every moment with professional photography and documentation services.',
+      description: 'Capture every moment with professional event-management and documentation services.',
       icon: CameraIcon
     },
     {
@@ -120,17 +188,30 @@ export default function EventPage() {
       {/* Hero Section */}
       <Section className="bg-gradient-to-b from-gray-50 to-white pt-32 pb-16">
         <Container>
-          <div className="text-center">
-            <ShinyText>Event Management Excellence</ShinyText>
-            <h1 className="mt-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Create Unforgettable Events
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
-              From intimate gatherings to large-scale conferences, we provide comprehensive event management solutions that ensure your event's success.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button variant="primary" size="lg">Start Planning</Button>
-              <Button variant="secondary" size="lg">Learn More</Button>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="text-center lg:text-left">
+              <ShinyText>Event Management Excellence</ShinyText>
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Create Unforgettable Events
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-gray-600 mx-auto lg:mx-0">
+                From intimate gatherings to large-scale conferences, we provide comprehensive event management solutions that ensure your event's success.
+              </p>
+              <div className="mt-10 flex items-center justify-center lg:justify-start gap-x-6">
+                <Button variant="primary" size="lg">Start Planning</Button>
+                <Button variant="secondary" size="lg">Learn More</Button>
+              </div>
+            </div>
+            <div className="relative w-full aspect-video mt-8 lg:mt-0">
+              <iframe 
+                className="w-full h-full rounded-[10px] shadow-lg"
+                src="https://www.youtube.com/embed/Co2Ot_nnI-8?si=jC13pPufzp-pr93b" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+              />
             </div>
           </div>
         </Container>
@@ -168,6 +249,88 @@ export default function EventPage() {
                     {solution.features.map((feature, index) => (
                       <li key={index} className="flex items-center text-sm text-gray-600">
                         <span className="mr-2">•</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Automation Services Section */}
+      <Section className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Automated Event Services
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Streamline your event management with our cutting-edge automation solutions
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {automationServices.map((service) => (
+              <Card
+                key={service.id}
+                onMouseEnter={() => setHoveredAutomation(service.id)}
+                onMouseLeave={() => setHoveredAutomation(null)}
+                className={`relative overflow-hidden transition-all duration-500 transform hover:scale-105 ${
+                  hoveredAutomation === service.id ? 'shadow-lg' : 'shadow-md'
+                }`}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br transition-opacity duration-500 ${
+                  (() => {
+                    switch(service.id) {
+                      case 'instant-reply':
+                        return 'from-red-400 to-red-600';
+                      case 'comment-inbox':
+                        return 'from-rose-400 to-red-500';
+                      case 'event-info':
+                        return 'from-red-500 to-rose-600';
+                      case 'location-share':
+                        return 'from-rose-500 to-red-600';
+                      case 'smart-transfer':
+                        return 'from-red-400 to-rose-500';
+                      case 'contact-collection':
+                        return 'from-rose-400 to-red-500';
+                      case 'vip-assistance':
+                        return 'from-red-500 to-rose-600';
+                      case 'comment-sensor':
+                        return 'from-rose-500 to-red-600';
+                      default:
+                        return 'from-red-400 to-red-600';
+                    }
+                  })()
+                } opacity-5 hover:opacity-10`} />
+                <div className="p-6 relative z-10">
+                  <div className="relative">
+                    <service.icon className={`w-12 h-12 transition-all duration-500 transform ${
+                      hoveredAutomation === service.id ? 'scale-110 text-red-600' : 'text-red-500'
+                    }`} />
+                    <div className={`absolute inset-0 bg-white rounded-full filter blur opacity-20 transition-opacity duration-500 ${
+                      hoveredAutomation === service.id ? 'opacity-40' : 'opacity-0'
+                    }`} />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-gray-900 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-600 transition-colors duration-300">
+                    {service.description}
+                  </p>
+                  <ul className="mt-4 space-y-2">
+                    {service.features.map((feature, index) => (
+                      <li 
+                        key={index} 
+                        className={`flex items-center text-xs transition-all duration-300 ${
+                          hoveredAutomation === service.id ? 'text-gray-800 transform translate-x-1' : 'text-gray-600'
+                        }`}
+                      >
+                        <span className={`mr-2 transition-colors duration-300 ${
+                          hoveredAutomation === service.id ? 'text-red-500' : 'text-gray-400'
+                        }`}>•</span>
                         {feature}
                       </li>
                     ))}
