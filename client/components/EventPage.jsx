@@ -398,10 +398,10 @@ export default function EventPage() {
               <div className="relative">
                 <div className="flex items-center mb-6">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-primary flex items-center justify-center text-white font-bold text-xl mr-5 shadow-md">
-                    SK
+                    MA
                   </div>
                   <div>
-                    <div className="font-bold text-xl text-gray-900">Sarah Kim</div>
+                    <div className="font-bold text-xl text-gray-900">Morshed Alam</div>
                     <div className="text-gray-600">Wedding Planner, Dream Events</div>
                   </div>
                 </div>
@@ -428,10 +428,10 @@ export default function EventPage() {
               <div className="relative">
                 <div className="flex items-center mb-6">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-red-500 flex items-center justify-center text-white font-bold text-xl mr-5 shadow-md">
-                    MJ
+                    MR
                   </div>
                   <div>
-                    <div className="font-bold text-xl text-gray-900">Mark Johnson</div>
+                    <div className="font-bold text-xl text-gray-900">Md Real</div>
                     <div className="text-gray-600">Director, Corporate Events Pro</div>
                   </div>
                 </div>
