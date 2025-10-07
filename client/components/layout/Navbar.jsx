@@ -36,12 +36,11 @@ const Navbar = () => {
         { name: 'Hotel & Resort', href: '/hotel-and-resort' },
         { name: 'Restaurants', href: '/restaurants' },
         { name: 'Study Abroad', href: '/study-abroad' },
-        // { name: 'Event', href: '/event' },
         { name: 'Corporate Office', href: '/corporate-office' },
         { name: 'Travel Booking', href: '/travel-booking' },
         { name: 'Event Management', href: '/event' },
         { name: 'Salon & Parlor', href: '/salon' },
-        { name: 'E-commerce', href: '/e-commerce' },
+        { name: 'E-commerce', href: '/ecommerce' },
         { name: 'Organic Products', href: '/organic-products' },
         { name: 'Gadget Shops', href: '/gadget-shop' }
       ]
