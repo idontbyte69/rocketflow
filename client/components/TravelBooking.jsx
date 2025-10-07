@@ -161,10 +161,10 @@ export default function TravelBooking() {
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button className="bg-[#3B82F6] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-[#2563EB] shadow-md">
+                <Button className="bg-[#fee2e2] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-[#fee2e2] shadow-md">
                   Get Started Today
                 </Button>
-                <Button className="border border-[#3B82F6] text-[#3B82F6] hover:bg-[#3B82F6] hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md">
+                <Button className="border border-[#fee2e2] text-[#fee2e2] hover:bg-[#fee2e2] hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md">
                   View Case Studies
                 </Button>
               </div>
@@ -308,9 +308,22 @@ export default function TravelBooking() {
 
           <div className="grid md:grid-cols-3 gap-10">
             {caseStudies.map((c, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="bg-white border border-gray-100 rounded-3xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+                className="bg-white border border-gray-100 rounded-3xl shadow-md overflow-hidden cursor-pointer transition-all duration-300"
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+                }}
+                whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: i * 0.1,
+                  type: "spring",
+                  stiffness: 120,
+                }}
               >
                 {/* Image / Icon Section */}
                 <div className="relative h-48 w-full bg-gradient-to-r from-[#fca5a5] to-[#dc2626] flex items-center justify-center">
@@ -319,10 +332,16 @@ export default function TravelBooking() {
                       src={c.image}
                       alt={c.title}
                       className="object-cover w-full h-full opacity-90 hover:opacity-100 transition-opacity duration-500"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src =
+                          "https://picsum.photos/800/450?random=10";
+                      }}
                     />
                   ) : (
                     <div className="text-white text-6xl">{c.icon}</div>
                   )}
+
                   {c.category && (
                     <span className="absolute top-4 left-4 bg-white text-[#dc2626] text-xs font-semibold px-3 py-1 rounded-full shadow">
                       {c.category}
@@ -341,7 +360,7 @@ export default function TravelBooking() {
                     </p>
 
                     {/* Highlight */}
-                    <div className="bg-[#fee2e2] rounded-xl p-4 text-center mb-4">
+                    <div className="bg-[#fee2e2] rounded-xl p-4 text-center mb-4 transition-colors duration-300 hover:bg-[#fecaca]">
                       <p className="text-3xl font-extrabold text-[#dc2626]">
                         {c.stat}
                       </p>
@@ -376,7 +395,7 @@ export default function TravelBooking() {
                     {c.cta}
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </Container>
@@ -424,41 +443,42 @@ export default function TravelBooking() {
       </Section>
 
       {/* FAQ SECTION */}
-      <Section background="white" className="py-16">
-        <Container>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Frequently Asked Questions
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            {faqs.map((f, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Card
-                  padding="md"
-                  className="p-6 rounded-xl shadow-lg hover:shadow-xl transition"
-                >
-                  <h4 className="font-semibold text-lg mb-2">{f.q}</h4>
-                  <p className="text-gray-600">{f.a}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </Section>
+<Section background="white" className="py-16">
+  <Container>
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+      Frequently Asked Questions
+    </h2>
 
-      {/* CTA BANNER */}
-      <div className="fixed bottom-0 left-0 w-full bg-[#F87171] text-white py-4 px-6 shadow-xl flex justify-between items-center z-50">
-        <p className="font-semibold text-lg">
-          Ready to grow your travel agency?
-        </p>
-        <Button className="bg-white text-[#F87171] hover:bg-gray-100 transition-all">
-          Get Started
-        </Button>
-      </div>
+    <div className="grid gap-8 md:grid-cols-2">
+      {faqs.map((f, i) => (
+        <motion.div
+          key={i}
+          className="bg-white border border-gray-100 rounded-2xl shadow-md p-6 cursor-pointer transition-all duration-300"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          whileHover={{
+            scale: 1.05,
+            y: -5,
+            boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+          }}
+          whileTap={{ scale: 0.98 }}
+          transition={{
+            delay: i * 0.1,
+            type: "spring",
+            stiffness: 120,
+          }}
+        >
+          <h4 className="font-semibold text-lg mb-2 text-gray-900">
+            {f.q}
+          </h4>
+          <p className="text-gray-600 leading-relaxed">{f.a}</p>
+        </motion.div>
+      ))}
+    </div>
+  </Container>
+</Section>
+
 
       <Footer />
     </div>
