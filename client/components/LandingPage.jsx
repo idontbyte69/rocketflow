@@ -281,8 +281,10 @@ export default function LandingPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-primary-100/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                   </a>
+
                 ) : sector.name === 'Organic Products' ? (
                   <a href="/organic-products" className="block">
+
                     <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-white transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
                       <div className="text-center">
                         <div className="w-8 h-8 mx-auto mb-3 text-primary-dark">
@@ -293,6 +295,7 @@ export default function LandingPage() {
                       
                       <div className="absolute inset-0 bg-gradient-to-t from-primary-100/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
+
                   </a>
                 ) : sector.name === 'Travel Booking' ? (
                   <a href="/travel-booking" className="block">
@@ -333,6 +336,7 @@ export default function LandingPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-primary-100/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                   </a>
+
                 ) : (
                   <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-white transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
                     <div className="text-center">

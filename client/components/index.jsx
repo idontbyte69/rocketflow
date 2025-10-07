@@ -18,6 +18,7 @@ export { default as OrgaProPage } from './OrgaProPage';
 export { default as StudyAbroad } from './StudyAbroad';
 export { default as HotelandResort } from './HotelandResortPage';
 export { default as PhotographyPage } from './PhotographyPage';
+export { default as SalonPage } from './SalonPage';
 export { default as GadgetShopLanding } from './GadgetShopLanding';
 export { default as OrganicProductsPage } from './OrganicProductsPage';
 export { default as CorporateOfficePage } from './CorporateOfficePage';
