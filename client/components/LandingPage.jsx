@@ -337,6 +337,7 @@ export default function LandingPage() {
                     </div>
                   </a>
 
+
                 ) : sector.name === 'Salon & Parlor' ? (
                   <a href="/salon" className="block">
                     <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-white transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
@@ -351,6 +352,19 @@ export default function LandingPage() {
                     </div>
                   </a>
 
+                ) : sector.name === 'E-commerce' ? (
+                  <a href="/ecommerece" className="block">
+                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-white transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                      <div className="text-center">
+                        <div className="w-8 h-8 mx-auto mb-3 text-primary-dark">
+                          <sector.icon className="w-full h-full" />
+                        </div>
+                        <h3 className="text-sm font-semibold text-gray-700">{sector.name}</h3>
+                      </div>
+                      
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary-100/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </a>
                 ) : (
                   <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-white transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
                     <div className="text-center">
