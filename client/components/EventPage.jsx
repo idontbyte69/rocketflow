@@ -20,7 +20,8 @@ import {
   ArrowPathRoundedSquareIcon,
   UserPlusIcon,
   TrophyIcon,
-  ChatBubbleBottomCenterTextIcon
+  ChatBubbleBottomCenterTextIcon,
+  StarIcon
 } from '@heroicons/react/24/outline';
 
 export default function EventPage() {
@@ -370,6 +371,84 @@ export default function EventPage() {
                 </div>
               </Card>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Client Reviews Section */}
+      <Section className="py-20 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
+              What Our 
+              <span className="bg-gradient-to-r from-red-600 to-primary bg-clip-text text-transparent"> Clients Say</span>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-red-600 to-primary rounded-full"></div>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Hear from event organizers who have created unforgettable experiences with our solutions
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <Card className="p-8 rounded-2xl bg-gradient-to-br from-red-50 to-primary-50 border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-radial from-red-100 to-transparent opacity-50 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-radial from-primary-100 to-transparent opacity-30 rounded-full"></div>
+              
+              <div className="relative">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-primary flex items-center justify-center text-white font-bold text-xl mr-5 shadow-md">
+                    SK
+                  </div>
+                  <div>
+                    <div className="font-bold text-xl text-gray-900">Sarah Kim</div>
+                    <div className="text-gray-600">Wedding Planner, Dream Events</div>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="text-4xl text-red-500 absolute -top-5 -left-2 opacity-40">"</div>
+                  <p className="text-gray-700 italic text-lg relative z-10 mb-5 pl-4">
+                    The automated event management system has revolutionized how we plan weddings. The seamless coordination and real-time updates have made our events run flawlessly.
+                  </p>
+                  <div className="text-4xl text-red-500 absolute bottom-0 right-0 opacity-40">"</div>
+                </div>
+                <div className="flex text-secondary mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <StarIcon key={i} className="w-6 h-6 fill-current text-yellow-500" />
+                  ))}
+                </div>
+              </div>
+            </Card>
+            
+            <Card className="p-8 rounded-2xl bg-gradient-to-br from-primary-50 to-red-50 border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-radial from-primary-100 to-transparent opacity-50 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-radial from-red-100 to-transparent opacity-30 rounded-full"></div>
+              
+              <div className="relative">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-red-500 flex items-center justify-center text-white font-bold text-xl mr-5 shadow-md">
+                    MJ
+                  </div>
+                  <div>
+                    <div className="font-bold text-xl text-gray-900">Mark Johnson</div>
+                    <div className="text-gray-600">Director, Corporate Events Pro</div>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="text-4xl text-primary absolute -top-5 -left-2 opacity-40">"</div>
+                  <p className="text-gray-700 italic text-lg relative z-10 mb-5 pl-4">
+                    The platform's automation features have transformed how we handle corporate events. We can now manage twice as many events with better precision and attendee satisfaction.
+                  </p>
+                  <div className="text-4xl text-primary absolute bottom-0 right-0 opacity-40">"</div>
+                </div>
+                <div className="flex text-secondary mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <StarIcon key={i} className="w-6 h-6 fill-current text-yellow-500" />
+                  ))}
+                </div>
+              </div>
+            </Card>
           </div>
         </Container>
       </Section>
