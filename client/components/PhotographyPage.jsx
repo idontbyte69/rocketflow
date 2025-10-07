@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react";
 import { Navbar, Footer, Button, Card, Section, Container, ShinyText } from '.';
 import {
   CameraIcon,
@@ -7,7 +8,8 @@ import {
   ChatBubbleLeftRightIcon,
   GlobeAltIcon,
   BoltIcon,
-  ComputerDesktopIcon
+  ComputerDesktopIcon,
+  StarIcon
 } from '@heroicons/react/24/outline';
 
 export default function PhotographyPage() {
@@ -79,11 +81,21 @@ export default function PhotographyPage() {
             </div>
 
             <div>
-              <div className="rounded-xl overflow-hidden shadow-2xl">
-                <div className="w-full h-64 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
-                  <CameraIcon className="w-20 h-20 text-primary-dark" />
-                </div>
+              <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(8,112,184,0.3)]">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Photography Solutions"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
+              
+              {/* Video Caption */}
+              <p className="text-center text-sm text-gray-500 mt-4">
+                Discover how our photography solutions transform your business
+              </p>
             </div>
           </div>
         </Container>
@@ -119,6 +131,85 @@ export default function PhotographyPage() {
         </Container>
       </Section>
 
+      {/* Testimonials Section */}
+      <Section className="py-20 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
+              What Our 
+              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Clients Say</span>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Hear from photographers who have transformed their businesses with our digital solutions
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <Card className="p-8 rounded-2xl bg-gradient-to-br from-primary-50 to-secondary-50 border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-radial from-primary-100 to-transparent opacity-50 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-radial from-secondary-100 to-transparent opacity-30 rounded-full"></div>
+              
+              <div className="relative">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-black font-bold text-xl mr-5 shadow-md">
+                    SW
+                  </div>
+                  <div>
+                    <div className="font-bold text-xl text-gray-900">Sarah Wilson</div>
+                    <div className="text-gray-600">Wedding Photographer</div>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="text-4xl text-primary-500 absolute -top-5 -left-2 opacity-40">"</div>
+                  <p className="text-gray-700 italic text-lg relative z-10 mb-5 pl-4">
+                    The automated client communication and gallery delivery system has revolutionized my workflow. I'm saving 15+ hours per week on admin tasks, and my clients love the seamless experience.
+                  </p>
+                  <div className="text-4xl text-primary-500 absolute bottom-0 right-0 opacity-40">"</div>
+                </div>
+                <div className="flex text-secondary mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <StarIcon key={i} className="w-6 h-6 fill-current text-yellow-500" />
+                  ))}
+                </div>
+              </div>
+            </Card>
+            
+            <Card className="p-8 rounded-2xl bg-gradient-to-br from-secondary-50 to-primary-50 border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-radial from-secondary-100 to-transparent opacity-50 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-radial from-primary-100 to-transparent opacity-30 rounded-full"></div>
+              
+              <div className="relative">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-black font-bold text-xl mr-5 shadow-md">
+                    MR
+                  </div>
+                  <div>
+                    <div className="font-bold text-xl text-gray-900">Michael Rodriguez</div>
+                    <div className="text-gray-600">Commercial Photographer</div>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="text-4xl text-secondary-500 absolute -top-5 -left-2 opacity-40">"</div>
+                  <p className="text-gray-700 italic text-lg relative z-10 mb-5 pl-4">
+                    Since implementing the bulk SMS and portfolio solutions, my booking rate has increased by 40%. The automated follow-ups and professional online presence have been game-changers.
+                  </p>
+                  <div className="text-4xl text-secondary-500 absolute bottom-0 right-0 opacity-40">"</div>
+                </div>
+                <div className="flex text-secondary mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <StarIcon key={i} className="w-6 h-6 fill-current text-yellow-500" />
+                  ))}
+                </div>
+              </div>
+            </Card>
+          </div>
+        </Container>
+      </Section>
+
+      {/* CTA Section */}
       <Section className="py-20 bg-gradient-to-r from-primary-dark via-primary to-secondary text-white">
         <Container>
           <div className="text-center">
