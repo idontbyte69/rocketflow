@@ -265,7 +265,7 @@ export default function CorporateOfficePage() {
                         <div className="text-sm opacity-80 mb-1">Monthly Communications</div>
                         <div className="text-4xl font-bold">1.2M+</div>
                       </div>
-                      <div className="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                      <div className="w-16 h-16 bg-black bg-opacity-20 rounded-xl flex items-center justify-center backdrop-blur-sm">
                         <ChartBarIcon className="w-8 h-8" />
                       </div>
                     </div>
@@ -468,7 +468,7 @@ export default function CorporateOfficePage() {
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-white" />
+                    <stat.icon className="w-8 h-8 text-black" />
                   </div>
                   <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
                   <div className="text-blue-100 font-semibold">{stat.label}</div>
@@ -561,8 +561,8 @@ export default function CorporateOfficePage() {
         <Container className="relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center px-6 py-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full mb-8">
-              <BriefcaseIcon className="w-6 h-6 text-white mr-2" />
-              <span className="text-white font-semibold">Enterprise Solutions Available</span>
+              <BriefcaseIcon className="w-6 h-6 text-black mr-2" />
+              <span className="text-black font-semibold">Enterprise Solutions Available</span>
             </div>
 
             <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
