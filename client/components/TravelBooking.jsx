@@ -443,42 +443,41 @@ export default function TravelBooking() {
       </Section>
 
       {/* FAQ SECTION */}
-<Section background="white" className="py-16">
-  <Container>
-    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-      Frequently Asked Questions
-    </h2>
+      <Section background="white" className="py-16">
+        <Container>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            ❓ Frequently Asked Questions
+          </h2>
 
-    <div className="grid gap-8 md:grid-cols-2">
-      {faqs.map((f, i) => (
-        <motion.div
-          key={i}
-          className="bg-white border border-gray-100 rounded-2xl shadow-md p-6 cursor-pointer transition-all duration-300"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          whileHover={{
-            scale: 1.05,
-            y: -5,
-            boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-          }}
-          whileTap={{ scale: 0.98 }}
-          transition={{
-            delay: i * 0.1,
-            type: "spring",
-            stiffness: 120,
-          }}
-        >
-          <h4 className="font-semibold text-lg mb-2 text-gray-900">
-            {f.q}
-          </h4>
-          <p className="text-gray-600 leading-relaxed">{f.a}</p>
-        </motion.div>
-      ))}
-    </div>
-  </Container>
-</Section>
-
+          <div className="grid gap-8 md:grid-cols-2">
+            {faqs.map((f, i) => (
+              <motion.div
+                key={i}
+                className="relative flex flex-col justify-between bg-white/10 backdrop-blur-md border border-gray-200 rounded-2xl shadow-md p-6 cursor-pointer transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -3,
+                  boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+                  backgroundColor: "rgba(255,255,255,0.9)",
+                }}
+                transition={{
+                  delay: i * 0.1,
+                  type: "spring",
+                  stiffness: 120,
+                }}
+              >
+                <h4 className="font-semibold text-lg mb-2 text-gray-900">
+                  {f.q}
+                </h4>
+                <p className="text-gray-600 leading-relaxed">{f.a}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
       <Footer />
     </div>
