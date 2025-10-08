@@ -110,52 +110,52 @@ export default function EventPage() {
 
   const eventSolutions = [
     {
-      id: 'event-planning',
-      title: 'Comprehensive Event Planning',
-      description: "Transform your vision into reality with our end-to-end event planning services tailored to your needs",
-      icon: CalendarIcon,
+      id: 'social-inbox',
+      title: 'Unified Social Inbox',
+      description: "Manage all your client communications from Facebook, Instagram, WhatsApp, and other platforms in one centralized dashboard",
+      icon: ChatBubbleBottomCenterTextIcon,
       color: 'from-blue-400 to-primary-500',
-      features: ['Timeline management', 'Vendor coordination', 'Budget planning', 'Risk assessment']
+      features: ['Multi-platform integration', 'Automated message routing', 'Priority inbox sorting', 'Quick response templates']
     },
     {
-      id: 'attendee-management',
-      title: 'Attendee Experience',
-      description: "Create memorable experiences with seamless attendee management and engagement strategies",
-      icon: UserGroupIcon,
-      color: 'from-primary-400 to-primary-600',
-      features: ['Registration system', 'Guest communication', 'Name badge creation', 'Check-in automation']
-    },
-    {
-      id: 'event-marketing',
-      title: 'Event Promotion',
-      description: 'Maximize attendance with strategic marketing campaigns across multiple channels',
-      icon: MegaphoneIcon,
-      color: 'from-secondary-400 to-secondary-600',
-      features: ['Social media promotion', 'Email campaigns', 'PR outreach', 'Influencer partnerships']
-    },
-    {
-      id: 'venue-management',
-      title: 'Venue Selection & Management',
-      description: 'Find and manage the perfect venue that matches your event vision and requirements',
-      icon: MapPinIcon,
-      color: 'from-primary-500 to-primary-700',
-      features: ['Location scouting', 'Layout planning', 'AV equipment setup', 'On-site coordination']
-    },
-    {
-      id: 'ticketing',
-      title: 'Ticketing Solutions',
-      description: 'Streamline your ticket sales and access control with our comprehensive ticketing platform',
-      icon: TicketIcon,
-      color: 'from-primary-dark to-gray-700',
-      features: ['Multiple ticket types', 'Dynamic pricing', 'QR code scanning', 'Real-time analytics']
-    },
-    {
-      id: 'event-technology',
-      title: 'Event Technology Integration',
-      description: "Enhance your event with cutting-edge technology solutions for better engagement",
+      id: 'auto-response',
+      title: 'Smart Auto-Response',
+      description: "AI-powered automated responses that handle common event inquiries across all messaging platforms 24/7",
       icon: SparklesIcon,
+      color: 'from-primary-400 to-primary-600',
+      features: ['Context-aware replies', 'Multi-language support', 'Custom response rules', 'Sentiment analysis']
+    },
+    {
+      id: 'inquiry-management',
+      title: 'Inquiry Management',
+      description: 'Automatically categorize and route client inquiries to the right team members based on event type and requirements',
+      icon: InboxIcon,
+      color: 'from-secondary-400 to-secondary-600',
+      features: ['Smart categorization', 'Team assignment', 'Follow-up automation', 'Performance tracking']
+    },
+    {
+      id: 'client-engagement',
+      title: 'Client Engagement Hub',
+      description: 'Maintain consistent client communication across all channels with automated updates and follow-ups',
+      icon: UserGroupIcon,
+      color: 'from-primary-500 to-primary-700',
+      features: ['Scheduled updates', 'Event milestones', 'Feedback collection', 'Client portal access']
+    },
+    {
+      id: 'social-monitoring',
+      title: 'Social Media Monitoring',
+      description: 'Monitor and respond to event-related mentions, comments, and messages across all social platforms',
+      icon: MegaphoneIcon,
+      color: 'from-primary-dark to-gray-700',
+      features: ['Real-time alerts', 'Sentiment tracking', 'Competitor analysis', 'Engagement metrics']
+    },
+    {
+      id: 'workflow-automation',
+      title: 'Workflow Automation',
+      description: "Streamline your event management process with automated workflows for client communications",
+      icon: ArrowPathRoundedSquareIcon,
       color: 'from-secondary-500 to-secondary-700',
-      features: ['Virtual components', 'Mobile event apps', 'Live streaming', 'Interactive features']
+      features: ['Custom workflows', 'Task automation', 'Integration with CRM', 'Performance analytics']
     }
   ];
 
@@ -235,7 +235,7 @@ export default function EventPage() {
                 key={solution.id}
                 onMouseEnter={() => setHoveredSolution(solution.id)}
                 onMouseLeave={() => setHoveredSolution(null)}
-                className={`relative overflow-hidden transition-all duration-300 ${
+                className={`relative overflow-hidden transition-all duration-300 h-full ${
                   hoveredSolution === solution.id ? 'transform -translate-y-2' : ''
                 }`}
               >
@@ -278,7 +278,7 @@ export default function EventPage() {
                 key={service.id}
                 onMouseEnter={() => setHoveredAutomation(service.id)}
                 onMouseLeave={() => setHoveredAutomation(null)}
-                className={`relative overflow-hidden transition-all duration-500 transform hover:scale-105 ${
+                className={`relative overflow-hidden transition-all duration-500 transform hover:scale-105 h-full ${
                   hoveredAutomation === service.id ? 'shadow-lg' : 'shadow-md'
                 }`}
               >
@@ -360,7 +360,7 @@ export default function EventPage() {
                 key={index}
                 onMouseEnter={() => setHoveredBenefit(index)}
                 onMouseLeave={() => setHoveredBenefit(null)}
-                className={`text-center transition-all duration-300 ${
+                className={`text-center transition-all duration-300 h-full ${
                   hoveredBenefit === index ? 'transform -translate-y-2' : ''
                 }`}
               >
@@ -390,7 +390,7 @@ export default function EventPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <Card className="p-8 rounded-2xl bg-gradient-to-br from-red-50 to-primary-50 border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+            <Card className="p-8 rounded-2xl bg-gradient-to-br from-red-50 to-primary-50 border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden h-full">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-radial from-red-100 to-transparent opacity-50 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-radial from-primary-100 to-transparent opacity-30 rounded-full"></div>
@@ -420,7 +420,7 @@ export default function EventPage() {
               </div>
             </Card>
             
-            <Card className="p-8 rounded-2xl bg-gradient-to-br from-primary-50 to-red-50 border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+            <Card className="p-8 rounded-2xl bg-gradient-to-br from-primary-50 to-red-50 border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden h-full">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-radial from-primary-100 to-transparent opacity-50 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-radial from-red-100 to-transparent opacity-30 rounded-full"></div>
