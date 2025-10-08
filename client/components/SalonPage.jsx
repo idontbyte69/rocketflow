@@ -170,16 +170,96 @@ export default function SalonPage() {
       </Section>
 
       {/* CTA Section */}
-      <Section className="py-20 bg-gradient-to-r from-primary-dark via-primary to-secondary text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-72 h-72 bg-white opacity-5 rounded-full transform translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full transform -translate-x-1/3 translate-y-1/3"></div>
+      <Section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, var(--coral-500) 0%, var(--primary-600) 50%, var(--coral-600) 100%)' }}>
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          {/* Main Background Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-coral-500/40 via-primary-600/30 to-coral-600/50"></div>
+          
+          {/* Animated Blobs */}
+          <div className="absolute top-20 left-20 w-96 h-96 bg-coral-200/30 rounded-full blur-3xl animate-blob"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-300/30 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+          <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-coral-300/30 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+          
+          {/* Additional Decorative Elements */}
+          <div className="absolute inset-0" style={{ 
+            backgroundImage: 'radial-gradient(circle at center, transparent 0%, rgba(251, 91, 105, 0.2) 100%)',
+            mixBlendMode: 'overlay' 
+          }}></div>
+        </div>
+
         <Container className="relative z-10">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4 text-black">Ready to streamline your salon business?</h2>
-            <p className="max-w-2xl mx-auto mb-6 text-black">Book a demo and see how instant replies, broadcasts, and booking helpers will save time and increase bookings.</p>
-            <div className="flex gap-4 justify-center">
-              <Button className="bg-white text-primary-dark px-6 py-3 rounded-lg">Schedule a Demo</Button>
-              <Button className="border border-white text-white px-6 py-3 rounded-lg">Start Free Trial</Button>
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Highlight Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full mb-8">
+              <div className="w-5 h-5 rounded-full bg-coral-400 animate-pulse mr-2"></div>
+              <span className="text-white font-semibold">Limited Time Offer</span>
+            </div>
+
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
+              Transform Your
+              <br />
+              <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
+                Salon Business Today
+              </span>
+            </h2>
+            
+            <p className="text-xl md:text-2xl text-white text-opacity-90 mb-12 leading-relaxed">
+              Join 500+ salons already using our platform to automate bookings,
+              <br />reduce no-shows by 75%, and boost customer engagement
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="bg-white hover:bg-opacity-95 px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                <span className="text-coral-500">Get Started Free</span>
+              </button>
+              <button className="border-2 border-white text-white hover:bg-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-2xl group">
+                <span className="group-hover:text-coral-500">Schedule Demo</span>
+              </button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-white text-opacity-90">
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-coral-400/20 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <span>No credit card required</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-coral-400/20 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <span>Setup in 5 minutes</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-coral-400/20 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <span>24/7 Support</span>
+              </div>
+            </div>
+
+            {/* Stats Grid */}
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 border border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">75%</div>
+                <div className="text-white text-opacity-90">Reduced No-Shows</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 border border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">40%</div>
+                <div className="text-white text-opacity-90">More Bookings</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 border border-white/20">
+                <div className="text-3xl font-bold text-white mb-2">500+</div>
+                <div className="text-white text-opacity-90">Happy Salons</div>
+              </div>
             </div>
           </div>
         </Container>
