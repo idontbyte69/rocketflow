@@ -140,18 +140,18 @@ const Navbar = () => {
                               {item.dropdownColumns.map((column, columnIndex) => (
                                 <div 
                                   key={column.title} 
-                                  className={`space-y-2 ${columnIndex < item.dropdownColumns.length - 1 ? 'border-r border-gray-200 pr-8' : ''}`}
+                                  className={`${columnIndex < item.dropdownColumns.length - 1 ? 'border-r border-gray-200 pr-8' : ''}`}
                                   style={{ gridColumn: `span ${column.colSpan || 1}` }}
                                 >
-                                  <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 pb-2 border-b border-gray-200">
+                                  <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4 pb-2 border-b border-gray-200">
                                     {column.title}
                                   </h3>
-                                  <div className={column.colSpan > 1 ? 'grid grid-cols-2 gap-x-8 gap-y-0.5' : 'space-y-0.5'}>
+                                  <div className={column.colSpan > 1 ? 'grid grid-cols-2 gap-x-8' : 'flex flex-col'}>
                                     {column.items.map((dropdownItem) => (
                                       <a
                                         key={dropdownItem.name}
                                         href={dropdownItem.href}
-                                        className="block px-3 py-1.5 text-base font-semibold text-gray-900 hover:text-coral-500 hover:bg-gray-50 rounded-md transition-colors duration-200 leading-snug"
+                                        className="block py-1.5 text-base font-semibold text-gray-900 hover:text-coral-500 transition-colors duration-200 leading-tight"
                                       >
                                         {dropdownItem.name}
                                       </a>
