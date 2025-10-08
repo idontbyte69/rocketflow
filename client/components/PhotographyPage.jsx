@@ -15,46 +15,103 @@ import {
 export default function PhotographyPage() {
   const services = [
     {
-      id: 'bulk-sms',
-      title: 'Bulk SMS Campaigns',
-      description: 'Send targeted promotional and booking messages to customers with high deliverability and scheduling options.',
-      icon: DevicePhoneMobileIcon,
-      features: ['Scheduled blasts', 'Personalized templates', 'Delivery reporting']
-    },
-    {
-      id: 'auto-reply',
-      title: 'Auto Reply & Chatbot',
-      description: 'Automate enquiries from clients via WhatsApp, SMS or website chat so you never miss a booking.',
+      id: 'instant-inquiry',
+      title: 'Instant Inquiry & Brochure Delivery',
+      description: 'Automated, professional responses 24/7 with immediate brochure delivery.',
       icon: ChatBubbleLeftRightIcon,
-      features: ['Instant replies', 'Booking flows', 'FAQ automation']
+      impacts: [
+        '• Impress clients with immediate, professional responses 24/7',
+        '• Capture and qualify leads',
+        '• Free yourself from constantly answering the same questions'
+      ]
     },
     {
-      id: 'domain-hosting',
-      title: 'Domain & Hosting',
-      description: 'Reliable domain registration and hosting to keep your portfolio sites fast and always online.',
-      icon: ComputerDesktopIcon,
-      features: ['One-click deploy', 'SSL certificates', '99.9% uptime']
-    },
-    {
-      id: 'portfolio-site',
-      title: 'Portfolio Websites',
-      description: 'Beautiful, responsive portfolio sites that highlight your work and make it easy for clients to book.',
+      id: 'client-tagging',
+      title: 'Smart Client Tagging & Organization',
+      description: 'Comprehensive client pipeline management and organization system.',
       icon: GlobeAltIcon,
-      features: ['Fast galleries', 'Contact & booking forms', 'Mobile-first design']
+      impacts: [
+        '• A clean, organized view of your entire client pipeline',
+        '• Know exactly where every client is in your workflow',
+        '• Easily filter and contact specific groups of clients'
+      ]
     },
     {
-      id: 'workflow',
-      title: 'Shooting & Delivery Workflows',
-      description: 'Streamline shoots, client approvals and digital delivery so you can focus on creating.',
+      id: 'automated-workflow',
+      title: 'Automated Client Workflow',
+      description: 'End-to-end automation from booking to gallery delivery.',
       icon: BoltIcon,
-      features: ['Client portals', 'Auto deliverables', 'Revision tracking']
+      impacts: [
+        '• Provide a high-end, proactive client experience',
+        '• Automate your entire communication workflow',
+        '• Eliminate the "ghosting" that happens after sending prices'
+      ]
     },
     {
-      id: 'branding',
-      title: 'Branding & Social Kits',
-      description: 'On-brand templates, social-ready assets, and campaign toolkits to grow your presence.',
+      id: 'seamless-booking',
+      title: 'Seamless Booking & Information Collection',
+      description: 'Professional and thorough booking process automation.',
+      icon: ComputerDesktopIcon,
+      impacts: [
+        '• Collect all necessary client information in an organized way',
+        '• Look incredibly professional and thorough',
+        '• Save time on administrative back-and-forth'
+      ]
+    },
+    {
+      id: 'payment-reminders',
+      title: 'Automated Session & Payment Reminders',
+      description: 'Smart reminders to reduce no-shows and ensure timely payments.',
+      icon: DevicePhoneMobileIcon,
+      impacts: [
+        '• Drastically reduce client no-shows',
+        '• Ensure you get paid on time, every time',
+        '• Maintain positive client relationships '
+      ]
+    },
+    {
+      id: 'targeted-promos',
+      title: 'Targeted Promotions for Mini-Sessions',
+      description: 'Strategic promotion system for maximum ROI.',
       icon: CameraIcon,
-      features: ['Social templates', 'Content calendars', 'Ad creatives']
+      impacts: [
+        '• Fill your calendar during slower periods',
+        '• Generate repeat business from existing clients',
+        '• Achieve higher ROI on marketing efforts'
+      ]
+    },
+    {
+      id: 'ai-assistant',
+      title: '24/7 AI-Powered Studio Assistant',
+      description: 'Intelligent automated responses for potential clients.',
+      icon: ChatBubbleLeftRightIcon,
+      impacts: [
+        '• Instant answers for potential clients',
+        '• Frees you up for consultations and bookings',
+        '• Ensures no lead is left waiting'
+      ]
+    },
+    {
+      id: 'analytics',
+      title: 'Business Performance Analytics',
+      description: 'Data-driven insights for business growth.',
+      icon: BoltIcon,
+      impacts: [
+        '• Know where to focus your marketing efforts',
+        '• Make data-driven decisions to grow',
+        '• Understand true ROI of your social presence'
+      ]
+    },
+    {
+      id: 'unified-hub',
+      title: 'Unified Client Communication Hub',
+      description: 'Centralized communication management for seamless operations.',
+      icon: ChatBubbleLeftRightIcon,
+      impacts: [
+        '• Single view of all client conversation history',
+        '• Never lose track of important details',
+        '• Run smoothly during busiest seasons'
+      ]
     }
   ];
 
@@ -103,28 +160,38 @@ export default function PhotographyPage() {
 
       <Section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <Container>
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold">Services for Photographers</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mt-3">Everything you need to manage bookings, deliveries, and marketing — designed for photography studios and freelancers.</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Transform Your
+              <span className="relative inline-block text-coral-600"> Photography Business
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-coral-500 to-primary rounded-full"></div>
+              </span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto mt-3">
+              Comprehensive suite of automation tools designed to elevate your photography business. 
+              From instant client responses to seamless workflows — everything you need to grow and scale.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => (
-              <Card key={s.id} className="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all">
-                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white mb-4">
+              <Card key={s.id} className="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all group h-full flex flex-col">
+                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-coral-500 to-primary flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300">
                   <s.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
-                <p className="text-gray-600 mb-4">{s.description}</p>
-                <ul className="text-sm text-gray-700 space-y-2 mb-4">
-                  {s.features.map((f, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="w-2 h-2 bg-primary rounded-full mt-2"></span>
-                      <span>{f}</span>
-                    </li>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 line-clamp-2">{s.title}</h3>
+                <p className="text-gray-600 mb-4 line-clamp-2">{s.description}</p>
+                <div className="space-y-2 mb-6 flex-grow">
+                  <h4 className="font-semibold text-coral-600">Impact:</h4>
+                  {s.impacts.map((impact, i) => (
+                    <div key={i} className="flex items-start gap-2 text-gray-700 leading-tight transition-colors group-hover:text-gray-900 text-sm">
+                      <span className="flex-shrink-0 break-normal whitespace-normal">{impact}</span>
+                    </div>
                   ))}
-                </ul>
-                <Button className="bg-primary text-white px-4 py-2 rounded-lg">Learn More</Button>
+                </div>
+                <button className="w-full bg-gradient-to-r from-coral-500 to-primary text-white px-4 py-3 rounded-lg font-semibold hover:from-coral-600 hover:to-primary-dark transition-all duration-300 transform hover:scale-[1.02]">
+                  Learn More
+                </button>
               </Card>
             ))}
           </div>
@@ -210,14 +277,102 @@ export default function PhotographyPage() {
       </Section>
 
       {/* CTA Section */}
-      <Section className="py-20 bg-gradient-to-r from-primary-dark via-primary to-secondary text-white">
-        <Container>
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4 text-black">Ready to streamline your photography business?</h2>
-            <p className="max-w-2xl mx-auto mb-6 text-black">Book a demo and see how our tools reduce manual work, speed up client delivery, and help you sell more.</p>
-            <div className="flex gap-4 justify-center">
-              <Button className="bg-white text-primary-dark px-6 py-3 rounded-lg">Schedule a Demo</Button>
-              <Button className="border border-white text-white px-6 py-3 rounded-lg">Start Free Trial</Button>
+      <Section className="py-24 relative overflow-hidden" style={{ 
+        background: 'linear-gradient(135deg, var(--coral-600) 0%, var(--coral-500) 50%, var(--primary) 100%)'
+      }}>
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          {/* Main Background Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-coral-500/60 via-primary/50 to-coral-600/70"></div>
+          
+          {/* Animated Elements */}
+          <div className="absolute top-20 left-20 w-96 h-96 bg-coral-200/30 rounded-full blur-3xl animate-blob">
+            <div className="absolute inset-0 bg-gradient-to-r from-coral-400 to-coral-500 mix-blend-overlay"></div>
+          </div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-coral-200/30 rounded-full blur-3xl animate-blob animation-delay-2000">
+            <div className="absolute inset-0 bg-gradient-to-r from-coral-500 to-primary mix-blend-overlay"></div>
+          </div>
+          <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-coral-200/30 rounded-full blur-3xl animate-blob animation-delay-4000">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-coral-400 mix-blend-overlay"></div>
+          </div>
+          
+          {/* Camera Lens Effect */}
+          <div className="absolute inset-0" style={{ 
+            background: 'radial-gradient(circle at center, transparent 30%, rgba(251, 91, 105, 0.2) 70%)',
+            mixBlendMode: 'overlay' 
+          }}></div>
+        </div>
+
+        <Container className="relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Special Offer Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full mb-8">
+              <div className="w-5 h-5 rounded-full bg-white animate-pulse mr-2"></div>
+              <span className="text-white font-semibold">Limited Launch Offer</span>
+            </div>
+
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
+              Capture More
+              <br />
+              <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
+                Than Just Moments
+              </span>
+            </h2>
+            
+            <p className="text-xl md:text-2xl text-white text-opacity-90 mb-12 leading-relaxed">
+              Join 1000+ photographers who've automated their workflow,
+              <br />increased bookings by 40%, and doubled their client satisfaction
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="bg-white hover:bg-opacity-95 px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                <span className="text-coral-500 hover:text-coral-600">
+                  Start Creating
+                </span>
+              </button>
+              <button className="border-2 border-white text-white hover:bg-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-2xl group">
+                <span className="group-hover:text-coral-500">
+                  Watch Demo
+                </span>
+              </button>
+            </div>
+
+            {/* Feature Highlights */}
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-white text-opacity-90">
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-coral-400/20 backdrop-blur-sm flex items-center justify-center">
+                  <CameraIcon className="w-5 h-5 text-white" />
+                </div>
+                <span>AI-Powered Workflow</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-coral-400/20 backdrop-blur-sm flex items-center justify-center">
+                  <BoltIcon className="w-5 h-5 text-white" />
+                </div>
+                <span>5x Faster Delivery</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-coral-400/20 backdrop-blur-sm flex items-center justify-center">
+                  <GlobeAltIcon className="w-5 h-5 text-white" />
+                </div>
+                <span>Global Client Access</span>
+              </div>
+            </div>
+
+            {/* Stats Grid */}
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-coral-400/10 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 border border-coral-200/20">
+                <div className="text-3xl font-bold text-white mb-2">40%</div>
+                <div className="text-white text-opacity-90">More Bookings</div>
+              </div>
+              <div className="bg-coral-400/10 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 border border-coral-200/20">
+                <div className="text-3xl font-bold text-white mb-2">15hrs</div>
+                <div className="text-white text-opacity-90">Saved per Week</div>
+              </div>
+              <div className="bg-coral-400/10 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 border border-coral-200/20">
+                <div className="text-3xl font-bold text-white mb-2">1000+</div>
+                <div className="text-white text-opacity-90">Happy Photographers</div>
+              </div>
             </div>
           </div>
         </Container>
