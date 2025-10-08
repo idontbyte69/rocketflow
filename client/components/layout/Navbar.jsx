@@ -143,7 +143,7 @@ const Navbar = () => {
                                   className={`${columnIndex < item.dropdownColumns.length - 1 ? 'border-r border-gray-200 pr-8' : ''}`}
                                   style={{ gridColumn: `span ${column.colSpan || 1}` }}
                                 >
-                                  <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4 pb-2 border-b border-gray-200">
+                                  <h3 className="text-l font-extrabold text-purple-800 uppercase tracking-wide mb-4 pb-2 border-b-2 border-coral-500">
                                     {column.title}
                                   </h3>
                                   <div className={column.colSpan > 1 ? 'grid grid-cols-2 gap-x-8' : 'flex flex-col'}>
