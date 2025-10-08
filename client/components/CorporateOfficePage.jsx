@@ -259,13 +259,13 @@ export default function CorporateOfficePage() {
                 {/* Dashboard Cards Stack */}
                 <div className="space-y-4">
                   {/* Top Card - Analytics */}
-                  <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 shadow-2xl text-white transform hover:scale-105 transition-all duration-300">
+                  <Card animationDelay={0} className="!bg-gradient-to-br !from-blue-600 !to-indigo-700 !text-white">
                     <div className="flex items-center justify-between mb-6">
                       <div>
                         <div className="text-sm opacity-80 mb-1">Monthly Communications</div>
                         <div className="text-4xl font-bold">1.2M+</div>
                       </div>
-                      <div className="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                      <div className="w-16 h-16 bg-black bg-opacity-20 rounded-xl flex items-center justify-center backdrop-blur-sm">
                         <ChartBarIcon className="w-8 h-8" />
                       </div>
                     </div>
@@ -275,28 +275,28 @@ export default function CorporateOfficePage() {
                       </div>
                       <span className="text-sm font-semibold">+24%</span>
                     </div>
-                  </div>
+                  </Card>
 
                   {/* Middle Cards - Side by Side */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-indigo-100 transform hover:scale-105 transition-all duration-300">
+                    <Card animationDelay={0.1} className="border-2 border-indigo-100">
                       <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
                         <ChatBubbleLeftRightIcon className="w-6 h-6 text-white" />
                       </div>
                       <div className="text-2xl font-bold text-gray-900 mb-1">98%</div>
                       <div className="text-sm text-gray-600">Response Rate</div>
-                    </div>
-                    <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-purple-100 transform hover:scale-105 transition-all duration-300">
+                    </Card>
+                    <Card animationDelay={0.15} className="border-2 border-purple-100">
                       <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
                         <ClockIcon className="w-6 h-6 text-white" />
                       </div>
                       <div className="text-2xl font-bold text-gray-900 mb-1">2.5min</div>
                       <div className="text-sm text-gray-600">Avg Response</div>
-                    </div>
+                    </Card>
                   </div>
 
                   {/* Bottom Card - Activity */}
-                  <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-blue-100">
+                  <Card animationDelay={0.2} className="border-2 border-blue-100">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
                         AI
@@ -309,7 +309,7 @@ export default function CorporateOfficePage() {
                         Live
                       </div>
                     </div>
-                  </div>
+                  </Card>
                 </div>
 
                 {/* Floating Elements */}
@@ -337,12 +337,13 @@ export default function CorporateOfficePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {features.map((feature, index) => (
-              <div
+              <Card
                 key={index}
-                className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 border-2 ${
+                animationDelay={index * 0.1}
+                className={`cursor-pointer transition-all duration-300 border-2 ${
                   activeFeature === index
-                    ? 'bg-gradient-to-br from-blue-50 to-indigo-50 border-indigo-300 shadow-xl scale-105'
-                    : 'bg-white border-gray-200 hover:border-indigo-200 hover:shadow-lg'
+                    ? 'bg-gradient-to-br from-blue-50 to-indigo-50 border-indigo-300 scale-105'
+                    : 'border-gray-200 hover:border-indigo-200'
                 }`}
                 onClick={() => setActiveFeature(index)}
               >
@@ -359,7 +360,7 @@ export default function CorporateOfficePage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </Container>
@@ -446,9 +447,10 @@ export default function CorporateOfficePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {benefits.map((benefit, index) => (
-              <div
+              <Card
                 key={index}
-                className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-blue-100"
+                animationDelay={index * 0.1}
+                className="bg-gradient-to-br from-slate-50 to-blue-50 border-2 border-blue-100"
               >
                 <div className={`w-16 h-16 bg-gradient-to-br from-${benefit.color}-500 to-${benefit.color}-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
                   <benefit.icon className="w-8 h-8 text-white" />
@@ -458,7 +460,7 @@ export default function CorporateOfficePage() {
                 <div className={`inline-block px-4 py-2 bg-${benefit.color}-100 text-${benefit.color}-700 rounded-full text-sm font-bold`}>
                   {benefit.metric}
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
 
@@ -468,7 +470,7 @@ export default function CorporateOfficePage() {
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-white" />
+                    <stat.icon className="w-8 h-8 text-black" />
                   </div>
                   <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
                   <div className="text-blue-100 font-semibold">{stat.label}</div>
@@ -494,9 +496,11 @@ export default function CorporateOfficePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {caseStudies.map((study, index) => (
-              <div
+              <Card
                 key={index}
-                className="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-indigo-100"
+                animationDelay={index * 0.15}
+                className="border-2 border-indigo-100"
+                padding="lg"
               >
                 {/* Company Header */}
                 <div className="flex items-center gap-6 mb-8 pb-8 border-b border-gray-100">
@@ -542,7 +546,7 @@ export default function CorporateOfficePage() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </Container>
@@ -561,8 +565,8 @@ export default function CorporateOfficePage() {
         <Container className="relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center px-6 py-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full mb-8">
-              <BriefcaseIcon className="w-6 h-6 text-white mr-2" />
-              <span className="text-white font-semibold">Enterprise Solutions Available</span>
+              <BriefcaseIcon className="w-6 h-6 text-black mr-2" />
+              <span className="text-black font-semibold">Enterprise Solutions Available</span>
             </div>
 
             <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">

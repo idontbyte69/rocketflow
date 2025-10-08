@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import {
   FaChartLine,
   FaBriefcase,
@@ -249,96 +250,77 @@ export default function HotelandResort() {
     <div className="min-h-screen bg-gradient-to-br from-white to-gray-50 text-gray-800">
       <Navbar />
 
-      {/* 🌅 HERO SECTION */}
-      <section className="relative w-full my-14 bg-white text-black">
-        <div className="relative z-10 container mx-auto px-6 py-12 flex flex-col md:flex-row items-start md:items-center gap-8">
-          {/* LEFT SIDE CONTENT */}
-          <div className="flex-1 flex flex-col justify-start text-left">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
-              Automate Your <span className="text-[#dc2626]">Hospitality</span>{" "}
-              Business
-            </h1>
-            <p className="text-gray-700 mb-8 text-lg md:text-xl leading-relaxed max-w-lg">
-              Smart solutions for restaurants, hotels, and resorts — from
-              automated calls to booking management.
-            </p>
-            <div className="flex gap-4 flex-wrap">
-              <Button
-                size="lg"
-                className="bg-[#F87171] text-white transition-all duration-300"
-              >
-                Request Demo
-              </Button>
-              <Button
-                variant="secondary"
-                size="lg"
-                className="border-[#F87171] text-[#dc2626] transition-all duration-300"
-              >
-                Learn More
-              </Button>
-            </div>
+      {/* HERO SECTION */}
+<section className="relative w-full pt-24 pb-16 bg-white text-gray-900 overflow-hidden">
+  <Container>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Left Column - Content */}
+      <motion.div
+        className="order-1 text-center lg:text-left"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <span className="text-[#F87171]">
+            Grow Your Travel Agency
+          </span>{" "}
+          Faster
+        </h1>
+        <p className="text-gray-700 mb-8 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto lg:mx-0">
+          We provide tools, marketing solutions, and growth strategies to
+          help travel agencies increase bookings, boost revenue, and
+          delight their customers.
+        </p>
+
+        {/* Key Stats */}
+        <div className="grid grid-cols-2 gap-4 mb-8 max-w-md mx-auto lg:mx-0">
+          <div className="text-center p-5 bg-[#FEE2E2] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+            <div className="text-3xl font-bold text-[#dc2626]">35%</div>
+            <div className="text-sm text-gray-600">Bookings Growth</div>
           </div>
-
-          {/* RIGHT SIDE VIDEO */}
-          <div className="flex-1 w-full md:w-auto mt-8 md:mt-0 relative">
-            <video
-              ref={videoRef}
-              className="w-full h-full object-cover rounded-2xl cursor-pointer"
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
-              autoPlay
-              muted={isMuted}
-              loop
-              playsInline
-              onClick={togglePlay}
-            />
-            <div className="absolute inset-0 bg-gradient-to-br pointer-events-none rounded-2xl" />
-
-            {/* Mute/Unmute */}
-            <button
-              onClick={toggleMute}
-              className="absolute bottom-5 left-5 text-white bg-black/50 p-2 rounded-full hover:bg-black/70 transition"
-            >
-              {isMuted ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M11 5L6 9H2v6h4l5 4V5z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 9l6 6M21 9l-6 6"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M11 5L6 9H2v6h4l5 4V5z"
-                  />
-                </svg>
-              )}
-            </button>
+          <div className="text-center p-5 bg-[#FEE2E2] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+            <div className="text-3xl font-bold text-[#dc2626]">50%</div>
+            <div className="text-sm text-gray-600">Revenue Boost</div>
           </div>
         </div>
-      </section>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <Button className="bg-[#F87171] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-[#dc2626] shadow-md">
+            Get Started Today
+          </Button>
+          <Button className="border border-[#F87171] text-[#dc2626] hover:bg-[#F87171] hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md">
+            View Case Studies
+          </Button>
+        </div>
+      </motion.div>
+
+      {/* Right Column - Video */}
+      <motion.div
+        className="order-2 relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-md transform hover:scale-[1.02] transition-all duration-500"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <iframe
+          className="absolute top-0 left-0 w-full h-full rounded-xl"
+          src="https://www.youtube.com/embed/MZnyjXSUX3Q"
+          title="Travel Agency Solutions"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+
+        {/* Video Caption */}
+        <p className="text-center text-sm text-gray-500 mt-4 absolute bottom-[-2.5rem] w-full">
+          See how our solutions boost agency growth
+        </p>
+      </motion.div>
+    </div>
+  </Container>
+</section>
+
 
       {/* 📊 TRUSTED STATS SECTION */}
       <Section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
@@ -444,12 +426,12 @@ export default function HotelandResort() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {services.map((service, i) => (
-              <div key={i} className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+              <Card key={i} animationDelay={i * 0.1}>
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">{service.title}</h3>
                 <p className="text-gray-600 mb-4">{service.desc}</p>
                 <Button className="bg-[#F87171] text-white hover:bg-[#dc2626] transition-all">Learn More</Button>
-              </div>
+              </Card>
             ))}
           </div>
         </Container>

@@ -62,20 +62,38 @@ export default function TravelBooking() {
   const caseStudies = [
     {
       title: "Agency X Growth Story",
-      stat: "35%",
-      desc: "Helped Agency X increase their bookings by 35% through marketing and system automation.",
+      stat: "+35%",
+      desc: "We helped Agency X increase their bookings by 35% through marketing automation and better customer insights.",
+      category: "Bookings",
+      client: "Agency X",
+      role: "Travel Company",
+      logo: "https://cdn-icons-png.flaticon.com/512/3135/3135823.png",
+      icon: "🌍",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
       cta: "Read Full Story",
     },
     {
       title: "Revenue Boost Y",
-      stat: "50%",
-      desc: "Boosted Agency Y's revenue by 50% with curated packages and dynamic promotions.",
+      stat: "+50%",
+      desc: "Boosted Agency Y’s revenue by 50% using curated packages, upselling tools, and real-time analytics.",
+      category: "Revenue",
+      client: "Agency Y",
+      role: "Luxury Travel",
+      logo: "https://cdn-icons-png.flaticon.com/512/3135/3135768.png",
+      icon: "💼",
+      image: "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
       cta: "Read Full Story",
     },
     {
       title: "Customer Engagement Z",
-      stat: "40%",
-      desc: "Increased repeat customers by 40% with loyalty programs and targeted campaigns.",
+      stat: "+40%",
+      desc: "Increased repeat customers by 40% with personalized loyalty programs and targeted campaigns.",
+      category: "Engagement",
+      client: "Travel Hub Z",
+      role: "Tourism Agency",
+      logo: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      icon: "📈",
+      image: "https://picsum.photos/800/450?random=3",
       cta: "Read Full Story",
     },
   ];
@@ -109,7 +127,7 @@ export default function TravelBooking() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative w-full pt-24 pb-16 bg-white text-black overflow-hidden">
+      <section className="relative w-full pt-24 pb-16 bg-white text-gray-900 overflow-hidden">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Content */}
@@ -120,10 +138,8 @@ export default function TravelBooking() {
               transition={{ duration: 1 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-[#F87171] via-[#dc2626] to-[#fca5a5] bg-clip-text text-transparent">
-                  Grow Your Travel Agency
-                </span>{" "}
-                Faster
+                Grow Your
+                <span className="text-[#dc2626]"> Travel Agency</span> Faster
               </h1>
               <p className="text-gray-700 mb-8 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto lg:mx-0">
                 We provide tools, marketing solutions, and growth strategies to
@@ -133,22 +149,22 @@ export default function TravelBooking() {
 
               {/* Key Stats */}
               <div className="grid grid-cols-2 gap-4 mb-8 max-w-md mx-auto lg:mx-0">
-                <div className="text-center p-5 bg-gradient-to-br from-[#fee2e2] to-[#fecaca] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                  <div className="text-3xl font-bold text-[#dc2626]">35%</div>
-                  <div className="text-sm text-gray-600">Bookings Growth</div>
+                <div className="text-center p-5 bg-[#fca5a5] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                  <div className="text-3xl font-bold text-[#fff]">35%</div>
+                  <div className="text-sm text-[#fff]">Bookings Growth</div>
                 </div>
-                <div className="text-center p-5 bg-gradient-to-br from-[#fee2e2] to-[#fca5a5] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                  <div className="text-3xl font-bold text-[#dc2626]">50%</div>
-                  <div className="text-sm text-gray-600">Revenue Boost</div>
+                <div className="text-center p-5 bg-[#fca5a5] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                  <div className="text-3xl font-bold text-[#fff]">50%</div>
+                  <div className="text-sm text-[#fff]">Revenue Boost</div>
                 </div>
               </div>
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button className="bg-gradient-to-r from-[#F87171] via-[#dc2626] to-[#fca5a5] hover:from-[#dc2626] hover:to-[#f87171] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-xl">
+                <Button className="bg-[#fee2e2] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-[#fee2e2] shadow-md">
                   Get Started Today
                 </Button>
-                <Button className="border border-[#dc2626] text-[#dc2626] hover:bg-[#dc2626] hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-xl">
+                <Button className="border border-[#fee2e2] text-[#fee2e2] hover:bg-[#fee2e2] hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md">
                   View Case Studies
                 </Button>
               </div>
@@ -156,13 +172,13 @@ export default function TravelBooking() {
 
             {/* Right Column - Video */}
             <motion.div
-              className="order-2 relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(220,38,38,0.3)]"
+              className="order-2 relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-md transform hover:scale-[1.02] transition-all duration-500"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
             >
               <iframe
-                className="absolute top-0 left-0 w-full h-full"
+                className="absolute top-0 left-0 w-full h-full rounded-xl"
                 src="https://www.youtube.com/embed/MZnyjXSUX3Q"
                 title="Travel Agency Solutions"
                 frameBorder="0"
@@ -292,40 +308,94 @@ export default function TravelBooking() {
 
           <div className="grid md:grid-cols-3 gap-10">
             {caseStudies.map((c, i) => (
-              <Tilt
+              <motion.div
                 key={i}
-                tiltMaxAngleX={8}
-                tiltMaxAngleY={8}
-                glareEnable={true}
-                glareMaxOpacity={0.2}
-                className="rounded-3xl"
+                className="bg-white border border-gray-100 rounded-3xl shadow-md overflow-hidden cursor-pointer transition-all duration-300"
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+                }}
+                whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: i * 0.1,
+                  type: "spring",
+                  stiffness: 120,
+                }}
               >
-                <motion.div
-                  className=" shadow-xl p-8 rounded-3xl flex flex-col justify-between cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(220,38,38,0.2)]"
-                  whileHover={{ scale: 1.06 }}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: i * 0.15,
-                    type: "spring",
-                    stiffness: 80,
-                  }}
-                >
-                  <div className="mb-6">
-                    <h3 className="font-bold text-xl md:text-2xl mb-2 text-black">
+                {/* Image / Icon Section */}
+                <div className="relative h-48 w-full bg-gradient-to-r from-[#fca5a5] to-[#dc2626] flex items-center justify-center">
+                  {c.image ? (
+                    <img
+                      src={c.image}
+                      alt={c.title}
+                      className="object-cover w-full h-full opacity-90 hover:opacity-100 transition-opacity duration-500"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src =
+                          "https://picsum.photos/800/450?random=10";
+                      }}
+                    />
+                  ) : (
+                    <div className="text-white text-6xl">{c.icon}</div>
+                  )}
+
+                  {c.category && (
+                    <span className="absolute top-4 left-4 bg-white text-[#dc2626] text-xs font-semibold px-3 py-1 rounded-full shadow">
+                      {c.category}
+                    </span>
+                  )}
+                </div>
+
+                {/* Content */}
+                <div className="p-6 flex flex-col justify-between h-full">
+                  <div>
+                    <h3 className="font-bold text-xl md:text-2xl mb-2 text-gray-900">
                       {c.title}
                     </h3>
-                    <p className="text-4xl md:text-5xl font-extrabold mb-2 text-gradient bg-clip-text text-black">
-                      {c.stat}
+                    <p className="text-gray-700 mb-3 leading-relaxed">
+                      {c.desc}
                     </p>
-                    <p className="text-gray-700 leading-relaxed">{c.desc}</p>
+
+                    {/* Highlight */}
+                    <div className="bg-[#fee2e2] rounded-xl p-4 text-center mb-4 transition-colors duration-300 hover:bg-[#fecaca]">
+                      <p className="text-3xl font-extrabold text-[#dc2626]">
+                        {c.stat}
+                      </p>
+                      <p className="text-[#991b1b] text-sm font-medium">
+                        Improvement in key metric
+                      </p>
+                    </div>
+
+                    {/* Client Info */}
+                    {c.client && (
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={
+                            c.logo ||
+                            "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                          }
+                          alt={c.client}
+                          className="w-10 h-10 rounded-full border border-[#fca5a5]"
+                        />
+                        <div>
+                          <p className="font-semibold text-gray-800">
+                            {c.client}
+                          </p>
+                          <p className="text-sm text-gray-500">{c.role}</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
-                  <Button className="bg-[#dc2626] hover:bg-[#F87171] text-white px-6 py-3 rounded-lg font-semibold shadow-md transition-all duration-300">
+                  {/* Button */}
+                  <Button className="mt-6 bg-[#dc2626] hover:bg-[#b91c1c] text-white w-full py-3 rounded-lg font-semibold shadow-md transition-all duration-300">
                     {c.cta}
                   </Button>
-                </motion.div>
-              </Tilt>
+                </div>
+              </motion.div>
             ))}
           </div>
         </Container>
@@ -376,38 +446,21 @@ export default function TravelBooking() {
       <Section background="white" className="py-16">
         <Container>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Frequently Asked Questions
+            ❓ Frequently Asked Questions
           </h2>
-          <div className="grid gap-6 md:grid-cols-2">
+
+          <div className="grid gap-8 md:grid-cols-2">
             {faqs.map((f, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Card
-                  padding="md"
-                  className="p-6 rounded-xl shadow-lg hover:shadow-xl transition"
-                >
-                  <h4 className="font-semibold text-lg mb-2">{f.q}</h4>
-                  <p className="text-gray-600">{f.a}</p>
-                </Card>
-              </motion.div>
+              <Card key={i} animationDelay={i * 0.1} className="relative flex flex-col justify-between bg-white/95 backdrop-blur-md">
+                <h4 className="font-semibold text-lg mb-2 text-gray-900">
+                  {f.q}
+                </h4>
+                <p className="text-gray-600 leading-relaxed">{f.a}</p>
+              </Card>
             ))}
           </div>
         </Container>
       </Section>
-
-      {/* CTA BANNER */}
-      <div className="fixed bottom-0 left-0 w-full bg-[#F87171] text-white py-4 px-6 shadow-xl flex justify-between items-center z-50">
-        <p className="font-semibold text-lg">
-          Ready to grow your travel agency?
-        </p>
-        <Button className="bg-white text-[#F87171] hover:bg-gray-100 transition-all">
-          Get Started
-        </Button>
-      </div>
 
       <Footer />
     </div>
