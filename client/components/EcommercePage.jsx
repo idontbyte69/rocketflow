@@ -287,14 +287,14 @@ export default function EcommercePage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl p-6 text-white shadow-xl transform hover:scale-105 transition-all duration-300">
                     <div className="w-12 h-12 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
-                      <UserGroupIcon className="w-6 h-6" />
+                      <UserGroupIcon className="w-6 h-6 text-black" />
                     </div>
                     <div className="text-3xl font-bold mb-1">2.4K</div>
                     <div className="text-sm opacity-90">Active Customers</div>
                   </div>
                   <div className="bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl p-6 text-white shadow-xl transform hover:scale-105 transition-all duration-300">
                     <div className="w-12 h-12 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
-                      <ChartBarIcon className="w-6 h-6" />
+                      <ChartBarIcon className="w-6 h-6 text-black" />
                     </div>
                     <div className="text-3xl font-bold mb-1">94%</div>
                     <div className="text-sm opacity-90">Satisfaction</div>
