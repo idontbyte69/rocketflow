@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import { Navbar, Footer } from ".";
 
-export default function Restaurant() {
+export default function Restaurants() {
   const services = [
     {
       icon: "🍽️",
