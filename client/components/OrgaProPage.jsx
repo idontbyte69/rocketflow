@@ -85,11 +85,13 @@ const OrgaProPage = () => {
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="p-6 border-2 border-green-200 hover:border-green-400 transition-colors duration-300 bg-white hover:bg-green-50"
+                className="p-6 border-2 border-green-200 hover:border-green-400 transition-colors duration-300 bg-white hover:bg-green-50 h-full"
               >
-                <div className="text-4xl mb-4 text-gray-700">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
-                <p className="text-gray-700">{service.description}</p>
+                <div className="flex flex-col h-full">
+                  <div className="text-4xl mb-4 text-gray-700">{service.icon}</div>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
+                  <p className="text-gray-700">{service.description}</p>
+                </div>
               </Card>
             ))}
           </div>
@@ -110,7 +112,7 @@ const OrgaProPage = () => {
               (platform, index) => (
                 <div
                   key={index}
-                  className="p-4 rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow"
+                  className="p-4 rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow h-full flex items-center justify-center"
                 >
                   <p className="font-semibold text-gray-800">{platform}</p>
                 </div>
