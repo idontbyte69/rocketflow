@@ -196,7 +196,7 @@ export default function OrganicProductsPage() {
               <div className="relative bg-gradient-to-br from-green-100 to-emerald-100 rounded-3xl p-8 shadow-2xl border-4 border-white">
                 {/* Feature Cards Floating */}
                 <div className="space-y-4">
-                  <div className="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
+                  <Card animationDelay={0} className="!bg-white">
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
                         <ChatBubbleLeftRightIcon className="w-7 h-7 text-white" />
@@ -207,9 +207,9 @@ export default function OrganicProductsPage() {
                       </div>
                       <div className="text-green-600 font-bold">Active</div>
                     </div>
-                  </div>
+                  </Card>
 
-                  <div className="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
+                  <Card animationDelay={0.1} className="!bg-white">
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
                         <DevicePhoneMobileIcon className="w-7 h-7 text-white" />
@@ -220,9 +220,9 @@ export default function OrganicProductsPage() {
                       </div>
                       <div className="text-emerald-600 font-bold">98%</div>
                     </div>
-                  </div>
+                  </Card>
 
-                  <div className="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
+                  <Card animationDelay={0.2} className="!bg-white">
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center">
                         <EnvelopeIcon className="w-7 h-7 text-white" />
@@ -233,7 +233,7 @@ export default function OrganicProductsPage() {
                       </div>
                       <div className="text-teal-600 font-bold">85%</div>
                     </div>
-                  </div>
+                  </Card>
                 </div>
 
                 {/* Floating Badge */}
@@ -334,16 +334,17 @@ export default function OrganicProductsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <div
+              <Card
                 key={index}
-                className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 border-2 border-transparent hover:border-green-200"
+                animationDelay={index * 0.1}
+                className="border-2 border-transparent hover:border-green-200"
               >
                 <div className={`w-16 h-16 ${benefit.color} bg-opacity-10 rounded-2xl flex items-center justify-center mb-6`}>
                   <benefit.icon className={`w-8 h-8 ${benefit.color}`} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-              </div>
+              </Card>
             ))}
           </div>
 

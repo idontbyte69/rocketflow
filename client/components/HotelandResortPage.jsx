@@ -426,12 +426,12 @@ export default function HotelandResort() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {services.map((service, i) => (
-              <div key={i} className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+              <Card key={i} animationDelay={i * 0.1}>
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">{service.title}</h3>
                 <p className="text-gray-600 mb-4">{service.desc}</p>
                 <Button className="bg-[#F87171] text-white hover:bg-[#dc2626] transition-all">Learn More</Button>
-              </div>
+              </Card>
             ))}
           </div>
         </Container>

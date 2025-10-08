@@ -267,7 +267,7 @@ export default function EcommercePage() {
             <div className="relative">
               <div className="relative">
                 {/* Main Card - Sales Dashboard */}
-                <div className="bg-white rounded-3xl p-8 shadow-2xl border-2 border-red-100 mb-6 transform hover:scale-105 transition-all duration-300">
+                <Card animationDelay={0} className="border-2 border-red-100 mb-6">
                   <div className="flex items-center justify-between mb-6">
                     <div>
                       <div className="text-sm text-gray-600 mb-1">Today's Sales</div>
@@ -281,24 +281,24 @@ export default function EcommercePage() {
                     <ArrowTrendingUpIcon className="w-5 h-5" />
                     <span>+34% from yesterday</span>
                   </div>
-                </div>
+                </Card>
 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl p-6 text-white shadow-xl transform hover:scale-105 transition-all duration-300">
+                  <Card animationDelay={0.1} className="!bg-gradient-to-br !from-red-500 !to-rose-600 !text-white">
                     <div className="w-12 h-12 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
                       <UserGroupIcon className="w-6 h-6 text-black" />
                     </div>
                     <div className="text-3xl font-bold mb-1">2.4K</div>
                     <div className="text-sm opacity-90">Active Customers</div>
-                  </div>
-                  <div className="bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl p-6 text-white shadow-xl transform hover:scale-105 transition-all duration-300">
+                  </Card>
+                  <Card animationDelay={0.15} className="!bg-gradient-to-br !from-rose-500 !to-pink-600 !text-white">
                     <div className="w-12 h-12 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
                       <ChartBarIcon className="w-6 h-6 text-black" />
                     </div>
                     <div className="text-3xl font-bold mb-1">94%</div>
                     <div className="text-sm opacity-90">Satisfaction</div>
-                  </div>
+                  </Card>
                 </div>
 
                 {/* Floating Badge */}
@@ -326,11 +326,13 @@ export default function EcommercePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div
+              <Card
                 key={index}
-                className="group bg-gradient-to-br from-white to-red-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 border-2 border-red-100 hover:border-red-300"
+                animationDelay={index * 0.1}
+                className="bg-gradient-to-br from-white to-red-50 border-2 border-red-100 hover:border-red-300"
+                padding="lg"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
@@ -343,7 +345,7 @@ export default function EcommercePage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Card>
             ))}
           </div>
         </Container>
@@ -448,11 +450,12 @@ export default function EcommercePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {benefits.map((benefit, index) => (
-              <div
+              <Card
                 key={index}
-                className="text-center group"
+                animationDelay={index * 0.1}
+                className="text-center"
               >
-                <div className={`w-20 h-20 bg-gradient-to-br ${benefit.color} rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-20 h-20 bg-gradient-to-br ${benefit.color} rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl`}>
                   <benefit.icon className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
@@ -460,7 +463,7 @@ export default function EcommercePage() {
                 <div className={`inline-block px-5 py-2 bg-gradient-to-r ${benefit.color} text-white rounded-full text-sm font-bold shadow-lg`}>
                   {benefit.metric}
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
 
@@ -503,9 +506,11 @@ export default function EcommercePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {successStories.map((story, index) => (
-              <div
+              <Card
                 key={index}
-                className="bg-white rounded-3xl p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 border-2 border-red-100 transform hover:-translate-y-2"
+                animationDelay={index * 0.15}
+                className="border-2 border-red-100"
+                padding="lg"
               >
                 {/* Header */}
                 <div className="flex items-center gap-6 mb-8 pb-8 border-b border-red-100">
@@ -552,7 +557,7 @@ export default function EcommercePage() {
                   <div className="text-4xl text-red-300 mb-2">"</div>
                   <p className="text-gray-700 italic leading-relaxed">{story.testimonial}</p>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </Container>

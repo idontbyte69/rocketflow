@@ -52,7 +52,7 @@ const Navbar = () => {
             { name: 'Photography', href: '/photography' },
             { name: 'Education', href: '/education' },
             { name: 'Hotel & Resort', href: '/hotel-and-resort' },
-            { name: 'Restaurants', href: '/restaurant' },
+            { name: 'Restaurants', href: '/restaurants' },
             { name: 'Study Abroad', href: '/study-abroad' },
             { name: 'Corporate Office', href: '/corporate-office' },
             { name: 'Travel Booking', href: '/travel-booking' },
