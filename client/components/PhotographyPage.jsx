@@ -210,14 +210,102 @@ export default function PhotographyPage() {
       </Section>
 
       {/* CTA Section */}
-      <Section className="py-20 bg-gradient-to-r from-primary-dark via-primary to-secondary text-white">
-        <Container>
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4 text-black">Ready to streamline your photography business?</h2>
-            <p className="max-w-2xl mx-auto mb-6 text-black">Book a demo and see how our tools reduce manual work, speed up client delivery, and help you sell more.</p>
-            <div className="flex gap-4 justify-center">
-              <Button className="bg-white text-primary-dark px-6 py-3 rounded-lg">Schedule a Demo</Button>
-              <Button className="border border-white text-white px-6 py-3 rounded-lg">Start Free Trial</Button>
+      <Section className="py-24 relative overflow-hidden" style={{ 
+        background: 'linear-gradient(135deg, var(--coral-600) 0%, var(--coral-500) 50%, var(--primary) 100%)'
+      }}>
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          {/* Main Background Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-coral-500/60 via-primary/50 to-coral-600/70"></div>
+          
+          {/* Animated Elements */}
+          <div className="absolute top-20 left-20 w-96 h-96 bg-coral-200/30 rounded-full blur-3xl animate-blob">
+            <div className="absolute inset-0 bg-gradient-to-r from-coral-400 to-coral-500 mix-blend-overlay"></div>
+          </div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-coral-200/30 rounded-full blur-3xl animate-blob animation-delay-2000">
+            <div className="absolute inset-0 bg-gradient-to-r from-coral-500 to-primary mix-blend-overlay"></div>
+          </div>
+          <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-coral-200/30 rounded-full blur-3xl animate-blob animation-delay-4000">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-coral-400 mix-blend-overlay"></div>
+          </div>
+          
+          {/* Camera Lens Effect */}
+          <div className="absolute inset-0" style={{ 
+            background: 'radial-gradient(circle at center, transparent 30%, rgba(251, 91, 105, 0.2) 70%)',
+            mixBlendMode: 'overlay' 
+          }}></div>
+        </div>
+
+        <Container className="relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Special Offer Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full mb-8">
+              <div className="w-5 h-5 rounded-full bg-white animate-pulse mr-2"></div>
+              <span className="text-white font-semibold">Limited Launch Offer</span>
+            </div>
+
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
+              Capture More
+              <br />
+              <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
+                Than Just Moments
+              </span>
+            </h2>
+            
+            <p className="text-xl md:text-2xl text-white text-opacity-90 mb-12 leading-relaxed">
+              Join 1000+ photographers who've automated their workflow,
+              <br />increased bookings by 40%, and doubled their client satisfaction
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="bg-white hover:bg-opacity-95 px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                <span className="text-coral-500 hover:text-coral-600">
+                  Start Creating
+                </span>
+              </button>
+              <button className="border-2 border-white text-white hover:bg-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-2xl group">
+                <span className="group-hover:text-coral-500">
+                  Watch Demo
+                </span>
+              </button>
+            </div>
+
+            {/* Feature Highlights */}
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-white text-opacity-90">
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-coral-400/20 backdrop-blur-sm flex items-center justify-center">
+                  <CameraIcon className="w-5 h-5 text-white" />
+                </div>
+                <span>AI-Powered Workflow</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-coral-400/20 backdrop-blur-sm flex items-center justify-center">
+                  <BoltIcon className="w-5 h-5 text-white" />
+                </div>
+                <span>5x Faster Delivery</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-coral-400/20 backdrop-blur-sm flex items-center justify-center">
+                  <GlobeAltIcon className="w-5 h-5 text-white" />
+                </div>
+                <span>Global Client Access</span>
+              </div>
+            </div>
+
+            {/* Stats Grid */}
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-coral-400/10 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 border border-coral-200/20">
+                <div className="text-3xl font-bold text-white mb-2">40%</div>
+                <div className="text-white text-opacity-90">More Bookings</div>
+              </div>
+              <div className="bg-coral-400/10 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 border border-coral-200/20">
+                <div className="text-3xl font-bold text-white mb-2">15hrs</div>
+                <div className="text-white text-opacity-90">Saved per Week</div>
+              </div>
+              <div className="bg-coral-400/10 backdrop-blur-sm rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 border border-coral-200/20">
+                <div className="text-3xl font-bold text-white mb-2">1000+</div>
+                <div className="text-white text-opacity-90">Happy Photographers</div>
+              </div>
             </div>
           </div>
         </Container>
