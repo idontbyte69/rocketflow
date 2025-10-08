@@ -167,7 +167,7 @@ export default function StudyAbroad() {
               <div className="animate-fadeIn">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                   <ShinyText className="text-black">
-                    Study Abroad Made Simple
+                    Streamlining Workflows for Study‑Abroad Consultancies
                   </ShinyText>
                 </h1>
                 <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
@@ -568,7 +568,7 @@ export default function StudyAbroad() {
               >
                 <div className="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-lg mx-auto md:mx-0">
-                    <benefit.icon className="w-8 h-8" />
+                    <benefit.icon className="w-8 h-8 text-black" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center md:text-left">{benefit.title}</h3>
@@ -643,7 +643,7 @@ export default function StudyAbroad() {
                 className="p-8 rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
               >
                 <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg">
-                  <story.icon className="w-10 h-10 text-white" />
+                  <story.icon className="w-10 h-10 text-black" />
                 </div>
                 <h3 className="text-2xl font-bold text-center text-gray-900 mb-6">{story.title}</h3>
                 <div className="space-y-5">

@@ -581,7 +581,7 @@ export default function EducationPage() {
               >
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-lg mb-4">
-                    <benefit.icon className="w-8 h-8" />
+                    <benefit.icon className="w-8 h-8 text-black" />
                   </div>
                   <div className="w-full">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
@@ -656,7 +656,7 @@ export default function EducationPage() {
                 className="p-8 rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
               >
                 <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg">
-                  <study.icon className="w-10 h-10 text-white" />
+                  <study.icon className="w-10 h-10 text-black" />
                 </div>
                 <h3 className="text-2xl font-bold text-center text-gray-900 mb-6">{study.title}</h3>
                 <div className="space-y-5">
