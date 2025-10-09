@@ -478,6 +478,240 @@ export default function CorporateOfficePage() {
               ))}
             </div>
           </div>
+
+          {/* Summary of Benefits */}
+          <div className="mt-20">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Summary of <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Benefits</span>
+              </h3>
+              <p className="text-lg text-gray-600">How Rocket Flow transforms corporate operations</p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6">
+              {/* Lead Generation */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-blue-200">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
+                  {/* Category */}
+                  <div className="md:col-span-3 flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <BriefcaseIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
+                      <div className="font-bold text-gray-900 text-lg">Lead Generation</div>
+                    </div>
+                  </div>
+
+                  {/* Problem */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
+                    <p className="text-gray-700 leading-relaxed">Inconsistent or low-quality lead flow</p>
+                  </div>
+
+                  {/* Solution */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">✨ Solution</div>
+                    <p className="text-gray-700 leading-relaxed font-medium">Automated Lead Magnet Delivery & Inquiry Qualification</p>
+                  </div>
+
+                  {/* Impact */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
+                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
+                      Consistent pre-qualified leads
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sales Cycle */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-indigo-200">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
+                  {/* Category */}
+                  <div className="md:col-span-3 flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <ChartBarIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
+                      <div className="font-bold text-gray-900 text-lg">Sales Cycle</div>
+                    </div>
+                  </div>
+
+                  {/* Problem */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
+                    <p className="text-gray-700 leading-relaxed">Leads going cold during the long nurturing process</p>
+                  </div>
+
+                  {/* Solution */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-2">✨ Solution</div>
+                    <p className="text-gray-700 leading-relaxed font-medium">Automated, Value-Driven Email Nurturing Sequences</p>
+                  </div>
+
+                  {/* Impact */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
+                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
+                      Higher conversion rates
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Client Management */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-purple-200">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
+                  {/* Category */}
+                  <div className="md:col-span-3 flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <UsersIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
+                      <div className="font-bold text-gray-900 text-lg">Client Management</div>
+                    </div>
+                  </div>
+
+                  {/* Problem */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
+                    <p className="text-gray-700 leading-relaxed">Manual, time-consuming client onboarding process</p>
+                  </div>
+
+                  {/* Solution */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-2">✨ Solution</div>
+                    <p className="text-gray-700 leading-relaxed font-medium">Automated Onboarding & Communication Workflows</p>
+                  </div>
+
+                  {/* Impact */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
+                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
+                      Better client satisfaction
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project Management */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-cyan-200">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
+                  {/* Category */}
+                  <div className="md:col-span-3 flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <ClipboardDocumentCheckIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
+                      <div className="font-bold text-gray-900 text-lg">Project Management</div>
+                    </div>
+                  </div>
+
+                  {/* Problem */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
+                    <p className="text-gray-700 leading-relaxed">Chasing clients for feedback and approvals</p>
+                  </div>
+
+                  {/* Solution */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-2">✨ Solution</div>
+                    <p className="text-gray-700 leading-relaxed font-medium">Automated Client Deadline & Meeting Reminders</p>
+                  </div>
+
+                  {/* Impact */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
+                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
+                      Better project timelines
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Marketing */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-violet-200">
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
+                  {/* Category */}
+                  <div className="md:col-span-3 flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <PresentationChartLineIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
+                      <div className="font-bold text-gray-900 text-lg">Marketing</div>
+                    </div>
+                  </div>
+
+                  {/* Problem */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
+                    <p className="text-gray-700 leading-relaxed">Generic marketing messages to all prospects</p>
+                  </div>
+
+                  {/* Solution */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-violet-600 uppercase tracking-wider mb-2">✨ Solution</div>
+                    <p className="text-gray-700 leading-relaxed font-medium">Smart Segmentation for Targeted Content Distribution</p>
+                  </div>
+
+                  {/* Impact */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
+                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
+                      Better lead quality
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Efficiency */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-emerald-200">
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
+                  {/* Category */}
+                  <div className="md:col-span-3 flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <BoltIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
+                      <div className="font-bold text-gray-900 text-lg">Efficiency</div>
+                    </div>
+                  </div>
+
+                  {/* Problem */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
+                    <p className="text-gray-700 leading-relaxed">Expert staff bogged down by admin tasks</p>
+                  </div>
+
+                  {/* Solution */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2">✨ Solution</div>
+                    <p className="text-gray-700 leading-relaxed font-medium">AI Assistant for FAQs & Automated Scheduling</p>
+                  </div>
+
+                  {/* Impact */}
+                  <div className="md:col-span-3">
+                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
+                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
+                      Focus on strategic work
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </Container>
       </Section>
 
