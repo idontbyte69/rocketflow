@@ -21,7 +21,10 @@ import {
   UserPlusIcon,
   TrophyIcon,
   ChatBubbleBottomCenterTextIcon,
-  StarIcon
+  StarIcon,
+  CurrencyDollarIcon,
+  CheckCircleIcon,
+  RocketLaunchIcon
 } from '@heroicons/react/24/outline';
 
 export default function EventPage() {
@@ -344,66 +347,165 @@ export default function EventPage() {
       </Section>
 
       {/* Service Impact Table Section */}
-      <Section className="py-16 bg-gray-50">
+      <Section className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Service Impact Overview
+            <ShinyText className="text-red-600 font-semibold text-sm uppercase tracking-wider">
+              Complete Solution Overview
+            </ShinyText>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4">
+              Transform Every Challenge into <span className="text-red-500">Growth Opportunity</span>
             </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              See how our solutions transform your business challenges
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
+              See how RocketFlow solves the biggest challenges facing event managers in today's dynamic market
             </p>
           </div>
-          
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Category</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Problem</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Rocket Flow Solution</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Impact</th>
+
+          <div className="overflow-x-auto rounded-2xl shadow-xl">
+            <table className="w-full bg-white">
+              <thead className="bg-gradient-to-r from-red-500 to-primary">
+                <tr>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">Category</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">Problem</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">Rocket Flow Solution</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">Impact</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200 bg-white">
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Lead Management</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Drowning in "Price?" DMs & inquiries</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Instant Inquiry Response & Brochure Delivery</td>
-                  <td className="px-6 py-4 text-sm text-green-600">Saves hours per week, captures more leads</td>
+              <tbody className="divide-y divide-gray-200">
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center group-hover:bg-red-200 transition-colors">
+                        <InboxIcon className="w-5 h-5 text-red-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-red-600">Lead Management</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Drowning in "Price?" DMs & inquiries</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Instant Inquiry Response & Brochure Delivery</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <CheckCircleIcon className="w-4 h-4 mr-1" />
+                      Saves hours per week
+                    </span>
+                  </td>
                 </tr>
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Client Conversion</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Leads "ghosting" after getting prices</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Automated Nurturing & Follow-Up Sequences</td>
-                  <td className="px-6 py-4 text-sm text-green-600">Higher booking rates</td>
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                        <UserGroupIcon className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-blue-600">Client Conversion</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Leads "ghosting" after getting prices</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Automated Nurturing & Follow-Up Sequences</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <ChartBarIcon className="w-4 h-4 mr-1" />
+                      Higher booking rates
+                    </span>
+                  </td>
                 </tr>
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Client Experience</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Inconsistent communication & manual work</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Automated Client Workflow from Booking to Delivery</td>
-                  <td className="px-6 py-4 text-sm text-green-600">Professional, high-end client service</td>
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                        <SparklesIcon className="w-5 h-5 text-purple-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-purple-600">Client Experience</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Inconsistent communication & manual work</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Automated Client Workflow from Booking to Delivery</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <StarIcon className="w-4 h-4 mr-1" />
+                      Professional service
+                    </span>
+                  </td>
                 </tr>
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Financials</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Awkwardly chasing late payments</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Automated Payment Reminders</td>
-                  <td className="px-6 py-4 text-sm text-green-600">On-time payments and improved cash flow</td>
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors">
+                        <CurrencyDollarIcon className="w-5 h-5 text-green-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-green-600">Financials</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Awkwardly chasing late payments</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Automated Payment Reminders</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <CurrencyDollarIcon className="w-4 h-4 mr-1" />
+                      Improved cash flow
+                    </span>
+                  </td>
                 </tr>
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Scheduling</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Client no-shows for sessions</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Automated SMS & Email Session Reminders</td>
-                  <td className="px-6 py-4 text-sm text-green-600">Reduced no-shows, organized schedule</td>
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                        <ClockIcon className="w-5 h-5 text-orange-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-orange-600">Scheduling</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Client no-shows for sessions</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Automated SMS & Email Session Reminders</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <CalendarIcon className="w-4 h-4 mr-1" />
+                      Reduced no-shows
+                    </span>
+                  </td>
                 </tr>
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Marketing & Growth</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Difficulty booking during off-seasons</td>
-                  <td className="px-6 py-4 text-sm text-gray-700">Targeted Mini-Session & Offer Campaigns</td>
-                  <td className="px-6 py-4 text-sm text-green-600">Fills calendar and generates repeat business</td>
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center group-hover:bg-pink-200 transition-colors">
+                        <MegaphoneIcon className="w-5 h-5 text-pink-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-pink-600">Marketing & Growth</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Difficulty booking during off-seasons</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Targeted Mini-Session & Offer Campaigns</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <RocketLaunchIcon className="w-4 h-4 mr-1" />
+                      Accelerated growth
+                    </span>
+                  </td>
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <div className="mt-16">
+            <div className="bg-gradient-to-r from-red-50 to-white rounded-2xl p-8 border border-red-100">
+              <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">Revolutionize Your Event Management</h3>
+              <p className="text-lg text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+                From lead management to client experience, RocketFlow automates your entire event business workflow,
+                letting you focus on creating unforgettable experiences.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex items-center space-x-3 justify-center">
+                  <SparklesIcon className="w-6 h-6 text-red-600" />
+                  <span className="font-semibold text-gray-800">Save 20+ hours/week</span>
+                </div>
+                <div className="flex items-center space-x-3 justify-center">
+                  <ChartBarIcon className="w-6 h-6 text-red-600" />
+                  <span className="font-semibold text-gray-800">Increase bookings by 40%</span>
+                </div>
+                <div className="flex items-center space-x-3 justify-center">
+                  <RocketLaunchIcon className="w-6 h-6 text-red-600" />
+                  <span className="font-semibold text-gray-800">Scale your business</span>
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </Section>
