@@ -9,7 +9,9 @@ import {
   GlobeAltIcon,
   BoltIcon,
   ComputerDesktopIcon,
-  StarIcon
+  StarIcon,
+  CurrencyDollarIcon,
+  CalendarIcon
 } from '@heroicons/react/24/outline';
 
 export default function PhotographyPage() {
@@ -173,25 +175,49 @@ export default function PhotographyPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <Card key={s.id} className="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all group h-full flex flex-col">
-                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-coral-500 to-primary flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <s.icon className="w-6 h-6" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+            {/* Background decorative elements */}
+            <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-gradient-radial from-primary-50 to-transparent opacity-30 rounded-full"></div>
+            
+            {services.map((s, index) => (
+              <Card
+                key={s.id}
+                className="p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden group h-[550px] flex flex-col"
+              >
+                {/* Card Background Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-coral-50/0 to-primary-50/0 group-hover:from-coral-50/30 group-hover:to-primary-50/30 transition-all duration-500"></div>
+                
+                {/* Icon Section */}
+                <div className="relative flex justify-center mb-6">
+                  <div className="absolute -top-3 -left-3 w-24 h-24 bg-coral-100 rounded-full opacity-30 filter blur-xl group-hover:opacity-50 transition-opacity"></div>
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-coral-500 to-primary flex items-center justify-center shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-300">
+                    <s.icon className="h-8 w-8 text-black" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 line-clamp-2">{s.title}</h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">{s.description}</p>
-                <div className="space-y-2 mb-6 flex-grow">
-                  <h4 className="font-semibold text-coral-600">Impact:</h4>
-                  {s.impacts.map((impact, i) => (
-                    <div key={i} className="flex items-start gap-2 text-gray-700 leading-tight transition-colors group-hover:text-gray-900 text-sm">
-                      <span className="flex-shrink-0 break-normal whitespace-normal">{impact}</span>
-                    </div>
-                  ))}
+
+                {/* Content Section */}
+                <div className="relative z-10 flex flex-col flex-grow">
+                  <div className="flex-shrink-0">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-coral-600 transition-colors line-clamp-2 min-h-[4rem]">{s.title}</h3>
+                    <p className="text-gray-600 mb-6 text-lg text-center group-hover:text-gray-700 transition-colors line-clamp-3 min-h-[4.5rem]">{s.description}</p>
+                  </div>
+                  
+                  {/* Benefits Section */}
+                  <div className="space-y-3 flex flex-col w-full px-4 mb-6 flex-grow">
+                    {s.impacts.map((impact, i) => (
+                      <div key={i} className="flex items-center text-sm text-gray-700 group/item transition-all duration-300 hover:translate-x-1">
+                        <span className="w-3 h-3 bg-coral-500 rounded-full mr-3 group-hover/item:scale-125 transition-transform flex-shrink-0"></span>
+                        <span className="group-hover/item:text-coral-600 transition-colors">{impact.replace('• ', '')}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Action Button */}
+                  <button className="w-full bg-gradient-to-r from-coral-500 to-primary text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg group-hover:shadow-xl relative overflow-hidden mt-auto">
+                    <span className="relative z-10">Learn More</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-coral-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </button>
                 </div>
-                <button className="w-full bg-gradient-to-r from-coral-500 to-primary text-white px-4 py-3 rounded-lg font-semibold hover:from-coral-600 hover:to-primary-dark transition-all duration-300 transform hover:scale-[1.02]">
-                  Learn More
-                </button>
               </Card>
             ))}
           </div>
@@ -213,51 +239,117 @@ export default function PhotographyPage() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="min-w-full bg-white rounded-xl overflow-hidden shadow-lg">
-              <thead>
-                <tr className="bg-white border-b border-gray-200">
-                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Category</th>
-                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Problem</th>
-                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Rocket Flow Solution</th>
-                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Impact</th>
+            <table className="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+              <thead className="bg-coral-500 text-white">
+                <tr>
+                  <th className="px-6 py-4 text-left font-bold">Category</th>
+                  <th className="px-6 py-4 text-left font-bold">Problem</th>
+                  <th className="px-6 py-4 text-left font-bold">Rocket Flow Solution</th>
+                  <th className="px-6 py-4 text-left font-bold">Impact</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Lead Management</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">Drowning in "Price?" DMs & inquiries</td>
-                  <td className="px-6 py-4 text-sm text-gray-900">Instant Inquiry Response & Brochure Delivery</td>
-                  <td className="px-6 py-4 text-sm text-primary">Saves hours per week, captures more leads</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <ChatBubbleLeftRightIcon className="w-6 h-6 text-coral-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Lead Management</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Drowning in "Price?" DMs & inquiries</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Instant Inquiry Response & Brochure Delivery</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Saves hours per week, captures more leads</span>
+                  </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Client Conversion</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">Leads "ghosting" after getting prices</td>
-                  <td className="px-6 py-4 text-sm text-gray-900">Automated Nurturing & Follow-Up Sequences</td>
-                  <td className="px-6 py-4 text-sm text-primary">Higher booking rates</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <CameraIcon className="w-6 h-6 text-purple-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Client Conversion</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Leads "ghosting" after getting prices</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Automated Nurturing & Follow-Up Sequences</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Higher booking rates</span>
+                  </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Client Experience</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">Inconsistent communication & manual work</td>
-                  <td className="px-6 py-4 text-sm text-gray-900">Automated Client Workflow from Booking to Delivery</td>
-                  <td className="px-6 py-4 text-sm text-primary">Professional, high-end client service</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <StarIcon className="w-6 h-6 text-yellow-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Client Experience</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Inconsistent communication & manual work</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Automated Client Workflow from Booking to Delivery</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Professional, high-end client service</span>
+                  </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Financials</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">Awkwardly chasing late payments</td>
-                  <td className="px-6 py-4 text-sm text-gray-900">Automated Payment Reminders</td>
-                  <td className="px-6 py-4 text-sm text-primary">On-time payments and improved cash flow</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <CurrencyDollarIcon className="w-6 h-6 text-green-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Financials</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Awkwardly chasing late payments</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Automated Payment Reminders</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">On-time payments and improved cash flow</span>
+                  </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Scheduling</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">Client no-shows for sessions</td>
-                  <td className="px-6 py-4 text-sm text-gray-900">Automated SMS & Email Session Reminders</td>
-                  <td className="px-6 py-4 text-sm text-primary">Reduced no-shows, organized schedule</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <CalendarIcon className="w-6 h-6 text-blue-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Scheduling</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Client no-shows for sessions</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Automated SMS & Email Session Reminders</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Reduced no-shows, organized schedule</span>
+                  </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Marketing & Growth</td>
-                  <td className="px-6 py-4 text-sm text-gray-600">Difficulty booking during off-seasons</td>
-                  <td className="px-6 py-4 text-sm text-gray-900">Targeted Mini-Session & Offer Campaigns</td>
-                  <td className="px-6 py-4 text-sm text-primary">Fills calendar and generates repeat business</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <GlobeAltIcon className="w-6 h-6 text-indigo-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Marketing & Growth</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Difficulty booking during off-seasons</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Targeted Mini-Session & Offer Campaigns</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Fills calendar and generates repeat business</span>
+                  </td>
                 </tr>
               </tbody>
             </table>
