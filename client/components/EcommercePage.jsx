@@ -498,240 +498,177 @@ export default function EcommercePage() {
               <p className="text-lg text-gray-600">Transform your e-commerce business with automation</p>
             </div>
 
-            <div className="grid grid-cols-1 gap-6">
-              {/* Sales Conversion */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-red-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-rose-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  {/* Category */}
-                  <div className="md:col-span-3 flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-rose-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
-                      <div className="font-bold text-gray-900 text-lg">Sales Conversion</div>
-                    </div>
-                  </div>
+            {/* Table */}
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-gradient-to-r from-red-600 via-rose-600 to-pink-600">
+                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-red-400">
+                      Category
+                    </th>
+                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-red-400">
+                      Problem
+                    </th>
+                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-red-400">
+                      Rocket Flow Solution
+                    </th>
+                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
+                      Impact
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  {/* Sales Conversion */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-red-50 hover:to-rose-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-rose-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                          </svg>
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Sales Conversion</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">High cart abandonment rate</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">Automated Multi-Channel Cart Recovery Sequences</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Recovers 20-30% lost sales
+                      </p>
+                    </td>
+                  </tr>
 
-                  {/* Problem */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">High cart abandonment rate</p>
-                  </div>
+                  {/* Social Media Sales */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                          </svg>
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Social Media Sales</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">Manual, slow order taking from comments/DMs</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">Automated "Comment-to-Cart" & Messenger Ordering</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Instant social conversions
+                      </p>
+                    </td>
+                  </tr>
 
-                  {/* Solution */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2">✨ Solution</div>
-                    <p className="text-gray-700 leading-relaxed font-medium">Automated Multi-Channel Cart Recovery Sequences</p>
-                  </div>
+                  {/* Customer Loyalty */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                          </svg>
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Customer Loyalty</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">Low rate of repeat purchases (low LTV)</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">Automated Win-Back, Upsell & Re-order Campaigns</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Higher LTV & repeats
+                      </p>
+                    </td>
+                  </tr>
 
-                  {/* Impact */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
-                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
-                      Recovers 20-30% lost sales
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  {/* Customer Support */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                          </svg>
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Customer Support</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">Staff overwhelmed by repetitive questions</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">24/7 AI-Powered Assistant for FAQs & Order Tracking</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Less tickets, happier customers
+                      </p>
+                    </td>
+                  </tr>
 
-              {/* Social Media Sales */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-pink-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-50 to-rose-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  {/* Category */}
-                  <div className="md:col-span-3 flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
-                      <div className="font-bold text-gray-900 text-lg">Social Media Sales</div>
-                    </div>
-                  </div>
+                  {/* Operations */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                          </svg>
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Operations</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">Manual order and shipping notifications</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">Proactive, Automated Order Status Updates via SMS/Email</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Builds trust, fewer calls
+                      </p>
+                    </td>
+                  </tr>
 
-                  {/* Problem */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">Manual, slow order taking from comments/DMs</p>
-                  </div>
-
-                  {/* Solution */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-pink-600 uppercase tracking-wider mb-2">✨ Solution</div>
-                    <p className="text-gray-700 leading-relaxed font-medium">Automated "Comment-to-Cart" & Messenger Ordering</p>
-                  </div>
-
-                  {/* Impact */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
-                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
-                      Instant social conversions
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Customer Loyalty */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-purple-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  {/* Category */}
-                  <div className="md:col-span-3 flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
-                      <div className="font-bold text-gray-900 text-lg">Customer Loyalty</div>
-                    </div>
-                  </div>
-
-                  {/* Problem */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">Low rate of repeat purchases (low LTV)</p>
-                  </div>
-
-                  {/* Solution */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-2">✨ Solution</div>
-                    <p className="text-gray-700 leading-relaxed font-medium">Automated Win-Back, Upsell & Re-order Campaigns</p>
-                  </div>
-
-                  {/* Impact */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
-                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
-                      Higher LTV & repeats
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Customer Support */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-blue-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  {/* Category */}
-                  <div className="md:col-span-3 flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
-                      <div className="font-bold text-gray-900 text-lg">Customer Support</div>
-                    </div>
-                  </div>
-
-                  {/* Problem */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">Staff overwhelmed by repetitive questions</p>
-                  </div>
-
-                  {/* Solution */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">✨ Solution</div>
-                    <p className="text-gray-700 leading-relaxed font-medium">24/7 AI-Powered Assistant for FAQs & Order Tracking</p>
-                  </div>
-
-                  {/* Impact */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
-                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
-                      Less tickets, happier customers
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Operations */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-indigo-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  {/* Category */}
-                  <div className="md:col-span-3 flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
-                      <div className="font-bold text-gray-900 text-lg">Operations</div>
-                    </div>
-                  </div>
-
-                  {/* Problem */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">Manual order and shipping notifications</p>
-                  </div>
-
-                  {/* Solution */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-2">✨ Solution</div>
-                    <p className="text-gray-700 leading-relaxed font-medium">Proactive, Automated Order Status Updates via SMS/Email</p>
-                  </div>
-
-                  {/* Impact */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
-                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
-                      Builds trust, fewer calls
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Marketing */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-orange-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  {/* Category */}
-                  <div className="md:col-span-3 flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Category</div>
-                      <div className="font-bold text-gray-900 text-lg">Marketing</div>
-                    </div>
-                  </div>
-
-                  {/* Problem */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">Low engagement on generic marketing blasts</p>
-                  </div>
-
-                  {/* Solution */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-orange-600 uppercase tracking-wider mb-2">✨ Solution</div>
-                    <p className="text-gray-700 leading-relaxed font-medium">Hyper-Segmentation for Targeted Promotions & Flash Sales</p>
-                  </div>
-
-                  {/* Impact */}
-                  <div className="md:col-span-3">
-                    <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">🚀 Impact</div>
-                    <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-bold text-sm shadow-md">
-                      Higher ROI & conversions
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  {/* Marketing */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                          </svg>
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Marketing</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">Low engagement on generic marketing blasts</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">Hyper-Segmentation for Targeted Promotions & Flash Sales</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Higher ROI & conversions
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </Container>
