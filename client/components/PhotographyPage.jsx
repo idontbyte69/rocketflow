@@ -198,6 +198,73 @@ export default function PhotographyPage() {
         </Container>
       </Section>
 
+      {/* Solutions Table Section */}
+      <Section className="py-16 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
+              Photography Business
+              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Solutions</span>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See how we solve common photography business challenges
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white rounded-xl overflow-hidden shadow-lg">
+              <thead>
+                <tr className="bg-white border-b border-gray-200">
+                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Category</th>
+                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Problem</th>
+                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Rocket Flow Solution</th>
+                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Impact</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Lead Management</td>
+                  <td className="px-6 py-4 text-sm text-gray-600">Drowning in "Price?" DMs & inquiries</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">Instant Inquiry Response & Brochure Delivery</td>
+                  <td className="px-6 py-4 text-sm text-primary">Saves hours per week, captures more leads</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Client Conversion</td>
+                  <td className="px-6 py-4 text-sm text-gray-600">Leads "ghosting" after getting prices</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">Automated Nurturing & Follow-Up Sequences</td>
+                  <td className="px-6 py-4 text-sm text-primary">Higher booking rates</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Client Experience</td>
+                  <td className="px-6 py-4 text-sm text-gray-600">Inconsistent communication & manual work</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">Automated Client Workflow from Booking to Delivery</td>
+                  <td className="px-6 py-4 text-sm text-primary">Professional, high-end client service</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Financials</td>
+                  <td className="px-6 py-4 text-sm text-gray-600">Awkwardly chasing late payments</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">Automated Payment Reminders</td>
+                  <td className="px-6 py-4 text-sm text-primary">On-time payments and improved cash flow</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Scheduling</td>
+                  <td className="px-6 py-4 text-sm text-gray-600">Client no-shows for sessions</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">Automated SMS & Email Session Reminders</td>
+                  <td className="px-6 py-4 text-sm text-primary">Reduced no-shows, organized schedule</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-gray-900">Marketing & Growth</td>
+                  <td className="px-6 py-4 text-sm text-gray-600">Difficulty booking during off-seasons</td>
+                  <td className="px-6 py-4 text-sm text-gray-900">Targeted Mini-Session & Offer Campaigns</td>
+                  <td className="px-6 py-4 text-sm text-primary">Fills calendar and generates repeat business</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </Container>
+      </Section>
+
       {/* Testimonials Section */}
       <Section className="py-20 bg-white">
         <Container>
