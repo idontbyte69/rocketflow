@@ -173,41 +173,35 @@ export default function SalonPage() {
             {services.map((s, index) => (
               <Card
                 key={s.id}
-                className="p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden group h-[550px] flex flex-col"
+                className="p-4 rounded-xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden group h-[320px] flex flex-col"
               >
                 {/* Card Background Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-secondary-50/0 group-hover:from-primary-50/30 group-hover:to-secondary-50/30 transition-all duration-500"></div>
                 
                 {/* Icon Section */}
-                <div className="relative flex justify-center mb-6">
-                  <div className="absolute -top-3 -left-3 w-24 h-24 bg-primary-100 rounded-full opacity-30 filter blur-xl group-hover:opacity-50 transition-opacity"></div>
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-300">
-                    <s.icon className="h-8 w-8 text-black" />
+                <div className="relative flex justify-center mb-2">
+                  <div className="absolute -top-1 -left-1 w-12 h-12 bg-primary-100 rounded-full opacity-30 filter blur-md group-hover:opacity-50 transition-opacity"></div>
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-md relative z-10 group-hover:scale-110 transition-transform duration-300">
+                    <s.icon className="h-5 w-5 text-black" />
                   </div>
                 </div>
 
                 {/* Content Section */}
                 <div className="relative z-10 flex flex-col flex-grow">
                   <div className="flex-shrink-0">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-primary-dark transition-colors line-clamp-2 min-h-[4rem]">{s.title}</h3>
-                    <p className="text-gray-600 mb-6 text-lg text-center group-hover:text-gray-700 transition-colors line-clamp-3 min-h-[4.5rem]">{s.description}</p>
+                    <h3 className="text-[15px] font-bold text-gray-900 mb-1.5 text-center group-hover:text-primary-dark transition-colors line-clamp-2 min-h-[2.75rem]">{s.title}</h3>
+                    <p className="text-gray-600 mb-2 text-sm text-center group-hover:text-gray-700 transition-colors line-clamp-2 min-h-[2.75rem]">{s.description}</p>
                   </div>
                   
                   {/* Benefits Section */}
-                  <div className="space-y-3 flex flex-col w-full px-4 mb-6 flex-grow">
+                  <div className="space-y-1.5 flex flex-col w-full px-2 mb-2 flex-grow">
                     {s.impacts.map((impact, i) => (
-                      <div key={i} className="flex items-center text-sm text-gray-700 group/item transition-all duration-300 hover:translate-x-1">
-                        <span className="w-3 h-3 bg-primary rounded-full mr-3 group-hover/item:scale-125 transition-transform flex-shrink-0"></span>
+                      <div key={i} className="flex items-center text-xs text-gray-700 group/item transition-all duration-300 hover:translate-x-1">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2 group-hover/item:scale-125 transition-transform flex-shrink-0"></span>
                         <span className="group-hover/item:text-primary-dark transition-colors">{impact.replace('• ', '')}</span>
                       </div>
                     ))}
                   </div>
-
-                  {/* Action Button */}
-                  <button className="w-full bg-gradient-to-r from-primary to-secondary text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg group-hover:shadow-xl relative overflow-hidden mt-auto">
-                    <span className="relative z-10">Learn More</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </button>
                 </div>
               </Card>
             ))}
