@@ -16,15 +16,105 @@ import {
 
 export default function SalonPage() {
   const services = [
-    { id: 'instant-inbox', title: 'Instant Reply (Inbox)', description: 'Automatic, customizable replies to messages arriving in your inbox.', icon: ChatBubbleLeftRightIcon },
-    { id: 'instant-comment', title: 'Instant Reply (Comments)', description: 'Auto-respond to social media comments to engage customers quickly.', icon: ChatBubbleOvalLeftIcon },
-    { id: 'comment-to-inbox', title: 'Comment → Inbox', description: 'Convert public comments into private inbox conversations automatically.', icon: ArrowPathIcon },
-    { id: 'show-offers', title: 'Show Offers', description: 'Highlight promotions and limited-time offers across channels.', icon: GlobeAltIcon },
-    { id: 'chat-transfer', title: 'Chatbot → Human', description: 'Seamlessly escalate complex chats from bot to a human agent.', icon: UserGroupIcon },
-    { id: 'capture-contact', title: 'Capture Phone & Email', description: 'Automatically capture customer contact details during conversations.', icon: DevicePhoneMobileIcon },
-    { id: 'broadcast', title: 'Broadcast Messages', description: 'Send promotions and announcements to your customer lists.', icon: ChatBubbleLeftRightIcon },
-    { id: 'help-booking', title: 'Booking Assistance', description: 'Assist customers with appointment booking and confirmations.', icon: CalendarIcon },
-    { id: 'pricing', title: 'Pricing Details', description: 'Present service pricing and answer pricing queries instantly.', icon: CurrencyDollarIcon }
+    {
+      id: 'virtual-receptionist',
+      title: '24/7 Virtual Receptionist',
+      description: 'Never miss a client inquiry with round-the-clock professional responses.',
+      icon: ChatBubbleLeftRightIcon,
+      impacts: [
+        '• Capture every lead, 24/7',
+        '• Instant, professional responses',
+        '• Free staff from repetitive queries'
+      ]
+    },
+    {
+      id: 'client-segmentation',
+      title: 'Smart Client Segmentation',
+      description: 'Intelligent client organization and personalized communication system.',
+      icon: UserGroupIcon,
+      impacts: [
+        '• Automatically tag clients',
+        '• Target promotions effectively',
+        '• Personalize all communication'
+      ]
+    },
+    {
+      id: 'loyalty-engagement',
+      title: 'Automated Loyalty & Re-engagement',
+      description: 'Build lasting relationships and boost client retention.',
+      icon: ArrowPathIcon,
+      impacts: [
+        '• Increase repeat business',
+        '• Make clients feel valued',
+        '• Win back lost clients'
+      ]
+    },
+    {
+      id: 'bridal-inquiries',
+      title: 'Seamless Bridal Inquiries',
+      description: 'Specialized system for high-value bridal service bookings.',
+      icon: ChatBubbleOvalLeftIcon,
+      impacts: [
+        '• Never miss a high-value booking',
+        '• Professional process impresses clients',
+        '• Automatically collect event details'
+      ]
+    },
+    {
+      id: 'appointment-reminders',
+      title: 'Appointment Reminders',
+      description: 'Automated system to ensure clients never miss appointments.',
+      icon: CalendarIcon,
+      impacts: [
+        '• Reduce no-shows significantly',
+        '• Eliminate manual reminder calls',
+        '• Reliable daily schedule view'
+      ]
+    },
+    {
+      id: 'targeted-promos',
+      title: 'Targeted Promotions',
+      description: 'Strategic promotion system to maximize salon occupancy.',
+      icon: GlobeAltIcon,
+      impacts: [
+        '• Fill slow days with offers',
+        '• Capitalize on festival demand',
+        '• Drive immediate footfall'
+      ]
+    },
+    {
+      id: 'ai-receptionist',
+      title: 'AI-Powered Receptionist',
+      description: 'Intelligent automated responses for seamless customer service.',
+      icon: ChatBubbleLeftRightIcon,
+      impacts: [
+        '• 24/7 instant customer service',
+        '• Accurate information anytime',
+        '• Staff focus on in-salon work'
+      ]
+    },
+    {
+      id: 'business-analytics',
+      title: 'Business Analytics',
+      description: 'Data-driven insights for salon growth and optimization.',
+      icon: CurrencyDollarIcon,
+      impacts: [
+        '• Data-driven business decisions',
+        '• Identify popular services',
+        '• Optimize marketing spend'
+      ]
+    },
+    {
+      id: 'unified-communication',
+      title: 'Unified Communication',
+      description: 'Centralized client communication and booking management.',
+      icon: DevicePhoneMobileIcon,
+      impacts: [
+        '• All client history in one place',
+        '• Prevent double-bookings',
+        '• Run a smooth, modern operation'
+      ]
+    }
   ];
 
   return (
@@ -78,15 +168,92 @@ export default function SalonPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => (
-              <Card key={s.id} className="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all">
-                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white mb-4">
+              <Card key={s.id} className="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all group h-full flex flex-col">
+                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300">
                   <s.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
-                <p className="text-gray-600 mb-4">{s.description}</p>
-                <Button className="bg-primary text-white px-4 py-2 rounded-lg">Learn More</Button>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 line-clamp-2">{s.title}</h3>
+                <p className="text-gray-600 mb-4 line-clamp-2">{s.description}</p>
+                <div className="space-y-2 mb-6 flex-grow">
+                  <h4 className="font-semibold text-primary">Key Benefits:</h4>
+                  {s.impacts.map((impact, i) => (
+                    <div key={i} className="flex items-start gap-2 text-gray-700 leading-tight transition-colors group-hover:text-gray-900 text-sm">
+                      <span className="flex-shrink-0 break-normal whitespace-normal">{impact}</span>
+                    </div>
+                  ))}
+                </div>
+                <button className="w-full bg-gradient-to-r from-primary to-secondary text-white px-4 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02]">
+                  Learn More
+                </button>
               </Card>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Solutions Table Section */}
+      <Section className="py-16 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
+              Salon Business
+              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Solutions</span>
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See how we solve common salon business challenges
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white rounded-xl overflow-hidden shadow-lg">
+              <thead>
+                <tr className="bg-white border-b border-gray-200">
+                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Category</th>
+                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Problem</th>
+                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Rocket Flow Solution</th>
+                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Impact</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-base font-semibold text-black">Appointments</td>
+                  <td className="px-6 py-4 text-base text-gray-900">Costly client no-shows & last-minute cancellations</td>
+                  <td className="px-6 py-4 text-base text-gray-900">Automated SMS Appointment Reminders with Confirmation</td>
+                  <td className="px-6 py-4 text-base font-medium text-coral-600">Dramatically reduces no-shows, secures revenue</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-base font-semibold text-black">Client Management</td>
+                  <td className="px-6 py-4 text-base text-gray-900">Repetitive inquiries about price and services</td>
+                  <td className="px-6 py-4 text-base text-gray-900">24/7 AI Receptionist & Instant Service Menu Delivery</td>
+                  <td className="px-6 py-4 text-base font-medium text-coral-600">Saves hours of staff time daily</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-base font-semibold text-black">Client Loyalty</td>
+                  <td className="px-6 py-4 text-base text-gray-900">Low rate of repeat business</td>
+                  <td className="px-6 py-4 text-base text-gray-900">Automated Re-engagement & Birthday Campaigns</td>
+                  <td className="px-6 py-4 text-base font-medium text-coral-600">Increases client retention & lifetime value</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-base font-semibold text-black">Marketing</td>
+                  <td className="px-6 py-4 text-base text-gray-900">Empty slots during weekdays or off-seasons</td>
+                  <td className="px-6 py-4 text-base text-gray-900">Targeted Slow Day & Festival Offer Broadcasts</td>
+                  <td className="px-6 py-4 text-base font-medium text-coral-600">Fills the appointment book, boosts revenue</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-base font-semibold text-black">High-Value Bookings</td>
+                  <td className="px-6 py-4 text-base text-gray-900">Disorganized handling of bridal inquiries</td>
+                  <td className="px-6 py-4 text-base text-gray-900">Automated Bridal Inquiry Forms & Package Delivery</td>
+                  <td className="px-6 py-4 text-base font-medium text-coral-600">Professional process, more high-ticket bookings</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-base font-semibold text-black">Operations</td>
+                  <td className="px-6 py-4 text-base text-gray-900">Manual time-consuming reminder calls</td>
+                  <td className="px-6 py-4 text-base text-gray-900">Fully Automated Communication Workflows</td>
+                  <td className="px-6 py-4 text-base font-medium text-coral-600">Frees up staff and improves efficiency</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </Container>
       </Section>
