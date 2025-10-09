@@ -363,7 +363,7 @@ export default function EventPage() {
 
           <div className="overflow-x-auto rounded-2xl shadow-xl">
             <table className="w-full bg-white">
-              <thead className="bg-gradient-to-r from-red-500 to-primary">
+              <thead className="bg-red-500">
                 <tr>
                   <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">Category</th>
                   <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">Problem</th>
@@ -564,20 +564,22 @@ export default function EventPage() {
               How Rocket Flow Transforms Your Event Management
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {eventBenefits.map((benefit, index) => (
               <Card
                 key={index}
                 onMouseEnter={() => setHoveredBenefit(index)}
                 onMouseLeave={() => setHoveredBenefit(null)}
-                className={`text-center transition-all duration-300 h-full ${
-                  hoveredBenefit === index ? 'transform -translate-y-2' : ''
+                className={`text-center transition-all duration-300 h-full transform hover:shadow-lg ${
+                  hoveredBenefit === index ? '-translate-y-2' : ''
                 }`}
               >
-                <div className="p-6">
-                  <benefit.icon className="w-12 h-12 mx-auto text-primary-500" />
-                  <h3 className="mt-4 text-lg font-semibold text-gray-900">{benefit.title}</h3>
-                  <p className="mt-2 text-sm text-gray-600">{benefit.description}</p>
+                <div className="p-8">
+                  <div className="rounded-full w-16 h-16 mx-auto bg-gradient-to-br from-red-50 to-primary-50 flex items-center justify-center">
+                    <benefit.icon className="w-8 h-8 text-red-600" />
+                  </div>
+                  <h3 className="mt-6 text-xl font-semibold text-gray-900">{benefit.title}</h3>
+                  <p className="mt-4 text-base text-gray-600 leading-relaxed">{benefit.description}</p>
                 </div>
               </Card>
             ))}
@@ -590,8 +592,7 @@ export default function EventPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
-              What Our 
-              <span className="bg-gradient-to-r from-red-600 to-primary bg-clip-text text-transparent"> Clients Say</span>
+              What Our Clients Say
               <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-red-600 to-primary rounded-full"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
