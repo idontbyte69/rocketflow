@@ -35,7 +35,10 @@ import {
   GlobeAltIcon,
   RocketLaunchIcon,
   CheckCircleIcon,
-  LightBulbIcon
+  LightBulbIcon,
+  FireIcon,
+  ChartPieIcon,
+  BuildingStorefrontIcon
 } from '@heroicons/react/24/outline';
 
 export default function GadgetShopLanding() {
@@ -45,57 +48,84 @@ export default function GadgetShopLanding() {
   const services = [
     {
       id: 'pre-order-campaigns',
-      title: 'Pre-Order & "Notify Me" Campaigns',
-      description: 'Build automated hype lists and maximize sales during critical product launches',
+      title: 'Run Powerful Pre-Order & "Notify Me" Campaigns',
+      description: 'Build a hype list automatically. On "Coming Soon" posts, auto-reply to "price" comments: "Reply NOTIFY ME for first access to pre-order link." Launch day: broadcast to entire list and sell out in hours.',
       icon: BellAlertIcon,
       count: '500+ Pre-Orders',
       color: 'from-coral-500 to-red-400',
-      benefits: ['Build high-intent marketing lists automatically', 'Maximize launch day sales', 'Create exclusive customer experiences']
+      benefits: ['Maximize sales during critical product launches', 'Build high-intent marketing list automatically', 'Create seamless and exclusive experience for eager customers']
     },
     {
       id: 'smart-segmentation',
       title: 'Smart Segmentation by Tech Preference',
-      description: 'Target customers by brand allegiance, product category, and purchase intent',
+      description: 'Understand your customers\' ecosystem. Segment by Brand Allegiance (Apple_Fan, Android_User), Product Category (Smartphone_Shopper, Laptop_Hunter), Purchase Intent (PreOrdered_S26, Abandoned_Cart_Laptop).',
       icon: TagIcon,
       count: 'Hyper-Targeted',
       color: 'from-blue-500 to-indigo-400',
-      benefits: ['Send hyper-relevant offers', 'Identify brand trends', 'Run targeted upgrade campaigns']
+      benefits: ['Send hyper-relevant offers (Pixel Watch only to Android_Users)', 'Identify trends and popular brands with your audience', 'Run targeted upgrade campaigns (trade-in for iPhone 16 users)']
     },
     {
       id: 'automated-upselling',
-      title: 'Automated Upselling & Cart Recovery',
-      description: 'Increase AOV with smart accessory recommendations and abandoned cart recovery',
+      title: 'Automated Upselling & Pre-Order Conversion',
+      description: 'After smartphone purchase: "Congratulations! Protect your investment with top-rated cases. 15% off for 24 hours." Abandoned cart: "Still deciding on MacBook Air? Complete order now, get free laptop sleeve."',
       icon: CurrencyDollarIcon,
       count: '37% AOV Boost',
       color: 'from-purple-500 to-pink-400',
-      benefits: ['Increase average order value', 'Convert hesitant buyers', 'Recover lost sales']
+      benefits: ['Dramatically increase average order value with automated accessories', 'Convert hesitant buyers by reminding product value', 'Recover lost sales from abandoned carts']
     },
     {
       id: 'stock-alerts',
-      title: 'Back-in-Stock & Pre-Order Updates',
-      description: 'Never lose sales with automated availability alerts and proactive updates',
+      title: 'Automated "Back-in-Stock" & Pre-Order Updates',
+      description: 'Sold-out items get "Notify Me When Available" button. When restocked: "Good news! Sony WF-1000XM5 back in stock. Order now before sellout again." Keep pre-order customers updated proactively.',
       icon: ArchiveBoxIcon,
       count: '98% Recovery',
       color: 'from-green-500 to-emerald-400',
-      benefits: ['Recapture lost revenue', 'Build customer trust', 'Reduce support messages']
+      benefits: ['Recapture sales you would have lost permanently', 'Build immense trust and reduce pre-order anxiety', 'Drastically reduce "When will item be back?" support messages']
     },
     {
       id: 'warranty-support',
       title: 'Proactive Warranty & Support Automation',
-      description: 'Streamline post-purchase experience with automated registration and guides',
+      description: 'After purchase: auto-email warranty registration link and setup guides. For complex products, send "Quick Start Guide" or tutorial video links. Build professional post-purchase experience.',
       icon: DocumentTextIcon,
       count: 'Seamless Support',
       color: 'from-orange-500 to-amber-400',
-      benefits: ['Streamline warranty process', 'Position as helpful expert', 'Encourage positive reviews']
+      benefits: ['Streamline warranty process and build customer database', 'Provide value beyond sale, position as helpful expert', 'Encourage positive reviews and word-of-mouth referrals']
+    },
+    {
+      id: 'flash-sales',
+      title: 'Targeted Tech Promotions & Flash Sales',
+      description: '10:50 AM Wednesday flash sale: "Tech Refresh! Next 4 hours only, 40% OFF power banks, chargers, headphones." Brand-specific: Email Apple_Fan list about new AirPods Pro stock.',
+      icon: FireIcon,
+      count: 'Flash Sales',
+      color: 'from-red-500 to-orange-400',
+      benefits: ['Drive immediate sales and clear inventory with timely offers', 'Create excitement and urgency among customer base', 'Powerful tool for hitting weekly/monthly sales targets']
     },
     {
       id: 'ai-tech-expert',
       title: '24/7 AI-Powered Tech Expert',
-      description: 'Answer technical questions instantly with AI that knows your products',
+      description: 'Handle endless questions: "Is this global version?" "Warranty/EMI policy?" "Compare iPhone 17 vs Samsung S26 camera?" "When new PlayStation?" Instant accurate answers build buyer confidence.',
       icon: PhoneIcon,
       count: '24/7 Available',
       color: 'from-teal-500 to-cyan-400',
-      benefits: ['Provide instant answers', 'Free up expert staff', 'Build buyer confidence']
+      benefits: ['Provide instant, accurate answers 24/7, building buyer confidence', 'Free up knowledgeable staff for complex sales and support', 'Ensure every potential customer gets info to make purchase decision']
+    },
+    {
+      id: 'sales-analytics',
+      title: 'Sales & Trend Analytics',
+      description: 'Get data to stay ahead in fast-moving tech market. Identify most profitable products/brands, track pre-order campaign success, analyze upsell automation effectiveness.',
+      icon: ChartPieIcon,
+      count: 'Smart Insights',
+      color: 'from-indigo-500 to-purple-400',
+      benefits: ['Make smarter inventory and purchasing decisions', 'Understand customers\' buying patterns', 'Optimize marketing to focus on what truly drives sales']
+    },
+    {
+      id: 'omnichannel-experience',
+      title: 'An Omnichannel Customer Experience',
+      description: 'Unify entire journey: discover product on Facebook, ask via Messenger, get pre-order alert via SMS, receive invoice/warranty via email. RocketFlow connects all touchpoints seamlessly.',
+      icon: GlobeAltIcon,
+      count: 'Unified Journey',
+      color: 'from-cyan-500 to-blue-400',
+      benefits: ['Modern, professional experience rivaling major retailers', 'Builds immense trust, sets you apart from smaller competitors', 'Creates smooth path from discovery to post-purchase support']
     }
   ];
 
@@ -303,8 +333,8 @@ export default function GadgetShopLanding() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               Automation for the <span className="text-coral-500">Fast-Paced Tech Market</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From managing product launches to providing instant tech support, we help you capitalize on the unique dynamics of the gadget market in Bangladesh
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From automated pre-order campaigns to 24/7 AI tech support, these 9 comprehensive automation solutions help you dominate every aspect of the gadget market in Bangladesh
             </p>
           </div>
 
@@ -771,9 +801,9 @@ export default function GadgetShopLanding() {
             <table className="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
               <thead className="bg-coral-500 text-white">
                 <tr>
-                  <th className="px-6 py-4 text-left font-bold">Challenge</th>
-                  <th className="px-6 py-4 text-left font-bold">Traditional Approach</th>
-                  <th className="px-6 py-4 text-left font-bold">RocketFlow Solution</th>
+                  <th className="px-6 py-4 text-left font-bold">Category</th>
+                  <th className="px-6 py-4 text-left font-bold">Problem</th>
+                  <th className="px-6 py-4 text-left font-bold">Rocket Flow Solution</th>
                   <th className="px-6 py-4 text-left font-bold">Impact</th>
                 </tr>
               </thead>
@@ -784,16 +814,15 @@ export default function GadgetShopLanding() {
                       <BellAlertIcon className="w-6 h-6 text-coral-500" />
                       <div>
                         <p className="font-semibold text-gray-900">Product Launches</p>
-                        <p className="text-sm text-gray-600">Chaotic pre-order inquiries</p>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-gray-600">Manual list management, missed opportunities</td>
+                  <td className="px-6 py-4 text-gray-600">Manually managing chaotic pre-order inquiries</td>
                   <td className="px-6 py-4">
-                    <span className="font-semibold text-coral-600">Automated "Notify Me" Lists & Launch Broadcasts</span>
+                    <span className="font-semibold text-coral-600">Automated "Notify Me" Lists & Launch Day Broadcasts</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">Maximized launch sales, reduced manual work</span>
+                    <span className="font-bold text-green-600">Maximizes launch day sales, reduces manual work</span>
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
@@ -801,17 +830,16 @@ export default function GadgetShopLanding() {
                     <div className="flex items-center space-x-3">
                       <CurrencyDollarIcon className="w-6 h-6 text-purple-500" />
                       <div>
-                        <p className="font-semibold text-gray-900">Low Profitability</p>
-                        <p className="text-sm text-gray-600">Missed upsell opportunities</p>
+                        <p className="font-semibold text-gray-900">Profitability</p>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-gray-600">Manual follow-up, forgotten accessories</td>
+                  <td className="px-6 py-4 text-gray-600">Low-margin on primary gadgets, missed upsells</td>
                   <td className="px-6 py-4">
-                    <span className="font-semibold text-purple-600">Automated Accessory Upsell Sequences</span>
+                    <span className="font-semibold text-purple-600">Automated Post-Purchase Accessory Upsell Sequences</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">37% AOV increase & higher profit margins</span>
+                    <span className="font-bold text-green-600">Increases Average Order Value (AOV) & profit</span>
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
@@ -819,17 +847,16 @@ export default function GadgetShopLanding() {
                     <div className="flex items-center space-x-3">
                       <ArchiveBoxIcon className="w-6 h-6 text-green-500" />
                       <div>
-                        <p className="font-semibold text-gray-900">Stock Outs</p>
-                        <p className="text-sm text-gray-600">Lost sales on popular items</p>
+                        <p className="font-semibold text-gray-900">Sales Recovery</p>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-gray-600">Customers forget, go to competitors</td>
+                  <td className="px-6 py-4 text-gray-600">Losing sales on out-of-stock items</td>
                   <td className="px-6 py-4">
-                    <span className="font-semibold text-green-600">Automated Back-in-Stock Notifications</span>
+                    <span className="font-semibold text-green-600">Automated "Back-in-Stock" Notifications</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">98% sales recovery, improved loyalty</span>
+                    <span className="font-bold text-green-600">Recaptures lost revenue, improves customer loyalty</span>
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
@@ -838,16 +865,32 @@ export default function GadgetShopLanding() {
                       <PhoneIcon className="w-6 h-6 text-teal-500" />
                       <div>
                         <p className="font-semibold text-gray-900">Customer Support</p>
-                        <p className="text-sm text-gray-600">Repetitive tech questions</p>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-gray-600">Staff overwhelmed, delayed responses</td>
+                  <td className="px-6 py-4 text-gray-600">Repetitive technical & policy questions</td>
                   <td className="px-6 py-4">
-                    <span className="font-semibold text-teal-600">24/7 AI Tech Expert</span>
+                    <span className="font-semibold text-teal-600">24/7 AI Assistant for Specs, Warranty, EMI queries</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">Instant answers, freed expert staff</span>
+                    <span className="font-bold text-green-600">Saves expert staff time, provides instant answers</span>
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <ShieldCheckIcon className="w-6 h-6 text-indigo-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Customer Trust</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Anxiety and support tickets from pre-order customers</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-indigo-600">Proactive Pre-Order & Shipping Status Updates via SMS</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-green-600">Builds trust, reduces support load</span>
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
@@ -855,17 +898,16 @@ export default function GadgetShopLanding() {
                     <div className="flex items-center space-x-3">
                       <TagIcon className="w-6 h-6 text-blue-500" />
                       <div>
-                        <p className="font-semibold text-gray-900">Generic Marketing</p>
-                        <p className="text-sm text-gray-600">Low conversion rates</p>
+                        <p className="font-semibold text-gray-900">Marketing</p>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-gray-600">One-size-fits-all campaigns</td>
+                  <td className="px-6 py-4 text-gray-600">Generic marketing to a diverse tech audience</td>
                   <td className="px-6 py-4">
-                    <span className="font-semibold text-blue-600">Smart Brand & Preference Segmentation</span>
+                    <span className="font-semibold text-blue-600">Smart Segmentation by Brand & Product Preference</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">Higher ROI, targeted upgrade offers</span>
+                    <span className="font-bold text-green-600">Higher ROI on targeted campaigns & upgrade offers</span>
                   </td>
                 </tr>
               </tbody>
