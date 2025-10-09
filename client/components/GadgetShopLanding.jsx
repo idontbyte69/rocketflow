@@ -200,11 +200,83 @@ export default function GadgetShopLanding() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
+    <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "RocketFlow Gadget Shop Marketing Automation",
+            "description": "Specialized marketing automation platform for gadget retailers in Bangladesh. Features pre-order campaigns, smart customer segmentation, and AI-powered customer support.",
+            "provider": {
+              "@type": "Organization",
+              "name": "RocketFlow",
+              "url": "https://rocketflow.com"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Bangladesh"
+            },
+            "audience": {
+              "@type": "BusinessAudience",
+              "audienceType": "Gadget Retailers, Electronics Stores, Tech Shops"
+            },
+            "serviceType": "Marketing Automation Software",
+            "offers": {
+              "@type": "Offer",
+              "name": "Gadget Shop Automation Package",
+              "description": "Complete automation suite for gadget retailers including pre-order management, customer segmentation, and AI support",
+              "category": "Software as a Service"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Automation Features",
+              "itemListElement": services.map((service, index) => ({
+                "@type": "Offer",
+                "position": index + 1,
+                "name": service.title,
+                "description": service.description,
+                "category": "Marketing Automation Feature"
+              }))
+            }
+          })
+        }}
+      />
       
-      {/* Hero Section */}
-      <Section className="pt-20 pb-16 bg-gradient-to-br from-coral-50 via-orange-50 to-red-50">
+      <main className="min-h-screen bg-white">
+        <Navbar />
+        
+        {/* Breadcrumb Navigation */}
+        <nav aria-label="Breadcrumb" className="pt-24 pb-4 bg-white">
+          <Container>
+            <ol className="flex items-center space-x-2 text-sm text-gray-600">
+              <li>
+                <Link href="/" className="hover:text-coral-600 transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li className="text-gray-400">/</li>
+              <li>
+                <Link href="/industries" className="hover:text-coral-600 transition-colors">
+                  Industries
+                </Link>
+              </li>
+              <li className="text-gray-400">/</li>
+              <li className="text-coral-600 font-medium" aria-current="page">
+                Gadget Shop Automation
+              </li>
+            </ol>
+          </Container>
+        </nav>
+
+        {/* Hero Section */}
+        <Section 
+          as="header" 
+          className="pt-12 pb-16 bg-gradient-to-br from-coral-50 via-orange-50 to-red-50"
+          role="banner"
+        >
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -271,9 +343,11 @@ export default function GadgetShopLanding() {
                   <div className="absolute inset-0 bg-gray-900 flex items-center justify-center opacity-0 transition-opacity duration-500 pointer-events-none">
                     <Image 
                       src="/techsho.png" 
-                      alt="Success Stories Preview" 
+                      alt="RocketFlow gadget shop automation dashboard showing success metrics for Bangladesh tech retailers" 
                       fill
                       className="object-cover"
+                      loading="eager"
+                      priority={true}
                     />
                   </div>
                   
@@ -323,44 +397,52 @@ export default function GadgetShopLanding() {
         </Container>
       </Section>
 
-      {/* Categories Section */}
-      <Section className="py-20">
+      {/* Automation Services Section */}
+      <Section as="section" className="py-20" aria-labelledby="services-heading">
         <Container>
-          <div className="text-center space-y-4 mb-16">
-            <ShinyText className="text-coral-600 font-semibold text-sm uppercase tracking-wider">
+          <header className="text-center space-y-4 mb-16">
+            <p className="text-coral-600 font-semibold text-sm uppercase tracking-wider">
               RocketFlow's Gadget Shop Solutions
-            </ShinyText>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            </p>
+            <h2 id="services-heading" className="text-3xl md:text-4xl font-bold text-gray-900">
               Automation for the <span className="text-coral-500">Fast-Paced Tech Market</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From automated pre-order campaigns to 24/7 AI tech support, these 9 comprehensive automation solutions help you dominate every aspect of the gadget market in Bangladesh
             </p>
-          </div>
+          </header>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <Card
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
+            {services.map((service, index) => (
+              <article
                 key={service.id}
-                className={`group cursor-pointer transition-all duration-300 hover:shadow-2xl border-0 ${
+                className={`group cursor-pointer transition-all duration-300 hover:shadow-2xl border-0 bg-white rounded-xl p-8 ${
                   hoveredCategory === service.id ? 'scale-105' : ''
                 }`}
                 onMouseEnter={() => setHoveredCategory(service.id)}
                 onMouseLeave={() => setHoveredCategory(null)}
+                role="listitem"
+                aria-labelledby={`service-${service.id}-title`}
+                itemScope
+                itemType="https://schema.org/Service"
               >
-                <div className="p-8 text-center space-y-6">
-                  <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
+                <div className="text-center space-y-6">
+                  <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`} aria-hidden="true">
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
                   
                   <div className="space-y-3">
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-coral-600 transition-colors">
+                    <h3 
+                      id={`service-${service.id}-title`}
+                      className="text-xl font-bold text-gray-900 group-hover:text-coral-600 transition-colors"
+                      itemProp="name"
+                    >
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed" itemProp="description">
                       {service.description}
                     </p>
-                    <p className="text-sm font-semibold text-coral-600">
+                    <p className="text-sm font-semibold text-coral-600" aria-label={`Service metric: ${service.count}`}>
                       {service.count}
                     </p>
                   </div>
@@ -369,11 +451,12 @@ export default function GadgetShopLanding() {
                     variant="outline" 
                     size="sm" 
                     className="border-coral-500 text-coral-600 hover:bg-coral-500 hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    aria-label={`Learn more about ${service.title}`}
                   >
                     Learn More
                   </Button>
                 </div>
-              </Card>
+              </article>
             ))}
           </div>
         </Container>
@@ -963,7 +1046,8 @@ export default function GadgetShopLanding() {
         </Container>
       </Section>
 
-      <Footer />
-    </div>
+        <Footer />
+      </main>
+    </>
   );
 }

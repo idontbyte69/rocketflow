@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Navbar, Footer, Button, Container, Section } from '@/components';
+import { Navbar, Footer, Button, Container, Section } from '../../../components';
 
 export default function GetStartedPage() {
   const [formData, setFormData] = useState({
