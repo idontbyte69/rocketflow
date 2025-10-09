@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -250,7 +250,6 @@ export default function HotelandResort() {
     <div className="min-h-screen bg-gradient-to-br from-white to-gray-50 text-gray-800">
       <Navbar />
 
-<<<<<<< Updated upstream
       {/* HERO SECTION */}
 <section className="relative w-full pt-24 pb-16 bg-white text-gray-900 overflow-hidden">
   <Container>
@@ -273,29 +272,6 @@ export default function HotelandResort() {
           help travel agencies increase bookings, boost revenue, and
           delight their customers.
         </p>
-=======
-      {/* 🌅 HERO SECTION WITH VIDEO & GLASS EFFECT */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden text-black bg-gradient-to-br from-coral-50 via-orange-50 to-red-50">
-        <div className="relative z-10 container mx-auto flex justify-center px-6">
-          <div className="flex w-full max-w-8xl rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white/10 backdrop-blur-md">
-            {/* LEFT SIDE CONTENT */}
-            <div className="flex-1 p-8 md:p-12 flex flex-col justify-center text-left">
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
-                Automate Your <span className="text-[#dc2626]">Hospitality</span> Business
-              </h1>
-              <p className="text-gray-700 mb-8 text-lg md:text-xl leading-relaxed max-w-lg">
-                Smart solutions for restaurants, hotels, and resorts — from automated calls to booking management.
-              </p>
-              <div className="flex gap-4">
-                <Button size="lg" className="bg-[#F87171] text-white transition-all duration-300">
-                  Request Demo
-                </Button>
-                <Button variant="secondary" size="lg" className="border-[#F87171] text-[#dc2626] transition-all duration-300">
-                  Learn More
-                </Button>
-              </div>
-            </div>
->>>>>>> Stashed changes
 
         {/* Key Stats */}
         <div className="grid grid-cols-2 gap-4 mb-8 max-w-md mx-auto lg:mx-0">
@@ -346,7 +322,7 @@ export default function HotelandResort() {
 </section>
 
 
-      {/* 📊 TRUSTED STATS SECTION */}
+      {/* ≡ƒôè TRUSTED STATS SECTION */}
       <Section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 border border-white rounded-full"></div>
@@ -399,7 +375,7 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* 🏨 ABOUT SECTION */}
+      {/* ≡ƒÅ¿ ABOUT SECTION */}
       <Section background="white">
         <Container>
           <div className="flex flex-col md:flex-row items-center gap-10">
@@ -420,7 +396,7 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* 💻 SERVICES SECTION */}
+      {/* ≡ƒÆ╗ SERVICES SECTION */}
       {/* <section className="bg-white py-16">
         <Container>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
@@ -461,7 +437,7 @@ export default function HotelandResort() {
         </Container>
       </section>
 
-      {/* ❓ FAQ SECTION */}
+      {/* Γ¥ô FAQ SECTION */}
       <Section background="gradient">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
@@ -476,7 +452,7 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* 📈 CASE STUDIES SECTION */}
+      {/* ≡ƒôê CASE STUDIES SECTION */}
       <Section background="white">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-10">Success Stories</h2>
@@ -495,7 +471,7 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* 🤝 PARTNERS / INTEGRATIONS */}
+      {/* ≡ƒñ¥ PARTNERS / INTEGRATIONS */}
       <Section background="gradient">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-4">Partners & Integrations</h2>
@@ -524,7 +500,7 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* 📢 CTA BANNER */}
+      {/* ≡ƒôó CTA BANNER */}
       <div className="fixed bottom-0 left-0 w-full bg-[#F87171] text-white py-4 px-6 shadow-xl flex justify-between items-center z-50">
         <p className="font-semibold text-lg">Ready to boost your bookings?</p>
         <Button className="bg-white text-[#F87171] hover:bg-gray-100 transition-all">Book a Demo</Button>
