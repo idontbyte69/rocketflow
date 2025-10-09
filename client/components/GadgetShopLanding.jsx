@@ -25,6 +25,7 @@ import {
   ChartBarSquareIcon,
   MegaphoneIcon,
   Cog6ToothIcon,
+<<<<<<< Updated upstream
   PresentationChartLineIcon,
   BellAlertIcon,
   TagIcon,
@@ -39,6 +40,9 @@ import {
   FireIcon,
   ChartPieIcon,
   BuildingStorefrontIcon
+=======
+  PresentationChartLineIcon
+>>>>>>> Stashed changes
 } from '@heroicons/react/24/outline';
 
 export default function GadgetShopLanding() {
@@ -47,6 +51,7 @@ export default function GadgetShopLanding() {
 
   const services = [
     {
+<<<<<<< Updated upstream
       id: 'pre-order-campaigns',
       title: 'Run Powerful Pre-Order & "Notify Me" Campaigns',
       description: 'Build a hype list automatically. On "Coming Soon" posts, auto-reply to "price" comments: "Reply NOTIFY ME for first access to pre-order link." Launch day: broadcast to entire list and sell out in hours.',
@@ -126,6 +131,54 @@ export default function GadgetShopLanding() {
       count: 'Unified Journey',
       color: 'from-cyan-500 to-blue-400',
       benefits: ['Modern, professional experience rivaling major retailers', 'Builds immense trust, sets you apart from smaller competitors', 'Creates smooth path from discovery to post-purchase support']
+=======
+      id: 'social-media',
+      title: 'Social Media Marketing',
+      description: 'Build engaging content and grow your gadget brand on all platforms',
+      icon: ChatBubbleLeftRightIcon,
+      count: '300% Growth',
+      color: 'from-coral-500 to-red-400'
+    },
+    {
+      id: 'ecommerce',
+      title: 'E-commerce Optimization',
+      description: 'Optimize your online store for maximum conversions and sales',
+      icon: ComputerDesktopIcon,
+      count: '150% Sales Boost',
+      color: 'from-blue-500 to-indigo-400'
+    },
+    {
+      id: 'content-creation',
+      title: 'Product Photography',
+      description: 'Professional product shoots and video content creation',
+      icon: CameraIcon,
+      count: '500+ Shoots',
+      color: 'from-purple-500 to-pink-400'
+    },
+    {
+      id: 'influencer',
+      title: 'Influencer Partnerships',
+      description: 'Connect with tech influencers and brand ambassadors',
+      icon: MegaphoneIcon,
+      count: '1000+ Influencers',
+      color: 'from-green-500 to-emerald-400'
+    },
+    {
+      id: 'automation',
+      title: 'Marketing Automation',
+      description: 'Automate email campaigns, inventory alerts, and customer follow-ups',
+      icon: Cog6ToothIcon,
+      count: '24/7 Automation',
+      color: 'from-orange-500 to-amber-400'
+    },
+    {
+      id: 'analytics',
+      title: 'Performance Analytics',
+      description: 'Track sales, customer behavior, and marketing ROI in real-time',
+      icon: PresentationChartLineIcon,
+      count: 'Real-time Data',
+      color: 'from-teal-500 to-cyan-400'
+>>>>>>> Stashed changes
     }
   ];
 
@@ -139,7 +192,11 @@ export default function GadgetShopLanding() {
       rating: 4.9,
       reviews: 'Client Success',
       badge: 'Success Story',
+<<<<<<< Updated upstream
       features: ['Pre-Order Campaigns', 'Smart Segmentation', 'AI Tech Expert']
+=======
+      features: ['Social Media Marketing', 'E-commerce Optimization', 'Influencer Partnerships']
+>>>>>>> Stashed changes
     },
     {
       id: 2,
@@ -150,7 +207,11 @@ export default function GadgetShopLanding() {
       rating: 4.8,
       reviews: 'Client Success',
       badge: 'Featured',
+<<<<<<< Updated upstream
       features: ['Automated Upselling', 'Stock Alerts', 'Warranty Automation']
+=======
+      features: ['Content Creation', 'SEO Optimization', 'Marketing Automation']
+>>>>>>> Stashed changes
     },
     {
       id: 3,
@@ -161,7 +222,11 @@ export default function GadgetShopLanding() {
       rating: 4.7,
       reviews: 'Client Success',
       badge: 'Trending',
+<<<<<<< Updated upstream
       features: ['Flash Sales', 'Customer Segmentation', 'Omnichannel Experience']
+=======
+      features: ['Influencer Marketing', 'Video Content', 'Social Media Growth']
+>>>>>>> Stashed changes
     },
     {
       id: 4,
@@ -172,7 +237,11 @@ export default function GadgetShopLanding() {
       rating: 4.6,
       reviews: 'Client Success',
       badge: 'Rapid Growth',
+<<<<<<< Updated upstream
       features: ['Launch Campaigns', '24/7 AI Support', 'Sales Analytics']
+=======
+      features: ['Viral Campaigns', 'Community Building', 'Customer Retention']
+>>>>>>> Stashed changes
     }
   ];
 
@@ -210,6 +279,7 @@ export default function GadgetShopLanding() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <ShinyText className="text-coral-600 font-semibold text-sm uppercase tracking-wider">
+<<<<<<< Updated upstream
                   RocketFlow for Gadget Retailers in Bangladesh
                 </ShinyText>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
@@ -220,6 +290,18 @@ export default function GadgetShopLanding() {
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Transform your gadget store into the most responsive tech destination with automated pre-orders, 
                   smart upselling, and instant customer support that drives real results.
+=======
+                  RocketFlow for Gadget Retailers
+                </ShinyText>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Grow Your <span className="text-coral-500">Gadget Shop</span> with 
+                  <br />
+                  Smart <span className="text-coral-500">Marketing</span> Solutions
+                </h1>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Transform your gadget store into a thriving business with our comprehensive marketing strategies, 
+                  social media management, and e-commerce optimization services.
+>>>>>>> Stashed changes
                 </p>
               </div>
               
@@ -229,11 +311,19 @@ export default function GadgetShopLanding() {
                   size="lg" 
                   className="bg-coral-500 hover:bg-coral-600"
                 >
+<<<<<<< Updated upstream
                   <RocketLaunchIcon className="w-5 h-5 mr-2 inline-block" />
                    Start Dominating
                 </Button>
                 <Button variant="outline" size="lg" className="border-coral-500 text-coral-600 hover:bg-coral-50">
                   See How It Works
+=======
+                  <ShoppingCartIcon className="w-5 h-5 mr-2 inline-block" />
+                   Grow Now
+                </Button>
+                <Button variant="outline" size="lg" className="border-coral-500 text-coral-600 hover:bg-coral-50">
+                  View Our Services
+>>>>>>> Stashed changes
                 </Button>
               </div>
 
@@ -328,6 +418,7 @@ export default function GadgetShopLanding() {
         <Container>
           <div className="text-center space-y-4 mb-16">
             <ShinyText className="text-coral-600 font-semibold text-sm uppercase tracking-wider">
+<<<<<<< Updated upstream
               RocketFlow's Gadget Shop Solutions
             </ShinyText>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -335,6 +426,15 @@ export default function GadgetShopLanding() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From automated pre-order campaigns to 24/7 AI tech support, these 9 comprehensive automation solutions help you dominate every aspect of the gadget market in Bangladesh
+=======
+              Our Marketing Services
+            </ShinyText>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Comprehensive <span className="text-coral-500">Growth Solutions</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              From social media management to e-commerce optimization, we provide everything your gadget shop needs to thrive
+>>>>>>> Stashed changes
             </p>
           </div>
 
@@ -379,6 +479,7 @@ export default function GadgetShopLanding() {
         </Container>
       </Section>
 
+<<<<<<< Updated upstream
       {/* How RocketFlow Works Section */}
       <Section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <Container>
@@ -540,6 +641,8 @@ export default function GadgetShopLanding() {
         </Container>
       </Section>
 
+=======
+>>>>>>> Stashed changes
       {/* Featured Products */}
       <Section className="py-20 bg-gray-50">
         <Container>
@@ -551,11 +654,16 @@ export default function GadgetShopLanding() {
               Proven <span className="text-coral-500">Results</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+<<<<<<< Updated upstream
               See how we've helped gadget retailers in Bangladesh achieve remarkable growth and dominate the tech market
+=======
+              See how we've helped gadget retailers achieve remarkable growth and success
+>>>>>>> Stashed changes
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<<<<<<< Updated upstream
             {successStories.map((story, index) => (
               <div
                 key={story.id}
@@ -698,6 +806,77 @@ export default function GadgetShopLanding() {
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-coral-400 rounded-full opacity-0 group-hover:opacity-60 transition-all duration-700 transform group-hover:translate-y-1 group-hover:translate-x-1"></div>
                 <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-orange-400 rounded-full opacity-0 group-hover:opacity-50 transition-all duration-500 transform group-hover:-translate-y-1 group-hover:-translate-x-1"></div>
               </div>
+=======
+            {successStories.map((story) => (
+              <Card
+                key={story.id}
+                className={`group cursor-pointer transition-all duration-300 hover:shadow-2xl overflow-hidden ${
+                  hoveredProduct === story.id ? 'scale-105' : ''
+                }`}
+                onMouseEnter={() => setHoveredProduct(story.id)}
+                onMouseLeave={() => setHoveredProduct(null)}
+              >
+                <div className="relative">
+                  <div className="aspect-square bg-gray-100 overflow-hidden">
+                    <Image 
+                      src={story.image} 
+                      alt={story.name}
+                      fill
+                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  {story.badge && (
+                    <div className="absolute top-3 left-3 bg-coral-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                      {story.badge}
+                    </div>
+                  )}
+                  <button className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <HeartIcon className="w-4 h-4 text-gray-600" />
+                  </button>
+                </div>
+
+                <div className="p-6 space-y-4">
+                  <div>
+                    <h3 className="font-bold text-gray-900 group-hover:text-coral-600 transition-colors mb-2">
+                      {story.name}
+                    </h3>
+                    <div className="flex items-center space-x-1 mb-2">
+                      <div className="flex space-x-1">
+                        {[...Array(5)].map((_, i) => (
+                          <StarIcon 
+                            key={i} 
+                            className={`w-4 h-4 ${i < Math.floor(story.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} 
+                          />
+                        ))}
+                      </div>
+                      <span className="text-sm text-gray-600">({story.reviews})</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1 mb-3">
+                      {story.features.map((feature, index) => (
+                        <span key={index} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-1">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-xl font-bold text-coral-600">{story.result}</span>
+                        <span className="text-sm text-gray-500">{story.timeframe}</span>
+                      </div>
+                    </div>
+                    <Button 
+                      size="sm" 
+                      className="bg-coral-500 hover:bg-coral-600 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    >
+                      <ShoppingCartIcon className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+>>>>>>> Stashed changes
             ))}
           </div>
 
@@ -716,6 +895,7 @@ export default function GadgetShopLanding() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <ShinyText className="text-coral-600 font-semibold text-sm uppercase tracking-wider">
+<<<<<<< Updated upstream
                   Why RocketFlow for Gadget Shops
                 </ShinyText>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -724,15 +904,32 @@ export default function GadgetShopLanding() {
                 <p className="text-xl text-gray-600 leading-relaxed">
                   In a fast-paced market like Bangladesh, speed, trust, and managing product hype are everything. 
                   RocketFlow acts as your automated operations manager, designed to capitalize on the unique dynamics of the tech market.
+=======
+                  Why Choose Us
+                </ShinyText>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                  Marketing Excellence <span className="text-coral-500">Guaranteed</span>
+                </h2>
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  We partner with successful gadget retailers to deliver proven marketing strategies 
+                  that drive real growth and measurable results for your business.
+>>>>>>> Stashed changes
                 </p>
               </div>
 
               <div className="space-y-6">
                 {[
+<<<<<<< Updated upstream
                   { icon: BellAlertIcon, title: 'Run Powerful Pre-Order Campaigns', desc: 'Build automated hype lists for new product launches and maximize sales' },
                   { icon: TagIcon, title: 'Smart Tech Segmentation', desc: 'Target customers by brand allegiance and product category preferences' },
                   { icon: CurrencyDollarIcon, title: 'Automated Upselling', desc: 'Boost AOV with accessory recommendations and cart recovery sequences' },
                   { icon: PhoneIcon, title: '24/7 AI Tech Expert', desc: 'Answer endless spec and availability questions automatically' }
+=======
+                  { icon: ShieldCheckIcon, title: 'Proven Strategies', desc: 'Marketing methods tested across 500+ gadget stores' },
+                  { icon: BoltIcon, title: 'Rapid Implementation', desc: 'Go live with campaigns within 48 hours' },
+                  { icon: WifiIcon, title: 'Digital Expertise', desc: 'Complete online presence optimization' },
+                  { icon: Battery100Icon, title: 'Sustainable Growth', desc: 'Long-term strategies for lasting success' }
+>>>>>>> Stashed changes
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-coral-100 rounded-xl flex items-center justify-center">
@@ -748,6 +945,7 @@ export default function GadgetShopLanding() {
             </div>
 
             <div className="relative">
+<<<<<<< Updated upstream
               <div className="bg-coral-500 rounded-2xl p-8 text-white">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
@@ -757,10 +955,22 @@ export default function GadgetShopLanding() {
                   <p className="text-coral-100">
                     Connect your customer journey across Facebook, SMS, Email, and WhatsApp to create a seamless 
                     experience from product discovery to post-purchase support.
+=======
+              <div className="bg-gradient-to-br from-coral-500 to-red-500 rounded-2xl p-8 text-white">
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4">
+                    <SparklesIcon className="w-8 h-8" />
+                    <h3 className="text-2xl font-bold">Growth Partnership</h3>
+                  </div>
+                  <p className="text-coral-100">
+                    Partner with RocketFlow for comprehensive marketing solutions that scale your 
+                    gadget business to new heights.
+>>>>>>> Stashed changes
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-white rounded-full"></div>
+<<<<<<< Updated upstream
                       <span>Product launch management</span>
                     </div>
                     <div className="flex items-center space-x-3">
@@ -774,6 +984,21 @@ export default function GadgetShopLanding() {
                   </div>
                   <Button variant="secondary" className="bg-white text-coral-600 hover:bg-coral-50">
                     Get Started
+=======
+                      <span>Complete marketing strategy</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                      <span>Dedicated account manager</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                      <span>Performance tracking & reporting</span>
+                    </div>
+                  </div>
+                  <Button variant="secondary" className="bg-white text-coral-600 hover:bg-coral-50">
+                    Start Partnership
+>>>>>>> Stashed changes
                   </Button>
                 </div>
               </div>
@@ -782,6 +1007,7 @@ export default function GadgetShopLanding() {
         </Container>
       </Section>
 
+<<<<<<< Updated upstream
       {/* Benefits Summary Section */}
       <Section className="py-20 bg-white">
         <Container>
@@ -957,6 +1183,25 @@ export default function GadgetShopLanding() {
               </Button>
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-coral-600">
                 Schedule a Demo
+=======
+      {/* CTA Section */}
+      <Section className="py-20 bg-gradient-to-r from-coral-500 to-red-500">
+        <Container>
+          <div className="text-center text-white space-y-8">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Ready to Grow Your Gadget Business?
+            </h2>
+            <p className="text-xl text-coral-100 max-w-2xl mx-auto">
+              Join hundreds of successful gadget retailers who have transformed their businesses 
+              with our proven marketing strategies and growth solutions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="secondary" size="lg" className="bg-white text-coral-600 hover:bg-coral-50">
+                Get Started Today
+              </Button>
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-coral-600">
+                Schedule Consultation
+>>>>>>> Stashed changes
               </Button>
             </div>
           </div>

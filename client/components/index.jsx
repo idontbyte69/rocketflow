@@ -17,6 +17,7 @@ export { default as EducationPage } from './EducationPage';
 export { default as OrgaProPage } from './OrgaProPage';
 export { default as StudyAbroad } from './StudyAbroad';
 export { default as HotelandResort } from './HotelandResortPage';
+<<<<<<< Updated upstream
 export { default as PhotographyPage } from './PhotographyPage';
 export { default as SalonPage } from './SalonPage';
 export { default as GadgetShopLanding } from './GadgetShopLanding';
@@ -25,3 +26,6 @@ export { default as CorporateOfficePage } from './CorporateOfficePage';
 export { default as EcommercePage } from './EcommercePage';
 export { default as TravelBooking } from './TravelBooking';
 export { default as Restaurants } from './Restaurants';
+=======
+export { default as GadgetShopLanding } from './GadgetShopLanding';
+>>>>>>> Stashed changes

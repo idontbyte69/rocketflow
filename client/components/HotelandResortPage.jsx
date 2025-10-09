@@ -250,6 +250,7 @@ export default function HotelandResort() {
     <div className="min-h-screen bg-gradient-to-br from-white to-gray-50 text-gray-800">
       <Navbar />
 
+<<<<<<< Updated upstream
       {/* HERO SECTION */}
 <section className="relative w-full pt-24 pb-16 bg-white text-gray-900 overflow-hidden">
   <Container>
@@ -272,6 +273,29 @@ export default function HotelandResort() {
           help travel agencies increase bookings, boost revenue, and
           delight their customers.
         </p>
+=======
+      {/* 🌅 HERO SECTION WITH VIDEO & GLASS EFFECT */}
+      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden text-black bg-gradient-to-br from-coral-50 via-orange-50 to-red-50">
+        <div className="relative z-10 container mx-auto flex justify-center px-6">
+          <div className="flex w-full max-w-8xl rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white/10 backdrop-blur-md">
+            {/* LEFT SIDE CONTENT */}
+            <div className="flex-1 p-8 md:p-12 flex flex-col justify-center text-left">
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
+                Automate Your <span className="text-[#dc2626]">Hospitality</span> Business
+              </h1>
+              <p className="text-gray-700 mb-8 text-lg md:text-xl leading-relaxed max-w-lg">
+                Smart solutions for restaurants, hotels, and resorts — from automated calls to booking management.
+              </p>
+              <div className="flex gap-4">
+                <Button size="lg" className="bg-[#F87171] text-white transition-all duration-300">
+                  Request Demo
+                </Button>
+                <Button variant="secondary" size="lg" className="border-[#F87171] text-[#dc2626] transition-all duration-300">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+>>>>>>> Stashed changes
 
         {/* Key Stats */}
         <div className="grid grid-cols-2 gap-4 mb-8 max-w-md mx-auto lg:mx-0">
