@@ -166,25 +166,49 @@ export default function SalonPage() {
             <p className="text-gray-600 max-w-2xl mx-auto mt-3">The features we offer to salons and parlors to automate communication, bookings and promotions.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <Card key={s.id} className="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all group h-full flex flex-col">
-                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <s.icon className="w-6 h-6" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+            {/* Background decorative elements */}
+            <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-gradient-radial from-primary-50 to-transparent opacity-30 rounded-full"></div>
+            
+            {services.map((s, index) => (
+              <Card
+                key={s.id}
+                className="p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden group h-[550px] flex flex-col"
+              >
+                {/* Card Background Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-secondary-50/0 group-hover:from-primary-50/30 group-hover:to-secondary-50/30 transition-all duration-500"></div>
+                
+                {/* Icon Section */}
+                <div className="relative flex justify-center mb-6">
+                  <div className="absolute -top-3 -left-3 w-24 h-24 bg-primary-100 rounded-full opacity-30 filter blur-xl group-hover:opacity-50 transition-opacity"></div>
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-300">
+                    <s.icon className="h-8 w-8 text-black" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 line-clamp-2">{s.title}</h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">{s.description}</p>
-                <div className="space-y-2 mb-6 flex-grow">
-                  <h4 className="font-semibold text-primary">Key Benefits:</h4>
-                  {s.impacts.map((impact, i) => (
-                    <div key={i} className="flex items-start gap-2 text-gray-700 leading-tight transition-colors group-hover:text-gray-900 text-sm">
-                      <span className="flex-shrink-0 break-normal whitespace-normal">{impact}</span>
-                    </div>
-                  ))}
+
+                {/* Content Section */}
+                <div className="relative z-10 flex flex-col flex-grow">
+                  <div className="flex-shrink-0">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-primary-dark transition-colors line-clamp-2 min-h-[4rem]">{s.title}</h3>
+                    <p className="text-gray-600 mb-6 text-lg text-center group-hover:text-gray-700 transition-colors line-clamp-3 min-h-[4.5rem]">{s.description}</p>
+                  </div>
+                  
+                  {/* Benefits Section */}
+                  <div className="space-y-3 flex flex-col w-full px-4 mb-6 flex-grow">
+                    {s.impacts.map((impact, i) => (
+                      <div key={i} className="flex items-center text-sm text-gray-700 group/item transition-all duration-300 hover:translate-x-1">
+                        <span className="w-3 h-3 bg-primary rounded-full mr-3 group-hover/item:scale-125 transition-transform flex-shrink-0"></span>
+                        <span className="group-hover/item:text-primary-dark transition-colors">{impact.replace('• ', '')}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Action Button */}
+                  <button className="w-full bg-gradient-to-r from-primary to-secondary text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg group-hover:shadow-xl relative overflow-hidden mt-auto">
+                    <span className="relative z-10">Learn More</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </button>
                 </div>
-                <button className="w-full bg-gradient-to-r from-primary to-secondary text-white px-4 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02]">
-                  Learn More
-                </button>
               </Card>
             ))}
           </div>
@@ -206,51 +230,117 @@ export default function SalonPage() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="min-w-full bg-white rounded-xl overflow-hidden shadow-lg">
-              <thead>
-                <tr className="bg-white border-b border-gray-200">
-                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Category</th>
-                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Problem</th>
-                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Rocket Flow Solution</th>
-                  <th className="px-6 py-4 text-left text-base font-bold uppercase tracking-wider text-black">Impact</th>
+            <table className="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+              <thead className="bg-coral-500 text-white">
+                <tr>
+                  <th className="px-6 py-4 text-left font-bold">Category</th>
+                  <th className="px-6 py-4 text-left font-bold">Problem</th>
+                  <th className="px-6 py-4 text-left font-bold">Rocket Flow Solution</th>
+                  <th className="px-6 py-4 text-left font-bold">Impact</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-base font-semibold text-black">Appointments</td>
-                  <td className="px-6 py-4 text-base text-gray-900">Costly client no-shows & last-minute cancellations</td>
-                  <td className="px-6 py-4 text-base text-gray-900">Automated SMS Appointment Reminders with Confirmation</td>
-                  <td className="px-6 py-4 text-base font-medium text-coral-600">Dramatically reduces no-shows, secures revenue</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <ChatBubbleLeftRightIcon className="w-6 h-6 text-coral-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Appointments</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Costly client no-shows & last-minute cancellations</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Automated SMS Appointment Reminders with Confirmation</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Dramatically reduces no-shows, secures revenue</span>
+                  </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-base font-semibold text-black">Client Management</td>
-                  <td className="px-6 py-4 text-base text-gray-900">Repetitive inquiries about price and services</td>
-                  <td className="px-6 py-4 text-base text-gray-900">24/7 AI Receptionist & Instant Service Menu Delivery</td>
-                  <td className="px-6 py-4 text-base font-medium text-coral-600">Saves hours of staff time daily</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <UserGroupIcon className="w-6 h-6 text-purple-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Client Management</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Repetitive inquiries about price and services</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">24/7 AI Receptionist & Instant Service Menu Delivery</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Saves hours of staff time daily</span>
+                  </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-base font-semibold text-black">Client Loyalty</td>
-                  <td className="px-6 py-4 text-base text-gray-900">Low rate of repeat business</td>
-                  <td className="px-6 py-4 text-base text-gray-900">Automated Re-engagement & Birthday Campaigns</td>
-                  <td className="px-6 py-4 text-base font-medium text-coral-600">Increases client retention & lifetime value</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <StarIcon className="w-6 h-6 text-yellow-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Client Loyalty</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Low rate of repeat business</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Automated Re-engagement & Birthday Campaigns</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Increases client retention & lifetime value</span>
+                  </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-base font-semibold text-black">Marketing</td>
-                  <td className="px-6 py-4 text-base text-gray-900">Empty slots during weekdays or off-seasons</td>
-                  <td className="px-6 py-4 text-base text-gray-900">Targeted Slow Day & Festival Offer Broadcasts</td>
-                  <td className="px-6 py-4 text-base font-medium text-coral-600">Fills the appointment book, boosts revenue</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <GlobeAltIcon className="w-6 h-6 text-blue-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Marketing</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Empty slots during weekdays or off-seasons</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Targeted Slow Day & Festival Offer Broadcasts</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Fills the appointment book, boosts revenue</span>
+                  </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-base font-semibold text-black">High-Value Bookings</td>
-                  <td className="px-6 py-4 text-base text-gray-900">Disorganized handling of bridal inquiries</td>
-                  <td className="px-6 py-4 text-base text-gray-900">Automated Bridal Inquiry Forms & Package Delivery</td>
-                  <td className="px-6 py-4 text-base font-medium text-coral-600">Professional process, more high-ticket bookings</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <CurrencyDollarIcon className="w-6 h-6 text-green-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">High-Value Bookings</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Disorganized handling of bridal inquiries</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Automated Bridal Inquiry Forms & Package Delivery</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Professional process, more high-ticket bookings</span>
+                  </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4 text-base font-semibold text-black">Operations</td>
-                  <td className="px-6 py-4 text-base text-gray-900">Manual time-consuming reminder calls</td>
-                  <td className="px-6 py-4 text-base text-gray-900">Fully Automated Communication Workflows</td>
-                  <td className="px-6 py-4 text-base font-medium text-coral-600">Frees up staff and improves efficiency</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <ArrowPathIcon className="w-6 h-6 text-indigo-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Operations</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Manual time-consuming reminder calls</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Fully Automated Communication Workflows</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Frees up staff and improves efficiency</span>
+                  </td>
                 </tr>
               </tbody>
             </table>
