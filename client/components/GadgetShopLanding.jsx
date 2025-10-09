@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from "react";
 import Link from "next/link";
@@ -425,8 +425,8 @@ export default function GadgetShopLanding() {
                     <span className="text-xs bg-coral-100 text-coral-600 px-2 py-1 rounded-full">AUTOMATED</span>
                   </div>
                   <div className="border-l-4 border-coral-500 pl-4">
-                    <p className="font-semibold text-gray-900">"iPhone 17 Coming Soon! 📱"</p>
-                    <p className="text-gray-600 text-sm mt-1">💬 152 comments • 🔄 45 shares</p>
+                    <p className="font-semibold text-gray-900">"iPhone 17 Coming Soon! ≡ƒô▒"</p>
+                    <p className="text-gray-600 text-sm mt-1">≡ƒÆ¼ 152 comments ΓÇó ≡ƒöä 45 shares</p>
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
@@ -638,7 +638,7 @@ export default function GadgetShopLanding() {
                     
                     <div className="flex justify-between items-center">
                       <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium border border-green-200 transform group-hover:scale-105 group-hover:bg-green-200 transition-all duration-300">
-                        ✓ {story.reviews}
+                        Γ£ô {story.reviews}
                       </span>
                       <span className="text-xs text-gray-500 font-medium transform group-hover:scale-105 group-hover:text-coral-600 transition-all duration-300">
                         Case Study #{story.id}
@@ -819,10 +819,10 @@ export default function GadgetShopLanding() {
                   </td>
                   <td className="px-6 py-4 text-gray-600">Manually managing chaotic pre-order inquiries</td>
                   <td className="px-6 py-4">
-                    <span className="font-semibold text-coral-600">Automated "Notify Me" Lists & Launch Day Broadcasts</span>
+                    <span className="font-semibold text-gray-600">Automated "Notify Me" Lists & Launch Day Broadcasts</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">Maximizes launch day sales, reduces manual work</span>
+                    <span className="font-bold text-gray-600">Maximizes launch day sales, reduces manual work</span>
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
@@ -836,10 +836,10 @@ export default function GadgetShopLanding() {
                   </td>
                   <td className="px-6 py-4 text-gray-600">Low-margin on primary gadgets, missed upsells</td>
                   <td className="px-6 py-4">
-                    <span className="font-semibold text-purple-600">Automated Post-Purchase Accessory Upsell Sequences</span>
+                    <span className="font-semibold text-gray-600">Automated Post-Purchase Accessory Upsell Sequences</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">Increases Average Order Value (AOV) & profit</span>
+                    <span className="font-bold text-gray-600">Increases Average Order Value (AOV) & profit</span>
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
@@ -853,10 +853,10 @@ export default function GadgetShopLanding() {
                   </td>
                   <td className="px-6 py-4 text-gray-600">Losing sales on out-of-stock items</td>
                   <td className="px-6 py-4">
-                    <span className="font-semibold text-green-600">Automated "Back-in-Stock" Notifications</span>
+                    <span className="font-semibold text-gray-600">Automated "Back-in-Stock" Notifications</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">Recaptures lost revenue, improves customer loyalty</span>
+                    <span className="font-bold text-gray-600">Recaptures lost revenue, improves customer loyalty</span>
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
@@ -870,10 +870,10 @@ export default function GadgetShopLanding() {
                   </td>
                   <td className="px-6 py-4 text-gray-600">Repetitive technical & policy questions</td>
                   <td className="px-6 py-4">
-                    <span className="font-semibold text-teal-600">24/7 AI Assistant for Specs, Warranty, EMI queries</span>
+                    <span className="font-semibold text-gray-600">24/7 AI Assistant for Specs, Warranty, EMI queries</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">Saves expert staff time, provides instant answers</span>
+                    <span className="font-bold text-gray-600">Saves expert staff time, provides instant answers</span>
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
@@ -887,10 +887,10 @@ export default function GadgetShopLanding() {
                   </td>
                   <td className="px-6 py-4 text-gray-600">Anxiety and support tickets from pre-order customers</td>
                   <td className="px-6 py-4">
-                    <span className="font-semibold text-indigo-600">Proactive Pre-Order & Shipping Status Updates via SMS</span>
+                    <span className="font-semibold text-gray-600">Proactive Pre-Order & Shipping Status Updates via SMS</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">Builds trust, reduces support load</span>
+                    <span className="font-bold text-gray-600">Builds trust, reduces support load</span>
                   </td>
                 </tr>
                 <tr className="hover:bg-gray-50 transition-colors">
@@ -904,10 +904,10 @@ export default function GadgetShopLanding() {
                   </td>
                   <td className="px-6 py-4 text-gray-600">Generic marketing to a diverse tech audience</td>
                   <td className="px-6 py-4">
-                    <span className="font-semibold text-blue-600">Smart Segmentation by Brand & Product Preference</span>
+                    <span className="font-semibold text-gray-600">Smart Segmentation by Brand & Product Preference</span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className="font-bold text-green-600">Higher ROI on targeted campaigns & upgrade offers</span>
+                    <span className="font-bold text-gray-600">Higher ROI on targeted campaigns & upgrade offers</span>
                   </td>
                 </tr>
               </tbody>

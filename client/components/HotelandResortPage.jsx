@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -322,7 +322,7 @@ export default function HotelandResort() {
 </section>
 
 
-      {/* 📊 TRUSTED STATS SECTION */}
+      {/* ≡ƒôè TRUSTED STATS SECTION */}
       <Section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 border border-white rounded-full"></div>
@@ -375,7 +375,7 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* 🏨 ABOUT SECTION */}
+      {/* ≡ƒÅ¿ ABOUT SECTION */}
       <Section background="white">
         <Container>
           <div className="flex flex-col md:flex-row items-center gap-10">
@@ -396,7 +396,7 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* 💻 SERVICES SECTION */}
+      {/* ≡ƒÆ╗ SERVICES SECTION */}
       {/* <section className="bg-white py-16">
         <Container>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
@@ -437,7 +437,7 @@ export default function HotelandResort() {
         </Container>
       </section>
 
-      {/* ❓ FAQ SECTION */}
+      {/* Γ¥ô FAQ SECTION */}
       <Section background="gradient">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
@@ -452,7 +452,7 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* 📈 CASE STUDIES SECTION */}
+      {/* ≡ƒôê CASE STUDIES SECTION */}
       <Section background="white">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-10">Success Stories</h2>
@@ -471,7 +471,7 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* 🤝 PARTNERS / INTEGRATIONS */}
+      {/* ≡ƒñ¥ PARTNERS / INTEGRATIONS */}
       <Section background="gradient">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-4">Partners & Integrations</h2>
@@ -500,7 +500,7 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* 📢 CTA BANNER */}
+      {/* ≡ƒôó CTA BANNER */}
       <div className="fixed bottom-0 left-0 w-full bg-[#F87171] text-white py-4 px-6 shadow-xl flex justify-between items-center z-50">
         <p className="font-semibold text-lg">Ready to boost your bookings?</p>
         <Button className="bg-white text-[#F87171] hover:bg-gray-100 transition-all">Book a Demo</Button>
