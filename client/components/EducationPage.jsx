@@ -17,7 +17,11 @@ import {
   BuildingOfficeIcon,
   GlobeAltIcon,
   BriefcaseIcon,
-  LanguageIcon
+  LanguageIcon,
+  CheckCircleIcon,
+  RocketLaunchIcon,
+  SparklesIcon,
+  UserGroupIcon
 } from '@heroicons/react/24/outline';
 
 export default function EducationPage() {
@@ -168,33 +172,33 @@ export default function EducationPage() {
               <div className="animate-fadeIn">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                   <ShinyText className="bg-gradient-to-r from-primary-dark via-primary to-secondary text-black">
-                    Strategic Education Marketing
+                    Rocket Flow for IELTS Coaching Centers
                   </ShinyText>
                 </h1>
                 <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed mx-auto max-w-3xl">
-                  Transform your institution's digital presence with data-driven marketing strategies designed to increase 
-                  enrollments, elevate your brand, and create meaningful connections with prospective students.
+                  Revolutionize your IELTS online coaching center with intelligent automation for lead generation, student management, 
+                  and operational efficiency. Act as a 24/7 virtual admissions officer and administrator.
                 </p>
               </div>
               
               {/* Key Stats - Enhanced with animations */}
               <div className="grid grid-cols-2 gap-4 mb-8 max-w-md mx-auto">
                 <div className="text-center p-5 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                  <div className="text-3xl font-bold text-primary-dark">58%</div>
-                  <div className="text-sm text-gray-600">Application Growth</div>
+                  <div className="text-3xl font-bold text-primary-dark">80%</div>
+                  <div className="text-sm text-gray-600">FAQs Automated</div>
                 </div>
                 <div className="text-center p-5 bg-gradient-to-br from-secondary-50 to-primary-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                  <div className="text-3xl font-bold text-primary-dark">4.2x</div>
-                  <div className="text-sm text-gray-600">Marketing ROI</div>
+                  <div className="text-3xl font-bold text-primary-dark">24/7</div>
+                  <div className="text-sm text-gray-600">Lead Capture</div>
                 </div>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary-600 hover:to-secondary-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-xl">
-                  Get Started Today
+                  Start Free Trial
                 </Button>
                 <Button className="border border-primary-dark text-primary-dark hover:bg-primary-dark hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-xl">
-                  View Case Studies
+                  Watch Demo
                 </Button>
               </div>
             </div>
@@ -233,56 +237,56 @@ export default function EducationPage() {
         <Container className="relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Measurable Results That Matter
+              Transform Your IELTS Center Operations
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our data-driven education marketing strategies deliver quantifiable outcomes for institutions of all sizes
+              Automate the entire student lifecycle from first inquiry to final enrollment
             </p>
           </div>
           
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center group">
               <div className="relative">
                 <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  650+
+                  80%
                 </div>
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
               </div>
-              <div className="text-gray-300 text-lg">Education Clients</div>
-              <div className="text-gray-400 text-sm mt-1">Across 5 Continents</div>
+              <div className="text-gray-300 text-lg">FAQs Handled</div>
+              <div className="text-gray-400 text-sm mt-1">Automatically by AI</div>
             </div>
             
             <div className="text-center group">
               <div className="relative">
                 <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  58%
+                  24/7
                 </div>
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
               </div>
-              <div className="text-gray-300 text-lg">Application Growth</div>
-              <div className="text-gray-400 text-sm mt-1">Year-Over-Year Average</div>
+              <div className="text-gray-300 text-lg">Lead Capture</div>
+              <div className="text-gray-400 text-sm mt-1">Never Miss an Inquiry</div>
             </div>
             
             <div className="text-center group">
               <div className="relative">
                 <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  4.2x
+                  92%
                 </div>
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
               </div>
-              <div className="text-gray-300 text-lg">Marketing ROI</div>
-              <div className="text-gray-400 text-sm mt-1">Verified Returns</div>
+              <div className="text-gray-300 text-lg">Attendance Boost</div>
+              <div className="text-gray-400 text-sm mt-1">With Automated Reminders</div>
             </div>
             
             <div className="text-center group">
               <div className="relative">
                 <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  42%
+                  3x
                 </div>
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
               </div>
-              <div className="text-gray-300 text-lg">Lower Cost</div>
-              <div className="text-gray-400 text-sm mt-1">Per Qualified Applicant</div>
+              <div className="text-gray-300 text-lg">Higher Conversion</div>
+              <div className="text-gray-400 text-sm mt-1">Lead to Enrollment</div>
             </div>
           </div>
           
@@ -291,19 +295,19 @@ export default function EducationPage() {
             <div className="inline-flex flex-wrap items-center justify-center space-x-8 text-gray-400">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">Google Premier Partner</span>
+                <span className="text-sm">Multi-Channel Automation</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">Meta Certified Agency</span>
+                <span className="text-sm">Smart Segmentation</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">Education Marketing Awards</span>
+                <span className="text-sm">Unified Communication Hub</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">HubSpot Diamond Partner</span>
+                <span className="text-sm">AI-Powered Counselor</span>
               </div>
             </div>
           </div>
@@ -319,230 +323,338 @@ export default function EducationPage() {
             <div className="absolute -top-6 right-1/3 w-12 h-12 rounded-full bg-secondary-50 filter blur-lg opacity-70"></div>
             
             <h2 className="relative text-4xl font-bold text-gray-900 mb-6 inline-block">
-              <span className="bg-gradient-to-r from-primary to-secondary text-black">Results-Driven</span> Marketing Solutions
+              <span className="bg-gradient-to-r from-primary to-secondary text-black">9 Powerful Features</span> for IELTS Centers
               <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Our specialized marketing strategies help educational institutions stand out in a competitive landscape, 
-              with a measurable focus on enrollment growth, student engagement, and institutional reputation.
+              Automate every aspect of your student journey from first contact to final enrollment and beyond
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
             {/* Background decorative elements */}
             <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-gradient-radial from-primary-50 to-transparent opacity-30 rounded-full"></div>
-            {/* AI-Powered Student Portal */}
+            
+            {/* 1. Instant Lead Capture */}
             <Card
               className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
-                hoveredSolution === 'student-portal' ? 'shadow-2xl border-blue-200 bg-blue-50/30' : ''
+                hoveredSolution === 'lead-capture' ? 'shadow-2xl border-blue-200 bg-blue-50/30' : ''
               }`}
-              onMouseEnter={() => setHoveredSolution('student-portal')}
+              onMouseEnter={() => setHoveredSolution('lead-capture')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
               <div className="relative flex justify-center">
                 <div className="absolute -top-3 -left-3 w-24 h-24 bg-blue-100 rounded-full opacity-30 filter blur-xl"></div>
                 <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
-                  <AcademicCapIcon className="w-10 h-10" />
+                  <BoltIcon className="w-10 h-10" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">AI-Powered Student Portal</h3>
-              <p className="text-gray-600 mb-6 text-lg text-center">Intelligent student management systems with automated enrollment, grade tracking, and personalized learning paths</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Instant Lead Capture & First Response</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Auto-reply to social media comments and send course brochures instantly</p>
               <div className="space-y-3 flex flex-col w-full px-4">
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-blue-700 transition-colors">Automated enrollment</span>
+                  <span className="group-hover:text-blue-700 transition-colors">Auto-reply to comments</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-blue-700 transition-colors">Grade management</span>
+                  <span className="group-hover:text-blue-700 transition-colors">Deliver brochures automatically</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-blue-700 transition-colors">Learning analytics</span>
+                  <span className="group-hover:text-blue-700 transition-colors">24/7 lead capture</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-blue-700 transition-colors">Parent communication</span>
+                  <span className="group-hover:text-blue-700 transition-colors">Free demo class links</span>
                 </div>
               </div>
             </Card>
 
-            {/* Educational Chatbots */}
+            {/* 2. Smart Student Segmentation */}
             <Card
               className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
-                hoveredSolution === 'virtual-assistant' ? 'shadow-2xl border-red-200 bg-red-50/30' : ''
+                hoveredSolution === 'segmentation' ? 'shadow-2xl border-red-200 bg-red-50/30' : ''
               }`}
-              onMouseEnter={() => setHoveredSolution('virtual-assistant')}
+              onMouseEnter={() => setHoveredSolution('segmentation')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
               <div className="relative flex justify-center">
                 <div className="absolute -top-3 -left-3 w-24 h-24 bg-red-100 rounded-full opacity-30 filter blur-xl"></div>
                 <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
-                  <ChatBubbleLeftRightIcon className="w-10 h-10" />
+                  <ChartBarIcon className="w-10 h-10" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Educational Chatbots</h3>
-              <p className="text-gray-600 mb-6 text-lg text-center">24/7 AI assistants to answer student queries, provide course information, and guide through admission processes</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Smart Student Segmentation</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Automatically tag students based on goals, weaknesses, and urgency</p>
               <div className="space-y-3 flex flex-col w-full px-4">
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-red-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-red-700 transition-colors">Instant query resolution</span>
+                  <span className="group-hover:text-red-700 transition-colors">Target score tracking</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-red-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-red-700 transition-colors">Course guidance</span>
+                  <span className="group-hover:text-red-700 transition-colors">Module weakness tags</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-red-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-red-700 transition-colors">Admission support</span>
+                  <span className="group-hover:text-red-700 transition-colors">Urgency classification</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-red-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-red-700 transition-colors">Multi-language support</span>
+                  <span className="group-hover:text-red-700 transition-colors">Status pipeline view</span>
                 </div>
               </div>
             </Card>
 
-            {/* Learning Management System */}
+            {/* 3. Automated Nurturing */}
             <Card
               className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
-                hoveredSolution === 'lms-platform' ? 'shadow-2xl border-yellow-200 bg-yellow-50/30' : ''
+                hoveredSolution === 'nurturing' ? 'shadow-2xl border-yellow-200 bg-yellow-50/30' : ''
               }`}
-              onMouseEnter={() => setHoveredSolution('lms-platform')}
+              onMouseEnter={() => setHoveredSolution('nurturing')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
               <div className="relative flex justify-center">
                 <div className="absolute -top-3 -left-3 w-24 h-24 bg-yellow-100 rounded-full opacity-30 filter blur-xl"></div>
                 <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
-                  <BookOpenIcon className="w-10 h-10" />
+                  <ChatBubbleOvalLeftIcon className="w-10 h-10" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Learning Management System</h3>
-              <p className="text-gray-600 mb-6 text-lg text-center">Comprehensive digital learning platforms with video streaming, assignment management, and progress tracking</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Automated Nurturing & Follow-Up</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Multi-channel sequences keep prospects engaged until enrollment</p>
               <div className="space-y-3 flex flex-col w-full px-4">
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-yellow-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-yellow-700 transition-colors">Video lectures</span>
+                  <span className="group-hover:text-yellow-700 transition-colors">Email sequences</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-yellow-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-yellow-700 transition-colors">Assignment tracking</span>
+                  <span className="group-hover:text-yellow-700 transition-colors">Messenger follow-ups</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-yellow-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-yellow-700 transition-colors">Quiz systems</span>
+                  <span className="group-hover:text-yellow-700 transition-colors">SMS reminders</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-yellow-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-yellow-700 transition-colors">Progress analytics</span>
+                  <span className="group-hover:text-yellow-700 transition-colors">Testimonial videos</span>
                 </div>
               </div>
             </Card>
 
-            {/* Mobile Learning Apps */}
+            {/* 4. Seamless Registration */}
             <Card
               className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
-                hoveredSolution === 'mobile-learning' ? 'shadow-2xl border-green-200 bg-green-50/30' : ''
+                hoveredSolution === 'registration' ? 'shadow-2xl border-green-200 bg-green-50/30' : ''
               }`}
-              onMouseEnter={() => setHoveredSolution('mobile-learning')}
+              onMouseEnter={() => setHoveredSolution('registration')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
               <div className="relative flex justify-center">
                 <div className="absolute -top-3 -left-3 w-24 h-24 bg-green-100 rounded-full opacity-30 filter blur-xl"></div>
                 <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
-                  <DevicePhoneMobileIcon className="w-10 h-10" />
+                  <AcademicCapIcon className="w-10 h-10" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Mobile Learning Apps</h3>
-              <p className="text-gray-600 mb-6 text-lg text-center">Engaging mobile applications for students to access courses, submit assignments, and connect with peers</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Seamless Registration & Onboarding</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Automate the entire enrollment process from form to confirmation</p>
               <div className="space-y-3 flex flex-col w-full px-4">
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-green-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-green-700 transition-colors">Offline learning</span>
+                  <span className="group-hover:text-green-700 transition-colors">CRM integration</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-green-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-green-700 transition-colors">Interactive content</span>
+                  <span className="group-hover:text-green-700 transition-colors">Team notifications</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-green-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-green-700 transition-colors">Peer collaboration</span>
+                  <span className="group-hover:text-green-700 transition-colors">Auto confirmation emails</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-green-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-green-700 transition-colors">Push notifications</span>
+                  <span className="group-hover:text-green-700 transition-colors">Payment details delivery</span>
                 </div>
               </div>
             </Card>
 
-            {/* Administrative Automation */}
+            {/* 5. Class & Test Reminders */}
             <Card
               className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
-                hoveredSolution === 'admin-automation' ? 'shadow-2xl border-purple-200 bg-purple-50/30' : ''
+                hoveredSolution === 'reminders' ? 'shadow-2xl border-purple-200 bg-purple-50/30' : ''
               }`}
-              onMouseEnter={() => setHoveredSolution('admin-automation')}
+              onMouseEnter={() => setHoveredSolution('reminders')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
               <div className="relative flex justify-center">
                 <div className="absolute -top-3 -left-3 w-24 h-24 bg-purple-100 rounded-full opacity-30 filter blur-xl"></div>
                 <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
-                  <CogIcon className="w-10 h-10" />
+                  <DevicePhoneMobileIcon className="w-10 h-10" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Administrative Automation</h3>
-              <p className="text-gray-600 mb-6 text-lg text-center">Streamlined administrative processes including fee management, attendance tracking, and report generation</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Automated Class & Test Reminders</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Reduce absenteeism with timely automated reminders</p>
               <div className="space-y-3 flex flex-col w-full px-4">
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-purple-700 transition-colors">Fee management</span>
+                  <span className="group-hover:text-purple-700 transition-colors">Class SMS reminders</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-purple-700 transition-colors">Attendance tracking</span>
+                  <span className="group-hover:text-purple-700 transition-colors">Mock test notifications</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-purple-700 transition-colors">Report generation</span>
+                  <span className="group-hover:text-purple-700 transition-colors">Payment reminders</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-purple-700 transition-colors">Staff management</span>
+                  <span className="group-hover:text-purple-700 transition-colors">Zoom link delivery</span>
                 </div>
               </div>
             </Card>
 
-            {/* Virtual Classroom Solutions */}
+            {/* 6. Targeted Batch Promotion */}
             <Card
               className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
-                hoveredSolution === 'virtual-classroom' ? 'shadow-2xl border-indigo-200 bg-indigo-50/30' : ''
+                hoveredSolution === 'promotion' ? 'shadow-2xl border-indigo-200 bg-indigo-50/30' : ''
               }`}
-              onMouseEnter={() => setHoveredSolution('virtual-classroom')}
+              onMouseEnter={() => setHoveredSolution('promotion')}
               onMouseLeave={() => setHoveredSolution(null)}
             >
               <div className="relative flex justify-center">
                 <div className="absolute -top-3 -left-3 w-24 h-24 bg-indigo-100 rounded-full opacity-30 filter blur-xl"></div>
                 <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
-                  <ComputerDesktopIcon className="w-10 h-10" />
+                  <BookOpenIcon className="w-10 h-10" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Virtual Classroom Solutions</h3>
-              <p className="text-gray-600 mb-6 text-lg text-center">Interactive online learning environments with live streaming, screen sharing, and collaborative tools</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Targeted Batch & Course Promotion</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Run specific campaigns for different student segments</p>
               <div className="space-y-3 flex flex-col w-full px-4">
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-indigo-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-indigo-700 transition-colors">Live streaming</span>
+                  <span className="group-hover:text-indigo-700 transition-colors">Segment-based campaigns</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-indigo-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-indigo-700 transition-colors">Screen sharing</span>
+                  <span className="group-hover:text-indigo-700 transition-colors">Workshop promotions</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-indigo-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-indigo-700 transition-colors">Interactive whiteboards</span>
+                  <span className="group-hover:text-indigo-700 transition-colors">Last minute prep offers</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700 group">
                   <span className="w-3 h-3 bg-indigo-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                  <span className="group-hover:text-indigo-700 transition-colors">Recording capabilities</span>
+                  <span className="group-hover:text-indigo-700 transition-colors">Upsell opportunities</span>
+                </div>
+              </div>
+            </Card>
+
+            {/* 7. AI Admissions Counselor */}
+            <Card
+              className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
+                hoveredSolution === 'ai-counselor' ? 'shadow-2xl border-pink-200 bg-pink-50/30' : ''
+              }`}
+              onMouseEnter={() => setHoveredSolution('ai-counselor')}
+              onMouseLeave={() => setHoveredSolution(null)}
+            >
+              <div className="relative flex justify-center">
+                <div className="absolute -top-3 -left-3 w-24 h-24 bg-pink-100 rounded-full opacity-30 filter blur-xl"></div>
+                <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
+                  <ChatBubbleLeftRightIcon className="w-10 h-10" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">24/7 AI-Powered Admissions Counselor</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Handle common inquiries automatically, qualify leads intelligently</p>
+              <div className="space-y-3 flex flex-col w-full px-4">
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-pink-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-pink-700 transition-colors">Course fee queries</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-pink-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-pink-700 transition-colors">Duration & timings</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-pink-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-pink-700 transition-colors">Study materials info</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-pink-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-pink-700 transition-colors">Lead qualification</span>
+                </div>
+              </div>
+            </Card>
+
+            {/* 8. Performance Analytics */}
+            <Card
+              className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
+                hoveredSolution === 'analytics' ? 'shadow-2xl border-orange-200 bg-orange-50/30' : ''
+              }`}
+              onMouseEnter={() => setHoveredSolution('analytics')}
+              onMouseLeave={() => setHoveredSolution(null)}
+            >
+              <div className="relative flex justify-center">
+                <div className="absolute -top-3 -left-3 w-24 h-24 bg-orange-100 rounded-full opacity-30 filter blur-xl"></div>
+                <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
+                  <ChartBarIcon className="w-10 h-10" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Performance Analytics</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Track and optimize every step of your admissions funnel</p>
+              <div className="space-y-3 flex flex-col w-full px-4">
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-orange-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-orange-700 transition-colors">Campaign tracking</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-orange-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-orange-700 transition-colors">Conversion rates</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-orange-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-orange-700 transition-colors">Message effectiveness</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-orange-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-orange-700 transition-colors">ROI optimization</span>
+                </div>
+              </div>
+            </Card>
+
+            {/* 9. Unified Communication Hub */}
+            <Card
+              className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
+                hoveredSolution === 'communication-hub' ? 'shadow-2xl border-teal-200 bg-teal-50/30' : ''
+              }`}
+              onMouseEnter={() => setHoveredSolution('communication-hub')}
+              onMouseLeave={() => setHoveredSolution(null)}
+            >
+              <div className="relative flex justify-center">
+                <div className="absolute -top-3 -left-3 w-24 h-24 bg-teal-100 rounded-full opacity-30 filter blur-xl"></div>
+                <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
+                  <CogIcon className="w-10 h-10" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Unified Student Communication Hub</h3>
+              <p className="text-gray-600 mb-6 text-lg text-center">Manage all conversations in one dashboard with full context</p>
+              <div className="space-y-3 flex flex-col w-full px-4">
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-teal-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-teal-700 transition-colors">Single dashboard</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-teal-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-teal-700 transition-colors">Full history view</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-teal-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-teal-700 transition-colors">No lost messages</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-700 group">
+                  <span className="w-3 h-3 bg-teal-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
+                  <span className="group-hover:text-teal-700 transition-colors">Team coordination</span>
                 </div>
               </div>
             </Card>
@@ -550,140 +662,166 @@ export default function EducationPage() {
         </Container>
       </Section>
 
-      {/* Benefits Section */}
-      <Section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50 relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-40 h-40 bg-primary-100 rounded-full opacity-50 transform translate-x-1/2 -translate-y-1/2 filter blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-60 h-60 bg-secondary-100 rounded-full opacity-40 transform -translate-x-1/2 translate-y-1/2 filter blur-3xl"></div>
-        
-        <Container className="relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
-              Why Educational Institutions 
-              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Choose Our Marketing</span>
-              <div className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our digital marketing strategies deliver measurable improvements in enrollment, brand awareness, 
-              and institutional growth.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {educationBenefits.map((benefit, index) => (
-              <Card
-                key={index}
-                className={`p-8 rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all duration-500 transform ${
-                  hoveredBenefit === index ? 'shadow-2xl border-primary-100 scale-[1.03]' : 'hover:-translate-y-2'
-                }`}
-                onMouseEnter={() => setHoveredBenefit(index)}
-                onMouseLeave={() => setHoveredBenefit(null)}
-              >
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white shadow-lg mb-4">
-                    <benefit.icon className="w-8 h-8 text-black" />
-                  </div>
-                  <div className="w-full">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                    <p className="text-gray-600 mb-5 text-lg">{benefit.description}</p>
-                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-4 shadow-inner mx-auto">
-                      <span className="text-base font-bold text-primary-dark flex justify-center items-center">
-                        <span className="w-3 h-3 bg-secondary rounded-full mr-2"></span>
-                        {benefit.metrics}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* Institution Types Section */}
-      <Section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      {/* Complete Solution Overview Section */}
+      <Section className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
-              Custom Marketing For Each 
-              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Education Sector</span>
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+            <ShinyText className="text-primary-600 font-semibold text-sm uppercase tracking-wider">
+              Complete Solution Overview
+            </ShinyText>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4">
+              Transform Every Challenge into <span className="text-primary-500">Growth Opportunity</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Each educational sector has unique audiences, challenges, and opportunities. Our marketing strategies are precisely tailored to your institution's specific context and goals.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
+              See how Rocket Flow solves the biggest challenges facing IELTS coaching centers in today's competitive market
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {institutionTypes.map((type, index) => (
-              <Card
-                key={index}
-                className="p-6 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 text-center hover:border-primary transform hover:-translate-y-2 bg-white"
-              >
-                <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center shadow-md">
-                  <type.icon className="w-8 h-8 text-primary-dark" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{type.name}</h3>
-                <p className="text-gray-600">{type.description}</p>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </Section>
 
-      {/* Case Studies Section */}
-      <Section className="py-20 bg-gradient-to-br from-gray-50 to-primary-50 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-gradient-radial from-secondary-100 to-transparent opacity-60 rounded-full"></div>
-        <div className="absolute -left-10 top-10 w-40 h-40 bg-gradient-radial from-primary-100 to-transparent opacity-50 rounded-full"></div>
-        
-        <Container className="relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
-              Marketing Success Stories from 
-              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Educational Leaders</span>
-              <div className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how we've helped educational institutions transform their digital presence and boost enrollment through strategic marketing.
-            </p>
+          <div className="overflow-x-auto rounded-2xl shadow-xl">
+            <table className="w-full bg-white">
+              <thead className="bg-red-500 from-primary-600 to-primary-500">
+                <tr>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">Category</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">Problem</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">Rocket Flow Solution</th>
+                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">Impact</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-colors">
+                        <ChatBubbleLeftRightIcon className="w-5 h-5 text-primary-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-primary-600">Lead Management</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">High volume of repetitive inquiries</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">AI Chat Assistant & Automated First Response</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <CheckCircleIcon className="w-4 h-4 mr-1" />
+                      80% of FAQs handled automatically
+                    </span>
+                  </td>
+                </tr>
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                        <UserGroupIcon className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-blue-600">Conversion Rate</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Leads go cold after the first inquiry</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Multi-channel Nurturing Sequences (Email, SMS)</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <ChartBarIcon className="w-4 h-4 mr-1" />
+                      Higher lead-to-enrollment ratio
+                    </span>
+                  </td>
+                </tr>
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                        <CogIcon className="w-5 h-5 text-purple-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-purple-600">Admin Overload</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Manually sending class/test reminders</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Automated SMS & Email Reminder System</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <CheckCircleIcon className="w-4 h-4 mr-1" />
+                      Increased attendance, less admin work
+                    </span>
+                  </td>
+                </tr>
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors">
+                        <ChartBarIcon className="w-5 h-5 text-green-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-green-600">Sales & Marketing</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Sending generic offers to everyone</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Smart Tagging & Segmented Campaigns</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <RocketLaunchIcon className="w-4 h-4 mr-1" />
+                      Higher campaign ROI & upsells
+                    </span>
+                  </td>
+                </tr>
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                        <BookOpenIcon className="w-5 h-5 text-orange-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-orange-600">Data Management</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Manual data entry for new students</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Automated Form Integration to CRM/Sheets</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <CheckCircleIcon className="w-4 h-4 mr-1" />
+                      Error-free, organized student data
+                    </span>
+                  </td>
+                </tr>
+                <tr className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
+                  <td className="px-6 py-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center group-hover:bg-pink-200 transition-colors">
+                        <SparklesIcon className="w-5 h-5 text-pink-600" />
+                      </div>
+                      <span className="text-base font-semibold text-gray-900 group-hover:text-pink-600">Student Experience</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Slow response times & scattered info</td>
+                  <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">Unified Communication Hub & Instant Info Delivery</td>
+                  <td className="px-6 py-5">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">
+                      <StarIcon className="w-4 h-4 mr-1" />
+                      Professional and seamless student journey
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {caseStudies.map((study, index) => (
-              <Card
-                key={index}
-                className="p-8 rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
-              >
-                <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg">
-                  <study.icon className="w-10 h-10 text-black" />
+
+          <div className="mt-16">
+            <div className="bg-gradient-to-r from-primary-50 to-white rounded-2xl p-8 border border-primary-100">
+              <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">Revolutionize Your IELTS Coaching Center</h3>
+              <p className="text-lg text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+                From lead management to student experience, Rocket Flow automates your entire coaching workflow,
+                letting you focus on what matters most - helping students achieve their dream IELTS scores.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex items-center space-x-3 justify-center">
+                  <SparklesIcon className="w-6 h-6 text-primary-600" />
+                  <span className="font-semibold text-gray-800">Save 20+ hours/week</span>
                 </div>
-                <h3 className="text-2xl font-bold text-center text-gray-900 mb-6">{study.title}</h3>
-                <div className="space-y-5">
-                  <div className="bg-red-50 p-4 rounded-xl">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-                      <span className="font-bold text-red-700">Challenge</span>
-                    </div>
-                    <p className="text-gray-700">{study.challenge}</p>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-xl">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
-                      <span className="font-bold text-blue-700">Solution</span>
-                    </div>
-                    <p className="text-gray-700">{study.solution}</p>
-                  </div>
-                  <div className="bg-green-50 p-4 rounded-xl">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
-                      <span className="font-bold text-green-700">Result</span>
-                    </div>
-                    <p className="text-gray-700">{study.result}</p>
-                  </div>
+                <div className="flex items-center space-x-3 justify-center">
+                  <ChartBarIcon className="w-6 h-6 text-primary-600" />
+                  <span className="font-semibold text-gray-800">Increase enrollments by 40%</span>
                 </div>
-              </Card>
-            ))}
+                <div className="flex items-center space-x-3 justify-center">
+                  <RocketLaunchIcon className="w-6 h-6 text-primary-600" />
+                  <span className="font-semibold text-gray-800">Scale your coaching center</span>
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </Section>
@@ -693,12 +831,12 @@ export default function EducationPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
-              What Our Marketing 
-              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Clients Say</span>
+              What IELTS Center 
+              <span className="bg-gradient-to-r from-primary to-secondary text-black"> Owners Say</span>
               <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Hear from educational leaders who have transformed their enrollment and brand visibility with our marketing strategies
+              Hear from coaching center owners who transformed their operations with Rocket Flow
             </p>
           </div>
           
@@ -711,17 +849,17 @@ export default function EducationPage() {
               <div className="relative">
                 <div className="flex flex-col items-center mb-6 text-center">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-black font-bold text-xl shadow-md mb-3">
-                    SM
+                    PR
                   </div>
                   <div>
-                    <div className="font-bold text-xl text-gray-900">Dr. Sarah Mitchell</div>
-                    <div className="text-gray-600">Dean, Metro University</div>
+                    <div className="font-bold text-xl text-gray-900">Priya Sharma</div>
+                    <div className="text-gray-600">Director, IELTS Excellence Academy</div>
                   </div>
                 </div>
                 <div className="relative text-center">
                   <div className="text-4xl text-primary-500 absolute -top-5 left-0 opacity-40">"</div>
                   <p className="text-gray-700 italic text-lg relative z-10 mb-5 px-6">
-                    The department-specific SEO campaigns were transformative. Our MBA program saw a 92% increase in qualified applicants, while our specialized engineering programs achieved an 83% boost in conversion rates from site visits to applications.
+                    Rocket Flow completely automated our student inquiries. We now capture every lead 24/7, and our enrollment rate increased by 67%. The AI chatbot handles 80% of common questions, freeing up our counselors to focus on serious prospects.
                   </p>
                   <div className="text-4xl text-primary-500 absolute bottom-0 right-0 opacity-40">"</div>
                 </div>
@@ -741,17 +879,17 @@ export default function EducationPage() {
               <div className="relative">
                 <div className="flex flex-col items-center mb-6 text-center">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-black font-bold text-xl shadow-md mb-3">
-                    MP
+                    AK
                   </div>
                   <div>
-                    <div className="font-bold text-xl text-gray-900">Mark Peterson</div>
-                    <div className="text-gray-600">Principal, International School</div>
+                    <div className="font-bold text-xl text-gray-900">Arun Kumar</div>
+                    <div className="text-gray-600">Founder, IELTS Pro Institute</div>
                   </div>
                 </div>
                 <div className="relative text-center">
                   <div className="text-4xl text-secondary-500 absolute -top-5 left-0 opacity-40">"</div>
                   <p className="text-gray-700 italic text-lg relative z-10 mb-5 px-6">
-                    The multilingual student journey campaigns completely revitalized our international recruitment. We've reduced cost per enrollment by 42% while increasing international student diversity by 76% across our five campuses.
+                    The automated reminder system is a game-changer! Our class attendance jumped from 65% to 92%. Students get timely SMS reminders for classes and mock tests. Plus, the segmented campaigns help us upsell advanced workshops to the right students.
                   </p>
                   <div className="text-4xl text-secondary-500 absolute bottom-0 right-0 opacity-40">"</div>
                 </div>
@@ -783,20 +921,21 @@ export default function EducationPage() {
         <Container className="relative z-10">
           <div className="text-center text-Text">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-fadeIn">
-              Transform Your Enrollment Pipeline
+              Ready to Transform Your IELTS Coaching Center?
             </h2>
             <p className="text-xl mb-10 opacity-90 max-w-3xl mx-auto leading-relaxed">
-              Get a customized marketing strategy that focuses on your institution's unique strengths and addresses 
-              your specific enrollment challenges with proven, data-backed solutions.
+              Join hundreds of coaching centers that have automated their operations, increased enrollments, 
+              and provided exceptional student experiences with Rocket Flow.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button className="bg-white text-primary-dark hover:bg-gray-100 px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl text-lg">
-                Request Enrollment Analysis
+                Start Free 14-Day Trial
               </Button>
               <Button className="border-2 border-white text-white hover:bg-white hover:text-primary-dark px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 text-lg">
-                Explore Marketing Solutions
+                Schedule a Demo
               </Button>
             </div>
+            <p className="text-sm mt-6 opacity-75">No credit card required • Setup in 5 minutes • Cancel anytime</p>
           </div>
         </Container>
       </Section>
