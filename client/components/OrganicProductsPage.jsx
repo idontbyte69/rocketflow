@@ -363,7 +363,7 @@ export default function OrganicProductsPage() {
             </div>
           </div>
 
-          {/* Summary of Benefits - Unique Card-Style Table */}
+          {/* Summary of Benefits - Table Format */}
           <div className="mt-16 max-w-7xl mx-auto">
             <div className="text-center mb-10">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -373,186 +373,165 @@ export default function OrganicProductsPage() {
               <p className="text-gray-600 text-lg">See exactly how we solve your biggest challenges</p>
             </div>
 
-            <div className="grid grid-cols-1 gap-6">
-              {/* Row 1 - Sales & Orders */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-green-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  <div className="md:col-span-3 flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <ShoppingCartIcon className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-xs uppercase tracking-wider text-green-600 font-bold mb-1">Category</div>
-                      <div className="text-lg font-bold text-gray-900">Sales & Orders</div>
-                    </div>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-red-600 font-bold mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">Manual, error-prone order taking from DMs</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-blue-600 font-bold mb-2">✨ Solution</div>
-                    <p className="text-gray-900 font-semibold leading-relaxed">Automated Ordering Assistant in Messenger</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-green-600 font-bold mb-2">🚀 Impact</div>
-                    <div className="bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-xl border-2 border-green-200">
-                      <p className="text-sm font-bold text-green-800">Faster sales, fewer errors, increased revenue</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* Table */}
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600">
+                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-green-400">
+                      Category
+                    </th>
+                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-green-400">
+                      Problem
+                    </th>
+                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-green-400">
+                      Rocket Flow Solution
+                    </th>
+                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
+                      Impact
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  {/* Sales & Orders */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <ShoppingCartIcon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Sales & Orders</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">Manual, error-prone order taking from DMs</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">Automated Ordering Assistant in Messenger</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Faster sales, fewer errors, increased revenue
+                      </p>
+                    </td>
+                  </tr>
 
-              {/* Row 2 - Customer Retention */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-emerald-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  <div className="md:col-span-3 flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <UserGroupIcon className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-xs uppercase tracking-wider text-emerald-600 font-bold mb-1">Category</div>
-                      <div className="text-lg font-bold text-gray-900">Customer Retention</div>
-                    </div>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-red-600 font-bold mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">Low rate of repeat purchases</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-blue-600 font-bold mb-2">✨ Solution</div>
-                    <p className="text-gray-900 font-semibold leading-relaxed">Automated Re-order Reminders (e.g., for honey, oil)</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-emerald-600 font-bold mb-2">🚀 Impact</div>
-                    <div className="bg-gradient-to-r from-emerald-100 to-teal-100 px-4 py-2 rounded-xl border-2 border-emerald-200">
-                      <p className="text-sm font-bold text-emerald-800">Massively boosts customer lifetime value</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  {/* Customer Retention */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <UserGroupIcon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Customer Retention</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">Low rate of repeat purchases</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">Automated Re-order Reminders (e.g., for honey, oil)</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Massively boosts customer lifetime value
+                      </p>
+                    </td>
+                  </tr>
 
-              {/* Row 3 - Customer Service */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-teal-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  <div className="md:col-span-3 flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <ChatBubbleLeftRightIcon className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-xs uppercase tracking-wider text-teal-600 font-bold mb-1">Category</div>
-                      <div className="text-lg font-bold text-gray-900">Customer Service</div>
-                    </div>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-red-600 font-bold mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">Repetitive questions about price, delivery, benefits</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-blue-600 font-bold mb-2">✨ Solution</div>
-                    <p className="text-gray-900 font-semibold leading-relaxed">24/7 AI-Powered Product Expert & FAQ Handler</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-teal-600 font-bold mb-2">🚀 Impact</div>
-                    <div className="bg-gradient-to-r from-teal-100 to-cyan-100 px-4 py-2 rounded-xl border-2 border-teal-200">
-                      <p className="text-sm font-bold text-teal-800">Saves hours daily, builds customer trust</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  {/* Customer Service */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <ChatBubbleLeftRightIcon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Customer Service</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">Repetitive questions about price, delivery, benefits</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">24/7 AI-Powered Product Expert & FAQ Handler</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Saves hours daily, builds customer trust
+                      </p>
+                    </td>
+                  </tr>
 
-              {/* Row 4 - Marketing */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-lime-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-lime-50 to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  <div className="md:col-span-3 flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-lime-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <SparklesIcon className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-xs uppercase tracking-wider text-lime-600 font-bold mb-1">Category</div>
-                      <div className="text-lg font-bold text-gray-900">Marketing</div>
-                    </div>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-red-600 font-bold mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">Announcing new stock or offers manually</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-blue-600 font-bold mb-2">✨ Solution</div>
-                    <p className="text-gray-900 font-semibold leading-relaxed">Targeted "New Stock" Alerts & Promotional Broadcasts</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-lime-600 font-bold mb-2">🚀 Impact</div>
-                    <div className="bg-gradient-to-r from-lime-100 to-green-100 px-4 py-2 rounded-xl border-2 border-lime-200">
-                      <p className="text-sm font-bold text-lime-800">Sells inventory faster, higher campaign ROI</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  {/* Marketing */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-lime-50 hover:to-green-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-lime-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <SparklesIcon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Marketing</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">Announcing new stock or offers manually</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">Targeted "New Stock" Alerts & Promotional Broadcasts</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Sells inventory faster, higher campaign ROI
+                      </p>
+                    </td>
+                  </tr>
 
-              {/* Row 5 - Operations */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-green-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  <div className="md:col-span-3 flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-700 to-emerald-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <TruckIcon className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-xs uppercase tracking-wider text-green-600 font-bold mb-1">Category</div>
-                      <div className="text-lg font-bold text-gray-900">Operations</div>
-                    </div>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-red-600 font-bold mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">Customers constantly asking "Where's my order?"</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-blue-600 font-bold mb-2">✨ Solution</div>
-                    <p className="text-gray-900 font-semibold leading-relaxed">Automated Order & Delivery Status Updates via SMS</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-green-600 font-bold mb-2">🚀 Impact</div>
-                    <div className="bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-xl border-2 border-green-200">
-                      <p className="text-sm font-bold text-green-800">Reduces support queries, improves satisfaction</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  {/* Operations */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-green-700 to-emerald-700 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <TruckIcon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Operations</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">Customers constantly asking "Where's my order?"</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">Automated Order & Delivery Status Updates via SMS</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Reduces support queries, improves satisfaction
+                      </p>
+                    </td>
+                  </tr>
 
-              {/* Row 6 - Business Growth */}
-              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-emerald-200">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-50 to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative grid grid-cols-1 md:grid-cols-12 gap-6 p-6 md:p-8">
-                  <div className="md:col-span-3 flex items-center gap-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-green-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <ChartBarIcon className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-xs uppercase tracking-wider text-emerald-600 font-bold mb-1">Category</div>
-                      <div className="text-lg font-bold text-gray-900">Business Growth</div>
-                    </div>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-red-600 font-bold mb-2">❌ Problem</div>
-                    <p className="text-gray-700 leading-relaxed">Difficulty managing B2B or subscriptions</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-blue-600 font-bold mb-2">✨ Solution</div>
-                    <p className="text-gray-900 font-semibold leading-relaxed">Streamlined Forms for Bulk Orders & Veggie Boxes</p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <div className="text-xs uppercase tracking-wider text-emerald-600 font-bold mb-2">🚀 Impact</div>
-                    <div className="bg-gradient-to-r from-emerald-100 to-green-100 px-4 py-2 rounded-xl border-2 border-emerald-200">
-                      <p className="text-sm font-bold text-emerald-800">Opens new, recurring revenue channels</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  {/* Business Growth */}
+                  <tr className="group hover:bg-gradient-to-r hover:from-emerald-50 hover:to-green-50 transition-all duration-300">
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-green-700 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <ChartBarIcon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">Business Growth</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">Difficulty managing B2B or subscriptions</p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">Streamlined Forms for Bulk Orders & Veggie Boxes</p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        Opens new, recurring revenue channels
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </Container>

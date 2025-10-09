@@ -210,6 +210,174 @@ export default function Restaurants() {
         </div>
       </section>
 
+      {/* BENEFITS SUMMARY TABLE */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Benefits Summary
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white shadow-lg rounded-lg overflow-hidden">
+              <thead>
+                <tr className="bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 text-white">
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Category
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Problem
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Rocket Flow Solution
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Impact
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {/* Revenue & Orders */}
+                <tr className="hover:bg-gradient-to-r hover:from-orange-50 hover:to-amber-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Revenue & Orders</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">High commissions from delivery apps</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Automated Direct Ordering via Messenger</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Increased profit margins</p>
+                  </td>
+                </tr>
+
+                {/* Reservations */}
+                <tr className="hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Reservations</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Costly no-shows</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Automated SMS Reminders with Confirmation</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Slashes no-show rates</p>
+                  </td>
+                </tr>
+
+                {/* Marketing */}
+                <tr className="hover:bg-gradient-to-r hover:from-orange-50 hover:to-amber-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Marketing</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Empty tables on slow weekdays</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Targeted Midweek Promotions</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Drives footfall during off-peak</p>
+                  </td>
+                </tr>
+
+                {/* Customer Service */}
+                <tr className="hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Customer Service</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Staff overwhelmed with calls/DMs</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">24/7 AI-Powered Assistant</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Frees up staff</p>
+                  </td>
+                </tr>
+
+                {/* Customer Loyalty */}
+                <tr className="hover:bg-gradient-to-r hover:from-orange-50 hover:to-amber-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Customer Loyalty</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Low rate of repeat visits</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Automated Post-Dining Feedback & Offers</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Increases retention & LTV</p>
+                  </td>
+                </tr>
+
+                {/* High-Value Bookings */}
+                <tr className="hover:bg-gradient-to-r hover:from-amber-50 hover:to-yellow-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">High-Value Bookings</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Disorganized party/catering inquiries</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Streamlined Forms for Events</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Captures more high-ticket events</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* TRUSTED SECTION */}
       <section className="py-20 bg-gray-50 relative overflow-hidden">
         {/* Decorative background circle */}
