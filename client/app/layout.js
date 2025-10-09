@@ -12,6 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://rocketflow.com'),
   title: {
     default: "RocketFlow | All-in-One Marketing Automation Platform",
     template: "%s | RocketFlow"

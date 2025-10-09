@@ -1,4 +1,4 @@
-import { CorporateOfficePage } from '@/components';
+import { CorporateOfficePage } from '../../components';
 
 export default function CorporateOffice() {
   return <CorporateOfficePage />;

@@ -2,7 +2,8 @@
 const nextConfig = {
   // Enable experimental features for better SEO
   experimental: {
-    optimizeCss: true,
+    // Disable CSS optimization temporarily due to critters dependency issue
+    // optimizeCss: true,
     optimizeServerReact: true,
   },
   
@@ -17,8 +18,7 @@ const nextConfig = {
   // Compression
   compress: true,
   
-  // Performance optimizations
-  swcMinify: true,
+  // Performance optimizations (swcMinify is enabled by default in Next.js 15)
   
   // Headers for better SEO and performance
   async headers() {
