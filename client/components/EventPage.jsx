@@ -31,60 +31,103 @@ export default function EventPage() {
 
   const automationServices = [
     {
-      id: 'instant-reply',
-      title: '24/7 Instant Reply',
-      description: 'Automated response system ensuring immediate engagement with your audience at any time',
-      icon: ClockIcon,
-      features: ['Round-the-clock availability', 'Customized responses', 'Multi-language support']
-    },
-    {
-      id: 'comment-inbox',
-      title: 'Comment-to-Inbox Transfer',
-      description: 'Automatically convert social media comments into organized inbox messages for better management',
+      id: 'instant-inquiry',
+      title: 'Instant Inquiry Management',
+      description: 'Comprehensive management system for all event types',
       icon: InboxIcon,
-      features: ['Instant notification', 'Priority sorting', 'Threading support']
+      features: [
+        'Impress potential high-value clients with immediate, professional responses',
+        'Capture and qualify leads before your competitors can',
+        'Automatically filter and direct inquiries to the right team member'
+      ]
     },
     {
-      id: 'event-info',
-      title: 'Automated Event Information',
-      description: 'Provide instant access to event details, schedules, and updates automatically',
-      icon: InformationCircleIcon,
-      features: ['Schedule updates', 'FAQ automation', 'Custom event alerts']
+      id: 'smart-segmentation',
+      title: 'Smart Lead & Attendee Segmentation',
+      description: 'Intelligent audience segmentation and management',
+      icon: UserGroupIcon,
+      features: [
+        'Clean pipeline for sales team and organized lists for marketing',
+        'Understand your audience for better event planning',
+        'Send highly relevant communication to every contact'
+      ]
     },
     {
-      id: 'location-share',
-      title: 'Location Share',
-      description: 'Automated location sharing system with real-time updates and directions',
-      icon: MapIcon,
-      features: ['Real-time tracking', 'Direction assistance', 'Venue details']
-    },
-    {
-      id: 'smart-transfer',
-      title: 'Smart Human Transfer',
-      description: 'Intelligent system to seamlessly transfer queries to human agents when needed',
+      id: 'automated-journeys',
+      title: 'Automated Client & Attendee Journeys',
+      description: 'Seamless automation for client and attendee communication',
       icon: ArrowPathRoundedSquareIcon,
-      features: ['Priority routing', 'Context preservation', 'Seamless handover']
+      features: [
+        'Nurture high-value leads to increase booking rates',
+        'Build excitement and ensure smooth attendee experience',
+        'Automate 90% of pre-event communication'
+      ]
     },
     {
-      id: 'contact-collection',
-      title: 'Contact Collection',
-      description: 'Automated system for gathering and organizing attendee contact information',
-      icon: UserPlusIcon,
-      features: ['Data validation', 'GDPR compliance', 'Integration ready']
+      id: 'registration',
+      title: 'Seamless Registration System',
+      description: 'Streamlined client briefing and ticket registration process',
+      icon: TicketIcon,
+      features: [
+        'Collect detailed client requirements structurally',
+        'Automate ticket sales and delivery',
+        'Reduce manual data entry and administrative work'
+      ]
     },
     {
-      id: 'vip-assistance',
-      title: 'VIP Assistance',
-      description: 'Premium automated service handling for VIP guests and special requests',
-      icon: TrophyIcon,
-      features: ['Priority handling', 'Exclusive access', 'Personalized service']
+      id: 'consultation',
+      title: 'Automated Consultation & Reminders',
+      description: 'Smart consultation management and reminder system',
+      icon: ClockIcon,
+      features: [
+        'Reduce no-shows for important client consultations',
+        'Keep attendees informed and excited',
+        'Ensure timely payments from clients'
+      ]
     },
     {
-      id: 'comment-sensor',
-      title: 'Comment Sensor & Feedback',
-      description: 'Advanced sentiment analysis and automated feedback collection system',
+      id: 'promotion',
+      title: 'Targeted Event Promotion',
+      description: 'Strategic promotion system for maximum impact',
+      icon: MegaphoneIcon,
+      features: [
+        'Sell more tickets with relevant marketing',
+        'Maximize attendance and revenue',
+        'Create urgency with timely offers'
+      ]
+    },
+    {
+      id: 'ai-desk',
+      title: '24/7 AI Information Desk',
+      description: 'Round-the-clock AI-powered event support',
+      icon: SparklesIcon,
+      features: [
+        'Provide instant answers and reduce support load',
+        'Improve client and attendee experience',
+        'Free up team for complex planning'
+      ]
+    },
+    {
+      id: 'analytics',
+      title: 'Event ROI & Analytics',
+      description: 'Comprehensive event analytics and ROI tracking',
+      icon: ChartBarIcon,
+      features: [
+        'Make data-driven decisions for future events',
+        'Optimize marketing budget for highest ROI',
+        'Understand core business strengths'
+      ]
+    },
+    {
+      id: 'unified-comms',
+      title: 'Unified Communication Center',
+      description: 'Centralized communication management system',
       icon: ChatBubbleBottomCenterTextIcon,
-      features: ['Sentiment analysis', 'Automated surveys', 'Real-time insights']
+      features: [
+        'Single, organized view of all communications',
+        'Seamless team coordination',
+        'Professional and scalable operation'
+      ]
     }
   ];
 
@@ -206,7 +249,7 @@ export default function EventPage() {
             <div className="relative w-full aspect-video mt-8 lg:mt-0">
               <iframe 
                 className="w-full h-full rounded-[10px] shadow-lg"
-                src="https://www.youtube.com/embed/Co2Ot_nnI-8?si=jC13pPufzp-pr93b" 
+                src="https://www.youtube.com/embed/m8qrcnM6cW4?si=GutyEwDLV8uo34k-" 
                 title="YouTube video player" 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -218,61 +261,18 @@ export default function EventPage() {
         </Container>
       </Section>
 
-      {/* Solutions Grid */}
-      <Section className="py-16">
-        <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Comprehensive Event Solutions
-            </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Everything you need to plan, execute, and succeed with your events
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {eventSolutions.map((solution) => (
-              <Card
-                key={solution.id}
-                onMouseEnter={() => setHoveredSolution(solution.id)}
-                onMouseLeave={() => setHoveredSolution(null)}
-                className={`relative overflow-hidden transition-all duration-300 h-full ${
-                  hoveredSolution === solution.id ? 'transform -translate-y-2' : ''
-                }`}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-r ${solution.color} opacity-0 transition-opacity duration-300 ${
-                  hoveredSolution === solution.id ? 'opacity-5' : ''
-                }`} />
-                <div className="relative p-6">
-                  {renderSolutionIcon(solution.id)}
-                  <h3 className="mt-4 text-xl font-semibold text-gray-900">{solution.title}</h3>
-                  <p className="mt-2 text-gray-600">{solution.description}</p>
-                  <ul className="mt-4 space-y-2">
-                    {solution.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-sm text-gray-600">
-                        <span className="mr-2">•</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
       {/* Automation Services Section */}
       <Section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Automated Event Services
+              Smart Event Management Features
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Streamline your event management with our cutting-edge automation solutions
+              Revolutionize your event management with our comprehensive automation solutions
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {automationServices.map((service) => (
               <Card
                 key={service.id}
@@ -343,18 +343,126 @@ export default function EventPage() {
         </Container>
       </Section>
 
-      {/* Benefits Section */}
+      {/* Service Impact Table Section */}
       <Section className="py-16 bg-gray-50">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Why Choose Our Event Services
+              Service Impact Overview
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Experience the difference with our professional event management expertise
+              See how our solutions transform your business challenges
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          
+          <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Category</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Problem</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Rocket Flow Solution</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Impact</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200 bg-white">
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Lead Management</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Drowning in "Price?" DMs & inquiries</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Instant Inquiry Response & Brochure Delivery</td>
+                  <td className="px-6 py-4 text-sm text-green-600">Saves hours per week, captures more leads</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Client Conversion</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Leads "ghosting" after getting prices</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Automated Nurturing & Follow-Up Sequences</td>
+                  <td className="px-6 py-4 text-sm text-green-600">Higher booking rates</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Client Experience</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Inconsistent communication & manual work</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Automated Client Workflow from Booking to Delivery</td>
+                  <td className="px-6 py-4 text-sm text-green-600">Professional, high-end client service</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Financials</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Awkwardly chasing late payments</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Automated Payment Reminders</td>
+                  <td className="px-6 py-4 text-sm text-green-600">On-time payments and improved cash flow</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Scheduling</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Client no-shows for sessions</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Automated SMS & Email Session Reminders</td>
+                  <td className="px-6 py-4 text-sm text-green-600">Reduced no-shows, organized schedule</td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4 text-sm font-medium text-primary-600">Marketing & Growth</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Difficulty booking during off-seasons</td>
+                  <td className="px-6 py-4 text-sm text-gray-700">Targeted Mini-Session & Offer Campaigns</td>
+                  <td className="px-6 py-4 text-sm text-green-600">Fills calendar and generates repeat business</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Solutions Grid */}
+      <Section className="py-16">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Comprehensive Event Solutions
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Everything you need to plan, execute, and succeed with your events
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {eventSolutions.map((solution) => (
+              <Card
+                key={solution.id}
+                onMouseEnter={() => setHoveredSolution(solution.id)}
+                onMouseLeave={() => setHoveredSolution(null)}
+                className={`relative overflow-hidden transition-all duration-300 h-full ${
+                  hoveredSolution === solution.id ? 'transform -translate-y-2' : ''
+                }`}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-r ${solution.color} opacity-0 transition-opacity duration-300 ${
+                  hoveredSolution === solution.id ? 'opacity-5' : ''
+                }`} />
+                <div className="relative p-6">
+                  {renderSolutionIcon(solution.id)}
+                  <h3 className="mt-4 text-xl font-semibold text-gray-900">{solution.title}</h3>
+                  <p className="mt-2 text-gray-600">{solution.description}</p>
+                  <ul className="mt-4 space-y-2">
+                    {solution.features.map((feature, index) => (
+                      <li key={index} className="flex items-center text-sm text-gray-600">
+                        <span className="mr-2">•</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Benefits Summary Section */}
+      <Section className="py-16 bg-gray-50">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Benefits Summary
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              How Rocket Flow Transforms Your Event Management
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-6">
             {eventBenefits.map((benefit, index) => (
               <Card
                 key={index}
