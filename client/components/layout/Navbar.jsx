@@ -77,7 +77,7 @@ const Navbar = () => {
       ]
     },
 
-    { name: 'Blog', href: '#blog' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Tutorial', href: '/tutorial' },
 
     { name: 'About', href: '#about' },
