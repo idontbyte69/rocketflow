@@ -462,9 +462,6 @@ export default function TravelBooking() {
         </Container>
       </Section>
 
-      {/* Provide More Section */}
-      <ProvideMoreSection />
-
       <Footer />
     </div>
   );

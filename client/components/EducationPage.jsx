@@ -941,8 +941,6 @@ export default function EducationPage() {
         </Container>
       </Section>
 
-      {/* Provide More Section */}
-      <ProvideMoreSection />
 
       <Footer />
     </div>
