@@ -77,16 +77,23 @@ const nextConfig = {
     ];
   },
   
-  // Redirects for better SEO (if needed)
+  // Redirects for better SEO (numeric id -> slug)
   async redirects() {
-    return [
-      // Example redirect from old URL structure
-      // {
-      //   source: '/old-gadget-page',
-      //   destination: '/gadget-shop',
-      //   permanent: true,
-      // },
-    ];
+    // import post list at config-time to map numeric ids to slugs
+    try {
+      // ESM import - POSTS is a simple array exported from components/blog/posts.js
+      const { default: POSTS } = await import('./components/blog/posts')
+      const redirects = POSTS.map((p) => ({
+        source: `/blog/${p.id}`,
+        destination: `/blog/${p.slug}`,
+        permanent: true,
+      }))
+      return redirects
+    } catch (err) {
+      // If import fails for any reason, fall back to no redirects
+      // (This keeps the dev/CI workflow resilient.)
+      return []
+    }
   },
   
   // SEO optimizations
