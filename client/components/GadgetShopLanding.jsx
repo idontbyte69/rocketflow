@@ -510,8 +510,8 @@ export default function GadgetShopLanding() {
                     <span className="text-xs bg-coral-100 text-coral-600 px-2 py-1 rounded-full group-hover:bg-coral-200 transition-colors duration-300">AUTOMATED</span>
                   </div>
                   <div className="border-l-4 border-coral-500 pl-4 group-hover:border-coral-600 transition-colors duration-300">
-                    <p className="font-semibold text-gray-900 group-hover:text-coral-700 transition-colors duration-300">"iPhone 17 Coming Soon! ≡ƒô▒"</p>
-                    <p className="text-gray-600 text-sm mt-1">≡ƒÆ¼ 152 comments ΓÇó ≡ƒöä 45 shares</p>
+                    <p className="font-semibold text-gray-900 group-hover:text-coral-700 transition-colors duration-300">"iPhone 17 Coming Soon! "</p>
+                    <p className="text-gray-600 text-sm mt-1">152 comments 45 shares</p>
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
