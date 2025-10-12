@@ -76,8 +76,10 @@ const Navbar = () => {
         }
       ]
     },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Tutorial', href: '#tutorial' },
+
+    { name: 'Blog', href: '#blog' },
+    { name: 'Tutorial', href: '/tutorial' },
+
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
