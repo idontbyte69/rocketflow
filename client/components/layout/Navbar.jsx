@@ -49,18 +49,18 @@ const Navbar = () => {
           title: 'BY BUSINESS TYPE',
           colSpan: 2,
           items: [
-            { name: 'Photography', href: '/photography' },
-            { name: 'Education', href: '/education' },
-            { name: 'Hotel & Resort', href: '/hotel-and-resort' },
-            { name: 'Restaurants', href: '/restaurants' },
-            { name: 'Study Abroad', href: '/study-abroad' },
             { name: 'Corporate Office', href: '/corporate-office' },
-            { name: 'Travel Booking', href: '/travel-booking' },
-            { name: 'Event Management', href: '/event' },
-            { name: 'Salon & Parlor', href: '/salon' },
             { name: 'E-commerce', href: '/ecommerce' },
+            { name: 'Education', href: '/education' },
+            { name: 'Event Management', href: '/event' },
+            { name: 'Gadget Shops', href: '/gadget-shop' },
+            { name: 'Hotel & Resort', href: '/hotel-and-resort' },
             { name: 'Organic Products', href: '/organic-products' },
-            { name: 'Gadget Shops', href: '/gadget-shop' }
+            { name: 'Photography', href: '/photography' },
+            { name: 'Restaurants', href: '/restaurants' },
+            { name: 'Salon & Parlor', href: '/salon' },
+            { name: 'Study Abroad', href: '/study-abroad' },
+            { name: 'Travel Booking', href: '/travel-booking' }
           ]
         },
         {
@@ -76,8 +76,10 @@ const Navbar = () => {
         }
       ]
     },
+
     { name: 'Blog', href: '#blog' },
     { name: 'Tutorial', href: '/tutorial' },
+
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];

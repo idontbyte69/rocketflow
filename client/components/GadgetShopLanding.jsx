@@ -52,7 +52,7 @@ export default function GadgetShopLanding() {
       description: 'Build a hype list automatically. On "Coming Soon" posts, auto-reply to "price" comments: "Reply NOTIFY ME for first access to pre-order link." Launch day: broadcast to entire list and sell out in hours.',
       icon: BellAlertIcon,
       count: '500+ Pre-Orders',
-      color: 'from-coral-500 to-red-400',
+      color: 'from-coral-600 to-red-400',
       benefits: ['Maximize sales during critical product launches', 'Build high-intent marketing list automatically', 'Create seamless and exclusive experience for eager customers']
     },
     {
@@ -414,11 +414,13 @@ export default function GadgetShopLanding() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
             {services.map((service, index) => (
-              <article
+              <Card
                 key={service.id}
-                className={`group cursor-pointer transition-all duration-300 hover:shadow-2xl border-0 bg-white rounded-xl p-8 ${
-                  hoveredCategory === service.id ? 'scale-105' : ''
-                }`}
+                className="group cursor-pointer border-0"
+                hover={true}
+                tiltEffect={true}
+                padding="lg"
+                animationDelay={index * 0.1}
                 onMouseEnter={() => setHoveredCategory(service.id)}
                 onMouseLeave={() => setHoveredCategory(null)}
                 role="listitem"
@@ -456,7 +458,7 @@ export default function GadgetShopLanding() {
                     Learn More
                   </Button>
                 </div>
-              </article>
+              </Card>
             ))}
           </div>
         </Container>
@@ -501,55 +503,55 @@ export default function GadgetShopLanding() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+              <Card hover={true} tiltEffect={true} padding="lg" className="group">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold text-gray-500">FACEBOOK POST</span>
-                    <span className="text-xs bg-coral-100 text-coral-600 px-2 py-1 rounded-full">AUTOMATED</span>
+                    <span className="text-xs bg-coral-100 text-coral-600 px-2 py-1 rounded-full group-hover:bg-coral-200 transition-colors duration-300">AUTOMATED</span>
                   </div>
-                  <div className="border-l-4 border-coral-500 pl-4">
-                    <p className="font-semibold text-gray-900">"iPhone 17 Coming Soon! ≡ƒô▒"</p>
-                    <p className="text-gray-600 text-sm mt-1">≡ƒÆ¼ 152 comments ΓÇó ≡ƒöä 45 shares</p>
+                  <div className="border-l-4 border-coral-500 pl-4 group-hover:border-coral-600 transition-colors duration-300">
+                    <p className="font-semibold text-gray-900 group-hover:text-coral-700 transition-colors duration-300">"iPhone 17 Coming Soon! "</p>
+                    <p className="text-gray-600 text-sm mt-1">152 comments 45 shares</p>
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-600">Auto-replies sent:</span>
-                      <span className="font-semibold text-coral-600">347</span>
+                      <span className="font-semibold text-coral-600 group-hover:scale-110 transition-transform duration-300">347</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Notify Me list:</span>
-                      <span className="font-semibold text-coral-600">+523 contacts</span>
+                      <span className="font-semibold text-coral-600 group-hover:scale-110 transition-transform duration-300">+523 contacts</span>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Card>
             </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
             <div className="order-2 lg:order-1 relative">
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+              <Card hover={true} tiltEffect={true} padding="lg" className="group">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold text-gray-500">CUSTOMER SEGMENTS</span>
-                    <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">SMART TARGETING</span>
+                    <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full group-hover:bg-blue-200 transition-colors duration-300">SMART TARGETING</span>
                   </div>
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg group-hover:bg-gray-100 transition-colors duration-300">
                       <span className="font-medium">Apple_Fan</span>
                       <span className="text-sm text-gray-600">1,247 customers</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg group-hover:bg-gray-100 transition-colors duration-300">
                       <span className="font-medium">Android_User</span>
                       <span className="text-sm text-gray-600">2,156 customers</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-coral-50 rounded-lg border border-coral-200">
-                      <span className="font-medium text-coral-700">Smartwatch_Enthusiast</span>
-                      <span className="text-sm text-coral-600">856 customers</span>
+                    <div className="flex items-center justify-between p-3 bg-coral-50 rounded-lg border border-coral-200 group-hover:bg-coral-100 group-hover:border-coral-300 transition-colors duration-300">
+                      <span className="font-medium text-coral-700 group-hover:text-coral-800 transition-colors duration-300">Smartwatch_Enthusiast</span>
+                      <span className="text-sm text-coral-600 group-hover:text-coral-700 transition-colors duration-300">856 customers</span>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Card>
             </div>
             <div className="order-1 lg:order-2 space-y-8">
               <div className="space-y-4">
@@ -608,14 +610,21 @@ export default function GadgetShopLanding() {
                 color: 'from-teal-500 to-cyan-400'
               }
             ].map((item, index) => (
-              <Card key={index} className="p-6 text-center space-y-4">
-                <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-r ${item.color} flex items-center justify-center`}>
+              <Card 
+                key={index} 
+                className="text-center space-y-4 group"
+                hover={true}
+                tiltEffect={true}
+                padding="lg"
+                animationDelay={index * 0.15}
+              >
+                <div className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-r ${item.color} flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
                   <item.icon className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-lg font-bold text-gray-900">{item.title}</h4>
+                <h4 className="text-lg font-bold text-gray-900 group-hover:text-coral-600 transition-colors duration-300">{item.title}</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
-                <div className="bg-gray-50 rounded-lg p-3">
-                  <p className="text-coral-600 font-bold">{item.impact}</p>
+                <div className="bg-gray-50 rounded-lg p-3 group-hover:bg-coral-50 transition-colors duration-300">
+                  <p className="text-coral-600 font-bold group-hover:text-coral-700 transition-colors duration-300">{item.impact}</p>
                 </div>
               </Card>
             ))}
@@ -640,17 +649,20 @@ export default function GadgetShopLanding() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {successStories.map((story, index) => (
-              <div
+              <Card
                 key={story.id}
-                className={`group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 cursor-pointer transform hover:scale-105 hover:-rotate-1 animate-in fade-in slide-in-from-bottom-4 ${
-                  hoveredProduct === story.id ? 'scale-105 -rotate-1' : ''
+                className={`group relative overflow-hidden ${
+                  hoveredProduct === story.id ? 'rotate-1' : ''
                 }`}
-                style={{ animationDelay: `${index * 100}ms`, animationDuration: '600ms' }}
+                hover={true}
+                tiltEffect={true}
+                padding="sm"
+                animationDelay={index * 0.1}
                 onMouseEnter={() => setHoveredProduct(story.id)}
                 onMouseLeave={() => setHoveredProduct(null)}
               >
                 {/* Background Overlay */}
-                <div className="absolute inset-0 bg-coral-50 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-95 group-hover:scale-100"></div>
+                <div className="absolute inset-0 bg-coral-50/50 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-95 group-hover:scale-100 rounded-3xl"></div>
                 
                 {/* Badge */}
                 {story.badge && (
@@ -772,7 +784,7 @@ export default function GadgetShopLanding() {
                 </div>
 
                 {/* Hover Effect Border Glow */}
-                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-coral-300 transition-all duration-300 pointer-events-none group-hover:shadow-xl group-hover:shadow-coral-200/50"></div>
+                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-coral-300 transition-all duration-300 pointer-events-none group-hover:shadow-xl" style={{ boxShadow: '0 25px 50px -12px rgba(248, 113, 113, 0.25)' }}></div>
                 
                 {/* Subtle shine effect on hover */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none transform group-hover:scale-105"></div>
@@ -780,7 +792,7 @@ export default function GadgetShopLanding() {
                 {/* Floating animation elements */}
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-coral-400 rounded-full opacity-0 group-hover:opacity-60 transition-all duration-700 transform group-hover:translate-y-1 group-hover:translate-x-1"></div>
                 <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-orange-400 rounded-full opacity-0 group-hover:opacity-50 transition-all duration-500 transform group-hover:-translate-y-1 group-hover:-translate-x-1"></div>
-              </div>
+              </Card>
             ))}
           </div>
 
