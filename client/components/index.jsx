@@ -9,12 +9,13 @@ export { default as Section } from './ui/Section';
 export { default as Container } from './ui/Container';
 export { default as ShinyText } from './ui/ShinyText';
 
-
+// Shared Components
+export { default as ProvideMoreSection } from './ProvideMoreSection';
 
 // Page Components
 export { default as LandingPage } from './LandingPage';
 export { default as EducationPage } from './EducationPage';
-export { default as OrgaProPage } from './OrgaProPage';
+// export { default as OrgaProPage } from './OrgaProPage';
 export { default as StudyAbroad } from './StudyAbroad';
 export { default as HotelandResort } from './HotelandResortPage';
 export { default as PhotographyPage } from './PhotographyPage';

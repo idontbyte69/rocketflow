@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import { Navbar, Footer, Button, Card, Section, Container } from '.';
+import { Navbar, Footer, Button, Card, Section, Container, ProvideMoreSection } from '.';
 import {
   EnvelopeIcon,
   ChatBubbleLeftRightIcon,
@@ -362,7 +362,8 @@ export default function OrganicProductsPage() {
               ))}
             </div>
           </div>
-
+      {/* Provide More Section */}
+      <ProvideMoreSection />
           {/* Summary of Benefits - Table Format */}
           <div className="mt-16 max-w-7xl mx-auto">
             <div className="text-center mb-10">

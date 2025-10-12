@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { Navbar, Footer, Button, Card, Section, Container } from ".";
+import { Navbar, Footer, Button, Card, Section, Container, ProvideMoreSection } from ".";
 import {
   FaPlane,
   FaMapMarkedAlt,
@@ -461,6 +461,9 @@ export default function TravelBooking() {
           </div>
         </Container>
       </Section>
+
+      {/* Provide More Section */}
+      <ProvideMoreSection />
 
       <Footer />
     </div>

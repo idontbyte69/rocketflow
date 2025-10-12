@@ -14,7 +14,7 @@ import {
   FaChartPie,
 } from "react-icons/fa";
 
-import { Navbar, Footer, Button, Card, Section, Container } from ".";
+import { Navbar, Footer, Button, Card, Section, Container, ProvideMoreSection } from ".";
 
 export default function HotelandResort() {
   const videoRef = useRef(null);
@@ -499,6 +499,7 @@ export default function HotelandResort() {
           </div>
         </Container>
       </Section>
+
 
       {/* ≡ƒôó CTA BANNER */}
       <div className="fixed bottom-0 left-0 w-full bg-[#F87171] text-white py-4 px-6 shadow-xl flex justify-between items-center z-50">

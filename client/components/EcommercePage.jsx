@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import { Navbar, Footer, Button, Card, Section, Container } from '.';
+import { Navbar, Footer, Button, Card, Section, Container, ProvideMoreSection } from '.';
 import {
   ShoppingCartIcon,
   ChatBubbleLeftRightIcon,
@@ -434,6 +434,7 @@ export default function EcommercePage() {
           </div>
         </Container>
       </Section>
+      <ProvideMoreSection />
 
       {/* Benefits Section */}
       <Section className="py-20 bg-white">
@@ -800,6 +801,9 @@ export default function EcommercePage() {
           </div>
         </Container>
       </Section>
+
+      {/* Provide More Section */}
+      <ProvideMoreSection />
 
       <Footer />
     </div>

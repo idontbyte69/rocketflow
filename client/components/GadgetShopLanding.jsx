@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Navbar, Footer, Button, Card, Section, Container, ShinyText } from '.';
+import { Navbar, Footer, Button, Card, Section, Container, ShinyText, ProvideMoreSection } from '.';
 import {
   DevicePhoneMobileIcon,
   ComputerDesktopIcon,
@@ -1057,7 +1057,6 @@ export default function GadgetShopLanding() {
           </div>
         </Container>
       </Section>
-
         <Footer />
       </main>
     </>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { Navbar, Footer, Button, Card, Section, Container, ShinyText } from '.';
+import { Navbar, Footer, Button, Card, Section, Container, ShinyText, ProvideMoreSection } from '.';
 import {
   ChatBubbleLeftRightIcon,
   ChatBubbleOvalLeftIcon,
@@ -208,6 +208,9 @@ export default function SalonPage() {
           </div>
         </Container>
       </Section>
+
+      {/* Provide More Section */}
+      <ProvideMoreSection />
 
       {/* Solutions Table Section */}
       <Section className="py-16 bg-white">
@@ -515,7 +518,6 @@ export default function SalonPage() {
           </div>
         </Container>
       </Section>
-
       <Footer />
     </div>
   );

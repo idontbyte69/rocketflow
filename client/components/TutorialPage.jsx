@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import { Navbar, Footer, Button, Card, Section, Container, ShinyText } from '.';
+import { Navbar, Footer, Button, Card, Section, Container, ShinyText, ProvideMoreSection } from '.';
 import {
   ArrowRightIcon,
   ArrowPathIcon,
@@ -619,6 +619,9 @@ export default function TutorialPage() {
           </div>
         </Container>
       </Section>
+
+      {/* Provide More Section */}
+      {/* <ProvideMoreSection /> */}
 
       <Footer />
     </main>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import { Navbar, Footer, Button, Card, Section, Container, ShinyText } from '.';
+import { Navbar, Footer, Button, Card, Section, Container, ShinyText, ProvideMoreSection } from '.';
 import {
   PaperAirplaneIcon,
   ChatBubbleLeftRightIcon,
@@ -636,6 +636,9 @@ export default function StudyAbroad() {
             </p>
           </div>
           
+        {/* Provide More Section */}
+        <ProvideMoreSection />
+  
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {successStories.map((story, index) => (
               <Card
@@ -787,6 +790,7 @@ export default function StudyAbroad() {
           </div>
         </Container>
       </Section>
+
 
       <Footer />
     </div>

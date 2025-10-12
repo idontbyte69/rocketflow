@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import { Navbar, Footer } from ".";
+import { Navbar, Footer, ProvideMoreSection } from ".";
 
 export default function Restaurants() {
   const services = [
@@ -168,6 +168,9 @@ export default function Restaurants() {
           </motion.div>
         </div>
       </section>
+
+      {/* Provide More Section */}
+      <ProvideMoreSection />
 
       {/* SERVICES */}
       <section className="py-16 bg-white">
