@@ -77,13 +77,11 @@ export default async function PostPage({ params }) {
     <>
       <Navbar />
 
-      {/* Hero */}
+      {/* Hero: title-over-background (no featured image used as background) */}
       <header className="relative">
-        <div className="relative h-80 md:h-96 w-full bg-gray-900">
-          <Image src={post.featuredImage} alt={post.title} fill className="object-cover opacity-80" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-white/0" />
-          <Container className="relative z-10">
-            <div className="max-w-4xl mx-auto text-center text-white py-20">
+        <div className="h-72 md:h-96 w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 flex items-center">
+          <Container>
+            <div className="max-w-4xl mx-auto text-center text-white py-16 md:py-20">
               <h1 className="text-3xl md:text-5xl font-extrabold drop-shadow-lg">{post.title}</h1>
               <p className="mt-3 text-sm md:text-base opacity-90">{post.excerpt}</p>
 
@@ -106,17 +104,25 @@ export default async function PostPage({ params }) {
               <main className="lg:col-span-2 p-8 lg:p-12">
                 <Link href="/blog" className="text-sm text-coral-500 hover:underline mb-2 inline-block">← Back to Blog</Link>
 
-                {/* Lead insight */}
+                {/* Lead insight with featured image on top */}
                 <div className="mt-2">
-                  <div className="text-lg md:text-xl font-semibold text-gray-900">Quick Insight</div>
-                  <p className="mt-2 text-gray-700 text-base leading-relaxed">{insights[0] || post.excerpt}</p>
-                  {insights.length > 1 && (
-                    <ul className="mt-3 list-disc list-inside text-gray-600">
-                      {insights.slice(1).map((s, i) => (
-                        <li key={i}>{s}</li>
-                      ))}
-                    </ul>
-                  )}
+                  <div className="flex flex-col gap-6 items-start">
+                    <div className="w-full rounded-lg overflow-hidden bg-gray-100">
+                      <Image src={post.featuredImage} alt={post.title} width={1200} height={700} className="object-cover w-full h-56 md:h-72" />
+                    </div>
+
+                    <div className="w-full">
+                      <div className="text-lg md:text-xl font-semibold text-gray-900">Quick Insight</div>
+                      <p className="mt-2 text-gray-700 text-base leading-relaxed">{insights[0] || post.excerpt}</p>
+                      {insights.length > 1 && (
+                        <ul className="mt-3 list-disc list-inside text-gray-600">
+                          {insights.slice(1).map((s, i) => (
+                            <li key={i}>{s}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
                 </div>
 
                 <article className="prose lg:prose-lg mt-6 text-gray-800">
