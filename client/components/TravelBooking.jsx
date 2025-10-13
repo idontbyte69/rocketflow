@@ -77,6 +77,7 @@ export default function TravelBookingPage() {
       icon: ChartBarIcon,
     },
     {
+      
       id: "nurture",
       title: "Automated Traveler Nurturing & Pre-Departure Communication",
       description:
