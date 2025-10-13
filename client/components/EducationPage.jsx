@@ -661,8 +661,10 @@ export default function EducationPage() {
           </div>
         </Container>
       </Section>
+      
       {/* Provide More Section */}
       <ProvideMoreSection />
+
       {/* Complete Solution Overview Section */}
       <Section className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <Container>
