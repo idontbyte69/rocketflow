@@ -618,65 +618,173 @@ export default function StudyAbroad() {
         </Container>
       </Section>
 
-      {/* Success Stories Section */}
-      <Section className="py-20 bg-gradient-to-br from-gray-50 to-primary-50 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-gradient-radial from-secondary-100 to-transparent opacity-60 rounded-full"></div>
-        <div className="absolute -left-10 top-10 w-40 h-40 bg-gradient-radial from-primary-100 to-transparent opacity-50 rounded-full"></div>
-        
-        <Container className="relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
-              Success Stories from 
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Industry Leaders</span>
-              <div className="absolute -bottom-2 left-1/4 right-1/4 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how we've helped study abroad consultancies transform their operations and improve student outcomes.
-            </p>
+      {/* BENEFITS SUMMARY TABLE */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Benefits Summary
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white shadow-lg rounded-lg overflow-hidden">
+              <thead>
+                <tr className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white">
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Category
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Problem
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Rocket Flow Solution
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Impact
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {/* Lead Management */}
+                <tr className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Lead Management</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Too many inquiries to handle manually</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Automated replies & tagging</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Faster response, more leads</p>
+                  </td>
+                </tr>
+
+                {/* Follow-Up */}
+                <tr className="hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Follow-Up</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Students don't reply after the first message</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Multi-channel sequence automation (Messenger, Email, SMS)</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Re-engages cold leads</p>
+                  </td>
+                </tr>
+
+                {/* Campaign Targeting */}
+                <tr className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Campaign Targeting</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Same message to all</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Smart segmentation for multi-channel broadcasts</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Higher engagement & reach</p>
+                  </td>
+                </tr>
+
+                {/* Data Handling */}
+                <tr className="hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Data Handling</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Scattered info across platforms</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Integrated forms & sheets with unified communication logs</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Organized lead tracking</p>
+                  </td>
+                </tr>
+
+                {/* Counselor Productivity */}
+                <tr className="hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Counselor Productivity</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Repetitive tasks and reminders</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">AI chat assistant & automated Email/SMS alerts</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">50% less manual work</p>
+                  </td>
+                </tr>
+
+                {/* Conversion Rate */}
+                <tr className="hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Conversion Rate</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Lost leads in the pipeline</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Smart, multi-channel broadcasting & follow-ups</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Up to 3x conversion growth</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          
-        {/* Provide More Section */}
-        <ProvideMoreSection />
-  
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {successStories.map((story, index) => (
-              <Card
-                key={index}
-                className="p-8 rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
-              >
-                <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg">
-                  <story.icon className="w-10 h-10 text-black" />
-                </div>
-                <h3 className="text-2xl font-bold text-center text-gray-900 mb-6">{story.title}</h3>
-                <div className="space-y-5">
-                  <div className="bg-red-50 p-4 rounded-xl">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-                      <span className="font-bold text-red-700">Challenge</span>
-                    </div>
-                    <p className="text-gray-700">{story.challenge}</p>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-xl">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
-                      <span className="font-bold text-blue-700">Solution</span>
-                    </div>
-                    <p className="text-gray-700">{story.solution}</p>
-                  </div>
-                  <div className="bg-green-50 p-4 rounded-xl">
-                    <div className="flex items-center mb-2">
-                      <div className="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
-                      <span className="font-bold text-green-700">Result</span>
-                    </div>
-                    <p className="text-gray-700">{story.result}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
 
       {/* Testimonials Section */}
       <Section className="py-20 bg-white">
