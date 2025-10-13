@@ -274,23 +274,23 @@ export default function HotelandResort() {
         </p>
 
         {/* Key Stats */}
-        <div className="grid grid-cols-2 gap-4 mb-8 max-w-md mx-auto lg:mx-0">
-          <div className="text-center p-5 bg-[#FEE2E2] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-            <div className="text-3xl font-bold text-[#dc2626]">35%</div>
-            <div className="text-sm text-gray-600">Bookings Growth</div>
+        <div className="grid grid-cols-2 gap-6 mb-8 max-w-lg mx-auto lg:mx-0">
+          <div className="text-center p-6 bg-[#FEE2E2] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center">
+            <div className="text-4xl font-bold text-[#dc2626] mb-2">35%</div>
+            <div className="text-sm text-gray-600 font-medium">Bookings Growth</div>
           </div>
-          <div className="text-center p-5 bg-[#FEE2E2] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-            <div className="text-3xl font-bold text-[#dc2626]">50%</div>
-            <div className="text-sm text-gray-600">Revenue Boost</div>
+          <div className="text-center p-6 bg-[#FEE2E2] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center">
+            <div className="text-4xl font-bold text-[#dc2626] mb-2">50%</div>
+            <div className="text-sm text-gray-600 font-medium">Revenue Boost</div>
           </div>
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <Button className="bg-[#F87171] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-[#dc2626] shadow-md">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start max-w-lg mx-auto lg:mx-0">
+          <Button className="bg-[#F87171] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-[#dc2626] shadow-md flex-1 sm:flex-none">
             Get Started Today
           </Button>
-          <Button className="border border-[#F87171] text-[#dc2626] hover:bg-[#F87171] hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md">
+          <Button className="border border-[#F87171] text-[#dc2626] hover:bg-[#F87171] hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md flex-1 sm:flex-none">
             View Case Studies
           </Button>
         </div>
@@ -437,20 +437,174 @@ export default function HotelandResort() {
         </Container>
       </section>
 
-      {/* Γ¥ô FAQ SECTION */}
-      <Section background="gradient">
-        <Container>
-          <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
-          <div className="space-y-4 md:w-2/3 mx-auto">
-            {faqs.map((f, i) => (
-              <Card key={i} padding="md">
-                <h4 className="font-semibold text-lg">{f.q}</h4>
-                <p className="text-gray-600 mt-2">{f.a}</p>
-              </Card>
-            ))}
+      {/* BENEFITS SUMMARY TABLE */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Benefits Summary
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white shadow-lg rounded-lg overflow-hidden">
+              <thead>
+                <tr className="bg-gradient-to-r from-rose-600 via-pink-600 to-red-600 text-white">
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Category
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Problem
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Rocket Flow Solution
+                  </th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                    Impact
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {/* Bookings & Revenue */}
+                <tr className="hover:bg-gradient-to-r hover:from-rose-50 hover:to-pink-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Bookings & Revenue</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">High dependency on OTAs & lost direct leads</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">24/7 Booking Assistant & Direct Booking Links</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Increased direct bookings & revenue</p>
+                  </td>
+                </tr>
+
+                {/* Guest Experience */}
+                <tr className="hover:bg-gradient-to-r hover:from-pink-50 hover:to-red-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Guest Experience</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Generic, reactive communication</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Automated Guest Journey (Pre to Post-stay)</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Enhanced guest satisfaction & loyalty</p>
+                  </td>
+                </tr>
+
+                {/* Operational Efficiency */}
+                <tr className="hover:bg-gradient-to-r hover:from-rose-50 hover:to-pink-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Operational Efficiency</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Staff overwhelmed by repetitive questions</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">AI-Powered Virtual Concierge & FAQ Automation</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">70% of common queries automated</p>
+                  </td>
+                </tr>
+
+                {/* Marketing & Sales */}
+                <tr className="hover:bg-gradient-to-r hover:from-pink-50 hover:to-red-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Marketing & Sales</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Low conversion on generic promotions</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Smart Segmentation & Targeted Campaigns</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Higher occupancy & ROI</p>
+                  </td>
+                </tr>
+
+                {/* Ancillary Revenue */}
+                <tr className="hover:bg-gradient-to-r hover:from-rose-50 hover:to-pink-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Ancillary Revenue</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Missed upsell opportunities</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Automated Pre-arrival Service Booking Messages</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">Increased spa, dining & activity revenue</p>
+                  </td>
+                </tr>
+
+                {/* Guest Loyalty */}
+                <tr className="hover:bg-gradient-to-r hover:from-pink-50 hover:to-red-50 transition-all duration-300">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-900">Guest Loyalty</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Low rate of repeat business & reviews</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-gray-700 leading-relaxed">Automated Post-stay Feedback & Offer System</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <p className="text-green-600 leading-relaxed font-bold">More positive reviews & repeat guests</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
 
       {/* ≡ƒôê CASE STUDIES SECTION */}
       <Section background="white">
@@ -500,12 +654,6 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-
-      {/* ≡ƒôó CTA BANNER */}
-      <div className="fixed bottom-0 left-0 w-full bg-[#F87171] text-white py-4 px-6 shadow-xl flex justify-between items-center z-50">
-        <p className="font-semibold text-lg">Ready to boost your bookings?</p>
-        <Button className="bg-white text-[#F87171] hover:bg-gray-100 transition-all">Book a Demo</Button>
-      </div>
 
       <Footer />
     </div>
