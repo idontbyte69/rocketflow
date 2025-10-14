@@ -756,8 +756,8 @@ export default function EducationPage() {
         <Container className="relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center px-6 py-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full mb-8">
-              <AcademicCapIcon className="w-6 h-6 text-white mr-2" />
-              <span className="text-white font-semibold">Transform Your IELTS Center Today</span>
+              <AcademicCapIcon className="w-6 h-6 text-black mr-2" />
+              <span className="text-black font-semibold">Transform Your IELTS Center Today</span>
             </div>
 
             <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
