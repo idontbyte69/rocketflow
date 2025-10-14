@@ -778,9 +778,6 @@ export default function CorporateOfficePage() {
         </Container>
       </Section>
 
-      {/* Provide More Section */}
-      <ProvideMoreSection />
-
       <Footer />
     </div>
   );
