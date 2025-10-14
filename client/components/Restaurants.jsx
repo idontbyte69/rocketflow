@@ -377,8 +377,7 @@ export default function Restaurants() {
           <div className="mt-16 max-w-7xl mx-auto">
             <div className="text-center mb-10">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                Transform Your Business with
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Rocket Flow</span>
+                Transform Your Business with Rocket Flow
               </h3>
               <p className="text-gray-600 text-lg">See exactly how we solve your biggest challenges</p>
             </div>
@@ -388,16 +387,16 @@ export default function Restaurants() {
               <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden">
                 <thead>
                   <tr className="bg-gradient-to-r from-primary via-primary-600 to-secondary">
-                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-primary-400">
+                    <th className="px-6 py-5 text-left text-sm font-bold text-black uppercase tracking-wider border-r border-primary-400">
                       Category
                     </th>
-                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-primary-400">
+                    <th className="px-6 py-5 text-left text-sm font-bold text-black uppercase tracking-wider border-r border-primary-400">
                       Problem
                     </th>
-                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-primary-400">
+                    <th className="px-6 py-5 text-left text-sm font-bold text-black uppercase tracking-wider border-r border-primary-400">
                       Rocket Flow Solution
                     </th>
-                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
+                    <th className="px-6 py-5 text-left text-sm font-bold text-black uppercase tracking-wider">
                       Impact
                     </th>
                   </tr>
@@ -552,8 +551,8 @@ export default function Restaurants() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Success Stories from
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Restaurant Owners</span>
+              Success Stories from Restaurant Owners
+      
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Real results from real restaurants
@@ -585,7 +584,7 @@ export default function Restaurants() {
 
                 {/* Author */}
                 <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-black font-bold text-xl shadow-lg">
                     {testimonial.avatar}
                   </div>
                   <div>
@@ -612,7 +611,7 @@ export default function Restaurants() {
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center px-6 py-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full mb-8">
               <SparklesIcon className="w-6 h-6 text-white mr-2" />
-              <span className="text-white font-semibold">Limited Time Offer</span>
+              <span className="text-black font-semibold">Limited Time Offer</span>
             </div>
 
             <h2 className="text-4xl md:text-6xl font-extrabold text-black mb-8 leading-tight">
