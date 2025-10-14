@@ -8,491 +8,476 @@ import {
   Card,
   Section,
   Container,
-  ShinyText,
   ProvideMoreSection,
 } from ".";
-// Heroicons import
 import {
-  GlobeAltIcon,
+  EnvelopeIcon,
+  ChatBubbleLeftRightIcon,
+  DevicePhoneMobileIcon,
+  CurrencyDollarIcon,
   BuildingOfficeIcon,
+  UsersIcon,
+  CalendarIcon,
+  DocumentTextIcon,
+  BriefcaseIcon,
+  ClipboardDocumentCheckIcon,
+  ChartBarIcon,
+  CogIcon,
+  BoltIcon,
+  ShieldCheckIcon,
+  ClockIcon,
+  PresentationChartLineIcon,
+  ComputerDesktopIcon,
+  GlobeAltIcon,
   TicketIcon,
   MapIcon,
-  CalendarIcon,
-  CurrencyDollarIcon,
-  UserGroupIcon,
-  ChartBarIcon,
-  ComputerDesktopIcon,
-  BoltIcon,
-  StarIcon,
-  BriefcaseIcon,
-  CogIcon,
-  CheckCircleIcon,
-  SparklesIcon,
-  RocketLaunchIcon,
 } from "@heroicons/react/24/outline";
 
-// FontAwesome import
-import {
-  FaPlane,
-  FaHotel,
-  FaMapMarkedAlt,
-  FaChartLine,
-  FaUsers,
-  FaSuitcaseRolling,
-  FaMoneyCheckAlt,
-  FaRocket,
-  FaStar,
-} from "react-icons/fa";
-
-import { motion } from "framer-motion";
-
 export default function TravelBookingPage() {
-  const [hoveredFeature, setHoveredFeature] = useState(null);
-  const [hoveredBenefit, setHoveredBenefit] = useState(null);
+  const [activeFeature, setActiveFeature] = useState(0);
+  const [hoveredService, setHoveredService] = useState(null);
 
-  // Replace travelFeatures with the user's 9 actionable items
-  const travelFeatures = [
+  // Travel Solutions
+  // Travel Solutions (Rocket Flow for Travel Booking Companies)
+  const solutions = [
     {
       id: "instant-inquiry",
-      title: "Instant Tour Package Inquiry Handling",
+      title: "Instant Tour Inquiry Handling",
       description:
-        "Auto-reply with brochures for keywords (Thailand, Sajek, Umrah) and instant lead qualification.",
-      bullets: [
-        "Auto-reply with brochures for keywords",
-        "Instant lead qualification with follow-up questions",
-        "Example: DM details immediately after user comments",
+        "Automatically respond to customer inquiries with brochures, itineraries, and pricing via social media or website forms, even after hours.",
+      icon: GlobeAltIcon,
+      gradient: "from-blue-500 via-indigo-600 to-purple-700",
+      features: [
+        "Auto-reply with brochures",
+        "Instant lead qualification",
+        "24/7 response",
       ],
-      icon: FaPlane,
+      stats: { value: "100%", label: "No Missed Leads" },
     },
     {
-      id: "segmentation",
+      id: "traveler-segmentation",
       title: "Smart Traveler Segmentation",
       description:
-        "Automatically tag leads by destination, type, and funnel stage for targeted marketing.",
-      bullets: [
-        "Destination, trip-type and funnel tagging",
-        "Create targeted marketing lists",
-        "Analyze travel trends and personalize offers",
+        "Organize leads automatically by destination interest, travel type, and booking stage to personalize follow-ups and campaigns.",
+      icon: UsersIcon,
+      gradient: "from-indigo-500 via-purple-600 to-pink-700",
+      features: [
+        "Destination tags",
+        "Travel type classification",
+        "Funnel stage tracking",
       ],
-      icon: ChartBarIcon,
+      stats: { value: "5x", label: "Targeted Marketing Efficiency" },
     },
     {
-      
-      id: "nurture",
-      title: "Automated Traveler Nurturing & Pre-Departure Communication",
+      id: "nurturing-predeparture",
+      title: "Automated Nurturing & Pre-Departure",
       description:
-        "Lead nurturing sequences, pre-departure checklists and timely SMS reminders to improve conversions.",
-      bullets: [
-        "Lead nurture emails for non-bookers",
-        "Pre-departure sequences: checklists, tickets, SMS reminders",
-        "Convert inquiries to bookings",
+        "Guide clients from inquiry to departure with automated emails and SMS sequences, including pre-travel checklists and reminders.",
+      icon: CalendarIcon,
+      gradient: "from-purple-500 via-pink-600 to-rose-700",
+      features: [
+        "Lead nurturing sequences",
+        "Pre-departure reminders",
+        "Post-booking follow-ups",
       ],
-      icon: RocketLaunchIcon,
+      stats: { value: "95%", label: "Booking Conversion Rate" },
     },
     {
-      id: "custom-tour-visa",
-      title: "Custom Tour & Visa Application Automation",
+      id: "custom-visa",
+      title: "Custom Tour & Visa Automation",
       description:
-        "Collect tour requests and visa documents automatically, notify agents and confirm receipt to clients.",
-      bullets: [
-        "Collect custom tour requests and docs automatically",
-        "Notify agents and confirm receipt",
-        "Organize requests for efficiency",
+        "Collect client information for custom tours and visa processing automatically and notify relevant agents instantly.",
+      icon: BriefcaseIcon,
+      gradient: "from-cyan-500 via-blue-600 to-indigo-700",
+      features: [
+        "Custom tour forms",
+        "Visa document collection",
+        "Automated confirmations",
       ],
-      icon: GlobeAltIcon,
+      stats: { value: "90%", label: "Operational Efficiency" },
     },
     {
       id: "payments-reminders",
-      title: "Automated Payment & Travel Reminders",
+      title: "Automated Payments & Reminders",
       description:
-        "Payment reminders, flight reminders and visa status updates via SMS and email to improve cash flow and reduce anxiety.",
-      bullets: [
-        "Payment reminders via SMS/email",
-        "Flight reminders & visa status updates",
-        "Reduce traveler anxiety",
+        "Send automated payment reminders, flight alerts, and visa updates via SMS and email to reduce manual follow-ups.",
+      icon: CurrencyDollarIcon,
+      gradient: "from-blue-600 via-cyan-600 to-teal-700",
+      features: [
+        "Payment reminders",
+        "Flight & visa alerts",
+        "Timely notifications",
       ],
-      icon: FaMoneyCheckAlt,
+      stats: { value: "85%", label: "Faster Payments" },
     },
     {
       id: "targeted-campaigns",
-      title: "Targeted Tour & Offer Campaigns",
+      title: "Targeted Campaigns & Offers",
       description:
-        "Segmented campaigns for Eid, Umrah, last-minute deals and other occasions to boost bookings and fill unsold spots.",
-      bullets: [
-        "Eid / Umrah / last-minute campaign flows",
-        "Segmented offers to relevant audiences",
-        "Higher ROI on marketing campaigns",
+        "Send personalized offers, last-minute deals, and promotions to relevant travelers using smart segmentation and analytics.",
+      icon: ChartBarIcon,
+      gradient: "from-violet-500 via-purple-600 to-fuchsia-700",
+      features: [
+        "Segmented campaigns",
+        "Last-minute deal blasts",
+        "Marketing insights",
       ],
-      icon: BuildingOfficeIcon,
+      stats: { value: "4x", label: "Booking Rate Increase" },
     },
     {
-      id: "ai-desk",
+      id: "ai-travel-desk",
       title: "24/7 AI-Powered Travel Desk",
       description:
-        "An AI assistant that answers hundreds of common travel questions instantly so agents can focus on complex itineraries.",
-      bullets: [
-        "Instant answers to common questions",
-        "Agents focus on complex itineraries",
-        "Consistent and accurate information",
+        "Provide instant answers to common travel questions, freeing agents to focus on complex itineraries and closing sales.",
+      icon: CogIcon,
+      gradient: "from-indigo-500 via-blue-600 to-cyan-700",
+      features: [
+        "AI-powered FAQs",
+        "Round-the-clock assistance",
+        "Consistent info",
       ],
-      icon: UserGroupIcon,
+      stats: { value: "99%", label: "Customer Satisfaction" },
     },
     {
-      id: "analytics",
-      title: "Business & Marketing Analytics",
-      description:
-        "Track popular tours, conversion rates and campaign performance to make data-driven decisions.",
-      bullets: [
-        "Identify popular tours by inquiry volume",
-        "Track inquiry → booking conversion",
-        "Optimize marketing spend",
-      ],
-      icon: ChartBarIcon,
-    },
-    {
-      id: "unified-hub",
+      id: "communication-hub",
       title: "Unified Traveler Communication Hub",
       description:
-        "Manage the entire traveler conversation — from first comment to post-trip feedback — in one dashboard.",
-      bullets: [
-        "Complete history of every client interaction",
-        "Seamless handover between teams",
-        "Deliver consistent professional service",
+        "Manage all traveler interactions—from initial inquiry to post-trip feedback—in one organized dashboard.",
+      icon: ComputerDesktopIcon,
+      gradient: "from-pink-500 via-red-600 to-orange-700",
+      features: [
+        "Complete client history",
+        "Team collaboration",
+        "Professional service consistency",
       ],
-      icon: MapIcon,
+      stats: { value: "100%", label: "Operational Control" },
     },
   ];
 
-  // Summary rows for the solution table (user-provided mapping)
-  const summaryRows = [
-    { category: "Lead Conversion", problem: "High inquiry volume, low conversion rate", solution: "Instant Response & Automated Nurturing Sequences", impact: "Higher booking rates" },
-    { category: "Sales Efficiency", problem: "Agents waste time on repetitive questions", solution: "24/7 AI-Powered Travel Desk & FAQ Automation", impact: "Sales team focuses on hot leads" },
-    { category: "Customer Experience", problem: "Lack of pre-travel communication", solution: "Automated Pre-Departure Reminders & Checklists", impact: "Reduced traveler anxiety, higher satisfaction" },
-    { category: "Operations", problem: "Manually tracking payments and deadlines", solution: "Automated Payment & Document Reminders", impact: "Improved cash flow, fewer errors" },
-    { category: "Marketing", problem: "Low engagement on generic offers", solution: "Smart Segmentation & Targeted Campaigns", impact: "Higher ROI on marketing spend" },
-    { category: "Brand Reputation", problem: "Slow response times & scattered info", solution: "Unified Communication Hub & Instant Answers", impact: "Seen as a modern, reliable travel partner" },
-  ];
-
-  // Travel Benefits (mirrors Education benefits)
-  const travelBenefits = [
+  // Benefits
+  const benefits = [
     {
-      title: "Higher Bookings",
-      description:
-        "Capture more conversions with optimized flows and targeted promotions.",
-      icon: StarIcon,
-      metrics: "35% avg. bookings growth",
-    },
-    {
-      title: "Improved Revenue",
-      description:
-        "Increase average order value with dynamic pricing and upsells.",
-      icon: RocketLaunchIcon,
-      metrics: "50% avg. revenue lift",
-    },
-    {
-      title: "Better Retention",
-      description:
-        "Turn one-time travelers into repeat customers with loyalty and personalized offers.",
-      icon: UserGroupIcon,
-      metrics: "40% repeat customer increase",
-    },
-    {
-      title: "Measurable ROI",
-      description:
-        "Track every campaign and channel to prove marketing impact and optimize spend.",
-      icon: ChartBarIcon,
-      metrics: "5x verified marketing ROI",
-    },
-  ];
-
-  const agencyTypes = [
-    {
-      name: "Online Travel Agencies",
-      icon: BuildingOfficeIcon,
-      description: "API-first platforms focused on inventory and conversion.",
-    },
-    {
-      name: "Boutique Tour Operators",
       icon: GlobeAltIcon,
-      description:
-        "Curated experiences for premium travelers and small groups.",
+      title: "Global Coverage",
+      description: "Book flights, hotels, and tours worldwide",
+      metric: "200+ Countries",
+      color: "blue",
     },
     {
-      name: "Hotel & Resort Chains",
-      icon: BuildingOfficeIcon,
-      description:
-        "Direct booking optimization and loyalty program integrations for properties.",
+      icon: BoltIcon,
+      title: "Fast Booking",
+      description: "Instant confirmation and easy payments",
+      metric: "5min average booking",
+      color: "indigo",
     },
     {
-      name: "Corporate Travel",
-      icon: BriefcaseIcon,
-      description:
-        "Managed travel workflows, invoicing and policy enforcement for corporate clients.",
+      icon: ShieldCheckIcon,
+      title: "Safe & Secure",
+      description: "Protected payments and verified providers",
+      metric: "Trusted by millions",
+      color: "purple",
     },
     {
-      name: "Activity Marketplaces",
-      icon: TicketIcon,
-      description:
-        "Day tours, local experiences and add-ons integrated in the booking flow.",
-    },
-    {
-      name: "Destination Management",
-      icon: MapIcon,
-      description:
-        "Localized campaigns and content to attract inbound tourism to specific regions.",
+      icon: UsersIcon,
+      title: "Customer Support",
+      description: "24/7 travel assistance and helpdesk",
+      metric: "Always available",
+      color: "violet",
     },
   ];
 
+  // Features
+  const features = [
+    {
+      title: "Flight Search & Booking",
+      description: "Quickly find and book flights at the best prices",
+      icon: GlobeAltIcon,
+      stats: ["Instant confirmation", "Price alerts", "Multi-airline options"],
+    },
+    {
+      title: "Hotel & Stay Management",
+      description: "Seamless hotel bookings for any budget",
+      icon: BuildingOfficeIcon,
+      stats: ["Verified listings", "Flexible dates", "Special offers"],
+    },
+    {
+      title: "Tour Packages & Itineraries",
+      description: "Curated travel experiences for any traveler",
+      icon: TicketIcon,
+      stats: ["All-inclusive", "Local guides", "Customizable plans"],
+    },
+    {
+      title: "Travel Assistance & Insurance",
+      description: "24/7 support and trip protection services",
+      icon: ShieldCheckIcon,
+      stats: ["Emergency support", "Insurance coverage", "Travel tips"],
+    },
+  ];
+
+  // Travel Case Studies
   const caseStudies = [
     {
-      title: "Agency X Growth Story",
-      challenge:
-        "Low conversion rates on mobile and limited upsell opportunities.",
-      solution:
-        "Launched a mobile-first booking flow and dynamic package upsells.",
-      result: "35% increase in bookings and 22% AOV uplift",
-      icon: FaPlane,
+      company: "Adventure Travels",
+      industry: "Tour Operator",
+      challenge: "High manual booking load and customer queries",
+      solution: "Integrated AI travel assistant and automated booking system",
+      results: [
+        "50% faster booking",
+        "Reduced customer wait time",
+        "Increased repeat customers",
+      ],
+      logo: "AT",
     },
     {
-      title: "Resort Chain Y",
-      challenge: "High reliance on OTAs and low direct bookings.",
+      company: "Global Trips",
+      industry: "Online Travel Agency",
+      challenge: "Inconsistent booking confirmations and travel advice",
       solution:
-        "Optimized direct-booking UX, integrated loyalty and bespoke offers.",
-      result: "52% rise in direct bookings and improved margins",
-      icon: FaHotel,
-    },
-    {
-      title: "Tour Operator Z",
-      challenge: "Low repeat customers for adventure packages.",
-      solution:
-        "Introduced personalized itineraries and post-trip engagement flows.",
-      result: "40% increase in repeat bookings and higher NPS",
-      icon: FaSuitcaseRolling,
+        "Implemented automated confirmations and real-time travel insights",
+      results: [
+        "99% booking accuracy",
+        "24/7 support implemented",
+        "Customer satisfaction +30%",
+      ],
+      logo: "GT",
     },
   ];
 
-  const integrations = [
-    {
-      name: "Global Payment Gateway",
-      logo: "/logo.png",
-      description: "Secure payments and multi-currency settlement.",
-    },
-    {
-      name: "GDS & Hotel APIs",
-      logo: "/logo.png",
-      description:
-        "Direct access to flight & hotel inventories with live rates.",
-    },
-    {
-      name: "CRM & Marketing",
-      logo: "/logo.png",
-      description: "Customer lifecycle management and automated campaigns.",
-    },
+  const stats = [
+    { number: "1M+", label: "Trips Booked", icon: TicketIcon },
+    { number: "500K+", label: "Hotels Listed", icon: BuildingOfficeIcon },
+    { number: "99.9%", label: "Booking Success", icon: ShieldCheckIcon },
+    { number: "24/7", label: "Travel Support", icon: ClockIcon },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50">
       <Navbar />
 
-      {/* HERO */}
-      <Section className="pt-24 pb-16 bg-gradient-to-br from-coral-50 via-orange-50 to-red-50">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* LEFT */}
-            <div className="order-1 text-center lg:text-left">
-              <div className="animate-fadeIn">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  <ShinyText className="bg-gradient-to-r from-primary-dark via-primary to-secondary text-black">
-                    Rocket Flow for Travel Agencies
-                  </ShinyText>
-                </h1>
-
-                <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed mx-auto max-w-3xl">
-                  Automate bookings, increase revenue, and delight travelers
-                  with a unified platform built for modern travel businesses.
-                </p>
-              </div>
-
-              {/* key stats */}
-              <div className="grid grid-cols-2 gap-4 mb-8 max-w-md mx-auto lg:mx-0">
-                <div className="text-center p-5 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                  <div className="text-3xl font-bold text-primary-dark">
-                    35%
-                  </div>
-                  <div className="text-sm text-gray-600">Bookings Growth</div>
-                </div>
-                <div className="text-center p-5 bg-gradient-to-br from-secondary-50 to-primary-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                  <div className="text-3xl font-bold text-primary-dark">
-                    50%
-                  </div>
-                  <div className="text-sm text-gray-600">Revenue Boost</div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary-600 hover:to-secondary-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-xl">
-                  Start Free Trial
-                </Button>
-                <Button className="border border-primary-dark text-primary-dark hover:bg-primary-dark hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-xl">
-                  Watch Demo
-                </Button>
-              </div>
-            </div>
-
-            {/* RIGHT - video */}
-            <div className="order-2">
-              <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(8,112,184,0.3)]">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/MZnyjXSUX3Q"
-                  title="Travel Solutions Overview"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-
-              <p className="text-center text-sm text-gray-500 mt-4">
-                See how Rocket Flow transforms travel operations
-              </p>
-            </div>
+      {/* Hero Section */}
+      <Section className="pt-32 pb-24 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-20 left-20 w-64 h-64 border-4 border-blue-200 transform rotate-45"></div>
+            <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-indigo-200 transform -rotate-12"></div>
+            <div className="absolute top-1/2 left-1/2 w-72 h-72 border-4 border-purple-200 transform rotate-12"></div>
           </div>
-        </Container>
-      </Section>
-
-      {/* STATS */}
-      <Section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 border border-white rounded-full"></div>
-          <div className="absolute bottom-10 right-10 w-24 h-24 border border-white rounded-full"></div>
         </div>
 
         <Container className="relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Scale Your Travel Business
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From initial search to completed trip — automate and optimize
-              every touchpoint in the traveler journey.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full mb-6 border border-blue-200">
+                <GlobeAltIcon className="w-5 h-5 text-blue-600 mr-2" />
+                <span className="text-blue-900 font-semibold text-sm">
+                  World-Class Travel Booking
+                </span>
+              </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              {
-                number: "35%",
-                label: "Bookings Growth",
-                sub: "Average Increase",
-              },
-              { number: "50%", label: "Revenue Boost", sub: "Average Growth" },
-              {
-                number: "40%",
-                label: "Customer Retention",
-                sub: "Repeat Clients",
-              },
-              { number: "24/7", label: "Support", sub: "Always Available" },
-            ].map((s, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.15 }}
-                className="text-center group"
-              >
-                <div className="text-5xl md:text-6xl font-bold text-white mb-2">
-                  {s.number}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+                <span className="text-gray-900">Plan Your</span>
+                <br />
+                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                  Next Adventure
+                </span>
+              </h1>
+
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Book flights, hotels, tours, and travel experiences worldwide
+                with AI-powered automation and instant confirmations.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 mb-10">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <ShieldCheckIcon className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">
+                      Secure Payments
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Trusted globally
+                    </div>
+                  </div>
                 </div>
-                <div className="text-gray-300 text-lg">{s.label}</div>
-                <div className="text-gray-400 text-sm mt-1">{s.sub}</div>
-              </motion.div>
-            ))}
-          </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <BoltIcon className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">Fast Booking</div>
+                    <div className="text-sm text-gray-600">
+                      Instant confirmations
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <UsersIcon className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">
+                      Millions Served
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Happy travelers worldwide
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <ClockIcon className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">24/7 Support</div>
+                    <div className="text-sm text-gray-600">
+                      Always available
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-          <div className="mt-16 text-center">
-            <div className="inline-flex flex-wrap items-center justify-center space-x-8 text-gray-400">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">Live Inventory Sync</span>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                  Book Now
+                </Button>
+                <Button className="border-2 border-indigo-600 text-indigo-700 hover:bg-indigo-600 hover:text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300">
+                  Explore Packages
+                </Button>
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">Smart Pricing</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">Unified Communication</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">Partner Integrations</span>
+            </div>
+
+            {/* Right visual placeholder (reuse same Card stack as original) */}
+            <div className="relative">
+              <div className="relative">
+                <div className="space-y-4">
+                  <Card
+                    animationDelay={0}
+                    className="!bg-gradient-to-br !from-blue-600 !to-indigo-700 !text-white"
+                  >
+                    <div className="flex items-center justify-between mb-6">
+                      <div>
+                        <div className="text-sm opacity-80 mb-1">
+                          Trips This Month
+                        </div>
+                        <div className="text-4xl font-bold">1.2M+</div>
+                      </div>
+                      <div className="w-16 h-16 bg-black bg-opacity-20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                        <ChartBarIcon className="w-8 h-8" />
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="flex-1 bg-white bg-opacity-20 rounded-full h-2">
+                        <div className="bg-white rounded-full h-2 w-3/4"></div>
+                      </div>
+                      <span className="text-sm font-semibold">+24%</span>
+                    </div>
+                  </Card>
+                  <div className="grid grid-cols-2 gap-4">
+                    <Card
+                      animationDelay={0.1}
+                      className="border-2 border-indigo-100"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                        <UsersIcon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-2xl font-bold text-gray-900 mb-1">
+                        98%
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        Traveler Satisfaction
+                      </div>
+                    </Card>
+                    <Card
+                      animationDelay={0.15}
+                      className="border-2 border-purple-100"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
+                        <ClockIcon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-2xl font-bold text-gray-900 mb-1">
+                        2min
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        Avg Booking Time
+                      </div>
+                    </Card>
+                  </div>
+                  <Card
+                    animationDelay={0.2}
+                    className="border-2 border-blue-100"
+                  >
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+                        AI
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-bold text-gray-900">
+                          AI Travel Assistant Active
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          Helping 45 travelers now
+                        </div>
+                      </div>
+                      <div className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold">
+                        Live
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+
+                <div className="absolute -top-8 -right-8 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-full shadow-2xl font-bold text-sm transform rotate-6 hover:rotate-0 transition-transform duration-300">
+                  ✈️ Ready for Travel
+                </div>
               </div>
             </div>
           </div>
         </Container>
       </Section>
 
-      {/* 9 POWERFUL FEATURES */}
-      <Section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      {/* Continue Features, Solutions, Benefits, Case Studies, CTA sections exactly same structure but replace content with travel-related content */}
+      <Section className="py-20 bg-white">
         <Container>
-          <div className="text-center mb-16 relative">
-            <div className="absolute -top-10 left-1/4 w-20 h-20 rounded-full bg-primary-50 filter blur-xl opacity-70"></div>
-            <div className="absolute -top-6 right-1/3 w-12 h-12 rounded-full bg-secondary-50 filter blur-lg opacity-70"></div>
-
-            <h2 className="relative text-4xl font-bold text-gray-900 mb-6 inline-block">
-              <span className="bg-gradient-to-r from-primary to-secondary text-black">
-                9 Powerful Features
-              </span>{" "}
-              for Travel & Booking
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary"></div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Complete Suite for
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                {" "}
+                Travelers
+              </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Everything a modern travel business needs to convert, deliver and
-              delight — all in one platform.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Everything a traveler needs in one powerful platform
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-            <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-gradient-radial from-primary-50 to-transparent opacity-30 rounded-full"></div>
-
-            {travelFeatures.map((feature) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {features.map((feature, index) => (
               <Card
-                key={feature.id}
-                className={`p-8 rounded-2xl border border-gray-200 bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
-                  hoveredFeature === feature.id
-                    ? "shadow-2xl border-blue-200 bg-blue-50/30"
-                    : ""
+                key={index}
+                animationDelay={index * 0.1}
+                className={`cursor-pointer transition-all duration-300 border-2 ${
+                  activeFeature === index
+                    ? "bg-gradient-to-br from-blue-50 to-indigo-50 border-indigo-300 scale-105"
+                    : "border-gray-200 hover:border-indigo-200"
                 }`}
-                onMouseEnter={() => setHoveredFeature(feature.id)}
-                onMouseLeave={() => setHoveredFeature(null)}
+                onClick={() => setActiveFeature(index)}
               >
-                <div className="relative flex justify-center">
-                  <div
-                    className="absolute -top-3 -left-3 w-24 h-24 rounded-full opacity-30 filter blur-xl"
-                    style={{ background: "rgba(0,0,0,0.03)" }}
-                  ></div>
-                  <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white mb-6 shadow-lg relative z-10 p-4">
-                    <feature.icon className="w-10 h-10" />
-                  </div>
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                  <feature.icon className="w-7 h-7 text-white" />
                 </div>
-
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 mb-6 text-lg text-center">
+                <p className="text-gray-600 text-sm mb-4">
                   {feature.description}
                 </p>
-
-                <div className="space-y-3 flex flex-col w-full px-4">
-                  {feature.bullets.map((b, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center text-sm text-gray-700 group"
-                    >
-                      <span className="w-3 h-3 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                      <span className="group-hover:text-blue-700 transition-colors">
-                        {b}
-                      </span>
+                <div className="space-y-2">
+                  {feature.stats.map((stat, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm">
+                      <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div>
+                      <span className="text-gray-700">{stat}</span>
                     </div>
                   ))}
                 </div>
@@ -502,202 +487,142 @@ export default function TravelBookingPage() {
         </Container>
       </Section>
 
-      {/* Provide More Section */}
-      <ProvideMoreSection />
-
-      {/* Complete Solution Overview Section */}
-      <Section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <Section className="py-20 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
         <Container>
           <div className="text-center mb-16">
-            <ShinyText className="text-primary-600 font-semibold text-sm uppercase tracking-wider">
-              Complete Solution Overview
-            </ShinyText>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4">
-              Transform Every Travel Challenge into{" "}
-              <span className="text-primary-500">Growth Opportunity</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Travel Solutions
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                {" "}
+                For Every Journey
+              </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
-              Discover how our platform helps travel agencies boost bookings,
-              optimize operations, and delight travelers.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              AI-powered travel tools for smooth and hassle-free trips
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl shadow-xl">
-            <table className="w-full bg-white">
-              <thead className="bg-red-500 from-primary-600 to-primary-500">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">
-                    Category
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">
-                    Problem
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">
-                    Our Travel Solution
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider text-white">
-                    Impact
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {summaryRows.map((row, idx) => (
-                  <tr key={idx} className="transform transition-all duration-300 hover:scale-[1.01] hover:bg-gradient-to-r hover:from-gray-50 hover:to-white hover:shadow-md group">
-                    <td className="px-6 py-5">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-colors">
-                          <div className="w-3 h-3 rounded-full bg-primary-600"></div>
-                        </div>
-                        <span className="text-base font-semibold text-gray-900 group-hover:text-primary-600">{row.category}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">{row.problem}</td>
-                    <td className="px-6 py-5 text-base text-gray-700 group-hover:text-gray-900">{row.solution}</td>
-                    <td className="px-6 py-5">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-700 group-hover:bg-green-200">{row.impact}</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {solutions.map((solution, index) => (
+              <Card
+                key={solution.id}
+                className={`relative p-8 rounded-3xl bg-white border-2 shadow-xl hover:shadow-2xl transition-all duration-500 transform overflow-hidden group ${
+                  hoveredService === solution.id
+                    ? "border-indigo-300 scale-105 -translate-y-2"
+                    : "border-gray-200 hover:border-indigo-200"
+                }`}
+                onMouseEnter={() => setHoveredService(solution.id)}
+                onMouseLeave={() => setHoveredService(null)}
+              >
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                ></div>
+
+                <div className="absolute top-6 right-6 bg-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-xs font-bold shadow-md">
+                  {solution.stats.value}
+                </div>
+
+                <div
+                  className={`relative w-16 h-16 bg-gradient-to-br ${solution.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300`}
+                >
+                  <solution.icon className="w-8 h-8 text-white" />
+                </div>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 relative z-10">
+                  {solution.title}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed relative z-10">
+                  {solution.description}
+                </p>
+
+                <div className="space-y-3 relative z-10">
+                  {solution.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center gap-3 text-sm">
+                      <div
+                        className={`w-2 h-2 bg-gradient-to-r ${solution.gradient} rounded-full flex-shrink-0`}
+                      ></div>
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-gray-100 relative z-10">
+                  <div className="text-xs text-gray-500 uppercase tracking-wider">
+                    {solution.stats.label}
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <ProvideMoreSection />
+
+      {/* Benefits & Stats */}
+      <Section className="py-20 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Why Travelers
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                {" "}
+                Love Us
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Millions trust us for hassle-free bookings
+            </p>
           </div>
 
-          <div className="mt-16">
-            <div className="bg-gradient-to-r from-primary-50 to-white rounded-2xl p-8 border border-primary-100">
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
-                Revolutionize Your Travel Business
-              </h3>
-              <p className="text-lg text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-                From bookings to customer engagement, our platform automates
-                your agency workflow, letting you focus on providing
-                unforgettable travel experiences.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="flex items-center space-x-3 justify-center">
-                  <FaPlane className="w-6 h-6 text-primary-600" />
-                  <span className="font-semibold text-gray-800">
-                    Save 15+ hours/week
-                  </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {benefits.map((benefit, index) => (
+              <Card
+                key={index}
+                animationDelay={index * 0.1}
+                className="bg-gradient-to-br from-slate-50 to-blue-50 border-2 border-blue-100"
+              >
+                <div
+                  className={`w-16 h-16 bg-gradient-to-br from-${benefit.color}-500 to-${benefit.color}-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg`}
+                >
+                  <benefit.icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="flex items-center space-x-3 justify-center">
-                  <FaUsers className="w-6 h-6 text-primary-600" />
-                  <span className="font-semibold text-gray-800">
-                    Increase repeat travelers by 30%
-                  </span>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {benefit.description}
+                </p>
+                <div
+                  className={`inline-block px-4 py-2 bg-${benefit.color}-100 text-${benefit.color}-700 rounded-full text-sm font-bold`}
+                >
+                  {benefit.metric}
                 </div>
-                <div className="flex items-center space-x-3 justify-center">
-                  <FaRocket className="w-6 h-6 text-primary-600" />
-                  <span className="font-semibold text-gray-800">
-                    Scale your agency effortlessly
-                  </span>
+              </Card>
+            ))}
+          </div>
+
+          <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-12 shadow-2xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-8 h-8 text-black" />
+                  </div>
+                  <div className="text-4xl font-bold text-white mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-blue-100 font-semibold">
+                    {stat.label}
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </Container>
       </Section>
 
-      {/* Testimonials Section */}
-<Section className="py-20 bg-white">
-  <Container>
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
-        What Travel Agency{" "}
-        <span className="bg-gradient-to-r from-primary to-secondary text-black">
-          Owners Say
-        </span>
-        <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-      </h2>
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-        Hear from agencies that transformed their operations and boosted
-        traveler satisfaction.
-      </p>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-      {/* Testimonial Card 1 */}
-      <Card className="p-8 rounded-2xl bg-gradient-to-br from-primary-50 to-secondary-50 border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
-        <div className="relative text-center">
-          <div className="flex flex-col items-center mb-6 text-center">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-black font-bold text-xl shadow-md mb-3">
-              AB
-            </div>
-            <div>
-              <div className="font-bold text-xl text-gray-900">
-                Alice Brown
-              </div>
-              <div className="text-gray-600">CEO, Wanderlust Travels</div>
-            </div>
-          </div>
-          <p className="text-gray-700 italic text-lg relative z-10 mb-5 px-6">
-            Our booking process is now fully automated. Travelers get instant
-            confirmations, and our repeat booking rate has skyrocketed. The
-            platform handles 75% of routine inquiries automatically!
-          </p>
-          <div className="flex justify-center text-secondary mt-4">
-            {[...Array(5)].map((_, i) => (
-              <FaStar key={i} className="w-6 h-6 fill-current text-yellow-500" />
-            ))}
-          </div>
-        </div>
-      </Card>
-
-      {/* Testimonial Card 2 */}
-      <Card className="p-8 rounded-2xl bg-gradient-to-br from-secondary-50 to-primary-50 border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
-        <div className="relative text-center">
-          <div className="flex flex-col items-center mb-6 text-center">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-black font-bold text-xl shadow-md mb-3">
-              JS
-            </div>
-            <div>
-              <div className="font-bold text-xl text-gray-900">
-                John Smith
-              </div>
-              <div className="text-gray-600">Founder, GlobeTrotter Agency</div>
-            </div>
-          </div>
-          <p className="text-gray-700 italic text-lg relative z-10 mb-5 px-6">
-            With this platform, managing group tours and flight bookings has
-            never been easier. Automated notifications and analytics helped
-            us reduce errors and improve customer satisfaction by 60%.
-          </p>
-          <div className="flex justify-center text-secondary mt-4">
-            {[...Array(5)].map((_, i) => (
-              <FaStar key={i} className="w-6 h-6 fill-current text-yellow-500" />
-            ))}
-          </div>
-        </div>
-      </Card>
-    </div>
-  </Container>
-</Section>
-
-
-      {/* CTA Section */}
-      <Section className="py-24 bg-gradient-to-r from-primary-dark via-primary to-secondary relative overflow-hidden">
-        <Container className="relative z-10">
-          <div className="text-center text-Text">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-fadeIn">
-              Ready to Transform Your Travel Business?
-            </h2>
-            <p className="text-xl mb-10 opacity-90 max-w-3xl mx-auto leading-relaxed">
-              Join hundreds of agencies that have automated bookings, increased
-              revenue, and delighted travelers with our platform.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button className="bg-white text-primary-dark hover:bg-gray-100 px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl text-lg">
-                Start Free Trial
-              </Button>
-              <Button className="border-2 border-white text-white hover:bg-white hover:text-primary-dark px-10 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 text-lg">
-                Schedule a Demo
-              </Button>
-            </div>
-            <p className="text-sm mt-6 opacity-75">
-              No credit card required • Setup in 5 minutes • Cancel anytime
-            </p>
-          </div>
-        </Container>
-      </Section>
+      <ProvideMoreSection />
 
       <Footer />
     </div>
