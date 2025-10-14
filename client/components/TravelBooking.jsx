@@ -45,7 +45,7 @@ export default function TravelBookingPage() {
       description:
         "Automatically respond to customer inquiries with brochures, itineraries, and pricing via social media or website forms, even after hours.",
       icon: GlobeAltIcon,
-      gradient: "from-blue-500 via-indigo-600 to-purple-700",
+      gradient: "from-teal-500 via-cyan-600 to-blue-600",
       features: [
         "Auto-reply with brochures",
         "Instant lead qualification",
@@ -59,7 +59,7 @@ export default function TravelBookingPage() {
       description:
         "Organize leads automatically by destination interest, travel type, and booking stage to personalize follow-ups and campaigns.",
       icon: UsersIcon,
-      gradient: "from-indigo-500 via-purple-600 to-pink-700",
+      gradient: "from-cyan-500 via-sky-500 to-indigo-600",
       features: [
         "Destination tags",
         "Travel type classification",
@@ -73,7 +73,7 @@ export default function TravelBookingPage() {
       description:
         "Guide clients from inquiry to departure with automated emails and SMS sequences, including pre-travel checklists and reminders.",
       icon: CalendarIcon,
-      gradient: "from-purple-500 via-pink-600 to-rose-700",
+      gradient: "from-sky-500 via-indigo-500 to-purple-600",
       features: [
         "Lead nurturing sequences",
         "Pre-departure reminders",
@@ -87,7 +87,7 @@ export default function TravelBookingPage() {
       description:
         "Collect client information for custom tours and visa processing automatically and notify relevant agents instantly.",
       icon: BriefcaseIcon,
-      gradient: "from-cyan-500 via-blue-600 to-indigo-700",
+      gradient: "from-cyan-500 via-teal-500 to-sky-500",
       features: [
         "Custom tour forms",
         "Visa document collection",
@@ -101,7 +101,7 @@ export default function TravelBookingPage() {
       description:
         "Send automated payment reminders, flight alerts, and visa updates via SMS and email to reduce manual follow-ups.",
       icon: CurrencyDollarIcon,
-      gradient: "from-blue-600 via-cyan-600 to-teal-700",
+      gradient: "from-teal-500 via-cyan-500 to-sky-500",
       features: [
         "Payment reminders",
         "Flight & visa alerts",
@@ -115,7 +115,7 @@ export default function TravelBookingPage() {
       description:
         "Send personalized offers, last-minute deals, and promotions to relevant travelers using smart segmentation and analytics.",
       icon: ChartBarIcon,
-      gradient: "from-violet-500 via-purple-600 to-fuchsia-700",
+      gradient: "from-sky-500 via-indigo-500 to-violet-500",
       features: [
         "Segmented campaigns",
         "Last-minute deal blasts",
@@ -129,7 +129,7 @@ export default function TravelBookingPage() {
       description:
         "Provide instant answers to common travel questions, freeing agents to focus on complex itineraries and closing sales.",
       icon: CogIcon,
-      gradient: "from-indigo-500 via-blue-600 to-cyan-700",
+      gradient: "from-sky-500 via-cyan-600 to-teal-500",
       features: [
         "AI-powered FAQs",
         "Round-the-clock assistance",
@@ -143,7 +143,7 @@ export default function TravelBookingPage() {
       description:
         "Manage all traveler interactions—from initial inquiry to post-trip feedback—in one organized dashboard.",
       icon: ComputerDesktopIcon,
-      gradient: "from-pink-500 via-red-600 to-orange-700",
+      gradient: "from-teal-500 via-cyan-500 to-sky-500",
       features: [
         "Complete client history",
         "Team collaboration",
@@ -250,7 +250,7 @@ export default function TravelBookingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50">
       <Navbar />
 
       {/* Hero Section */}
@@ -266,9 +266,9 @@ export default function TravelBookingPage() {
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full mb-6 border border-blue-200">
-                <GlobeAltIcon className="w-5 h-5 text-blue-600 mr-2" />
-                <span className="text-blue-900 font-semibold text-sm">
+              <div className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-teal-100 to-cyan-100 rounded-full mb-6 border border-teal-200">
+                <GlobeAltIcon className="w-5 h-5 text-teal-600 mr-2" />
+                <span className="text-teal-900 font-semibold text-sm">
                   World-Class Travel Booking
                 </span>
               </div>
@@ -276,7 +276,7 @@ export default function TravelBookingPage() {
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
                 <span className="text-gray-900">Plan Your</span>
                 <br />
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 bg-clip-text text-transparent">
                   Next Adventure
                 </span>
               </h1>
@@ -288,7 +288,7 @@ export default function TravelBookingPage() {
 
               <div className="grid grid-cols-2 gap-4 mb-10">
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <ShieldCheckIcon className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -301,7 +301,7 @@ export default function TravelBookingPage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-sky-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <BoltIcon className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -312,7 +312,7 @@ export default function TravelBookingPage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
                     <UsersIcon className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -325,7 +325,7 @@ export default function TravelBookingPage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-sky-500 rounded-lg flex items-center justify-center flex-shrink-0">
                     <ClockIcon className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -338,10 +338,10 @@ export default function TravelBookingPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                <Button className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
                   Book Now
                 </Button>
-                <Button className="border-2 border-indigo-600 text-indigo-700 hover:bg-indigo-600 hover:text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300">
+                <Button className="border-2 border-cyan-600 text-cyan-700 hover:bg-cyan-600 hover:text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300">
                   Explore Packages
                 </Button>
               </div>
@@ -353,7 +353,7 @@ export default function TravelBookingPage() {
                 <div className="space-y-4">
                   <Card
                     animationDelay={0}
-                    className="!bg-gradient-to-br !from-blue-600 !to-indigo-700 !text-white"
+                    className="!bg-gradient-to-br !from-teal-500 !to-cyan-600 !text-white"
                   >
                     <div className="flex items-center justify-between mb-6">
                       <div>
@@ -378,9 +378,9 @@ export default function TravelBookingPage() {
                       animationDelay={0.1}
                       className="border-2 border-indigo-100"
                     >
-                      <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
-                        <UsersIcon className="w-6 h-6 text-white" />
-                      </div>
+                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
+                          <UsersIcon className="w-6 h-6 text-white" />
+                        </div>
                       <div className="text-2xl font-bold text-gray-900 mb-1">
                         98%
                       </div>
@@ -392,9 +392,9 @@ export default function TravelBookingPage() {
                       animationDelay={0.15}
                       className="border-2 border-purple-100"
                     >
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
-                        <ClockIcon className="w-6 h-6 text-white" />
-                      </div>
+                      <div className="w-12 h-12 bg-gradient-to-br from-sky-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4">
+                          <ClockIcon className="w-6 h-6 text-white" />
+                        </div>
                       <div className="text-2xl font-bold text-gray-900 mb-1">
                         2min
                       </div>
@@ -426,7 +426,7 @@ export default function TravelBookingPage() {
                   </Card>
                 </div>
 
-                <div className="absolute -top-8 -right-8 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-full shadow-2xl font-bold text-sm transform rotate-6 hover:rotate-0 transition-transform duration-300">
+                <div className="absolute -top-8 -right-8 bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-full shadow-2xl font-bold text-sm transform rotate-6 hover:rotate-0 transition-transform duration-300">
                   ✈️ Ready for Travel
                 </div>
               </div>
@@ -458,12 +458,12 @@ export default function TravelBookingPage() {
                 animationDelay={index * 0.1}
                 className={`cursor-pointer transition-all duration-300 border-2 ${
                   activeFeature === index
-                    ? "bg-gradient-to-br from-blue-50 to-indigo-50 border-indigo-300 scale-105"
-                    : "border-gray-200 hover:border-indigo-200"
+                    ? "bg-gradient-to-br from-teal-50 to-cyan-50 border-cyan-300 scale-105"
+                    : "border-gray-200 hover:border-cyan-200"
                 }`}
                 onClick={() => setActiveFeature(index)}
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -579,10 +579,10 @@ export default function TravelBookingPage() {
               <Card
                 key={index}
                 animationDelay={index * 0.1}
-                className="bg-gradient-to-br from-slate-50 to-blue-50 border-2 border-blue-100"
+                className="bg-gradient-to-br from-slate-50 to-cyan-50 border-2 border-cyan-100"
               >
                 <div
-                  className={`w-16 h-16 bg-gradient-to-br from-${benefit.color}-500 to-${benefit.color}-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg`}
+                  className={`w-16 h-16 bg-gradient-to-br from-${benefit.color === 'blue' ? 'teal' : benefit.color}-500 to-${benefit.color === 'blue' ? 'cyan' : benefit.color}-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg`}
                 >
                   <benefit.icon className="w-8 h-8 text-white" />
                 </div>
@@ -601,17 +601,17 @@ export default function TravelBookingPage() {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-12 shadow-2xl">
+          <div className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 rounded-3xl p-12 shadow-2xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-black" />
-                  </div>
+                      <stat.icon className="w-8 h-8 text-black" />
+                    </div>
                   <div className="text-4xl font-bold text-white mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-blue-100 font-semibold">
+                    <div className="text-cyan-100 font-semibold">
                     {stat.label}
                   </div>
                 </div>
@@ -640,7 +640,7 @@ export default function TravelBookingPage() {
           <div className="overflow-x-auto">
             <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden">
               <thead>
-                <tr className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+                <tr className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600">
                   <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
                     Category
                   </th>
@@ -707,7 +707,8 @@ export default function TravelBookingPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Success Stories from
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                {" "}Travel Leaders
+                {" "}
+                Travel Leaders
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -725,12 +726,16 @@ export default function TravelBookingPage() {
               >
                 {/* Company Header */}
                 <div className="flex items-center gap-6 mb-8 pb-8 border-b border-gray-100">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                  <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">
                     {study.logo}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">{study.company}</h3>
-                    <div className="text-indigo-600 font-semibold">{study.industry}</div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                      {study.company}
+                    </h3>
+                    <div className="text-indigo-600 font-semibold">
+                      {study.industry}
+                    </div>
                   </div>
                 </div>
 
@@ -742,7 +747,9 @@ export default function TravelBookingPage() {
                       Challenge
                     </span>
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{study.challenge}</p>
+                  <p className="text-gray-700 leading-relaxed">
+                    {study.challenge}
+                  </p>
                 </div>
 
                 {/* Solution */}
@@ -753,7 +760,9 @@ export default function TravelBookingPage() {
                       Solution
                     </span>
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{study.solution}</p>
+                  <p className="text-gray-700 leading-relaxed">
+                    {study.solution}
+                  </p>
                 </div>
 
                 {/* Results */}
@@ -771,7 +780,9 @@ export default function TravelBookingPage() {
                         className="flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100"
                       >
                         <div className="text-2xl">✓</div>
-                        <span className="text-gray-900 font-semibold">{result}</span>
+                        <span className="text-gray-900 font-semibold">
+                          {result}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -783,60 +794,62 @@ export default function TravelBookingPage() {
       </Section>
 
       {/* Travel CTA Section */}
-<Section className="py-24 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 relative overflow-hidden">
-  {/* Animated Background Patterns */}
-  <div className="absolute inset-0 opacity-10">
-    <div className="absolute top-0 left-0 w-full h-full">
-      <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white transform rotate-45 animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white transform -rotate-12 animate-pulse animation-delay-2000"></div>
-    </div>
-  </div>
-
-  <Container className="relative z-10 text-center">
-    <div className="max-w-4xl mx-auto">
-      <div className="inline-flex items-center px-6 py-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full mb-8">
-        <BriefcaseIcon className="w-6 h-6 text-black mr-2" />
-        <span className="text-black font-semibold">Exclusive Travel Packages</span>
-      </div>
-
-      <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
-        Plan Your Dream Trip
-        <br />
-        with Ease & Confidence
-      </h2>
-
-      <p className="text-xl md:text-2xl text-white text-opacity-90 mb-12 leading-relaxed">
-        Join thousands of travelers booking unforgettable journeys with our AI-powered travel assistant. 
-        Start planning your next adventure today.
-      </p>
-
-      <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-        <Button className="bg-white text-indigo-700 hover:bg-gray-100 px-12 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
-          Book a Trip Now
-        </Button>
-        <Button className="border-3 border-white text-white hover:bg-white hover:text-indigo-700 px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 backdrop-blur-sm bg-white bg-opacity-10">
-          Contact Travel Expert
-        </Button>
-      </div>
-
-      <div className="flex flex-wrap items-center justify-center gap-8 text-white text-opacity-90">
-        <div className="flex items-center gap-2">
-          <ShieldCheckIcon className="w-6 h-6" />
-          <span>Secure Bookings</span>
+  <Section className="py-24 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-700 relative overflow-hidden">
+        {/* Animated Background Patterns */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white transform rotate-45 animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white transform -rotate-12 animate-pulse animation-delay-2000"></div>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <ClockIcon className="w-6 h-6" />
-          <span>24/7 Travel Support</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <BoltIcon className="w-6 h-6" />
-          <span>Quick & Easy Booking</span>
-        </div>
-      </div>
-    </div>
-  </Container>
-</Section>
 
+        <Container className="relative z-10 text-center">
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-flex items-center px-6 py-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full mb-8">
+              <BriefcaseIcon className="w-6 h-6 text-black mr-2" />
+              <span className="text-black font-semibold">
+                Exclusive Travel Packages
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
+              Plan Your Dream Trip
+              <br />
+              with Ease & Confidence
+            </h2>
+
+            <p className="text-xl md:text-2xl text-white text-opacity-90 mb-12 leading-relaxed">
+              Join thousands of travelers booking unforgettable journeys with
+              our AI-powered travel assistant. Start planning your next
+              adventure today.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+              <Button className="bg-white text-cyan-700 hover:bg-gray-100 px-12 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                Book a Trip Now
+              </Button>
+              <Button className="border-3 border-white text-white hover:bg-white hover:text-cyan-700 px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 backdrop-blur-sm bg-white bg-opacity-10">
+                Contact Travel Expert
+              </Button>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-8 text-white text-opacity-90">
+              <div className="flex items-center gap-2">
+                <ShieldCheckIcon className="w-6 h-6" />
+                <span>Secure Bookings</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ClockIcon className="w-6 h-6" />
+                <span>24/7 Travel Support</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <BoltIcon className="w-6 h-6" />
+                <span>Quick & Easy Booking</span>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
 
       <ProvideMoreSection />
 
