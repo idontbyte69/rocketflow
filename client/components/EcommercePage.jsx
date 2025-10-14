@@ -802,9 +802,6 @@ export default function EcommercePage() {
         </Container>
       </Section>
 
-      {/* Provide More Section */}
-      <ProvideMoreSection />
-
       <Footer />
     </div>
   );
