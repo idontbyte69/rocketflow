@@ -630,14 +630,11 @@ export default function EducationPage() {
           </div>
         </Container>
       </Section>
-
-      {/* Case Studies Section */}
-      <Section className="py-20 bg-gradient-to-br from-gray-50 to-primary-50 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-gradient-radial from-secondary-100 to-transparent opacity-60 rounded-full"></div>
-        <div className="absolute -left-10 top-10 w-40 h-40 bg-gradient-radial from-primary-100 to-transparent opacity-50 rounded-full"></div>
-        
-        <Container className="relative z-10">
+      {/* Provide More Section */}
+      <ProvideMoreSection />
+      {/* Complete Solution Overview Section */}
+      <Section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
               Marketing Success Stories from 
