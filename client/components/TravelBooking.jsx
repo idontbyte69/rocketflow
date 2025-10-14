@@ -38,7 +38,6 @@ export default function TravelBookingPage() {
   const [hoveredService, setHoveredService] = useState(null);
 
   // Travel Solutions
-  // Travel Solutions (Rocket Flow for Travel Booking Companies)
   const solutions = [
     {
       id: "instant-inquiry",
@@ -621,6 +620,223 @@ export default function TravelBookingPage() {
           </div>
         </Container>
       </Section>
+
+      {/* Summary of Benefits */}
+      <Section className="py-20 bg-gray-50">
+        <Container>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Summary of{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Benefits
+              </span>
+            </h3>
+            <p className="text-lg text-gray-600">
+              How Rocket Flow transforms travel operations
+            </p>
+          </div>
+
+          {/* Table */}
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden">
+              <thead>
+                <tr className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
+                    Category
+                  </th>
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
+                    Problem
+                  </th>
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
+                    Rocket Flow Solution
+                  </th>
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
+                    Impact
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {benefits.map((benefit, idx) => (
+                  <tr
+                    key={idx}
+                    className="group hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300"
+                  >
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div
+                          className={`w-12 h-12 bg-gradient-to-br from-${benefit.color}-500 to-${benefit.color}-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300`}
+                        >
+                          <benefit.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">
+                          {benefit.title}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">
+                        {benefit.description}
+                      </p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">
+                        {benefit.metric}
+                      </p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        {benefit.title.includes("Efficiency")
+                          ? "Faster operations"
+                          : benefit.title.includes("Security")
+                          ? "Data protected"
+                          : "Enhanced experience"}
+                      </p>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Case Studies Section */}
+      <Section className="py-20 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Success Stories from
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                {" "}Travel Leaders
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real results from top travel companies
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {caseStudies.map((study, index) => (
+              <Card
+                key={index}
+                animationDelay={index * 0.15}
+                className="border-2 border-indigo-100"
+                padding="lg"
+              >
+                {/* Company Header */}
+                <div className="flex items-center gap-6 mb-8 pb-8 border-b border-gray-100">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                    {study.logo}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">{study.company}</h3>
+                    <div className="text-indigo-600 font-semibold">{study.industry}</div>
+                  </div>
+                </div>
+
+                {/* Challenge */}
+                <div className="mb-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span className="font-bold text-gray-900 uppercase text-sm tracking-wider">
+                      Challenge
+                    </span>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{study.challenge}</p>
+                </div>
+
+                {/* Solution */}
+                <div className="mb-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                    <span className="font-bold text-gray-900 uppercase text-sm tracking-wider">
+                      Solution
+                    </span>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{study.solution}</p>
+                </div>
+
+                {/* Results */}
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="font-bold text-gray-900 uppercase text-sm tracking-wider">
+                      Results
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 gap-3">
+                    {study.results.map((result, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100"
+                      >
+                        <div className="text-2xl">✓</div>
+                        <span className="text-gray-900 font-semibold">{result}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Travel CTA Section */}
+<Section className="py-24 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 relative overflow-hidden">
+  {/* Animated Background Patterns */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="absolute top-0 left-0 w-full h-full">
+      <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white transform rotate-45 animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-white transform -rotate-12 animate-pulse animation-delay-2000"></div>
+    </div>
+  </div>
+
+  <Container className="relative z-10 text-center">
+    <div className="max-w-4xl mx-auto">
+      <div className="inline-flex items-center px-6 py-3 bg-white bg-opacity-20 backdrop-blur-sm rounded-full mb-8">
+        <BriefcaseIcon className="w-6 h-6 text-black mr-2" />
+        <span className="text-black font-semibold">Exclusive Travel Packages</span>
+      </div>
+
+      <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
+        Plan Your Dream Trip
+        <br />
+        with Ease & Confidence
+      </h2>
+
+      <p className="text-xl md:text-2xl text-white text-opacity-90 mb-12 leading-relaxed">
+        Join thousands of travelers booking unforgettable journeys with our AI-powered travel assistant. 
+        Start planning your next adventure today.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+        <Button className="bg-white text-indigo-700 hover:bg-gray-100 px-12 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+          Book a Trip Now
+        </Button>
+        <Button className="border-3 border-white text-white hover:bg-white hover:text-indigo-700 px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 backdrop-blur-sm bg-white bg-opacity-10">
+          Contact Travel Expert
+        </Button>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-8 text-white text-opacity-90">
+        <div className="flex items-center gap-2">
+          <ShieldCheckIcon className="w-6 h-6" />
+          <span>Secure Bookings</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <ClockIcon className="w-6 h-6" />
+          <span>24/7 Travel Support</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <BoltIcon className="w-6 h-6" />
+          <span>Quick & Easy Booking</span>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Section>
+
 
       <ProvideMoreSection />
 
