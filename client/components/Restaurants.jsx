@@ -1,42 +1,80 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import Tilt from "react-parallax-tilt";
-import { Navbar, Footer, ProvideMoreSection } from ".";
+import { useState } from "react";
+import { Navbar, Footer, Button, Card, Section, Container, ProvideMoreSection } from ".";
+import {
+  ShoppingBagIcon,
+  ChatBubbleLeftRightIcon,
+  DevicePhoneMobileIcon,
+  ChartBarIcon,
+  TruckIcon,
+  UserGroupIcon,
+  ClockIcon,
+  SparklesIcon,
+  HeartIcon,
+  CpuChipIcon,
+  CalendarIcon,
+  ShoppingCartIcon
+} from '@heroicons/react/24/outline';
 
 export default function Restaurants() {
-  const services = [
+  const [hoveredService, setHoveredService] = useState(null);
+
+  const solutions = [
     {
-      icon: "🍽️",
+      id: 'boost-bookings',
       title: "Boost Bookings",
-      desc: "Smart online booking tools to fill more tables every day.",
+      description: "Smart online booking tools to fill more tables every day with seamless reservation management.",
+      icon: CalendarIcon,
+      gradient: 'from-red-400 via-orange-500 to-amber-600',
+      features: ['Online reservations', 'Table management', 'Booking confirmations', 'Waitlist system'],
+      stats: { value: '40%', label: 'More Bookings' }
     },
     {
-      icon: "📣",
+      id: 'marketing-branding',
       title: "Marketing & Branding",
-      desc: "Social campaigns and promotions to attract new customers.",
+      description: "Social campaigns and promotions to attract new customers and build your restaurant brand.",
+      icon: SparklesIcon,
+      gradient: 'from-orange-400 via-red-500 to-pink-600',
+      features: ['Social media campaigns', 'Brand strategy', 'Customer promotions', 'Digital advertising'],
+      stats: { value: '24/7', label: 'Marketing' }
     },
     {
-      icon: "🍕",
+      id: 'menu-optimization',
       title: "Menu Optimization",
-      desc: "Focus on dishes that bring highest revenue and customer delight.",
+      description: "Focus on dishes that bring highest revenue and customer delight with data-driven insights.",
+      icon: ShoppingBagIcon,
+      gradient: 'from-amber-400 via-orange-500 to-red-600',
+      features: ['Menu analytics', 'Pricing optimization', 'Popular dishes tracking', 'Revenue insights'],
+      stats: { value: '50%', label: 'Revenue Up' }
     },
     {
-      icon: "💳",
+      id: 'online-orders',
       title: "Online Orders",
-      desc: "Seamless delivery & pickup setup to increase revenue.",
+      description: "Seamless delivery & pickup setup to increase revenue with integrated ordering systems.",
+      icon: TruckIcon,
+      gradient: 'from-pink-400 via-red-500 to-orange-600',
+      features: ['Delivery integration', 'Pickup orders', 'Order tracking', 'Payment processing'],
+      stats: { value: '3x', label: 'Orders' }
     },
     {
-      icon: "📊",
+      id: 'analytics-insights',
       title: "Analytics & Insights",
-      desc: "Track sales trends, popular dishes, and customer feedback.",
+      description: "Track sales trends, popular dishes, and customer feedback with comprehensive analytics dashboard.",
+      icon: ChartBarIcon,
+      gradient: 'from-red-400 via-pink-500 to-purple-600',
+      features: ['Sales reports', 'Customer insights', 'Performance tracking', 'Trend analysis'],
+      stats: { value: '360°', label: 'View' }
     },
     {
-      icon: "👨‍🍳",
+      id: 'staff-operations',
       title: "Staff & Operations",
-      desc: "Streamline kitchen & service workflows efficiently.",
-    },
+      description: "Streamline kitchen & service workflows efficiently with smart operational tools.",
+      icon: UserGroupIcon,
+      gradient: 'from-orange-400 via-amber-500 to-yellow-600',
+      features: ['Staff scheduling', 'Kitchen display', 'Order management', 'Performance tracking'],
+      stats: { value: '35%', label: 'Efficiency' }
+    }
   ];
 
   const caseStudies = [
@@ -107,111 +145,192 @@ export default function Restaurants() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-gray-50 text-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-orange-50 to-amber-50">
       <Navbar />
 
       {/* HERO */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            className="text-center lg:text-left"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Grow Your <span className="text-[#dc2626]">Restaurant</span>{" "}
-              Faster
-            </h1>
-            <p className="text-gray-700 mb-8 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto lg:mx-0">
-              Tools, marketing, and strategies to boost bookings, revenue, and
-              customer engagement.
-            </p>
-
-            {/* Key Stats */}
-            <div className="grid grid-cols-2 gap-4 mb-8 max-w-md mx-auto lg:mx-0">
-              <div className="text-center p-5 bg-[#fca5a5] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                <div className="text-3xl font-bold text-white">40%</div>
-                <div className="text-sm text-white">Bookings Growth</div>
-              </div>
-              <div className="text-center p-5 bg-[#fca5a5] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                <div className="text-3xl font-bold text-white">50%</div>
-                <div className="text-sm text-white">Revenue Boost</div>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button className="bg-[#dc2626] text-white px-8 py-3 hover:bg-[#b91c1c]">
-                Get Started Today
-              </Button>
-              <Button className="border border-[#dc2626] text-[#dc2626] px-8 py-3 hover:bg-[#dc2626] hover:text-white">
-                View Case Studies
-              </Button>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-md transform hover:scale-[1.02] transition-all duration-500"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <iframe
-              className="absolute top-0 left-0 w-full h-full rounded-xl"
-              src="https://www.youtube.com/embed/MZnyjXSUX3Q"
-              title="Restaurant Growth Solutions"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </motion.div>
+      <Section className="pt-32 pb-20 relative overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 right-10 w-72 h-72 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+          <div className="absolute top-40 left-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-20 right-1/3 w-72 h-72 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
         </div>
-      </section>
+
+        <Container className="relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div>
+              <div className="inline-flex items-center px-4 py-2 bg-red-100 rounded-full mb-6">
+                <HeartIcon className="w-5 h-5 text-red-600 mr-2" />
+                <span className="text-red-800 font-semibold text-sm">Restaurant Growth Solutions</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-red-600 via-orange-600 to-amber-600 bg-clip-text text-transparent">
+                  Grow Your
+                </span>
+                <br />
+                <span className="text-gray-900">Restaurant Faster</span>
+              </h1>
+              
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Tools, marketing, and strategies to boost bookings, revenue, and customer engagement with cutting-edge digital solutions.
+              </p>
+
+              {/* Key Stats */}
+              <div className="grid grid-cols-3 gap-4 mb-8">
+                <div className="text-center p-4 bg-white rounded-2xl shadow-lg border-2 border-red-100">
+                  <div className="text-3xl font-bold text-red-600">40%</div>
+                  <div className="text-xs text-gray-600 mt-1">Bookings Growth</div>
+                </div>
+                <div className="text-center p-4 bg-white rounded-2xl shadow-lg border-2 border-orange-100">
+                  <div className="text-3xl font-bold text-orange-600">50%</div>
+                  <div className="text-xs text-gray-600 mt-1">Revenue Boost</div>
+                </div>
+                <div className="text-center p-4 bg-white rounded-2xl shadow-lg border-2 border-amber-100">
+                  <div className="text-3xl font-bold text-amber-600">24/7</div>
+                  <div className="text-xs text-gray-600 mt-1">Support</div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  Get Started Today
+                </Button>
+                <Button className="border-2 border-red-600 text-red-700 hover:bg-red-600 hover:text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300">
+                  View Case Studies
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Visual */}
+            <div className="relative">
+              <div className="relative bg-gradient-to-br from-red-100 to-orange-100 rounded-3xl p-8 shadow-2xl border-4 border-white">
+                {/* Feature Cards Floating */}
+                <div className="space-y-4">
+                  <Card animationDelay={0} className="!bg-white">
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-orange-600 rounded-xl flex items-center justify-center">
+                        <CalendarIcon className="w-7 h-7 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-bold text-gray-900">Smart Bookings</div>
+                        <div className="text-sm text-gray-600">Online reservations</div>
+                      </div>
+                      <div className="text-red-600 font-bold">Active</div>
+                    </div>
+                  </Card>
+
+                  <Card animationDelay={0.1} className="!bg-white">
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-600 rounded-xl flex items-center justify-center">
+                        <TruckIcon className="w-7 h-7 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-bold text-gray-900">Online Orders</div>
+                        <div className="text-sm text-gray-600">152 orders today</div>
+                      </div>
+                      <div className="text-orange-600 font-bold">+50%</div>
+                    </div>
+                  </Card>
+
+                  <Card animationDelay={0.2} className="!bg-white">
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 bg-gradient-to-br from-amber-500 to-red-600 rounded-xl flex items-center justify-center">
+                        <ChartBarIcon className="w-7 h-7 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-bold text-gray-900">Analytics</div>
+                        <div className="text-sm text-gray-600">Real-time insights</div>
+                      </div>
+                      <div className="text-amber-600 font-bold">Live</div>
+                    </div>
+                  </Card>
+                </div>
+
+                {/* Floating Badge */}
+                <div className="absolute -top-6 -right-6 bg-gradient-to-r from-red-500 to-orange-600 text-white px-6 py-3 rounded-full shadow-xl font-bold transform rotate-12">
+                  <div className="text-center">
+                    <div className="text-2xl">🍽️</div>
+                    <div className="text-xs">Top Rated</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Our Solutions Section */}
+      <Section className="py-20 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Digital Solutions for
+              <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent"> Restaurants</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Everything you need to boost bookings, increase revenue, and deliver exceptional customer experiences
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {solutions.map((solution, index) => (
+              <Card
+                key={solution.id}
+                className="group relative p-8 rounded-3xl bg-white border-2 border-gray-100 hover:border-red-200 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                animationDelay={index * 100}
+                onMouseEnter={() => setHoveredService(solution.id)}
+                onMouseLeave={() => setHoveredService(null)}
+              >
+                {/* Gradient Background on Hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
+
+                {/* Icon */}
+                <div className="relative flex justify-center mb-6">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${solution.gradient} rounded-2xl flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                    <solution.icon className="w-8 h-8" />
+                  </div>
+                </div>
+
+                {/* Stats Badge */}
+                <div className="absolute top-6 right-6 bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-semibold">
+                  {solution.stats.value}
+                </div>
+
+                {/* Content */}
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center relative z-10">
+                  {solution.title}
+                </h3>
+                <p className="text-gray-600 mb-6 text-center leading-relaxed relative z-10">
+                  {solution.description}
+                </p>
+
+                {/* Features */}
+                <div className="space-y-3 relative z-10">
+                  {solution.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center text-sm text-gray-700 group/item">
+                      <div className={`w-2 h-2 bg-gradient-to-r ${solution.gradient} rounded-full mr-3 group-hover/item:scale-125 transition-transform`}></div>
+                      <span className="group-hover/item:text-red-700 transition-colors">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bottom label */}
+                <div className="mt-6 pt-6 border-t border-gray-100 relative z-10">
+                  <span className="text-xs font-semibold text-red-600 uppercase tracking-wider">
+                    Restaurant Solutions
+                  </span>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
       {/* Provide More Section */}
       <ProvideMoreSection />
-
-      {/* SERVICES */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Our Services
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {services.map((s, i) => (
-              <Tilt
-                key={i}
-                tiltMaxAngleX={10}
-                tiltMaxAngleY={10}
-                glareEnable
-                glareMaxOpacity={0.15}
-                className="rounded-2xl"
-              >
-                <motion.div
-                  className="bg-white shadow-lg p-6 rounded-2xl cursor-pointer flex flex-col justify-between"
-                  whileHover={{
-                    scale: 1.05,
-                    y: -5,
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-                  }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: i * 0.1,
-                    type: "spring",
-                    stiffness: 120,
-                  }}
-                >
-                  <div className="text-4xl mb-4">{s.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
-                  <p className="text-gray-600">{s.desc}</p>
-                </motion.div>
-              </Tilt>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* BENEFITS SUMMARY TABLE */}
       <section className="py-16 bg-gray-50">
@@ -382,147 +501,136 @@ export default function Restaurants() {
       </section>
 
       {/* TRUSTED SECTION */}
-      <section className="py-20 bg-gray-50 relative overflow-hidden">
-        {/* Decorative background circle */}
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#dc2626]/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#dc2626]/10 rounded-full blur-3xl animate-pulse-slow"></div>
+      <Section className="py-20 bg-gradient-to-br from-red-100 via-orange-50 to-amber-100 relative overflow-hidden">
+        {/* Decorative blobs */}
+        <div className="absolute top-20 right-20 w-72 h-72 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute bottom-20 left-20 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
 
-        <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
-          <h3 className="text-3xl md:text-4xl font-bold mb-3">
-            Trusted by Restaurants Worldwide
-          </h3>
-          <p className="text-gray-600 mb-12 text-lg max-w-2xl mx-auto">
-            We’ve helped dozens of restaurants grow revenue and bookings
-            effectively with our tailored solutions.
-          </p>
+        <Container className="relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Trusted by
+              <span className="block mt-2 bg-gradient-to-r from-red-600 via-orange-600 to-amber-600 bg-clip-text text-transparent">
+                Restaurants Worldwide
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We've helped dozens of restaurants grow revenue and bookings effectively with our tailored solutions.
+            </p>
+          </div>
 
           <div className="flex flex-wrap justify-center items-center gap-12">
             {trustedLogos.map((logo, i) => (
-              <motion.div
+              <Card
                 key={i}
-                className="p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
+                className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border-2 border-gray-100 hover:border-red-200 transform hover:scale-110"
+                animationDelay={i * 100}
               >
-                <motion.img
+                <img
                   src={logo}
                   alt="Trusted logo"
-                  className="h-14 w-auto opacity-80 hover:opacity-100 hover:scale-110 transition-transform duration-300"
+                  className="h-14 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
                 />
-              </motion.div>
+              </Card>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* SUCCESS STORIES */}
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4">
-    <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-      Success Stories
-    </h2>
-    <div className="grid md:grid-cols-3 gap-10">
-      {caseStudies.map((c, i) => (
-        <Tilt
-          key={i}
-          tiltMaxAngleX={10}
-          tiltMaxAngleY={10}
-          glareEnable
-          glareMaxOpacity={0.15}
-          className="rounded-3xl"
-        >
-          <motion.div
-            className="bg-white rounded-3xl shadow-lg overflow-hidden cursor-pointer flex flex-col transition-transform duration-300"
-            whileHover={{
-              scale: 1.05,
-              y: -5,
-              boxShadow: "0 25px 45px rgba(0,0,0,0.2)",
-            }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1, type: "spring", stiffness: 120 }}
-          >
-            <div className="relative h-48 w-full overflow-hidden">
-              <img
-                src={c.image}
-                alt={c.title}
-                className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
-              />
-              <span className="absolute top-4 left-4 bg-[#dc2626] text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
-                {c.category}
-              </span>
-            </div>
-
-            <div className="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
+      <Section className="py-20 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Success Stories
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real results from restaurants that transformed their business with our solutions
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-10">
+            {caseStudies.map((c, i) => (
+              <Card
+                key={i}
+                className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col border-2 border-gray-100 hover:border-red-200"
+                animationDelay={i * 100}
+              >
+                <div className="relative h-48 w-full overflow-hidden">
                   <img
-                    src={c.logo}
-                    alt={c.client}
-                    className="w-10 h-10 rounded-full border border-[#fca5a5]"
+                    src={c.image}
+                    alt={c.title}
+                    className="object-cover w-full h-full transition-transform duration-500 hover:scale-110"
                   />
+                  <span className="absolute top-4 left-4 bg-gradient-to-r from-red-600 to-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
+                    {c.category}
+                  </span>
+                </div>
+
+                <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <p className="font-semibold text-gray-800">{c.client}</p>
-                    <p className="text-sm text-gray-500">{c.role}</p>
+                    <div className="flex items-center gap-3 mb-4">
+                      <img
+                        src={c.logo}
+                        alt={c.client}
+                        className="w-10 h-10 rounded-full border-2 border-red-200"
+                      />
+                      <div>
+                        <p className="font-semibold text-gray-800">{c.client}</p>
+                        <p className="text-sm text-gray-500">{c.role}</p>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-xl mb-2 text-gray-900">{c.title}</h3>
+                    <p className="text-gray-600 mb-4 leading-relaxed">{c.desc}</p>
+                  </div>
+
+                  <div className="flex justify-between items-center mt-4 gap-4">
+                    <div className="bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-100 rounded-xl p-4 text-center flex-1">
+                      <p className="text-2xl font-extrabold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+                        {c.stat}
+                      </p>
+                      <p className="text-xs font-medium text-gray-600 mt-1">
+                        Improvement
+                      </p>
+                    </div>
+                    <Button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-4 py-2 rounded-xl font-bold shadow-lg transform hover:scale-105 transition-all">
+                      {c.cta}
+                    </Button>
                   </div>
                 </div>
-                <h3 className="font-bold text-xl mb-2">{c.title}</h3>
-                <p className="text-gray-600 mb-4">{c.desc}</p>
-              </div>
-
-              <div className="flex justify-between items-center mt-4">
-                <div className="bg-[#fee2e2] rounded-xl p-4 text-center">
-                  <p className="text-2xl font-extrabold text-[#dc2626]">
-                    {c.stat}
-                  </p>
-                  <p className="text-xs font-medium text-[#991b1b]">
-                    Improvement
-                  </p>
-                </div>
-                <Button className="bg-[#dc2626] hover:bg-[#b91c1c] text-white px-4 py-2 rounded-lg">
-                  {c.cta}
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        </Tilt>
-      ))}
-    </div>
-  </div>
-</section>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
 
       {/* FAQ */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Frequently Asked Questions
-          </h2>
+      <Section className="py-20 bg-gradient-to-br from-red-50 via-orange-50 to-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Get answers to common questions about our restaurant growth solutions
+            </p>
+          </div>
+          
           <div className="grid gap-8 md:grid-cols-2">
             {faqs.map((f, i) => (
-              <motion.div
+              <Card
                 key={i}
-                className="relative flex flex-col justify-between bg-white/10 backdrop-blur-md border border-gray-200 rounded-2xl shadow-md p-6 cursor-pointer transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{
-                  scale: 1.05,
-                  y: -3,
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-                  backgroundColor: "rgba(255,255,255,0.9)",
-                }}
-                transition={{ delay: i * 0.1, type: "spring", stiffness: 120 }}
+                className="p-8 bg-white border-2 border-gray-100 hover:border-red-200 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                animationDelay={i * 100}
               >
-                <h4 className="font-semibold text-lg mb-2">{f.q}</h4>
-                <p className="text-gray-600">{f.a}</p>
-              </motion.div>
+                <h4 className="font-bold text-xl mb-4 text-gray-900">{f.q}</h4>
+                <p className="text-gray-600 leading-relaxed">{f.a}</p>
+              </Card>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       <Footer />
     </div>
