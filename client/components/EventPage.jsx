@@ -653,7 +653,7 @@ export default function EventPage() {
                 key={solution.id}
                 onMouseEnter={() => setHoveredSolution(solution.id)}
                 onMouseLeave={() => setHoveredSolution(null)}
-                className="group relative overflow-hidden bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 shadow-[0_4px_20px_-2px_rgba(59,130,246,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(59,130,246,0.2)] transition-all duration-300 hover:scale-105">
+                className="group relative overflow-hidden bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 shadow-[0_4px_20px_-2px_rgba(59,130,246,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(59,130,246,0.2)] transition-all duration-300 hover:scale-105 h-[28rem]">
                 <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient || 'from-blue-500 to-indigo-600'} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
                 <div className="relative z-10">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -698,7 +698,7 @@ export default function EventPage() {
                 key={index}
                 onMouseEnter={() => setHoveredBenefit(index)}
                 onMouseLeave={() => setHoveredBenefit(null)}
-                className="group relative overflow-hidden bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 shadow-[0_4px_20px_-2px_rgba(59,130,246,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(59,130,246,0.2)] transition-all duration-300 hover:scale-105"
+                className="group relative overflow-hidden bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 shadow-[0_4px_20px_-2px_rgba(59,130,246,0.1)] hover:shadow-[0_8px_25px_-5px_rgba(59,130,246,0.2)] transition-all duration-300 hover:scale-105 h-[15rem]"
               >
                 <div className="relative z-10">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
