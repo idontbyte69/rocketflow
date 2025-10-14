@@ -210,9 +210,9 @@ export default function EducationPage() {
         {/* Geometric Background Pattern */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
           <div className="absolute top-0 left-0 w-full h-full">
-            <div className="absolute top-20 left-20 w-64 h-64 border-4 border-blue-200 transform rotate-45"></div>
-            <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-indigo-200 transform -rotate-12"></div>
-            <div className="absolute top-1/2 left-1/2 w-72 h-72 border-4 border-purple-200 transform rotate-12"></div>
+            <div className="absolute top-20 left-20 w-64 h-64 border-4 border-purple-200 transform rotate-45"></div>
+            <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-fuchsia-200 transform -rotate-12"></div>
+            <div className="absolute top-1/2 left-1/2 w-72 h-72 border-4 border-pink-200 transform rotate-12"></div>
           </div>
         </div>
 
@@ -220,15 +220,15 @@ export default function EducationPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <div>
-              <div className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full mb-6 border border-blue-200">
-                <AcademicCapIcon className="w-5 h-5 text-blue-600 mr-2" />
-                <span className="text-blue-900 font-semibold text-sm">IELTS Coaching Excellence</span>
+              <div className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-purple-100 to-fuchsia-100 rounded-full mb-6 border border-purple-200">
+                <AcademicCapIcon className="w-5 h-5 text-purple-600 mr-2" />
+                <span className="text-purple-900 font-semibold text-sm">IELTS Coaching Excellence</span>
               </div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
                 <span className="text-gray-900">Rocket Flow for</span>
                 <br />
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
                   IELTS Centers
                 </span>
               </h1>
@@ -241,7 +241,7 @@ export default function EducationPage() {
               {/* Key Highlights */}
               <div className="grid grid-cols-2 gap-4 mb-10">
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <ChatBubbleLeftRightIcon className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -250,7 +250,7 @@ export default function EducationPage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <ClockIcon className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -279,10 +279,10 @@ export default function EducationPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                <Button className="bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 hover:from-purple-700 hover:via-fuchsia-700 hover:to-pink-700 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
                   Start Free Trial
                 </Button>
-                <Button className="border-2 border-indigo-600 text-indigo-700 hover:bg-indigo-600 hover:text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300">
+                <Button className="border-2 border-purple-600 text-purple-700 hover:bg-purple-600 hover:text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300">
                   Watch Demo
                 </Button>
               </div>
@@ -307,7 +307,7 @@ export default function EducationPage() {
               </p>
 
               {/* Floating Badge */}
-              <div className="absolute -top-8 -right-8 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-full shadow-2xl font-bold text-sm transform rotate-6 hover:rotate-0 transition-transform duration-300">
+              <div className="absolute -top-8 -right-8 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white px-6 py-3 rounded-full shadow-2xl font-bold text-sm transform rotate-6 hover:rotate-0 transition-transform duration-300">
                 🎓 IELTS Optimized
               </div>
             </div>
@@ -321,7 +321,7 @@ export default function EducationPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Complete Suite for
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> IELTS Centers</span>
+              <span className="bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent"> IELTS Centers</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Everything your coaching center needs in one powerful platform
@@ -335,12 +335,12 @@ export default function EducationPage() {
                 animationDelay={index * 0.1}
                 className={`cursor-pointer transition-all duration-300 border-2 ${
                   activeFeature === index
-                    ? 'bg-gradient-to-br from-blue-50 to-indigo-50 border-indigo-300 scale-105'
-                    : 'border-gray-200 hover:border-indigo-200'
+                    ? 'bg-gradient-to-br from-purple-50 to-fuchsia-50 border-purple-300 scale-105'
+                    : 'border-gray-200 hover:border-purple-200'
                 }`}
                 onClick={() => setActiveFeature(index)}
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-xl flex items-center justify-center mb-4">
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
@@ -348,7 +348,7 @@ export default function EducationPage() {
                 <div className="space-y-2">
                   {feature.stats.map((stat, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-sm">
-                      <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div>
+                      <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
                       <span className="text-gray-700">{stat}</span>
                     </div>
                   ))}
@@ -365,7 +365,7 @@ export default function EducationPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               9 Powerful Features
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> for IELTS Centers</span>
+              <span className="bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent"> for IELTS Centers</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Automate every aspect of your student journey from first contact to final enrollment and beyond
@@ -378,8 +378,8 @@ export default function EducationPage() {
                 key={solution.id}
                 className={`relative p-8 rounded-3xl bg-white border-2 shadow-xl hover:shadow-2xl transition-all duration-500 transform overflow-hidden group ${
                   hoveredService === solution.id 
-                    ? 'border-indigo-300 scale-105 -translate-y-2' 
-                    : 'border-gray-200 hover:border-indigo-200'
+                    ? 'border-purple-300 scale-105 -translate-y-2' 
+                    : 'border-gray-200 hover:border-purple-200'
                 }`}
                 onMouseEnter={() => setHoveredService(solution.id)}
                 onMouseLeave={() => setHoveredService(null)}
@@ -388,7 +388,7 @@ export default function EducationPage() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
                 {/* Stats Badge */}
-                <div className="absolute top-6 right-6 bg-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-xs font-bold shadow-md">
+                <div className="absolute top-6 right-6 bg-purple-100 text-purple-700 px-4 py-1.5 rounded-full text-xs font-bold shadow-md">
                   {solution.stats.value}
                 </div>
 
@@ -434,7 +434,7 @@ export default function EducationPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Why IELTS Centers
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Choose Rocket Flow</span>
+              <span className="bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent"> Choose Rocket Flow</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Join hundreds of coaching centers transforming their operations
@@ -461,7 +461,7 @@ export default function EducationPage() {
           </div>
 
           {/* Stats Bar */}
-          <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-12 shadow-2xl">
+          <div className="bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 rounded-3xl p-12 shadow-2xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
@@ -469,7 +469,7 @@ export default function EducationPage() {
                     <stat.icon className="w-8 h-8 text-black" />
                   </div>
                   <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-blue-100 font-semibold">{stat.label}</div>
+                  <div className="text-purple-100 font-semibold">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -479,7 +479,7 @@ export default function EducationPage() {
           <div className="mt-20">
             <div className="text-center mb-12">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Transform Every Challenge into <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Growth Opportunity</span>
+                Transform Every Challenge into <span className="bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent">Growth Opportunity</span>
               </h3>
               <p className="text-lg text-gray-600">How Rocket Flow solves the biggest challenges facing IELTS coaching centers</p>
             </div>
@@ -488,14 +488,14 @@ export default function EducationPage() {
             <div className="overflow-x-auto rounded-2xl shadow-xl">
               <table className="w-full border-collapse bg-white">
                 <thead>
-                  <tr className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
-                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
+                  <tr className="bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600">
+                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-purple-400">
                       Category
                     </th>
-                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
+                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-purple-400">
                       Problem
                     </th>
-                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
+                    <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-purple-400">
                       Rocket Flow Solution
                     </th>
                     <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
@@ -505,10 +505,10 @@ export default function EducationPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {/* Lead Management */}
-                  <tr className="group hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300">
+                  <tr className="group hover:bg-gradient-to-r hover:from-purple-50 hover:to-fuchsia-50 transition-all duration-300">
                     <td className="px-6 py-6 border-r border-gray-200">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
                           <ChatBubbleLeftRightIcon className="w-6 h-6 text-white" />
                         </div>
                         <span className="font-bold text-gray-900 text-lg">Lead Management</span>
@@ -528,10 +528,10 @@ export default function EducationPage() {
                   </tr>
 
                   {/* Conversion Rate */}
-                  <tr className="group hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 transition-all duration-300">
+                  <tr className="group hover:bg-gradient-to-r hover:from-fuchsia-50 hover:to-pink-50 transition-all duration-300">
                     <td className="px-6 py-6 border-r border-gray-200">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
                           <UserGroupIcon className="w-6 h-6 text-white" />
                         </div>
                         <span className="font-bold text-gray-900 text-lg">Conversion Rate</span>
@@ -551,10 +551,10 @@ export default function EducationPage() {
                   </tr>
 
                   {/* Admin Overload */}
-                  <tr className="group hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300">
+                  <tr className="group hover:bg-gradient-to-r hover:from-purple-50 hover:to-fuchsia-50 transition-all duration-300">
                     <td className="px-6 py-6 border-r border-gray-200">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
                           <CogIcon className="w-6 h-6 text-white" />
                         </div>
                         <span className="font-bold text-gray-900 text-lg">Admin Overload</span>
@@ -574,10 +574,10 @@ export default function EducationPage() {
                   </tr>
 
                   {/* Sales & Marketing */}
-                  <tr className="group hover:bg-gradient-to-r hover:from-cyan-50 hover:to-blue-50 transition-all duration-300">
+                  <tr className="group hover:bg-gradient-to-r hover:from-fuchsia-50 hover:to-pink-50 transition-all duration-300">
                     <td className="px-6 py-6 border-r border-gray-200">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
                           <ChartBarIcon className="w-6 h-6 text-white" />
                         </div>
                         <span className="font-bold text-gray-900 text-lg">Sales & Marketing</span>
@@ -597,10 +597,10 @@ export default function EducationPage() {
                   </tr>
 
                   {/* Data Management */}
-                  <tr className="group hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 transition-all duration-300">
+                  <tr className="group hover:bg-gradient-to-r hover:from-purple-50 hover:to-fuchsia-50 transition-all duration-300">
                     <td className="px-6 py-6 border-r border-gray-200">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
                           <BookOpenIcon className="w-6 h-6 text-white" />
                         </div>
                         <span className="font-bold text-gray-900 text-lg">Data Management</span>
@@ -620,10 +620,10 @@ export default function EducationPage() {
                   </tr>
 
                   {/* Student Experience */}
-                  <tr className="group hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 transition-all duration-300">
+                  <tr className="group hover:bg-gradient-to-r hover:from-fuchsia-50 hover:to-pink-50 transition-all duration-300">
                     <td className="px-6 py-6 border-r border-gray-200">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
                           <SparklesIcon className="w-6 h-6 text-white" />
                         </div>
                         <span className="font-bold text-gray-900 text-lg">Student Experience</span>
@@ -646,7 +646,7 @@ export default function EducationPage() {
             </div>
 
             <div className="mt-16">
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
+              <div className="bg-gradient-to-r from-purple-50 to-fuchsia-50 rounded-2xl p-8 border border-purple-100">
                 <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">Revolutionize Your IELTS Coaching Center</h3>
                 <p className="text-lg text-gray-600 text-center mb-8 max-w-3xl mx-auto">
                   From lead management to student experience, Rocket Flow automates your entire coaching workflow,
@@ -654,15 +654,15 @@ export default function EducationPage() {
                 </p>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="flex items-center space-x-3 justify-center">
-                    <SparklesIcon className="w-6 h-6 text-blue-600" />
+                    <SparklesIcon className="w-6 h-6 text-purple-600" />
                     <span className="font-semibold text-gray-800">Save 20+ hours/week</span>
                   </div>
                   <div className="flex items-center space-x-3 justify-center">
-                    <ChartBarIcon className="w-6 h-6 text-blue-600" />
+                    <ChartBarIcon className="w-6 h-6 text-purple-600" />
                     <span className="font-semibold text-gray-800">Increase enrollments by 40%</span>
                   </div>
                   <div className="flex items-center space-x-3 justify-center">
-                    <RocketLaunchIcon className="w-6 h-6 text-blue-600" />
+                    <RocketLaunchIcon className="w-6 h-6 text-purple-600" />
                     <span className="font-semibold text-gray-800">Scale your coaching center</span>
                   </div>
                 </div>
@@ -678,7 +678,7 @@ export default function EducationPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Success Stories from
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> IELTS Center Owners</span>
+              <span className="bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent"> IELTS Center Owners</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Real results from coaching centers like yours
@@ -690,17 +690,17 @@ export default function EducationPage() {
               <Card
                 key={index}
                 animationDelay={index * 0.15}
-                className="border-2 border-indigo-100"
+                className="border-2 border-purple-100"
                 padding="lg"
               >
                 {/* Company Header */}
                 <div className="flex items-center gap-6 mb-8 pb-8 border-b border-gray-100">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-fuchsia-700 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">
                     {study.logo}
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-1">{study.company}</h3>
-                    <div className="text-indigo-600 font-semibold">{study.industry}</div>
+                    <div className="text-purple-600 font-semibold">{study.industry}</div>
                   </div>
                 </div>
 
@@ -744,7 +744,7 @@ export default function EducationPage() {
       </Section>
 
       {/* CTA Section */}
-      <Section className="py-24 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 relative overflow-hidden">
+      <Section className="py-24 bg-gradient-to-r from-purple-700 via-fuchsia-700 to-pink-700 relative overflow-hidden">
         {/* Animated Background Patterns */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full">
@@ -772,10 +772,10 @@ export default function EducationPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button className="bg-white text-indigo-700 hover:bg-gray-100 px-12 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+              <Button className="bg-white text-purple-700 hover:bg-gray-100 px-12 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
                 Start Free 14-Day Trial
               </Button>
-              <Button className="border-3 border-white text-white hover:bg-white hover:text-indigo-700 px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 backdrop-blur-sm bg-white bg-opacity-10">
+              <Button className="border-3 border-white text-white hover:bg-white hover:text-purple-700 px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 backdrop-blur-sm bg-white bg-opacity-10">
                 Schedule a Demo
               </Button>
             </div>
