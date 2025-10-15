@@ -487,7 +487,57 @@ export default function HotelandResort() {
           </div>
         </Container>
       </Section>
-      
+
+      {/* Complete Suite for Travelers -> adapted for Hotels & Resorts */}
+      <Section className="py-20 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Complete Suite for
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                {" "}
+                Travelers
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Everything a traveler needs in one powerful platform
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {features.map((feature, index) => (
+              <Card
+                key={index}
+                animationDelay={index * 0.1}
+                className={`cursor-pointer transition-all duration-300 border-2 ${
+                  activeFeature === index
+                    ? "bg-gradient-to-br from-teal-50 to-cyan-50 border-cyan-300 scale-105"
+                    : "border-gray-200 hover:border-cyan-200"
+                }`}
+                onClick={() => setActiveFeature(index)}
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
+                  <feature.icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {feature.description}
+                </p>
+                <div className="space-y-2">
+                  {feature.stats.map((stat, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm">
+                      <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div>
+                      <span className="text-gray-700">{stat}</span>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
       {/* Travel Solutions (moved here to sit at the bottom of the Features Section) */}
       <Section className="py-20 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
@@ -556,6 +606,151 @@ export default function HotelandResort() {
                 </div>
               </Card>
             ))}
+          </div>
+        </Container>
+      </Section>
+      
+      
+            <ProvideMoreSection />
+
+      {/* Benefits & Stats */}
+      <Section className="py-20 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Why Travelers
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                {" "}
+                Love Us
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Millions trust us for hassle-free bookings
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {benefits.map((benefit, index) => (
+              <Card
+                key={index}
+                animationDelay={index * 0.1}
+                className="bg-gradient-to-br from-slate-50 to-cyan-50 border-2 border-cyan-100"
+              >
+                <div
+                  className={`w-16 h-16 bg-gradient-to-br from-${benefit.color === 'blue' ? 'teal' : benefit.color}-500 to-${benefit.color === 'blue' ? 'cyan' : benefit.color}-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg`}
+                >
+                  <benefit.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {benefit.description}
+                </p>
+                <div
+                  className={`inline-block px-4 py-2 bg-${benefit.color}-100 text-${benefit.color}-700 rounded-full text-sm font-bold`}
+                >
+                  {benefit.metric}
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          <div className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 rounded-3xl p-12 shadow-2xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <stat.icon className="w-8 h-8 text-black" />
+                    </div>
+                  <div className="text-4xl font-bold text-white mb-2">
+                    {stat.number}
+                  </div>
+                    <div className="text-cyan-100 font-semibold">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Summary of Benefits */}
+      <Section className="py-20 bg-gray-50">
+        <Container>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Summary of{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Benefits
+              </span>
+            </h3>
+            <p className="text-lg text-gray-600">
+              How Rocket Flow transforms travel operations
+            </p>
+          </div>
+
+          {/* Table */}
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden">
+              <thead>
+                <tr className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600">
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
+                    Category
+                  </th>
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
+                    Problem
+                  </th>
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
+                    Rocket Flow Solution
+                  </th>
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
+                    Impact
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {benefits.map((benefit, idx) => (
+                  <tr
+                    key={idx}
+                    className="group hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300"
+                  >
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div
+                          className={`w-12 h-12 bg-gradient-to-br from-${benefit.color}-500 to-${benefit.color}-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300`}
+                        >
+                          <benefit.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">
+                          {benefit.title}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">
+                        {benefit.description}
+                      </p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">
+                        {benefit.metric}
+                      </p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        {benefit.title.includes("Efficiency")
+                          ? "Faster operations"
+                          : benefit.title.includes("Security")
+                          ? "Data protected"
+                          : "Enhanced experience"}
+                      </p>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </Container>
       </Section>
