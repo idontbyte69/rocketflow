@@ -20,11 +20,28 @@ import {
   SparklesIcon
 } from '@heroicons/react/24/outline';
 
-export default function TutorialPage() {
-  const [activeVideo, setActiveVideo] = useState('admin-login');
+export default function TutorialPage({ tutorials = null }) {
+  const [activeVideo, setActiveVideo] = useState('');
   const [activeFaq, setActiveFaq] = useState(null);
 
-  const tutorialSections = [
+  // If server-provided tutorials are passed in, map them into sections;
+  // otherwise fall back to the built-in `tutorialSections` static data below.
+  const tutorialSections = (() => {
+    if (Array.isArray(tutorials) && tutorials.length) {
+      // Expect tutorials to be a flat list. Group them into a single section.
+      const videos = tutorials.map((t, idx) => ({
+        id: t.slug || `tutorial-${idx}`,
+        title: t.title,
+        description: t.excerpt || t.content?.slice(0, 200) || '',
+        duration: t.duration || '',
+        videoUrl: t.videoUrl || '',
+        steps: Array.isArray(t.steps) ? t.steps : (typeof t.steps === 'string' ? t.steps.split('\n').map(s=>s.trim()).filter(Boolean) : [])
+      }))
+      // default activeVideo to first incoming tutorial
+      if (videos.length && !activeVideo) setActiveVideo(videos[0].id)
+      return [{ id: 'server-tutorials', title: 'Tutorials', description: 'From the server', icon: RocketLaunchIcon, videos }]
+    }
+    return [
     {
       id: 'getting-started',
       title: 'Getting Started',
@@ -205,6 +222,7 @@ export default function TutorialPage() {
     },
     
   ];
+  })();
 
   const faqItems = [
     {

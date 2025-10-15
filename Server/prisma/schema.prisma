@@ -1,10 +1,10 @@
-generator client {
-  provider = "prisma-client-js"
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+generator client {
+  provider = "prisma-client-js"
 }
 
 model User {
@@ -17,70 +17,29 @@ model User {
 }
 
 model Post {
-  id           String   @id @default(cuid())
-  slug         String   @unique
-  title        String
-  excerpt      String
-  content      String
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  title         String
+  excerpt       String
+  content       String
   featuredImage String?
-  date         DateTime @default(now())
-  author       String
-  tags         String[] @default([])
-  views        Int      @default(0)
-  likes        Int      @default(0)
-  service      String?
+  date          DateTime @default(now())
+  author        String
+  tags          Json     @default("[]")  // ✅ changed from String[]
+  views         Int      @default(0)
+  likes         Int      @default(0)
+  service       String?
 }
 
 model Tutorial {
-  id           String   @id @default(cuid())
-  slug         String   @unique
-  title        String
-  excerpt      String
-  content      String
-  date         DateTime @default(now())
-  author       String
-  tags         String[] @default([])
-}
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
-model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  password  String
-  name      String?
-  role      String   @default("admin")
-  createdAt DateTime @default(now())
-}
-
-model Post {
-  id           String   @id @default(cuid())
-  slug         String   @unique
-  title        String
-  excerpt      String
-  content      String
-  featuredImage String?
-  date         DateTime @default(now())
-  author       String
-  tags         String[] @default([])
-  views        Int      @default(0)
-  likes        Int      @default(0)
-  service      String?
-}
-
-model Tutorial {
-  id           String   @id @default(cuid())
-  slug         String   @unique
-  title        String
-  excerpt      String
-  content      String
-  date         DateTime @default(now())
-  author       String
-  tags         String[] @default([])
+  id      String   @id @default(cuid())
+  slug    String   @unique
+  title   String
+  excerpt String
+  content String
+  date    DateTime @default(now())
+  author  String
+  tags    Json     @default("[]")  // ✅ changed from String[]
+  videoUrl String?
+  steps    Json     @default("[]")
 }
