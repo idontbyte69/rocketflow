@@ -518,14 +518,14 @@ export default function TutorialPage({ tutorials = null }) {
             {securityTips.map((tip, index) => (
               <Card 
                 key={index} 
-                className="p-8 backdrop-blur-sm bg-white/70 border border-gray-100 hover:shadow-xl hover:shadow-red-500/5 hover:border-red-100 transition-all duration-300"
+                className="h-64 p-1.5 backdrop-blur-sm bg-white/70 border border-gray-100 hover:shadow-xl hover:shadow-red-500/5 hover:border-red-100 transition-all duration-300"
               >
-                <div className="rounded-2xl w-16 h-16 bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center mb-6">
+                <div className="rounded-2xl w-16 h-16 bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center mb-4">
                   <tip.icon className="w-8 h-8 text-red-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{tip.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{tip.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{tip.description}</p>
-                <div className="mt-6 flex items-center text-red-600 font-medium">
+                <div className="mt-auto flex items-center text-red-600 font-medium">
                   <span>Learn more</span>
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </div>
