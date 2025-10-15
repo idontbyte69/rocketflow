@@ -16,6 +16,7 @@ import {
   BuildingOfficeIcon,
   TicketIcon,
   SparklesIcon,
+  ScissorsIcon,
   ShoppingCartIcon,
   ComputerDesktopIcon,
   PlayIcon,
@@ -174,7 +175,7 @@ export default function LandingPage() {
     { name: 'Organic Products', icon: ShoppingBagIcon, color: 'bg-gradient-to-br from-secondary-50 to-secondary-100' },
     { name: 'Photography', icon: CameraIcon, color: 'bg-gradient-to-br from-primary-50 to-primary-100' },
     { name: 'Restaurants', icon: ShoppingBagIcon, color: 'bg-gradient-to-br from-secondary-100 to-primary-100' },
-    { name: 'Salon & Parlor', icon: SparklesIcon, color: 'bg-gradient-to-br from-primary-50 to-primary-100' },
+    { name: 'Salon & Parlor', icon: ScissorsIcon, color: 'bg-gradient-to-br from-primary-50 to-primary-100' },
     { name: 'Study Abroad', icon: PaperAirplaneIcon, color: 'bg-gradient-to-br from-primary-50 to-secondary-50' },
     { name: 'Travel Booking', icon: TicketIcon, color: 'bg-gradient-to-br from-secondary-50 to-primary-100' }
   ];
