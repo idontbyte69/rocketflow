@@ -1,14 +1,14 @@
-'use client'
+"use client"
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Card from '../ui/Card'
 import Container from '../ui/Container'
 import Section from '../ui/Section'
-import POSTS from '../blog/posts'
+import { cn, normalizeImageUrl } from '../../lib/utils'
 
-const MOCK_POSTS = POSTS
+const API = process.env.NEXT_PUBLIC_ADMIN_API || 'http://localhost:4000'
 
 function formatDate(iso) {
   try {
@@ -23,42 +23,46 @@ function PostCard({ post }) {
     <Link href={`/blog/${post.slug}`} className="group block">
       <Card hover={true} tiltEffect={true} padding="md" className="group">
         <article aria-labelledby={`post-${post.id}-title`} className="flex flex-col h-full">
-        <div className="relative w-full h-44 rounded-xl overflow-hidden bg-gray-50">
-          <Image
-            src={post.featuredImage}
-            alt={post.title}
-            fill
-            className="object-cover"
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-        </div>
-
-        <div className="mt-4 flex-1 flex flex-col">
-          <h3 id={`post-${post.id}-title`} className="text-lg font-bold text-gray-900 group-hover:text-coral-600 transition-colors">
-            {post.title}
-          </h3>
-          <p className="text-sm text-gray-600 mt-2 line-clamp-3">{post.excerpt}</p>
-
-          <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
-            <div>
-              <span className="font-medium text-gray-700">{post.author}</span>
-              <span className="ml-2">•</span>
-              <time className="ml-2" dateTime={post.date}>{formatDate(post.date)}</time>
-            </div>
-            <div className="flex items-center space-x-3">
-              <span className="text-gray-400 text-sm">❤ {post.likes}</span>
-              <span className="text-gray-400 text-sm">👁 {post.views}</span>
-            </div>
+          <div className="relative w-full h-44 rounded-xl overflow-hidden bg-gray-50">
+            {post.featuredImage ? (
+              <Image
+                src={normalizeImageUrl(post.featuredImage)}
+                alt={post.title}
+                fill
+                className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-gray-400">No image</div>
+            )}
           </div>
 
-          <div className="mt-3 flex flex-wrap gap-2">
-            {post.tags.map((t) => (
-              <span key={t} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">{t}</span>
-            ))}
+          <div className="mt-4 flex-1 flex flex-col">
+            <h3 id={`post-${post.id}-title`} className="text-lg font-bold text-gray-900 group-hover:text-coral-600 transition-colors">
+              {post.title}
+            </h3>
+            <p className="text-sm text-gray-600 mt-2 line-clamp-3">{post.excerpt}</p>
+
+            <div className="mt-4 flex items-center justify-between text-xs text-gray-500">
+              <div>
+                <span className="font-medium text-gray-700">{post.author}</span>
+                <span className="ml-2">•</span>
+                <time className="ml-2" dateTime={post.date}>{formatDate(post.date)}</time>
+              </div>
+              <div className="flex items-center space-x-3">
+                <span className="text-gray-400 text-sm">❤ {post.likes}</span>
+                <span className="text-gray-400 text-sm">👁 {post.views}</span>
+              </div>
+            </div>
+
+            <div className="mt-3 flex flex-wrap gap-2">
+              {(post.tags || []).map((t) => (
+                <span key={t} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">{t}</span>
+              ))}
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
       </Card>
     </Link>
   )
@@ -68,26 +72,30 @@ export default function BlogClient() {
   const [query, setQuery] = useState('')
   const [service, setService] = useState('all')
   const [selectedTags, setSelectedTags] = useState([])
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   // derive tag and service options from posts
   const services = useMemo(() => {
-    const s = new Set(MOCK_POSTS.map((p) => p.service))
+    // filter out falsy services (undefined/null/empty) to avoid invalid options
+    const s = new Set(posts.map((p) => p.service).filter(Boolean))
     return ['all', ...Array.from(s)]
-  }, [])
+  }, [posts])
 
   const tags = useMemo(() => {
     const t = new Set()
-    MOCK_POSTS.forEach((p) => p.tags.forEach((tag) => t.add(tag)))
+    posts.forEach((p) => (p.tags || []).forEach((tag) => t.add(tag)))
     return Array.from(t)
-  }, [])
+  }, [posts])
 
   // filtering logic
   const filtered = useMemo(() => {
-    return MOCK_POSTS.filter((p) => {
+    return posts.filter((p) => {
       // search
       const q = query.trim().toLowerCase()
       if (q) {
-        const inText = (p.title + ' ' + p.excerpt + ' ' + p.tags.join(' ')).toLowerCase().includes(q)
+        const inText = (p.title + ' ' + p.excerpt + ' ' + (p.tags || []).join(' ')).toLowerCase().includes(q)
         if (!inText) return false
       }
 
@@ -95,20 +103,38 @@ export default function BlogClient() {
       if (service !== 'all' && p.service !== service) return false
 
       // tags
-      if (selectedTags.length > 0 && !selectedTags.every((t) => p.tags.includes(t))) return false
-
-      // (date filtering removed)
+      if (selectedTags.length > 0 && !selectedTags.every((t) => (p.tags || []).includes(t))) return false
 
       return true
     })
-  }, [query, service, selectedTags])
+  }, [query, service, selectedTags, posts])
 
   const latest = useMemo(() => {
     return [...filtered].sort((a, b) => new Date(b.date) - new Date(a.date))
   }, [filtered])
 
   const popular = useMemo(() => {
-    return [...MOCK_POSTS].sort((a, b) => (b.views + b.likes) - (a.views + a.likes)).slice(0, 3)
+    return [...posts].sort((a, b) => (b.views + b.likes) - (a.views + a.likes)).slice(0, 3)
+  }, [posts])
+
+  useEffect(() => {
+    let cancelled = false
+    setLoading(true)
+    setError('')
+    fetch(`${API}/posts`)
+      .then((r) => {
+        if (!r.ok) throw new Error('Failed to load posts')
+        return r.json()
+      })
+      .then((data) => {
+        if (!cancelled) setPosts(data)
+      })
+      .catch((err) => {
+        if (!cancelled) setError(err.message || 'Failed to load posts')
+      })
+      .finally(() => { if (!cancelled) setLoading(false) })
+
+    return () => { cancelled = true }
   }, [])
 
   // toggle tag selection
@@ -141,7 +167,6 @@ export default function BlogClient() {
                 ))}
               </select>
 
-              {/* date filters removed */}
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2 justify-center">
@@ -170,7 +195,13 @@ export default function BlogClient() {
               </div>
 
               {latest.length === 0 ? (
-                <div className="rounded-xl border border-gray-200 p-8 text-center text-gray-600">No posts match your filters. Try adjusting search or filters.</div>
+                loading ? (
+                  <div className="rounded-xl border border-gray-200 p-8 text-center text-gray-600">Loading posts...</div>
+                ) : error ? (
+                  <div className="rounded-xl border border-red-200 p-8 text-center text-red-600">{error}</div>
+                ) : (
+                  <div className="rounded-xl border border-gray-200 p-8 text-center text-gray-600">No posts match your filters. Try adjusting search or filters.</div>
+                )
               ) : (
                 <div className="grid md:grid-cols-2 gap-6">
                   {latest.map((post) => (
@@ -187,7 +218,11 @@ export default function BlogClient() {
                   {popular.map((p) => (
                     <div key={p.id} className="flex items-center gap-3">
                       <div className="w-16 h-10 relative rounded-md overflow-hidden bg-gray-50">
-                        <Image src={p.featuredImage} alt={p.title} fill className="object-cover" loading="lazy" />
+                        {p.featuredImage ? (
+                          <Image src={normalizeImageUrl(p.featuredImage)} alt={p.title} fill className="object-cover" loading="lazy" />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-gray-400">No image</div>
+                        )}
                       </div>
                       <div>
                         <p className="text-sm font-medium text-gray-900">{p.title}</p>
@@ -218,7 +253,6 @@ export default function BlogClient() {
           </div>
         </Container>
       </Section>
-        {/* no inline details - posts link to /blog/[slug] */}
     </main>
   )
 }
