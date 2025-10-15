@@ -379,14 +379,14 @@ export default function SalonPage() {
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4">
                   <Card className="!bg-gradient-to-br !from-purple-500 !to-fuchsia-600 !text-white">
-                    <div className="w-12 h-12 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 bg-red bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
                       <UserGroupIcon className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-3xl font-bold mb-1">185</div>
                     <div className="text-sm opacity-90">Active Clients</div>
                   </Card>
                   <Card className="!bg-gradient-to-br !from-fuchsia-500 !to-pink-600 !text-white">
-                    <div className="w-12 h-12 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 bg-red bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
                       <ChartBarIcon className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-3xl font-bold mb-1">98%</div>
