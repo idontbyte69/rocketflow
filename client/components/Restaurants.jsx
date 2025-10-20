@@ -187,7 +187,7 @@ export default function Restaurants() {
                 <Button className="bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-black px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                   Start Growing Today
                 </Button>
-                <Button className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300">
+                <Button className="bg-gradient-to-r from-primary to-primary-600 hover:from-primary-600 hover:to-primary-700 text-black px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                   Watch Demo
                 </Button>
               </div>
@@ -626,7 +626,7 @@ export default function Restaurants() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button className="bg-white text-primary hover:bg-gray-100 px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+              <Button className="border-3 border-white text-white hover:bg-white hover:text-primary px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 backdrop-blur-sm bg-white/10">
                 Get Started Free
               </Button>
               <Button className="border-3 border-white text-white hover:bg-white hover:text-primary px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 backdrop-blur-sm bg-white/10">
