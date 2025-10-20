@@ -3,9 +3,14 @@
 import { useState, useEffect } from 'react'
 import { cn } from '../../../lib/utils'
 import { useRouter } from 'next/navigation'
+import dynamic from 'next/dynamic'
 import { fetchPosts, createPost } from '../../../components/admin/api'
 import { AdminSidebar } from '../../../components/admin/AdminSidebar'
-import BlogEditor from '../../../components/admin/BlogEditor'
+
+const BlogEditor = dynamic(() => import('../../../components/admin/BlogEditor'), {
+  ssr: false,
+  loading: () => <div className="border rounded-xl p-4 bg-white min-h-[200px] flex items-center justify-center text-gray-400">Loading editor...</div>
+})
 
 export default function Dashboard() {
   const router = useRouter()

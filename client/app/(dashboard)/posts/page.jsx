@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
+import dynamic from 'next/dynamic'
 import { cn } from '../../../lib/utils'
 import Container from '../../../components/ui/Container'
 import Section from '../../../components/ui/Section'
@@ -10,7 +11,11 @@ import { fetchPosts, deletePost } from '../../../components/admin/api'
 import { toast } from 'react-toastify'
 import confirmWithToast from '../../../components/ui/confirmWithToast'
 import { createPost } from '../../../components/admin/api'
-import BlogEditor from '../../../components/admin/BlogEditor'
+
+const BlogEditor = dynamic(() => import('../../../components/admin/BlogEditor'), {
+  ssr: false,
+  loading: () => <div className="border rounded-xl p-4 bg-white min-h-[200px] flex items-center justify-center text-gray-400">Loading editor...</div>
+})
 
 // Minimal Tabs implementation (stable at module scope)
 function Tabs({ children }) {

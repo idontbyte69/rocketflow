@@ -2,13 +2,18 @@
 
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
+import dynamic from 'next/dynamic'
 import Container from '../../../components/ui/Container'
 import Section from '../../../components/ui/Section'
 import { AdminSidebar } from '../../../components/admin/AdminSidebar'
-import BlogEditor from '../../../components/admin/BlogEditor'
 import { fetchTutorials, createTutorial, deleteTutorial } from '../../../components/admin/api'
 import confirmWithToast from '../../../components/ui/confirmWithToast'
 import { toast } from 'react-toastify'
+
+const BlogEditor = dynamic(() => import('../../../components/admin/BlogEditor'), {
+  ssr: false,
+  loading: () => <div className="border rounded-xl p-4 bg-white min-h-[200px] flex items-center justify-center text-gray-400">Loading editor...</div>
+})
 
 function slugify(text = '') {
   return text
