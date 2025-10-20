@@ -10,7 +10,12 @@ export default function BlogEditor({ value, onChange, onImageUpload }) {
   const fileInputRef = useRef()
   const [uploading, setUploading] = useState(false)
   const [notice, setNotice] = useState('')
-  
+  const [mounted, setMounted] = useState(false)
+
+  // Wait for component to mount before initializing editor
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // This component is a client component ("use client") so it's safe to initialize TipTap here.
   const editor = useEditor({
@@ -19,13 +24,13 @@ export default function BlogEditor({ value, onChange, onImageUpload }) {
     onUpdate: ({ editor }) => {
       onChange && onChange(editor.getHTML())
     },
-    immediatelyRender: true,
+    immediatelyRender: false,
     editorProps: {
       attributes: {
         class: 'prose max-w-full min-h-[200px] focus:outline-none',
       },
     },
-  })
+  }, [mounted])
 
   // Keep editor content in sync when parent value changes
   useEffect(() => {
@@ -143,10 +148,12 @@ function addImageClasses(html = '') {
 
   <input type="file" accept="image/*" ref={fileInputRef} style={{ display: 'none' }} onChange={handleImageUpload} />
 
-      {editor ? (
+      {!mounted ? (
+        <div className="min-h-[200px] flex items-center justify-center text-gray-400">Loading editor...</div>
+      ) : editor ? (
         <EditorContent editor={editor} />
       ) : (
-        <div className="min-h-[200px] flex items-center justify-center text-gray-400">Loading editor...</div>
+        <div className="min-h-[200px] flex items-center justify-center text-gray-400">Initializing editor...</div>
       )}
       {notice && <div className="mt-2 text-sm text-gray-600">{notice}</div>}
     </div>
