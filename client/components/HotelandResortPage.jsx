@@ -14,360 +14,661 @@ import {
   FaChartPie,
 } from "react-icons/fa";
 
-import { Navbar, Footer, Button, Card, Section, Container, ProvideMoreSection } from ".";
+import {
+  Navbar,
+  Footer,
+  Button,
+  Card,
+  Section,
+  Container,
+  ProvideMoreSection,
+} from ".";
+import {
+  ChatBubbleLeftRightIcon,
+  ChartBarIcon,
+  CalendarIcon,
+  BuildingOfficeIcon,
+  CurrencyDollarIcon,
+  SparklesIcon,
+  BoltIcon,
+  Cog6ToothIcon,
+  GlobeAltIcon,
+  ShieldCheckIcon,
+  UsersIcon,
+  ClockIcon,
+} from "@heroicons/react/24/outline";
 
 export default function HotelandResort() {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
+  const [activeFeature, setActiveFeature] = useState(0);
+  const [hoveredService, setHoveredService] = useState(null);
 
   const services = [
     {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 3v18h18" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l3 3 3-3" />
-        </svg>
-      ),
+      icon: <FaChartLine className="w-12 h-12 text-black" />,
       title: "SEO Optimization",
       desc: "Improve your website ranking on search engines and attract more guests organically.",
     },
     {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L2 7l10 5 10-5-10-5z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2 17l10 5 10-5" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2 12l10 5 10-5" />
-        </svg>
-      ),
+      icon: <FaBriefcase className="w-12 h-12 text-black" />,
       title: "Brand & Reputation",
       desc: "Enhance your hotel/resort brand identity and manage online reviews.",
     },
     {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21 8v10H3V8" />
-        </svg>
-      ),
+      icon: <FaEnvelope className="w-12 h-12 text-black" />,
       title: "Email Marketing",
       desc: "Send promotional offers, seasonal deals, and personalized emails to your guests.",
     },
     {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      ),
+      icon: <FaSms className="w-12 h-12 text-black" />,
       title: "SMS Campaigns",
       desc: "Reach your guests directly via SMS for special promotions and updates.",
     },
     {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A2 2 0 0121 9.618v4.764a2 2 0 01-1.447 1.894L15 14M4 6h7v12H4V6z" />
-        </svg>
-      ),
+      icon: <FaBullhorn className="w-12 h-12 text-black" />,
       title: "Social Media Marketing",
       desc: "Boost engagement and bookings through Instagram, Facebook, and TikTok campaigns.",
     },
     {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-        </svg>
-      ),
+      icon: <FaHandshake className="w-12 h-12 text-black" />,
       title: "Booking & Revenue Strategy",
       desc: "Smart pricing, packages, and loyalty programs to increase reservations and revenue.",
     },
+  ];
+
+  const features = [
     {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M20 12a8 8 0 11-16 0 8 8 0 0116 0z" />
-        </svg>
-      ),
-      title: "Operational Efficiency",
-      desc: "Automate check-ins, guest management, and staff workflows to save time and costs.",
+      title: "24/7 Guest Support",
+      description:
+        "Instant responses to booking and stay queries via chat, SMS and email.",
+      icon: ChatBubbleLeftRightIcon,
+      stats: ["Instant replies", "Multilingual AI", "Booking confirmations"],
     },
     {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M7 8h10M7 12h10M7 16h10" />
-        </svg>
-      ),
-      title: "Customer Engagement",
-      desc: "Build long-term relationships with personalized offers, loyalty programs, and feedback.",
+      title: "Smart Room Allocation",
+      description:
+        "Automatically match guests to rooms based on preferences and availability.",
+      icon: ChartBarIcon,
+      stats: ["Higher occupancy", "Personalized stays", "Reduced overbookings"],
     },
     {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-12 h-12 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-6h6v6H9z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18" />
-        </svg>
-      ),
-      title: "Analytics & Insights",
-      desc: "Track website, social media, and booking data to make informed business decisions.",
+      title: "Automated Guest Journey",
+      description:
+        "Pre-arrival upsells, check-in reminders and post-stay follow-ups.",
+      icon: CalendarIcon,
+      stats: ["Pre-arrival offers", "Check-in reminders", "Review requests"],
+    },
+    {
+      title: "Event & Service Booking",
+      description:
+        "Manage spa, dining and event reservations with a unified calendar.",
+      icon: BuildingOfficeIcon,
+      stats: ["Central schedule", "Staff assignments", "Capacity control"],
     },
   ];
 
-  const faqs = [
+  const solutions = [
     {
-      q: "How long does integration take?",
-      a: "Integration is quick and typically takes less than 48 hours.",
+      title: "Direct Booking Engine",
+      description:
+        "Increase direct bookings through an optimized website checkout.",
+      icon: CurrencyDollarIcon,
     },
     {
-      q: "Is my customer data secure?",
-      a: "Yes! We follow strict security protocols and data encryption.",
+      title: "Loyalty & Memberships",
+      description: "Reward repeat guests and drive lifetime value.",
+      icon: SparklesIcon,
     },
     {
-      q: "Can this system handle multiple branches?",
-      a: "Absolutely, our platform supports multi-location operations.",
+      title: "Channel Manager",
+      description: "Keep rates and inventory synced across OTAs and GDS.",
+      icon: ChartBarIcon,
+    },
+    {
+      title: "In-stay Upsells",
+      description:
+        "Offer upgrades and services at the right moments during a stay.",
+      icon: BuildingOfficeIcon,
+    },
+  ];
+
+  // Stats for Benefits & Stats section (hotel/resort relevant)
+  const stats = [
+    { icon: UsersIcon, number: "1.2M+", label: "Trips Booked" },
+    { icon: ClockIcon, number: "2min", label: "Avg Booking Time" },
+    { icon: FaBell, number: "24/7", label: "Active Concierge" },
+    { icon: FaChartPie, number: "98%", label: "Guest Satisfaction" },
+  ];
+
+  // Additional standalone Travel Solutions section data (won't replace existing `solutions`)
+  const travelSolutions = [
+    {
+      id: "ts-24-7-assistant",
+      title: "24/7 Inquiry & Booking Assistant",
+      description:
+        "Instantly answer booking questions and guide guests to direct bookings any time of day.",
+      icon: ChatBubbleLeftRightIcon,
+      gradient: "from-teal-400 to-cyan-600",
+      stats: { value: "24/7", label: "Instant responses" },
+      features: [
+        "Auto FAQ replies",
+        "Collect dates & guests",
+        "Send booking link",
+      ],
+    },
+    {
+      id: "ts-segmentation",
+      title: "Smart Guest Segmentation",
+      description:
+        "Automatically tag and segment inquiries by interest, guest type and booking status for targeted offers.",
+      icon: ChartBarIcon,
+      gradient: "from-indigo-500 to-purple-600",
+      stats: { value: "Segments", label: "Targeted lists" },
+      features: ["Auto-tagging", "Behavioral segments", "Custom audiences"],
+    },
+    {
+      id: "ts-automated-journey",
+      title: "Automated Guest Journey",
+      description:
+        "Pre-arrival upsells, check-in reminders and post-stay follow-ups — all automated across channels.",
+      icon: CalendarIcon,
+      gradient: "from-sky-400 to-blue-600",
+      stats: { value: "Pre→Post", label: "Automated touchpoints" },
+      features: [
+        "Pre-arrival offers",
+        "Check-in reminders",
+        "Post-stay follow-ups",
+      ],
+    },
+    {
+      id: "ts-events-booking",
+      title: "Event & Service Bookings",
+      description:
+        "Collect and manage wedding, conference and spa inquiries with instant confirmations and team routing.",
+      icon: BuildingOfficeIcon,
+      gradient: "from-emerald-400 to-teal-600",
+      stats: { value: "Events", label: "Event leads" },
+      features: [
+        "Form-driven inquiries",
+        "Auto-delegation",
+        "Instant confirmations",
+      ],
+    },
+    {
+      id: "ts-reminders",
+      title: "Reservation & Activity Reminders",
+      description:
+        "Reduce no-shows with confirmations and timely SMS reminders for bookings and activities.",
+      icon: ClockIcon,
+      gradient: "from-yellow-400 to-orange-500",
+      stats: { value: "-40%", label: "No-shows reduced" },
+      features: ["Booking confirmations", "SMS reminders", "Activity alerts"],
+    },
+    {
+      id: "ts-marketing",
+      title: "Targeted Marketing & Promotions",
+      description:
+        "Send highly relevant promotions to the right guest segments to improve conversion and occupancy.",
+      icon: CurrencyDollarIcon,
+      gradient: "from-purple-500 to-pink-500",
+      stats: { value: "↑ ROI", label: "Campaign performance" },
+      features: ["Segmented offers", "A/B tests", "Flash sales"],
+    },
+    {
+      id: "ts-ai-concierge",
+      title: "24/7 AI-Powered Virtual Concierge",
+      description:
+        "An AI concierge answers common questions, provides local recommendations and handles simple bookings.",
+      icon: SparklesIcon,
+      gradient: "from-cyan-400 to-sky-600",
+      stats: { value: "AI Live", label: "Virtual concierge" },
+      features: ["FAQ automation", "Local recommendations", "Service bookings"],
+    },
+    {
+      id: "ts-analytics",
+      title: "Performance & Booking Analytics",
+      description:
+        "Track booking sources, campaign ROI and guest behavior to make data-driven decisions.",
+      icon: BoltIcon,
+      gradient: "from-sky-500 to-indigo-600",
+      stats: { value: "Insights", label: "Booking analytics" },
+      features: ["Campaign ROI", "Booking sources", "Trend reports"],
+    },
+    {
+      id: "ts-unified-inbox",
+      title: "Unified Guest Communication Platform",
+      description:
+        "Manage all guest conversations — social, email and SMS — from a single inbox with full context.",
+      icon: Cog6ToothIcon,
+      gradient: "from-teal-500 to-cyan-500",
+      stats: { value: "Unified", label: "All channels" },
+      features: ["Unified inbox", "Conversation history", "Team assignments"],
+    },
+  ];
+
+  const benefits = [
+    {
+      title: "Higher Occupancy",
+      description:
+        "Smart distribution, dynamic pricing and direct booking tools increase bookings.",
+      icon: ChartBarIcon,
+      color: "indigo",
+      metric: "+18% Direct Bookings",
+    },
+    {
+      title: "Fewer No-shows",
+      description:
+        "Automated confirmations and SMS reminders reduce cancellations.",
+      icon: ClockIcon,
+      color: "teal",
+      metric: "-40% No-shows",
+    },
+    {
+      title: "Better Reviews",
+      description:
+        "Personalized engagement and timely follow-ups increase positive feedback.",
+      icon: ChatBubbleLeftRightIcon,
+      color: "purple",
+      metric: "+25% 5-star Reviews",
+    },
+    {
+      title: "Operational Efficiency",
+      description:
+        "Automation reduces repetitive tasks so staff can focus on guest experience.",
+      icon: Cog6ToothIcon,
+      color: "blue",
+      metric: "70% Query Automation",
     },
   ];
 
   const caseStudies = [
     {
-      title: "Hotel X",
-      stat: "25%",
-      desc: "Increased bookings after using our automation.",
-      cta: "Read Full Story",
+      company: "Hotel X",
+      logo: "HX",
+      industry: "Hospitality",
+      challenge: "Low direct bookings and high OTA fees.",
+      solution:
+        "Implemented direct booking flows, promo codes and targeted email campaigns.",
+      results: ["+25% Direct bookings", "Reduced OTA fees", "Higher RevPAR"],
     },
     {
-      title: "Restaurant Y",
-      stat: "40%",
-      desc: "Reduced no-shows with automatic confirmations.",
-      cta: "Read Full Story",
-    },
-    {
-      title: "Resort Z",
-      stat: "30%",
-      desc: "Boosted customer satisfaction through engagement campaigns.",
-      cta: "Read Full Story",
+      company: "Resort Y",
+      logo: "RY",
+      industry: "Resort & Spa",
+      challenge: "High no-shows for spa and activities.",
+      solution:
+        "Added automated reminders and pre-payment options for bookings.",
+      results: ["-40% No-shows", "Increased ancillary revenue"],
     },
   ];
-
-  const integrations = [
-    {
-      name: "POS Provider",
-      logo: "/logo.png",
-      description: "Seamless point-of-sale integration.",
-    },
-    {
-      name: "Payment Gateway",
-      logo: "/logo.png",
-      description: "Secure and fast payment processing.",
-    },
-    {
-      name: "CRM System",
-      logo: "/logo.png",
-      description: "Manage your customer relationships efficiently.",
-    },
-  ];
-
-  // Video Controls
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
-
-  const toggleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !videoRef.current.muted;
-    setIsMuted(videoRef.current.muted);
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-gray-50 text-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50">
       <Navbar />
 
-      {/* HERO SECTION */}
-<section className="relative w-full pt-24 pb-16 bg-white text-gray-900 overflow-hidden">
-  <Container>
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      {/* Left Column - Content */}
-      <motion.div
-        className="order-1 text-center lg:text-left"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          <span className="text-[#F87171]">
-            Grow Your Travel Agency
-          </span>{" "}
-          Faster
-        </h1>
-        <p className="text-gray-700 mb-8 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto lg:mx-0">
-          We provide tools, marketing solutions, and growth strategies to
-          help travel agencies increase bookings, boost revenue, and
-          delight their customers.
-        </p>
-
-        {/* Key Stats */}
-        <div className="grid grid-cols-2 gap-6 mb-8 max-w-lg mx-auto lg:mx-0">
-          <div className="text-center p-6 bg-[#FEE2E2] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center">
-            <div className="text-4xl font-bold text-[#dc2626] mb-2">35%</div>
-            <div className="text-sm text-gray-600 font-medium">Bookings Growth</div>
+      {/* Hero Section */}
+      <Section className="pt-32 pb-24 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-20 left-20 w-64 h-64 border-4 border-blue-200 transform rotate-45"></div>
+            <div className="absolute bottom-20 right-20 w-80 h-80 border-4 border-indigo-200 transform -rotate-12"></div>
+            <div className="absolute top-1/2 left-1/2 w-72 h-72 border-4 border-purple-200 transform rotate-12"></div>
           </div>
-          <div className="text-center p-6 bg-[#FEE2E2] rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center">
-            <div className="text-4xl font-bold text-[#dc2626] mb-2">50%</div>
-            <div className="text-sm text-gray-600 font-medium">Revenue Boost</div>
-          </div>
-        </div>
-
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start max-w-lg mx-auto lg:mx-0">
-          <Button className="bg-[#F87171] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-[#dc2626] shadow-md flex-1 sm:flex-none">
-            Get Started Today
-          </Button>
-          <Button className="border border-[#F87171] text-[#dc2626] hover:bg-[#F87171] hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md flex-1 sm:flex-none">
-            View Case Studies
-          </Button>
-        </div>
-      </motion.div>
-
-      {/* Right Column - Video */}
-      <motion.div
-        className="order-2 relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-md transform hover:scale-[1.02] transition-all duration-500"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <iframe
-          className="absolute top-0 left-0 w-full h-full rounded-xl"
-          src="https://www.youtube.com/embed/MZnyjXSUX3Q"
-          title="Travel Agency Solutions"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-
-        {/* Video Caption */}
-        <p className="text-center text-sm text-gray-500 mt-4 absolute bottom-[-2.5rem] w-full">
-          See how our solutions boost agency growth
-        </p>
-      </motion.div>
-    </div>
-  </Container>
-</section>
-
-
-      {/* ≡ƒôè TRUSTED STATS SECTION */}
-      <Section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 border border-white rounded-full"></div>
-          <div className="absolute bottom-10 right-10 w-24 h-24 border border-white rounded-full"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-white rounded-full"></div>
         </div>
 
         <Container className="relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-teal-100 to-cyan-100 rounded-full mb-6 border border-teal-200">
+                <FaBriefcase className="w-5 h-5 text-teal-600 mr-2" />
+                <span className="text-teal-900 font-semibold text-sm">
+                  World-Class Hotel & Resort Solutions
+                </span>
+              </div>
+
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+                <span className="text-gray-900">Delight Your</span>
+                <br />
+                <span className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                  Next Guest
+                </span>
+              </h1>
+
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Book rooms, manage services, and engage guests worldwide with
+                AI-powered automation and instant confirmations.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 mb-10">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <ShieldCheckIcon className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">
+                      Secure Payments
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Trusted globally
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-sky-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FaBell className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">
+                      Instant Confirmations
+                    </div>
+                    <div className="text-sm text-gray-600">Reduce no-shows</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FaHandshake className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">Guest Loyalty</div>
+                    <div className="text-sm text-gray-600">
+                      Repeat bookings & retention
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-sky-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FaChartPie className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">
+                      Analytics & Reports
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Track performance
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+                  Book Room
+                </Button>
+                <Button className="border-2 border-cyan-600 text-cyan-700 hover:bg-cyan-600 hover:text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300">
+                  Explore Packages
+                </Button>
+              </div>
+            </div>
+
+            {/* Right visual placeholder (reuse same Card stack as original) */}
+            <div className="relative">
+              <div className="relative">
+                <div className="space-y-4">
+                  <Card
+                    animationDelay={0}
+                    className="!bg-gradient-to-br !from-teal-500 !to-cyan-600 !text-white"
+                  >
+                    <div className="flex items-center justify-between mb-6">
+                      <div>
+                        <div className="text-sm opacity-80 mb-1">
+                          Trips This Month
+                        </div>
+                        <div className="text-4xl font-bold">1.2M+</div>
+                      </div>
+                      <div className="w-16 h-16 bg-black bg-opacity-20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                        <ChartBarIcon className="w-8 h-8" />
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="flex-1 bg-white bg-opacity-20 rounded-full h-2">
+                        <div className="bg-white rounded-full h-2 w-3/4"></div>
+                      </div>
+                      <span className="text-sm font-semibold">+24%</span>
+                    </div>
+                  </Card>
+                  <div className="grid grid-cols-2 gap-4">
+                    <Card
+                      animationDelay={0.1}
+                      className="border-2 border-indigo-100"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
+                        <UsersIcon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-2xl font-bold text-gray-900 mb-1">
+                        98%
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        Traveler Satisfaction
+                      </div>
+                    </Card>
+                    <Card
+                      animationDelay={0.15}
+                      className="border-2 border-purple-100"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-sky-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4">
+                        <ClockIcon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-2xl font-bold text-gray-900 mb-1">
+                        2min
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        Avg Booking Time
+                      </div>
+                    </Card>
+                  </div>
+                  <Card
+                    animationDelay={0.2}
+                    className="border-2 border-blue-100"
+                  >
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+                        AI
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-bold text-gray-900">
+                          AI Travel Assistant Active
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          Helping 45 travelers now
+                        </div>
+                      </div>
+                      <div className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold">
+                        Live
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+
+                <div className="absolute -top-8 -right-8 bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-3 rounded-full shadow-2xl font-bold text-sm transform rotate-6 hover:rotate-0 transition-transform duration-300">
+                  ✈️ Ready for Travel
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Complete Suite for Travelers -> adapted for Hotels & Resorts */}
+      <Section className="py-20 bg-white">
+        <Container>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Trusted by Hotels & Resorts Worldwide
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Complete Suite for
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                {" "}
+                Travelers
+              </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Leading hospitality businesses rely on our automation and
-              marketing solutions to increase bookings, reduce no-shows, and
-              enhance guest experience.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Everything a traveler needs in one powerful platform
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: "500+", title: "Hotels & Resorts", subtitle: "Globally Enhanced" },
-              { number: "50K+", title: "Guests Assisted", subtitle: "Seamless Stays Daily" },
-              { number: "95%", title: "Satisfaction Rate", subtitle: "Happy Guests" },
-              { number: "24/7", title: "Support Available", subtitle: "Round-the-Clock Assistance" },
-            ].map((stat, i) => (
-              <div key={i} className="text-center group">
-                <div className="relative">
-                  <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                    {stat.number}
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {features.map((feature, index) => (
+              <Card
+                key={index}
+                animationDelay={index * 0.1}
+                className={`cursor-pointer transition-all duration-300 border-2 ${
+                  activeFeature === index
+                    ? "bg-gradient-to-br from-teal-50 to-cyan-50 border-cyan-300 scale-105"
+                    : "border-gray-200 hover:border-cyan-200"
+                }`}
+                onClick={() => setActiveFeature(index)}
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
+                  <feature.icon className="w-7 h-7 text-white" />
                 </div>
-                <div className="text-gray-300 text-lg">{stat.title}</div>
-                <div className="text-gray-400 text-sm mt-1">{stat.subtitle}</div>
-              </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {feature.description}
+                </p>
+                <div className="space-y-2">
+                  {feature.stats.map((stat, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm">
+                      <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div>
+                      <span className="text-gray-700">{stat}</span>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Travel Solutions (moved here to sit at the bottom of the Features Section) */}
+      <Section className="py-20 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Travel Solutions
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                {" "}
+                For Every Journey
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              AI-powered travel tools for smooth and hassle-free trips
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {travelSolutions.map((solution) => (
+              <Card
+                key={solution.id}
+                className={`relative p-8 rounded-3xl bg-white border-2 shadow-xl hover:shadow-2xl transition-all duration-500 transform overflow-hidden group ${
+                  hoveredService === solution.id
+                    ? "border-indigo-300 scale-105 -translate-y-2"
+                    : "border-gray-200 hover:border-indigo-200"
+                }`}
+                onMouseEnter={() => setHoveredService(solution.id)}
+                onMouseLeave={() => setHoveredService(null)}
+              >
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                ></div>
+
+                <div className="absolute top-6 right-6 bg-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-xs font-bold shadow-md">
+                  {solution.stats.value}
+                </div>
+
+                <div
+                  className={`relative w-16 h-16 bg-gradient-to-br ${solution.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300`}
+                >
+                  <solution.icon className="w-8 h-8 text-white" />
+                </div>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 relative z-10">
+                  {solution.title}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed relative z-10">
+                  {solution.description}
+                </p>
+
+                <div className="space-y-3 relative z-10">
+                  {solution.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center gap-3 text-sm">
+                      <div
+                        className={`w-2 h-2 bg-gradient-to-r ${solution.gradient} rounded-full flex-shrink-0`}
+                      ></div>
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-gray-100 relative z-10">
+                  <div className="text-xs text-gray-500 uppercase tracking-wider">
+                    {solution.stats.label}
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+      
+      
+            <ProvideMoreSection />
+
+      {/* Benefits & Stats */}
+      <Section className="py-20 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Why Travelers
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                {" "}
+                Love Us
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Millions trust us for hassle-free bookings
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {benefits.map((benefit, index) => (
+              <Card
+                key={index}
+                animationDelay={index * 0.1}
+                className="bg-gradient-to-br from-slate-50 to-cyan-50 border-2 border-cyan-100"
+              >
+                <div
+                  className={`w-16 h-16 bg-gradient-to-br from-${benefit.color === 'blue' ? 'teal' : benefit.color}-500 to-${benefit.color === 'blue' ? 'cyan' : benefit.color}-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg`}
+                >
+                  <benefit.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {benefit.description}
+                </p>
+                <div
+                  className={`inline-block px-4 py-2 bg-${benefit.color}-100 text-${benefit.color}-700 rounded-full text-sm font-bold`}
+                >
+                  {benefit.metric}
+                </div>
+              </Card>
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <div className="inline-flex flex-wrap items-center justify-center gap-8 text-gray-400">
-              {["ISO Certified", "Secure Payments", "Award Winning Service"].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                  <span className="text-sm">{item}</span>
+          <div className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600 rounded-3xl p-12 shadow-2xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <stat.icon className="w-8 h-8 text-black" />
+                    </div>
+                  <div className="text-4xl font-bold text-white mb-2">
+                    {stat.number}
+                  </div>
+                    <div className="text-cyan-100 font-semibold">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -375,286 +676,196 @@ export default function HotelandResort() {
         </Container>
       </Section>
 
-      {/* ≡ƒÅ¿ ABOUT SECTION */}
-      <Section background="white">
+      {/* Summary of Benefits */}
+      <Section className="py-20 bg-gray-50">
         <Container>
-          <div className="flex flex-col md:flex-row items-center gap-10">
-            <img
-              src="/logo.png"
-              alt="Resort"
-              className="rounded-2xl shadow-lg md:w-1/2 cursor-pointer"
-            />
-            <div className="flex-1">
-              <h2 className="text-3xl font-bold mb-4">Why Choose Our Automation</h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Our platform helps restaurants, hotels, and resorts save time,
-                reduce no-shows, and engage customers effortlessly.
-              </p>
-              <Button className="bg-[#F87171] text-white">About Us</Button>
-            </div>
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Summary of{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Benefits
+              </span>
+            </h3>
+            <p className="text-lg text-gray-600">
+              How Rocket Flow transforms travel operations
+            </p>
           </div>
-        </Container>
-      </Section>
 
-      {/* ≡ƒÆ╗ SERVICES SECTION */}
-      {/* <section className="bg-white py-16">
-        <Container>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Our Services
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {services.map((service, i) => (
-              <div
-                key={i}
-                className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl hover:-translate-y-2 transition-transform duration-300"
-              >
-                <div className="text-5xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.desc}</p>
-                <Button className="bg-[#F87171] text-white hover:bg-[#dc2626] transition-all">
-                  Learn More
-                </Button>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section> */}
-      {/* SERVICES */}
-      <section className="bg-white py-16">
-        <Container>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {services.map((service, i) => (
-              <Card key={i} animationDelay={i * 0.1}>
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.desc}</p>
-                <Button className="bg-[#F87171] text-white hover:bg-[#dc2626] transition-all">Learn More</Button>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* BENEFITS SUMMARY TABLE */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Benefits Summary
-          </h2>
+          {/* Table */}
           <div className="overflow-x-auto">
-            <table className="min-w-full bg-white shadow-lg rounded-lg overflow-hidden">
+            <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden">
               <thead>
-                <tr className="bg-gradient-to-r from-rose-600 via-pink-600 to-red-600 text-white">
-                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                <tr className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600">
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
                     Category
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
                     Problem
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-blue-400">
                     Rocket Flow Solution
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold uppercase tracking-wider">
+                  <th className="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider">
                     Impact
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {/* Bookings & Revenue */}
-                <tr className="hover:bg-gradient-to-r hover:from-rose-50 hover:to-pink-50 transition-all duration-300">
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
-                        </svg>
+                {benefits.map((benefit, idx) => (
+                  <tr
+                    key={idx}
+                    className="group hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300"
+                  >
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <div className="flex items-center gap-4">
+                        <div
+                          className={`w-12 h-12 bg-gradient-to-br from-${benefit.color}-500 to-${benefit.color}-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300`}
+                        >
+                          <benefit.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="font-bold text-gray-900 text-lg">
+                          {benefit.title}
+                        </span>
                       </div>
-                      <span className="text-sm font-medium text-gray-900">Bookings & Revenue</span>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">High dependency on OTAs & lost direct leads</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">24/7 Booking Assistant & Direct Booking Links</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-green-600 leading-relaxed font-bold">Increased direct bookings & revenue</p>
-                  </td>
-                </tr>
-
-                {/* Guest Experience */}
-                <tr className="hover:bg-gradient-to-r hover:from-pink-50 hover:to-red-50 transition-all duration-300">
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
-                        </svg>
-                      </div>
-                      <span className="text-sm font-medium text-gray-900">Guest Experience</span>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">Generic, reactive communication</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">Automated Guest Journey (Pre to Post-stay)</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-green-600 leading-relaxed font-bold">Enhanced guest satisfaction & loyalty</p>
-                  </td>
-                </tr>
-
-                {/* Operational Efficiency */}
-                <tr className="hover:bg-gradient-to-r hover:from-rose-50 hover:to-pink-50 transition-all duration-300">
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                        </svg>
-                      </div>
-                      <span className="text-sm font-medium text-gray-900">Operational Efficiency</span>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">Staff overwhelmed by repetitive questions</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">AI-Powered Virtual Concierge & FAQ Automation</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-green-600 leading-relaxed font-bold">70% of common queries automated</p>
-                  </td>
-                </tr>
-
-                {/* Marketing & Sales */}
-                <tr className="hover:bg-gradient-to-r hover:from-pink-50 hover:to-red-50 transition-all duration-300">
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46" />
-                        </svg>
-                      </div>
-                      <span className="text-sm font-medium text-gray-900">Marketing & Sales</span>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">Low conversion on generic promotions</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">Smart Segmentation & Targeted Campaigns</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-green-600 leading-relaxed font-bold">Higher occupancy & ROI</p>
-                  </td>
-                </tr>
-
-                {/* Ancillary Revenue */}
-                <tr className="hover:bg-gradient-to-r hover:from-rose-50 hover:to-pink-50 transition-all duration-300">
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        </svg>
-                      </div>
-                      <span className="text-sm font-medium text-gray-900">Ancillary Revenue</span>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">Missed upsell opportunities</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">Automated Pre-arrival Service Booking Messages</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-green-600 leading-relaxed font-bold">Increased spa, dining & activity revenue</p>
-                  </td>
-                </tr>
-
-                {/* Guest Loyalty */}
-                <tr className="hover:bg-gradient-to-r hover:from-pink-50 hover:to-red-50 transition-all duration-300">
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                        </svg>
-                      </div>
-                      <span className="text-sm font-medium text-gray-900">Guest Loyalty</span>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">Low rate of repeat business & reviews</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-gray-700 leading-relaxed">Automated Post-stay Feedback & Offer System</p>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-green-600 leading-relaxed font-bold">More positive reviews & repeat guests</p>
-                  </td>
-                </tr>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">
+                        {benefit.description}
+                      </p>
+                    </td>
+                    <td className="px-6 py-6 border-r border-gray-200">
+                      <p className="text-gray-700 leading-relaxed font-medium">
+                        {benefit.metric}
+                      </p>
+                    </td>
+                    <td className="px-6 py-6">
+                      <p className="text-green-600 leading-relaxed font-bold">
+                        {benefit.title.includes("Efficiency")
+                          ? "Faster operations"
+                          : benefit.title.includes("Security")
+                          ? "Data protected"
+                          : "Enhanced experience"}
+                      </p>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      {/* ≡ƒôê CASE STUDIES SECTION */}
-      <Section background="white">
+      {/* Case Studies */}
+      <Section className="py-20 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50">
         <Container>
-          <h2 className="text-3xl font-bold text-center mb-10">Success Stories</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {caseStudies.map((c, i) => (
-              <Card key={i} padding="md" className="flex flex-col justify-between">
-                <div>
-                  <h3 className="font-semibold text-xl mb-2">{c.title}</h3>
-                  <p className="text-3xl font-bold text-[#F87171] mb-2">{c.stat}</p>
-                  <p className="text-gray-600 mb-4">{c.desc}</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Success Stories from
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                {" "}
+                Travel Leaders
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real results from top travel companies
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {caseStudies.map((study, index) => (
+              <Card
+                key={index}
+                animationDelay={index * 0.15}
+                className="border-2 border-indigo-100"
+                padding="lg"
+              >
+                {/* Company Header */}
+                <div className="flex items-center gap-6 mb-8 pb-8 border-b border-gray-100">
+                  <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                    {study.logo}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                      {study.company}
+                    </h3>
+                    <div className="text-indigo-600 font-semibold">
+                      {study.industry}
+                    </div>
+                  </div>
                 </div>
-                <Button className="bg-[#F87171] text-white hover:bg-[#dc2626] transition-all">{c.cta}</Button>
+
+                {/* Challenge */}
+                <div className="mb-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span className="font-bold text-gray-900 uppercase text-sm tracking-wider">
+                      Challenge
+                    </span>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    {study.challenge}
+                  </p>
+                </div>
+
+                {/* Solution */}
+                <div className="mb-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                    <span className="font-bold text-gray-900 uppercase text-sm tracking-wider">
+                      Solution
+                    </span>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    {study.solution}
+                  </p>
+                </div>
+
+                {/* Results */}
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="font-bold text-gray-900 uppercase text-sm tracking-wider">
+                      Results
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 gap-3">
+                    {study.results.map((result, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100"
+                      >
+                        <div className="text-2xl">✓</div>
+                        <span className="text-gray-900 font-semibold">
+                          {result}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </Card>
             ))}
           </div>
         </Container>
       </Section>
 
-      {/* ≡ƒñ¥ PARTNERS / INTEGRATIONS */}
-      <Section background="gradient">
-        <Container>
-          <h2 className="text-3xl font-bold text-center mb-4">Partners & Integrations</h2>
-          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-            We collaborate with top industry providers to bring you seamless integrations and best-in-class services.
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            {integrations.map((i, idx) => (
-              <div
-                key={idx}
-                className="relative flex flex-col items-center cursor-pointer bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl group"
-              >
-                <img src={i.logo} alt={i.name} className="h-16 object-contain mb-2" />
-                <p className="text-gray-800 font-medium text-sm text-center">{i.name}</p>
-                <span className="absolute bottom-full mb-2 px-3 py-1 text-xs bg-black text-white rounded opacity-0 group-hover:opacity-100 transition-opacity text-center w-max max-w-xs">
-                  {i.description}
-                </span>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-center mt-8">
-            <Button className="bg-[#F87171] text-white hover:bg-[#dc2626] transition-all">
-              Become a Partner
+      {/* CTA */}
+      <Section className="py-24 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-700 relative overflow-hidden">
+        <Container className="relative z-10 text-center">
+          <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
+            Plan Your Dream Stay
+            <br />
+            with Ease & Confidence
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+            <Button className="bg-white text-cyan-700 hover:bg-gray-100 px-12 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+              Book a Room Now
+            </Button>
+            <Button className="border-3 border-white text-white hover:bg-white hover:text-cyan-700 px-12 py-5 rounded-xl font-bold text-lg transition-all duration-300 backdrop-blur-sm bg-white bg-opacity-10">
+              Contact Hotel Expert
             </Button>
           </div>
         </Container>
       </Section>
-
-
       <Footer />
     </div>
   );
