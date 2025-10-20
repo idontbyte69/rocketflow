@@ -1,64 +1,102 @@
 'use client'
 
-import { useState } from 'react'
-import { login, createPost } from './api'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { login, signup, isAuthenticated } from './api'
 
 export default function AdminApp() {
-  const [email, setEmail] = useState('admin@example.com')
-  const [password, setPassword] = useState('password')
-  const [token, setToken] = useState('')
+  const router = useRouter()
+  const [mode, setMode] = useState('login') // 'login' or 'signup'
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
   const [status, setStatus] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  const [post, setPost] = useState({ title: '', slug: '', excerpt: '', content: '', featuredImage: '', author: 'Admin', tags: [] })
-
-  async function doLogin(e) {
-    e.preventDefault()
-    try {
-      const data = await login(email, password)
-      setToken(data.token)
-      setStatus('Logged in')
-    } catch (err) {
-      setStatus('Login failed')
+  useEffect(() => {
+    if (isAuthenticated()) {
+      router.push('/dashboard')
     }
-  }
+  }, [router])
 
-  async function doCreate(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
+    setLoading(true)
+    setStatus('')
+
     try {
-      await createPost(token, post)
-      setStatus('Post created')
+      let data
+      if (mode === 'login') {
+        data = await login(email, password)
+      } else {
+        data = await signup(email, password, name)
+      }
+      localStorage.setItem('rf_token', data.token)
+      setStatus('Success! Redirecting...')
+      router.push('/dashboard')
     } catch (err) {
-      setStatus('Create failed')
+      setStatus(err.message || `${mode === 'login' ? 'Login' : 'Signup'} failed`)
+    } finally {
+      setLoading(false)
     }
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4">
-      <h2 className="text-2xl font-bold mb-4">Admin Panel</h2>
+    <div className="max-w-md mx-auto px-4 py-12">
+      <h2 className="text-2xl font-bold mb-4 text-center">
+        Admin {mode === 'login' ? 'Login' : 'Signup'}
+      </h2>
 
-      <section className="mb-8">
-        <h3 className="font-semibold">Login</h3>
-        <form onSubmit={doLogin} className="flex gap-2 mt-3">
-          <input className="border p-2 rounded" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="password" className="border p-2 rounded" value={password} onChange={(e) => setPassword(e.target.value)} />
-          <button className="bg-coral-500 text-white px-4 py-2 rounded">Login</button>
-        </form>
-      </section>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {mode === 'signup' && (
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="w-full border p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        )}
+        <input
+          type="email"
+          placeholder="Email Address"
+          className="w-full border p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          className="w-full border p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-blue-500 text-white py-3 rounded font-semibold hover:bg-blue-600 disabled:opacity-50"
+        >
+          {loading ? 'Processing...' : (mode === 'login' ? 'Login' : 'Signup')}
+        </button>
+      </form>
 
-      <section>
-        <h3 className="font-semibold">Create Post</h3>
-        <form onSubmit={doCreate} className="mt-3 space-y-3">
-          <input placeholder="Title" className="w-full border p-2 rounded" value={post.title} onChange={(e) => setPost({ ...post, title: e.target.value })} />
-          <input placeholder="Slug" className="w-full border p-2 rounded" value={post.slug} onChange={(e) => setPost({ ...post, slug: e.target.value })} />
-          <input placeholder="Excerpt" className="w-full border p-2 rounded" value={post.excerpt} onChange={(e) => setPost({ ...post, excerpt: e.target.value })} />
-          <textarea placeholder="Content" className="w-full border p-2 rounded" rows={6} value={post.content} onChange={(e) => setPost({ ...post, content: e.target.value })} />
-          <input placeholder="Featured Image" className="w-full border p-2 rounded" value={post.featuredImage} onChange={(e) => setPost({ ...post, featuredImage: e.target.value })} />
-          <div className="flex gap-2">
-            <button className="bg-coral-500 text-white px-4 py-2 rounded">Create</button>
-            <div className="text-sm self-center text-gray-600">{status}</div>
-          </div>
-        </form>
-      </section>
+      <div className="mt-4 text-center">
+        <button
+          onClick={() => setMode(mode === 'login' ? 'signup' : 'login')}
+          className="text-blue-500 hover:underline"
+        >
+          {mode === 'login' ? 'Need an account? Signup' : 'Already have an account? Login'}
+        </button>
+      </div>
+
+      {status && (
+        <div className={`mt-4 text-center text-sm ${status.includes('Success') ? 'text-green-600' : 'text-red-600'}`}>
+          {status}
+        </div>
+      )}
     </div>
   )
 }

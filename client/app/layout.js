@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ToastClientMount from '../components/ui/ToastClientMount'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://rocketflow.com'),
+  metadataBase: new URL('https://rocketflow.biz'),
   title: {
     default: "RocketFlow | All-in-One Marketing Automation Platform",
     template: "%s | RocketFlow"
@@ -42,7 +43,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://rocketflow.com',
+    url: 'https://rocketflow.biz',
     siteName: 'RocketFlow',
     title: 'RocketFlow | All-in-One Marketing Automation Platform',
     description: 'Transform your business with RocketFlow\'s powerful marketing automation platform. Boost revenue, engage customers, and streamline operations across all industries in Bangladesh.',
@@ -131,6 +132,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+  <ToastClientMount />
       </body>
     </html>
   );

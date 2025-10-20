@@ -1,27 +1,51 @@
-import POSTS from '../../../components/blog/posts'
+// Fetch posts from server instead of the local mock so DB-created posts are available
+const API = process.env.NEXT_PUBLIC_ADMIN_API || 'http://localhost:4000'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '../../../components/layout/Navbar'
 import Footer from '../../../components/layout/Footer'
 import Container from '../../../components/ui/Container'
 import Section from '../../../components/ui/Section'
+import { normalizeImageUrl } from '../../../lib/utils'
+
+function isValidUrl(value) {
+  if (!value || typeof value !== 'string') return false
+  try {
+    new URL(value)
+    return true
+  } catch (err) {
+    return false
+  }
+}
 
 export async function generateStaticParams() {
-  return POSTS.map((p) => ({ slug: p.slug }))
+  try {
+    const res = await fetch(`${API}/posts`)
+    if (!res.ok) return []
+    const posts = await res.json()
+    return posts.map((p) => ({ slug: p.slug }))
+  } catch (err) {
+    return []
+  }
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params
-  const post = POSTS.find((p) => p.slug === slug)
-  if (!post) return { title: 'Post not found' }
-  return {
-    title: `${post.title} | RocketFlow`,
-    description: post.excerpt,
-    openGraph: {
-      title: post.title,
+  const { slug } = params
+  try {
+    const res = await fetch(`${API}/posts/${slug}`)
+    if (!res.ok) return { title: 'Post not found' }
+    const post = await res.json()
+    return {
+      title: `${post.title} | RocketFlow`,
       description: post.excerpt,
-      images: [post.featuredImage],
+      openGraph: {
+        title: post.title,
+        description: post.excerpt,
+        images: [normalizeImageUrl(post.featuredImage)],
+      }
     }
+  } catch (err) {
+    return { title: 'Post not found' }
   }
 }
 
@@ -34,8 +58,19 @@ function formatDate(iso) {
 }
 
 export default async function PostPage({ params }) {
-  const { slug } = await params
-  const post = POSTS.find((p) => p.slug === slug)
+  const { slug } = params
+  let post = null
+  try {
+    const res = await fetch(`${API}/posts/${slug}`)
+    if (!res.ok) {
+      post = null
+    } else {
+      post = await res.json()
+    }
+  } catch (err) {
+    post = null
+  }
+
   if (!post) return (
     <>
       <Navbar />
@@ -49,29 +84,130 @@ export default async function PostPage({ params }) {
 
   // helpers for the layout
   function readingTime(text) {
-    const words = text ? text.split(/\s+/).length : 0
+    // strip HTML tags before counting words
+    const plain = text ? text.replace(/<[^>]*>/g, ' ') : ''
+    const words = plain ? plain.split(/\s+/).filter(Boolean).length : 0
     const minutes = Math.max(1, Math.round(words / 200))
     return `${minutes} min read`
   }
 
   function extractInsights(text) {
     if (!text) return []
-    const parts = text.split('.').map((s) => s.trim()).filter(Boolean)
+    // remove HTML and split into sentences
+    const plain = text.replace(/<[^>]*>/g, ' ')
+    const parts = plain.split('.').map((s) => s.trim()).filter(Boolean)
     // return up to 3 concise sentences as insights
     return parts.slice(0, 3)
   }
 
   const insights = extractInsights(post.content)
+  const getFirstBlockText = (content) => {
+    if (!content) return ''
+    try {
+      const m = content.match(/^\s*<(p|h[1-6])[^>]*>([\s\S]*?)<\/\1>/i)
+      if (!m) return ''
+      const inner = m[2].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+      return inner
+    } catch {
+      return ''
+    }
+  }
+
+  // Decide what to show as the 'Quick Insight'. Prefer explicit post.excerpt. If no excerpt,
+  // only use the first sentence extracted from content when that sentence is actually
+  // the very first block in the HTML (so we don't lift text that appears below an image).
+  const firstBlockText = getFirstBlockText(post.content)
+  const quickInsight = post.excerpt && post.excerpt.trim().length > 0
+    ? post.excerpt
+    : (firstBlockText && insights[0] && firstBlockText.replace(/\s+/g, ' ').trim().toLowerCase().includes(insights[0].replace(/\s+/g, ' ').trim().toLowerCase()) ? insights[0] : null)
+
+  // If the post content begins with the same short insight/excerpt we show above,
+  // strip that first block so the main article doesn't duplicate the same sentence.
+  function stripLeadingExcerpt(content, excerpt) {
+    if (!content || !excerpt) return content
+    try {
+      // Find the first paragraph or heading block
+      const firstMatch = content.match(/^\s*(<(p|h[1-6])[^>]*>)[\s\S]*?<\/\2>/i)
+      if (!firstMatch) return content
+      const fullFirst = firstMatch[0]
+      // Extract inner text of the first block (naive strip of tags)
+      const inner = fullFirst.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+      const normalize = (s) => (s || '').replace(/\s+/g, ' ').trim().toLowerCase()
+      if (!inner) return content
+      // If the first block matches the excerpt/insight (or the excerpt is contained within), remove it
+      if (normalize(inner).includes(normalize(excerpt)) || normalize(excerpt).includes(normalize(inner))) {
+        return content.replace(fullFirst, '')
+      }
+      return content
+    } catch (err) {
+      return content
+    }
+  }
+
+  // Ensure images inside saved HTML are constrained for the public view.
+  // This mirrors the editor's image sizing rules so content images don't overflow.
+  function processContentImages(html = '') {
+    if (!html) return html
+    try {
+      return html.replace(/<img\b([^>]*)>/gi, (match, attrs) => {
+        // If style attribute exists, ensure max-width/max-height and auto height are present
+        if (/\bstyle=/.test(attrs)) {
+          let updated = attrs.replace(/style=(['"])(.*?)\1/, (m, q, s) => {
+            let st = s
+            if (!/max-width/.test(st)) st += ';max-width:100%'
+            if (!/max-height/.test(st)) st += ';max-height:16rem'
+            if (!/height:/.test(st)) st += ';height:auto'
+            if (!/object-fit/.test(st)) st += ';object-fit:cover'
+            return `style=${q}${st}${q}`
+          })
+          if (/\bclass=/.test(updated)) {
+            updated = updated.replace(/class=(['"])(.*?)\1/, (m, q, cls) => {
+              const add = ' rounded-xl max-w-full'
+              if (cls.includes('rounded-xl') || cls.includes('max-w-full')) return `class=${q}${cls}${q}`
+              return `class=${q}${cls}${add}${q}`
+            })
+          } else {
+            updated = ` class="rounded-xl max-w-full" ${updated}`
+          }
+          return `<img${updated}>`
+        }
+
+        // No style attribute — inject both class and style to cap size
+        if (/\bclass=/.test(attrs)) {
+          return '<img' + attrs.replace(/class=(['"])(.*?)\1/, (m, q, cls) => {
+            const add = ' rounded-xl max-w-full'
+            if (cls.includes('rounded-xl') || cls.includes('max-w-full')) return `class=${q}${cls}${q}`
+            return `class=${q}${cls}${add}${q}`
+          }) + ' style="max-width:100%; max-height:16rem; width:auto; height:auto; object-fit:cover"'
+        }
+
+        return `<img class="rounded-xl max-w-full" style="max-width:100%; max-height:16rem; width:auto; height:auto; object-fit:cover" ${attrs}>`
+      })
+    } catch (e) {
+      return html
+    }
+  }
 
   // related posts: share at least one tag, fallback to same service
-  const related = POSTS.filter((p) => p.slug !== post.slug)
-    .map((p) => ({
-      post: p,
-      score: p.tags.filter((t) => post.tags.includes(t)).length + (p.service === post.service ? 0.2 : 0),
-    }))
-    .filter((r) => r.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3)
+  // load other posts to compute related
+  let related = []
+  try {
+    const res = await fetch(`${API}/posts`)
+    if (res.ok) {
+      const all = await res.json()
+      related = all
+        .filter((p) => p.slug !== post.slug)
+        .map((p) => ({
+          post: p,
+          score: (p.tags || []).filter((t) => (post.tags || []).includes(t)).length + (p.service === post.service ? 0.2 : 0),
+        }))
+        .filter((r) => r.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 3)
+    }
+  } catch (err) {
+    related = []
+  }
 
   return (
     <>
@@ -108,12 +244,16 @@ export default async function PostPage({ params }) {
                 <div className="mt-2">
                   <div className="flex flex-col gap-6 items-start">
                     <div className="w-full rounded-lg overflow-hidden bg-gray-100">
-                      <Image src={post.featuredImage} alt={post.title} width={1200} height={700} className="object-cover w-full h-56 md:h-72" />
+                      {post.featuredImage ? (
+                        <Image src={normalizeImageUrl(post.featuredImage)} alt={post.title} width={1200} height={700} className="object-cover w-full h-56 md:h-72" />
+                      ) : (
+                        <div className="w-full h-56 md:h-72 flex items-center justify-center text-gray-400">No image</div>
+                      )}
                     </div>
 
                     <div className="w-full">
                       <div className="text-lg md:text-xl font-semibold text-gray-900">Quick Insight</div>
-                      <p className="mt-2 text-gray-700 text-base leading-relaxed">{insights[0] || post.excerpt}</p>
+                      <p className="mt-2 text-gray-700 text-base leading-relaxed">{quickInsight || insights[0] || post.excerpt}</p>
                       {insights.length > 1 && (
                         <ul className="mt-3 list-disc list-inside text-gray-600">
                           {insights.slice(1).map((s, i) => (
@@ -126,7 +266,11 @@ export default async function PostPage({ params }) {
                 </div>
 
                 <article className="prose lg:prose-lg mt-6 text-gray-800">
-                  <p>{post.content}</p>
+                  {/* Render rich HTML content produced by TipTap. We assume content is sanitized on the server —
+                      if you need help sanitizing before saving, I can add server-side sanitization (recommended).
+                  */}
+                    {/* Remove a leading paragraph/heading if it duplicates the Quick Insight above */}
+                    <div dangerouslySetInnerHTML={{ __html: processContentImages(stripLeadingExcerpt(post.content, quickInsight)) }} />
                 </article>
 
                 {/* Tags & Share */}
@@ -156,7 +300,11 @@ export default async function PostPage({ params }) {
                       <Link key={r.slug} href={`/blog/${r.slug}`} className="block">
                         <div className="flex items-start gap-3">
                           <div className="w-20 h-12 relative rounded overflow-hidden bg-gray-100 flex-shrink-0">
-                            <Image src={r.featuredImage} alt={r.title} fill className="object-cover" />
+                            {r.featuredImage ? (
+                              <Image src={normalizeImageUrl(r.featuredImage)} alt={r.title} fill className="object-cover" />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center text-gray-400">No image</div>
+                            )}
                           </div>
                           <div>
                             <div className="text-sm font-medium text-gray-900">{r.title}</div>

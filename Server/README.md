@@ -58,3 +58,18 @@ API Endpoints
 Notes
 - This is a scaffold; add validation, error handling, rate limiting and logging for production.
 - You may prefer to create an admin web UI (React) inside `client/` that talks to this API.
+
+Cloudinary uploads
+- Add Cloudinary credentials to your server `.env`:
+
+```
+CLOUDINARY_CLOUD_NAME=your-cloud-name
+CLOUDINARY_API_KEY=your-api-key
+CLOUDINARY_API_SECRET=your-api-secret
+```
+
+Restart the server after updating `.env`.
+
+Sanitization
+ - The server now sanitizes TipTap HTML before saving posts using `sanitize-html`.
+ - Install dependencies with `npm install` in the `server` folder. If `sanitize-html` is not installed the server uses a conservative fallback sanitizer, but installing the package is recommended for robust filtering.

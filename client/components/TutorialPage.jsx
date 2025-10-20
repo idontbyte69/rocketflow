@@ -20,11 +20,28 @@ import {
   SparklesIcon
 } from '@heroicons/react/24/outline';
 
-export default function TutorialPage() {
-  const [activeVideo, setActiveVideo] = useState('admin-login');
+export default function TutorialPage({ tutorials = null }) {
+  const [activeVideo, setActiveVideo] = useState('');
   const [activeFaq, setActiveFaq] = useState(null);
 
-  const tutorialSections = [
+  // If server-provided tutorials are passed in, map them into sections;
+  // otherwise fall back to the built-in `tutorialSections` static data below.
+  const tutorialSections = (() => {
+    if (Array.isArray(tutorials) && tutorials.length) {
+      // Expect tutorials to be a flat list. Group them into a single section.
+      const videos = tutorials.map((t, idx) => ({
+        id: t.slug || `tutorial-${idx}`,
+        title: t.title,
+        description: t.excerpt || t.content?.slice(0, 200) || '',
+        duration: t.duration || '',
+        videoUrl: t.videoUrl || '',
+        steps: Array.isArray(t.steps) ? t.steps : (typeof t.steps === 'string' ? t.steps.split('\n').map(s=>s.trim()).filter(Boolean) : [])
+      }))
+      // default activeVideo to first incoming tutorial
+      if (videos.length && !activeVideo) setActiveVideo(videos[0].id)
+      return [{ id: 'server-tutorials', title: 'Tutorials', description: 'From the server', icon: RocketLaunchIcon, videos }]
+    }
+    return [
     {
       id: 'getting-started',
       title: 'Getting Started',
@@ -205,6 +222,7 @@ export default function TutorialPage() {
     },
     
   ];
+  })();
 
   const faqItems = [
     {
@@ -500,14 +518,14 @@ export default function TutorialPage() {
             {securityTips.map((tip, index) => (
               <Card 
                 key={index} 
-                className="p-8 backdrop-blur-sm bg-white/70 border border-gray-100 hover:shadow-xl hover:shadow-red-500/5 hover:border-red-100 transition-all duration-300"
+                className="h-64 p-1.5 backdrop-blur-sm bg-white/70 border border-gray-100 hover:shadow-xl hover:shadow-red-500/5 hover:border-red-100 transition-all duration-300"
               >
-                <div className="rounded-2xl w-16 h-16 bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center mb-6">
+                <div className="rounded-2xl w-16 h-16 bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center mb-4">
                   <tip.icon className="w-8 h-8 text-red-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{tip.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{tip.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{tip.description}</p>
-                <div className="mt-6 flex items-center text-red-600 font-medium">
+                <div className="mt-auto flex items-center text-red-600 font-medium">
                   <span>Learn more</span>
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </div>
