@@ -79,8 +79,7 @@ const Navbar = () => {
 
     { name: 'Blog', href: '/blog' },
     { name: 'Tutorial', href: '/tutorial' },
-
-    { name: 'About', href: '#about' },
+    { name: 'Pricing', href: '/pricing' },
     { name: 'Contact', href: '#contact' },
   ];
 

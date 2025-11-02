@@ -245,11 +245,11 @@ export default function GadgetShopLanding() {
         }}
       />
       
-      <main className="min-h-screen bg-white">
+      <div className="min-h-screen bg-gradient-to-br from-coral-50 via-orange-50 to-red-50">
         <Navbar />
         
         {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="pt-24 pb-4 bg-white">
+        <nav aria-label="Breadcrumb" className="pt-24 pb-4 bg-white/70 backdrop-blur">
           <Container>
             <ol className="flex items-center space-x-2 text-sm text-gray-600">
               <li>
@@ -274,11 +274,16 @@ export default function GadgetShopLanding() {
         {/* Hero Section */}
         <Section 
           as="header" 
-          className="pt-12 pb-16 bg-gradient-to-br from-coral-50 via-orange-50 to-red-50"
+          className="pt-32 pb-24 relative overflow-hidden"
           role="banner"
         >
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+          <div className="absolute top-10 left-14 w-64 h-64 border-4 border-coral-200 rounded-full blur-0"></div>
+          <div className="absolute bottom-16 right-12 w-80 h-80 border-4 border-orange-200 rounded-full -rotate-6"></div>
+          <div className="absolute top-1/3 right-1/4 w-72 h-72 border-4 border-red-200 rounded-full rotate-12"></div>
+        </div>
         <Container>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
                 <ShinyText className="text-coral-600 font-semibold text-sm uppercase tracking-wider">
@@ -378,27 +383,31 @@ export default function GadgetShopLanding() {
         </Container>
       </Section>
 
-      {/* Features Bar */}
-      <Section className="py-8 bg-gray-50 border-y">
+      {/* Features Overview */}
+      <Section className="py-20 bg-white/70 backdrop-blur border-y border-white/40">
         <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-center space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 bg-coral-100 rounded-lg flex items-center justify-center">
-                  <feature.icon className="w-5 h-5 text-coral-600" />
+              <Card
+                key={index}
+                className="h-full border-2 border-coral-100 bg-white/80 transition-all duration-300 hover:border-coral-300 hover:-translate-y-2"
+                animationDelay={index * 0.1}
+              >
+                <div className="flex items-center justify-center w-14 h-14 mb-5 rounded-xl bg-coral-100">
+                  <feature.icon className="w-6 h-6 text-coral-600" />
                 </div>
-                <div>
-                  <p className="font-semibold text-gray-900 text-sm">{feature.title}</p>
-                  <p className="text-xs text-gray-600">{feature.description}</p>
-                </div>
-              </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+              </Card>
             ))}
           </div>
         </Container>
       </Section>
 
-      {/* Automation Services Section */}
-      <Section as="section" className="py-20" aria-labelledby="services-heading">
+      <ProvideMoreSection />
+
+  {/* Automation Services Section */}
+  <Section as="section" className="py-20 bg-gradient-to-br from-white via-coral-50 to-orange-100" aria-labelledby="services-heading">
         <Container>
           <header className="text-center space-y-4 mb-16">
             <p className="text-coral-600 font-semibold text-sm uppercase tracking-wider">
@@ -465,7 +474,7 @@ export default function GadgetShopLanding() {
       </Section>
 
       {/* How RocketFlow Works Section */}
-      <Section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+  <Section className="py-20 bg-gradient-to-br from-white via-coral-50 to-orange-100">
         <Container>
           <div className="text-center space-y-4 mb-16">
             <ShinyText className="text-coral-600 font-semibold text-sm uppercase tracking-wider">
@@ -632,8 +641,166 @@ export default function GadgetShopLanding() {
         </Container>
       </Section>
 
-      {/* Featured Products */}
-      <Section className="py-20 bg-gray-50">
+      {/* Benefits Summary Section */}
+      <Section className="py-20 bg-white/80 backdrop-blur">
+        <Container>
+          <div className="text-center space-y-4 mb-16">
+            <ShinyText className="text-coral-600 font-semibold text-sm uppercase tracking-wider">
+              Complete Solution Overview
+            </ShinyText>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Transform Every Challenge into <span className="text-coral-500">Growth Opportunity</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See how RocketFlow solves the biggest challenges facing gadget retailers in Bangladesh's competitive market
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+              <thead className="bg-coral-500 text-white">
+                <tr>
+                  <th className="px-6 py-4 text-left font-bold">Category</th>
+                  <th className="px-6 py-4 text-left font-bold">Problem</th>
+                  <th className="px-6 py-4 text-left font-bold">Rocket Flow Solution</th>
+                  <th className="px-6 py-4 text-left font-bold">Impact</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <BellAlertIcon className="w-6 h-6 text-coral-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Product Launches</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Manually managing chaotic pre-order inquiries</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Automated "Notify Me" Lists & Launch Day Broadcasts</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Maximizes launch day sales, reduces manual work</span>
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <CurrencyDollarIcon className="w-6 h-6 text-purple-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Profitability</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Low-margin on primary gadgets, missed upsells</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Automated Post-Purchase Accessory Upsell Sequences</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Increases Average Order Value (AOV) & profit</span>
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <ArchiveBoxIcon className="w-6 h-6 text-green-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Sales Recovery</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Losing sales on out-of-stock items</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Automated "Back-in-Stock" Notifications</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Recaptures lost revenue, improves customer loyalty</span>
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <PhoneIcon className="w-6 h-6 text-teal-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Customer Support</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Repetitive technical & policy questions</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">24/7 AI Assistant for Specs, Warranty, EMI queries</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Saves expert staff time, provides instant answers</span>
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <ShieldCheckIcon className="w-6 h-6 text-indigo-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Customer Trust</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Anxiety and support tickets from pre-order customers</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Proactive Pre-Order & Shipping Status Updates via SMS</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Builds trust, reduces support load</span>
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50 transition-colors">
+                  <td className="px-6 py-4">
+                    <div className="flex items-center space-x-3">
+                      <TagIcon className="w-6 h-6 text-blue-500" />
+                      <div>
+                        <p className="font-semibold text-gray-900">Marketing</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-600">Generic marketing to a diverse tech audience</td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-gray-600">Smart Segmentation by Brand & Product Preference</span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-bold text-gray-600">Higher ROI on targeted campaigns & upgrade offers</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className="bg-coral-100 rounded-2xl p-8 border border-coral-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">The Complete Omnichannel Experience</h3>
+              <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+                A customer discovers a product on Facebook, asks questions via Messenger, gets pre-order alerts via SMS, 
+                and receives warranty info via Email. RocketFlow connects all touchpoints seamlessly.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="flex items-center space-x-3">
+                  <CheckCircleIcon className="w-6 h-6 text-coral-600" />
+                  <span className="font-semibold text-gray-800">Modern, professional experience</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircleIcon className="w-6 h-6 text-coral-600" />
+                  <span className="font-semibold text-gray-800">Builds immense customer trust</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircleIcon className="w-6 h-6 text-coral-600" />
+                  <span className="font-semibold text-gray-800">Smooth discovery-to-support journey</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+  {/* Client Success Stories */}
+  <Section className="py-20 bg-gradient-to-br from-white via-coral-50 to-orange-100">
         <Container>
           <div className="text-center space-y-4 mb-16">
             <ShinyText className="text-coral-600 font-semibold text-sm uppercase tracking-wider">
@@ -804,8 +971,8 @@ export default function GadgetShopLanding() {
         </Container>
       </Section>
 
-      {/* Tech Specs Section */}
-      <Section className="py-20">
+  {/* Tech Specs Section */}
+  <Section className="py-20 bg-white/80 backdrop-blur">
         <Container>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -876,165 +1043,6 @@ export default function GadgetShopLanding() {
           </div>
         </Container>
       </Section>
-
-      {/* Benefits Summary Section */}
-      <Section className="py-20 bg-white">
-        <Container>
-          <div className="text-center space-y-4 mb-16">
-            <ShinyText className="text-coral-600 font-semibold text-sm uppercase tracking-wider">
-              Complete Solution Overview
-            </ShinyText>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Transform Every Challenge into <span className="text-coral-500">Growth Opportunity</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how RocketFlow solves the biggest challenges facing gadget retailers in Bangladesh's competitive market
-            </p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
-              <thead className="bg-coral-500 text-white">
-                <tr>
-                  <th className="px-6 py-4 text-left font-bold">Category</th>
-                  <th className="px-6 py-4 text-left font-bold">Problem</th>
-                  <th className="px-6 py-4 text-left font-bold">Rocket Flow Solution</th>
-                  <th className="px-6 py-4 text-left font-bold">Impact</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center space-x-3">
-                      <BellAlertIcon className="w-6 h-6 text-coral-500" />
-                      <div>
-                        <p className="font-semibold text-gray-900">Product Launches</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 text-gray-600">Manually managing chaotic pre-order inquiries</td>
-                  <td className="px-6 py-4">
-                    <span className="font-semibold text-gray-600">Automated "Notify Me" Lists & Launch Day Broadcasts</span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="font-bold text-gray-600">Maximizes launch day sales, reduces manual work</span>
-                  </td>
-                </tr>
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center space-x-3">
-                      <CurrencyDollarIcon className="w-6 h-6 text-purple-500" />
-                      <div>
-                        <p className="font-semibold text-gray-900">Profitability</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 text-gray-600">Low-margin on primary gadgets, missed upsells</td>
-                  <td className="px-6 py-4">
-                    <span className="font-semibold text-gray-600">Automated Post-Purchase Accessory Upsell Sequences</span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="font-bold text-gray-600">Increases Average Order Value (AOV) & profit</span>
-                  </td>
-                </tr>
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center space-x-3">
-                      <ArchiveBoxIcon className="w-6 h-6 text-green-500" />
-                      <div>
-                        <p className="font-semibold text-gray-900">Sales Recovery</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 text-gray-600">Losing sales on out-of-stock items</td>
-                  <td className="px-6 py-4">
-                    <span className="font-semibold text-gray-600">Automated "Back-in-Stock" Notifications</span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="font-bold text-gray-600">Recaptures lost revenue, improves customer loyalty</span>
-                  </td>
-                </tr>
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center space-x-3">
-                      <PhoneIcon className="w-6 h-6 text-teal-500" />
-                      <div>
-                        <p className="font-semibold text-gray-900">Customer Support</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 text-gray-600">Repetitive technical & policy questions</td>
-                  <td className="px-6 py-4">
-                    <span className="font-semibold text-gray-600">24/7 AI Assistant for Specs, Warranty, EMI queries</span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="font-bold text-gray-600">Saves expert staff time, provides instant answers</span>
-                  </td>
-                </tr>
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center space-x-3">
-                      <ShieldCheckIcon className="w-6 h-6 text-indigo-500" />
-                      <div>
-                        <p className="font-semibold text-gray-900">Customer Trust</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 text-gray-600">Anxiety and support tickets from pre-order customers</td>
-                  <td className="px-6 py-4">
-                    <span className="font-semibold text-gray-600">Proactive Pre-Order & Shipping Status Updates via SMS</span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="font-bold text-gray-600">Builds trust, reduces support load</span>
-                  </td>
-                </tr>
-                <tr className="hover:bg-gray-50 transition-colors">
-                  <td className="px-6 py-4">
-                    <div className="flex items-center space-x-3">
-                      <TagIcon className="w-6 h-6 text-blue-500" />
-                      <div>
-                        <p className="font-semibold text-gray-900">Marketing</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 text-gray-600">Generic marketing to a diverse tech audience</td>
-                  <td className="px-6 py-4">
-                    <span className="font-semibold text-gray-600">Smart Segmentation by Brand & Product Preference</span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="font-bold text-gray-600">Higher ROI on targeted campaigns & upgrade offers</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div className="mt-16 text-center">
-            <div className="bg-coral-100 rounded-2xl p-8 border border-coral-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">The Complete Omnichannel Experience</h3>
-              <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-                A customer discovers a product on Facebook, asks questions via Messenger, gets pre-order alerts via SMS, 
-                and receives warranty info via Email. RocketFlow connects all touchpoints seamlessly.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="w-6 h-6 text-coral-600" />
-                  <span className="font-semibold text-gray-800">Modern, professional experience</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="w-6 h-6 text-coral-600" />
-                  <span className="font-semibold text-gray-800">Builds immense customer trust</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircleIcon className="w-6 h-6 text-coral-600" />
-                  <span className="font-semibold text-gray-800">Smooth discovery-to-support journey</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
       {/* CTA Section */}
       <Section className="py-20 bg-coral-500">
         <Container>
@@ -1058,7 +1066,7 @@ export default function GadgetShopLanding() {
         </Container>
       </Section>
         <Footer />
-      </main>
+      </div>
     </>
   );
 }
