@@ -80,7 +80,7 @@ const Navbar = () => {
     { name: 'Blog', href: '/blog' },
     { name: 'Tutorial', href: '/tutorial' },
     { name: 'Pricing', href: '/pricing' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -184,7 +184,7 @@ const Navbar = () => {
                       )}
                     </div>
                   ) : (
-                    <a
+                    <Link
                       href={item.href}
                       className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                         pathname === item.href 
@@ -193,7 +193,7 @@ const Navbar = () => {
                       }`}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   )}
                 </div>
               ))}
@@ -306,7 +306,7 @@ const Navbar = () => {
                     )}
                   </div>
                 ) : (
-                  <a
+                  <Link
                     href={item.href}
                     className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
                       pathname === item.href 
@@ -316,7 +316,7 @@ const Navbar = () => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}

@@ -26,3 +26,4 @@ export { default as CorporateOfficePage } from './CorporateOfficePage';
 export { default as EcommercePage } from './EcommercePage';
 export { default as TravelBooking } from './TravelBooking';
 export { default as Restaurants } from './Restaurants';
+export { default as ContactPage } from './ContactPage';
