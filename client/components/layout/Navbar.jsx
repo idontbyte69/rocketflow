@@ -107,7 +107,11 @@ const Navbar = () => {
                     >
                       <a
                         href={item.href}
-                        className="text-gray-600 hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center"
+                        className={`px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center ${
+                          pathname === item.href 
+                            ? 'text-coral-500 border-b-2 border-coral-500' 
+                            : 'text-gray-600 hover:text-coral-500'
+                        }`}
                       >
                         {item.name}
                         <svg 
@@ -182,7 +186,11 @@ const Navbar = () => {
                   ) : (
                     <a
                       href={item.href}
-                      className="text-gray-600 hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                      className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                        pathname === item.href 
+                          ? 'text-coral-500 border-b-2 border-coral-500' 
+                          : 'text-gray-600 hover:text-coral-500'
+                      }`}
                     >
                       {item.name}
                     </a>
@@ -300,7 +308,11 @@ const Navbar = () => {
                 ) : (
                   <a
                     href={item.href}
-                    className="text-gray-600 hover:text-coral-500 block px-3 py-2 text-base font-medium transition-colors duration-200"
+                    className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                      pathname === item.href 
+                        ? 'text-coral-500 bg-coral-50 border-l-4 border-coral-500' 
+                        : 'text-gray-600 hover:text-coral-500 hover:bg-gray-50'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
