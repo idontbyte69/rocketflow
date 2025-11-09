@@ -209,16 +209,20 @@ export default function LandingPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-8">
-              <Button size="lg" className="flex items-center gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary-600 hover:to-secondary-600">
-                <PlayIcon className="w-5 h-5 text-white" />
-                How It Works
-              </Button>
+              <Link href="/tutorial">
+                <Button size="lg" className="flex items-center gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary-600 hover:to-secondary-600">
+                  <PlayIcon className="w-5 h-5 text-white" />
+                  How It Works
+                </Button>
+              </Link>
               
               <div className="flex items-center gap-2 text-gray-600">
                 <span>Or</span>
-                <button className="text-primary font-semibold hover:text-primary-600 transition-colors">
-                  Try It For Free →
-                </button>
+                <Link href="/pricing">
+                  <button className="text-primary font-semibold hover:text-primary-600 transition-colors">
+                    Try It For Free →
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
