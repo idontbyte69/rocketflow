@@ -107,7 +107,7 @@ const Navbar = () => {
                     >
                       <a
                         href={item.href}
-                        className={`px-3 py-1.5 text-sm font-semibold transition-all duration-200 flex items-center rounded-full whitespace-nowrap ${
+                        className={`px-3 py-1.5 text-base font-semibold transition-all duration-200 flex items-center rounded-full whitespace-nowrap ${
                           pathname === item.href 
                             ? 'text-blue-600 bg-white/60' 
                             : 'text-gray-800 hover:text-blue-600 hover:bg-white/40'
@@ -115,7 +115,7 @@ const Navbar = () => {
                       >
                         {item.name}
                         <svg 
-                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                          className={`ml-1 h-5 w-5 transition-transform duration-200 ${
                             (item.name === 'Industries' && isIndustriesDropdownOpen) 
                               ? 'rotate-180' : ''
                           }`}
@@ -134,7 +134,7 @@ const Navbar = () => {
                           <div className="fixed left-0 right-0 h-2 z-40" style={{ top: '4.5rem' }} />
                           
                           <div 
-                            className="fixed left-0 right-0 backdrop-blur-3xl bg-white/20 shadow-2xl border-t border-white/30 z-50" 
+                            className="fixed left-0 right-0 bg-white shadow-2xl border-t border-gray-200 z-50" 
                             style={{ top: '5rem' }}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
@@ -186,7 +186,7 @@ const Navbar = () => {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`px-3 py-1.5 text-sm font-semibold transition-all duration-200 rounded-full whitespace-nowrap ${
+                      className={`px-3 py-1.5 text-base font-semibold transition-all duration-200 rounded-full whitespace-nowrap ${
                         pathname === item.href 
                           ? 'text-blue-600 bg-white/60' 
                           : 'text-gray-800 hover:text-blue-600 hover:bg-white/40'
@@ -205,7 +205,7 @@ const Navbar = () => {
 
             <Link href="https://rocketflow.biz/create_account/selected_package">
               <button
-                className={`group relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 ease-out transform hover:scale-105
+                className={`group relative px-4 py-2 text-base font-semibold rounded-full transition-all duration-300 ease-out transform hover:scale-105
                   ${pathname === '/signup'
                     ? 'text-white bg-blue-600 shadow-lg ring-2 ring-blue-400 ring-opacity-50 scale-105'
                     : 'text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl'}`}
