@@ -84,19 +84,19 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-blue-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-7xl">
+      <div className="backdrop-blur-2xl bg-white/30 border border-white/40 shadow-2xl rounded-full px-6">
+        <div className="flex justify-between items-center h-14 gap-4">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <img src="/logo.png" alt="RocketFlow Logo" className="h-8 w-auto" />
+              <img src="/logo.png" alt="RocketFlow Logo" className="h-7 w-auto" />
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:block flex-grow">
+            <div className="flex items-center justify-center space-x-4">
               {navItems.map((item) => (
                 <div key={item.name} className="relative">
                   {item.hasDropdown ? (
@@ -107,10 +107,10 @@ const Navbar = () => {
                     >
                       <a
                         href={item.href}
-                        className={`px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center ${
+                        className={`px-3 py-1.5 text-sm font-semibold transition-all duration-200 flex items-center rounded-full whitespace-nowrap ${
                           pathname === item.href 
-                            ? 'text-blue-600 border-b-2 border-blue-600' 
-                            : 'text-gray-700 hover:text-blue-600'
+                            ? 'text-blue-600 bg-white/60' 
+                            : 'text-gray-800 hover:text-blue-600 hover:bg-white/40'
                         }`}
                       >
                         {item.name}
@@ -131,11 +131,11 @@ const Navbar = () => {
                       {(item.name === 'Industries' && isIndustriesDropdownOpen) && (
                         <>
                           {/* Invisible bridge to prevent losing hover */}
-                          <div className="fixed left-0 right-0 h-1 z-40" style={{ top: '4rem' }} />
+                          <div className="fixed left-0 right-0 h-2 z-40" style={{ top: '4.5rem' }} />
                           
                           <div 
-                            className="fixed left-0 right-0 bg-gradient-to-b from-white to-blue-50 shadow-2xl border-t border-blue-200 z-50" 
-                            style={{ top: '4rem' }}
+                            className="fixed left-0 right-0 backdrop-blur-3xl bg-white/20 shadow-2xl border-t border-white/30 z-50" 
+                            style={{ top: '5rem' }}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                           >
@@ -186,10 +186,10 @@ const Navbar = () => {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                      className={`px-3 py-1.5 text-sm font-semibold transition-all duration-200 rounded-full whitespace-nowrap ${
                         pathname === item.href 
-                          ? 'text-blue-600 border-b-2 border-blue-600' 
-                          : 'text-gray-700 hover:text-blue-600'
+                          ? 'text-blue-600 bg-white/60' 
+                          : 'text-gray-800 hover:text-blue-600 hover:bg-white/40'
                       }`}
                     >
                       {item.name}
@@ -200,12 +200,12 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
+          {/* Desktop CTA Button */}
+          <div className="hidden lg:flex items-center flex-shrink-0">
 
             <Link href="https://rocketflow.biz/create_account/selected_package">
               <button
-                className={`group relative px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-105
+                className={`group relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 ease-out transform hover:scale-105
                   ${pathname === '/signup'
                     ? 'text-white bg-blue-600 shadow-lg ring-2 ring-blue-400 ring-opacity-50 scale-105'
                     : 'text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl'}`}
@@ -221,10 +221,10 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden flex-shrink-0">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"
+              className="inline-flex items-center justify-center p-2 rounded-full text-gray-800 hover:text-blue-600 hover:bg-white/40 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"
             >
               <span className="sr-only">Open main menu</span>
               {!isMenuOpen ? (
@@ -243,14 +243,14 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-b border-blue-200">
+        <div className="lg:hidden mt-2 w-screen max-w-sm mx-auto">
+          <div className="px-4 pt-3 pb-4 space-y-2 backdrop-blur-2xl bg-white/30 border border-white/40 shadow-2xl rounded-3xl">
             {navItems.map((item) => (
               <div key={item.name}>
                 {item.hasDropdown ? (
                   <div>
                     <button
-                      className="w-full text-left text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center justify-between"
+                      className="w-full text-left text-gray-800 hover:text-blue-600 hover:bg-white/40 px-3 py-2 text-base font-semibold rounded-xl transition-all duration-200 flex items-center justify-between"
                       onClick={() => {
                         if (item.name === 'Industries') setIsIndustriesDropdownOpen(!isIndustriesDropdownOpen);
                       }}
@@ -308,10 +308,10 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                    className={`block px-3 py-2 text-base font-semibold rounded-xl transition-all duration-200 ${
                       pathname === item.href 
-                        ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600' 
-                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                        ? 'text-blue-600 bg-white/60' 
+                        : 'text-gray-800 hover:text-blue-600 hover:bg-white/40'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -323,10 +323,10 @@ const Navbar = () => {
             <div className="pt-4 pb-2 space-y-3">
               <Link href="/signin" className="block">
                 <button 
-                  className={`w-full px-4 py-3 text-base font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-[1.02]
+                  className={`w-full px-4 py-3 text-base font-semibold rounded-full transition-all duration-300 ease-out transform hover:scale-[1.02]
                     ${pathname === '/signin'
                       ? 'text-white bg-blue-600 shadow-lg ring-2 ring-blue-400 ring-opacity-50'
-                      : 'text-blue-600 bg-white border-2 border-blue-600 hover:bg-blue-600 hover:text-white hover:shadow-md'}`}
+                      : 'text-blue-600 bg-white/60 border-2 border-blue-600 hover:bg-blue-600 hover:text-white hover:shadow-md'}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span className="flex items-center justify-center">
@@ -336,7 +336,7 @@ const Navbar = () => {
               </Link>
               <Link href="/signup" className="block">
                 <button 
-                  className={`w-full px-4 py-3 text-base font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-[1.02]
+                  className={`w-full px-4 py-3 text-base font-semibold rounded-full transition-all duration-300 ease-out transform hover:scale-[1.02]
                     ${pathname === '/signup'
                       ? 'text-white bg-gradient-to-r from-blue-700 to-blue-800 shadow-xl ring-2 ring-blue-400 ring-opacity-50'
                       : 'text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl'}`}

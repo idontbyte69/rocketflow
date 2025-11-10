@@ -280,17 +280,17 @@ export default function TutorialPage({ tutorials = null }) {
       <Navbar />
       
       {/* Hero Section */}
-      <Section className="bg-gradient-to-br from-red-50 via-white to-gray-50 pt-32 pb-24 relative overflow-hidden">
+      <Section className="bg-gradient-to-br from-blue-50 via-white to-blue-100 pt-32 pb-24 relative overflow-hidden">
         <Container>
           {/* Decorative background elements */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-40 -right-32 w-96 h-96 rounded-full bg-gradient-to-br from-red-100/30 to-red-200/30 blur-3xl transform rotate-12" />
-            <div className="absolute -bottom-40 -left-32 w-96 h-96 rounded-full bg-gradient-to-tr from-red-100/30 to-red-200/30 blur-3xl transform -rotate-12" />
+            <div className="absolute -top-40 -right-32 w-96 h-96 rounded-full bg-gradient-to-br from-blue-100/30 to-blue-200/30 blur-3xl transform rotate-12" />
+            <div className="absolute -bottom-40 -left-32 w-96 h-96 rounded-full bg-gradient-to-tr from-blue-100/30 to-blue-200/30 blur-3xl transform -rotate-12" />
           </div>
 
           <div className="relative text-center">
-            <div className="inline-block mb-4 px-6 py-2 bg-red-100/50 backdrop-blur-sm rounded-full">
-              <ShinyText className="text-xl font-semibold text-red-400">RocketFlow Tutorials</ShinyText>
+            <div className="inline-block mb-4 px-6 py-2 bg-blue-100/50 backdrop-blur-sm rounded-full">
+              <ShinyText className="text-xl font-semibold text-blue-600">RocketFlow Tutorials</ShinyText>
             </div>
             
             <h1 className="mt-8 text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl">
@@ -300,51 +300,51 @@ export default function TutorialPage({ tutorials = null }) {
 
             <p className="mt-8 text-xl leading-8 text-gray-600 max-w-3xl mx-auto">
               Comprehensive tutorials on admin login and landing page management. 
-              <span className="block mt-2 font-medium text-red-400">
+              <span className="block mt-2 font-medium text-blue-600">
                 Learn how to effectively manage your RocketFlow dashboard and create stunning landing pages.
               </span>
             </p>
 
             <div className="mt-12 flex items-center justify-center gap-6">
-              <Button variant="white" className="bg-red-400  text-white px-8 py-3 rounded-full hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300">
+              <Button variant="white" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-full hover:from-blue-700 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300">
                 Get Started
               </Button>
-              <Button variant="white-outline" className="border-2 border-red-200 text-red-400 px-8 py-3 rounded-full hover:border-red-300 transition-all duration-300">
+              <Button variant="white-outline" className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-50 transition-all duration-300">
                 Watch Demo
               </Button>
             </div>
 
             <div className="mt-12 flex items-center justify-center space-x-8">
               <div className="flex items-center space-x-2">
-                <CheckCircleIcon className="w-5 h-5 text-red-400" />
+                <CheckCircleIcon className="w-5 h-5 text-blue-600" />
                 <span className="text-gray-600">Step by Step Guide</span>
               </div>
               <div className="flex items-center space-x-2">
-                <VideoCameraIcon className="w-5 h-5 text-red-400" />
+                <VideoCameraIcon className="w-5 h-5 text-blue-600" />
                 <span className="text-gray-600">Video Tutorials</span>
               </div>
               <div className="flex items-center space-x-2">
-                <DocumentTextIcon className="w-5 h-5 text-red-400" />
+                <DocumentTextIcon className="w-5 h-5 text-blue-600" />
                 <span className="text-gray-600">Documentation</span>
               </div>
             </div>
 
             {/* Stats Section */}
             <div className="mt-20 grid grid-cols-2 gap-8 md:grid-cols-4">
-              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center border border-red-100/50">
-                <div className="text-4xl font-bold text-red-400">50+</div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center border border-blue-100/50">
+                <div className="text-4xl font-bold text-blue-600">50+</div>
                 <div className="mt-2 text-sm font-medium text-gray-600">Video Tutorials</div>
               </div>
-              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center border border-red-100/50">
-                <div className="text-4xl font-bold text-red-400">10k+</div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center border border-blue-100/50">
+                <div className="text-4xl font-bold text-blue-600">10k+</div>
                 <div className="mt-2 text-sm font-medium text-gray-600">Active Users</div>
               </div>
-              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center border border-red-100/50">
-                <div className="text-4xl font-bold text-red-400">24/7</div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center border border-blue-100/50">
+                <div className="text-4xl font-bold text-blue-600">24/7</div>
                 <div className="mt-2 text-sm font-medium text-gray-600">Support Available</div>
               </div>
-              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center border border-red-100/50">
-                <div className="text-4xl font-bold text-red-400">98%</div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center border border-blue-100/50">
+                <div className="text-4xl font-bold text-blue-600">98%</div>
                 <div className="mt-2 text-sm font-medium text-gray-600">Satisfaction Rate</div>
               </div>
             </div>
@@ -353,12 +353,12 @@ export default function TutorialPage({ tutorials = null }) {
       </Section>
 
       {/* Tutorial Navigation and Content Section */}
-      <Section className="py-16 bg-gradient-to-br from-white via-red-50/10 to-gray-50 relative">
+      <Section className="py-16 bg-gradient-to-br from-white via-blue-50/10 to-white relative">
         <Container>
           {/* Decorative Elements */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-1/4 right-0 w-64 h-64 bg-red-100/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-red-100/20 rounded-full blur-3xl" />
+            <div className="absolute top-1/4 right-0 w-64 h-64 bg-blue-100/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-blue-100/20 rounded-full blur-3xl" />
           </div>
           
           <div className="relative grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -370,24 +370,24 @@ export default function TutorialPage({ tutorials = null }) {
                     key={section.id}
                     className={`cursor-pointer transition-all duration-300 border backdrop-blur-sm shadow-sm ${
                       activeVideo.startsWith(section.id) 
-                        ? 'bg-gradient-to-r from-red-50/90 to-white border-red-500 shadow-red-500/10'
-                        : 'bg-white/70 border-gray-100 hover:bg-red-50/50 hover:border-red-200 hover:shadow-md hover:shadow-red-500/5'
+                        ? 'bg-gradient-to-r from-blue-50/90 to-white border-blue-600 shadow-blue-600/10'
+                        : 'bg-white/70 border-gray-100 hover:bg-blue-50/50 hover:border-blue-200 hover:shadow-md hover:shadow-blue-600/5'
                     }`}
                     onClick={() => setActiveVideo(section.videos[0].id)}
                   >
                     <div className="p-4 flex items-center space-x-3">
                       <div className={`rounded-xl p-3 ${
                         activeVideo.startsWith(section.id) 
-                          ? 'bg-gradient-to-br from-red-100 to-red-50' 
+                          ? 'bg-gradient-to-br from-blue-100 to-blue-50' 
                           : 'bg-gray-50'
                       }`}>
                         <section.icon className={`w-6 h-6 ${
-                          activeVideo.startsWith(section.id) ? 'text-red-600' : 'text-gray-500'
+                          activeVideo.startsWith(section.id) ? 'text-blue-600' : 'text-gray-500'
                         }`} />
                       </div>
                       <div>
                         <h3 className={`font-semibold ${
-                          activeVideo.startsWith(section.id) ? 'text-red-600' : 'text-gray-900'
+                          activeVideo.startsWith(section.id) ? 'text-blue-600' : 'text-gray-900'
                         }`}>
                           {section.title}
                         </h3>
@@ -413,7 +413,7 @@ export default function TutorialPage({ tutorials = null }) {
                           >
                             <div className="flex items-center justify-between">
                               <span className={`text-sm ${
-                                activeVideo === video.id ? 'text-red-600 font-medium' : 'text-gray-700'
+                                activeVideo === video.id ? 'text-blue-600 font-medium' : 'text-gray-700'
                               }`}>
                                 {video.title}
                               </span>
@@ -459,7 +459,7 @@ export default function TutorialPage({ tutorials = null }) {
 
                     return (
                       <>
-                        <div className="flex items-center space-x-2 text-sm text-red-600 mb-4">
+                        <div className="flex items-center space-x-2 text-sm text-blue-600 mb-4">
                           <span>{currentSection?.title}</span>
                           <ArrowRightIcon className="w-4 h-4" />
                           <span>{currentVideo?.title}</span>
@@ -497,17 +497,17 @@ export default function TutorialPage({ tutorials = null }) {
         </Container>
       </Section>
       {/* Security Tips Section */}
-      <Section className="pt-24 pb-24 bg-gradient-to-br from-red-50 via-white to-gray-50 relative">
+      <Section className="pt-24 pb-24 bg-gradient-to-br from-blue-50 via-white to-blue-100 relative">
         <Container>
           {/* Decorative background */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-100/30 rounded-full blur-3xl transform -rotate-12" />
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-100/30 rounded-full blur-3xl transform rotate-12" />
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl transform -rotate-12" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl transform rotate-12" />
           </div>
           
           <div className="text-center mb-16">
-            <div className="inline-block px-6 py-2 bg-red-100/50 backdrop-blur-sm rounded-full mb-4">
-              <span className="text-red-600 font-semibold">Stay Secure</span>
+            <div className="inline-block px-6 py-2 bg-blue-100/50 backdrop-blur-sm rounded-full mb-4">
+              <span className="text-blue-600 font-semibold">Stay Secure</span>
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Security Best Practices</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -518,14 +518,14 @@ export default function TutorialPage({ tutorials = null }) {
             {securityTips.map((tip, index) => (
               <Card 
                 key={index} 
-                className="h-64 p-1.5 backdrop-blur-sm bg-white/70 border border-gray-100 hover:shadow-xl hover:shadow-red-500/5 hover:border-red-100 transition-all duration-300"
+                className="h-64 p-1.5 backdrop-blur-sm bg-white/70 border border-gray-100 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-100 transition-all duration-300"
               >
-                <div className="rounded-2xl w-16 h-16 bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center mb-4">
-                  <tip.icon className="w-8 h-8 text-red-600" />
+                <div className="rounded-2xl w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center mb-4">
+                  <tip.icon className="w-8 h-8 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{tip.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{tip.description}</p>
-                <div className="mt-auto flex items-center text-red-600 font-medium">
+                <div className="mt-auto flex items-center text-blue-600 font-medium">
                   <span>Learn more</span>
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </div>
@@ -536,18 +536,18 @@ export default function TutorialPage({ tutorials = null }) {
       </Section>
 
       {/* FAQ Section */}
-      <Section className="py-24 bg-gradient-to-br from-white via-red-50/10 to-white relative">
+      <Section className="py-24 bg-gradient-to-br from-white via-blue-50/10 to-white relative">
         <Container>
           {/* Decorative Elements */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-1/3 right-0 w-96 h-96 bg-red-100/20 rounded-full blur-3xl transform rotate-45" />
-            <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-red-100/20 rounded-full blur-3xl transform -rotate-45" />
+            <div className="absolute top-1/3 right-0 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl transform rotate-45" />
+            <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl transform -rotate-45" />
           </div>
           
           <div className="max-w-4xl mx-auto relative">
             <div className="text-center mb-16">
-              <div className="inline-block px-6 py-2 bg-red-100/50 backdrop-blur-sm rounded-full mb-4">
-                <span className="text-red-600 font-semibold">Got Questions?</span>
+              <div className="inline-block px-6 py-2 bg-blue-100/50 backdrop-blur-sm rounded-full mb-4">
+                <span className="text-blue-600 font-semibold">Got Questions?</span>
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -562,12 +562,12 @@ export default function TutorialPage({ tutorials = null }) {
                 >
                   <button
                     onClick={() => setActiveFaq(activeFaq === faq.id ? null : faq.id)}
-                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-red-50 transition-colors duration-200"
+                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-blue-50 transition-colors duration-200"
                   >
                     <span className="text-lg font-medium text-gray-900">{faq.question}</span>
                     <span className="ml-6 flex-shrink-0">
                       <svg
-                        className={`w-6 h-6 text-red-500 transform transition-transform duration-200 ${
+                        className={`w-6 h-6 text-blue-600 transform transition-transform duration-200 ${
                           activeFaq === faq.id ? 'rotate-180' : ''
                         }`}
                         fill="none"
@@ -600,13 +600,13 @@ export default function TutorialPage({ tutorials = null }) {
       </Section>
 
       {/* Help & Support Section */}
-      <Section className="py-24 bg-red-50 relative overflow-hidden">
+      <Section className="py-24 bg-blue-50 relative overflow-hidden">
         <Container>
-          <div className="bg-red-400 rounded-3xl px-8 py-20 sm:p-20 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl px-8 py-20 sm:p-20 relative overflow-hidden">
             {/* Decorative Elements */}
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute -top-1/2 -right-1/4 w-96 h-96  rounded-full blur-3xl" />
-              <div className="absolute -bottom-1/2 -left-1/4 w-96 h-96  rounded-full blur-3xl" />
+              <div className="absolute -top-1/2 -right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-1/2 -left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
             </div>
             
             <div className="relative mx-auto max-w-2xl text-center">
@@ -615,12 +615,12 @@ export default function TutorialPage({ tutorials = null }) {
               </div>
               
               <h2 className="text-4xl font-bold tracking-tight text-white mb-6">Need Additional Help?</h2>
-              <p className="mx-auto max-w-xl text-lg leading-8 text-red-50">
+              <p className="mx-auto max-w-xl text-lg leading-8 text-blue-50">
                 Our expert support team is available around the clock to assist you with any questions about the admin dashboard or landing pages.
               </p>
               
               <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Button variant="white" className="w-full sm:w-auto bg-white text-red-600 px-8 py-3 rounded-full hover:bg-red-50 transition-all duration-300">
+                <Button variant="white" className="w-full sm:w-auto bg-white text-blue-600 px-8 py-3 rounded-full hover:bg-blue-50 transition-all duration-300">
                   <span className="flex items-center justify-center">
                     <UserCircleIcon className="w-5 h-5 mr-2" />
                     Contact Support

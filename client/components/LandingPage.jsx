@@ -19,7 +19,11 @@ import {
   ShoppingCartIcon,
   ComputerDesktopIcon,
   PlayIcon,
-  GlobeAsiaAustraliaIcon
+  GlobeAsiaAustraliaIcon,
+  VideoCameraIcon,
+  QrCodeIcon,
+  CalendarIcon,
+  EnvelopeIcon
 } from '@heroicons/react/24/outline';
 import { 
   FaFacebook, 
@@ -222,7 +226,7 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-900 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-50 text-gray-900 overflow-hidden">
       {/* Navigation */}
       <Navbar />
 
@@ -234,7 +238,7 @@ export default function LandingPage() {
       </div>
 
       {/* Hero Section */}
-      <Section className="min-h-screen flex items-center justify-center pt-20 pb-16 bg-gradient-to-br from-blue-100 via-white to-blue-50" padding="md">
+      <Section className="min-h-screen flex items-center justify-center pt-20 pb-16" padding="md">
         <Container>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Side - Text and Buttons */}
@@ -405,9 +409,9 @@ export default function LandingPage() {
       </Section>
 
       {/* Stats Section */}
-      <Section background="gray" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-white relative overflow-hidden" padding="lg">
+      <Section className="py-20 relative overflow-hidden" padding="lg">
         {/* Decorative Elements */}
-        <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-300 rounded-full blur-3xl"></div>
         </div>
@@ -477,7 +481,7 @@ export default function LandingPage() {
       
 
       {/* Services Section */}
-      <Section id="services" background="white" className="bg-gradient-to-b from-white to-blue-50">
+      <Section id="services" className="">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900">
@@ -548,7 +552,7 @@ export default function LandingPage() {
         </Container>
       </Section>
 {/* Reach Your Audiences Section */}
-      <Section id="channels" background="white" className="py-12 bg-gradient-to-b from-white to-blue-50">
+      <Section id="channels" className="py-12">
         <Container>
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-900">
@@ -664,7 +668,7 @@ export default function LandingPage() {
         </Container>
       </Section>
       {/* More Features Section */}
-      <Section background="gray" className="bg-gradient-to-b from-blue-50 to-white">
+      <Section className="">
         <Container>
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Left Side - Content */}
@@ -746,7 +750,7 @@ export default function LandingPage() {
       
 
       {/* Target Sectors Section */}
-      <Section id="industries" background="gray" className="bg-gradient-to-b from-white to-blue-50">
+      <Section id="industries" className="">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900">
@@ -911,7 +915,7 @@ export default function LandingPage() {
       {/* Social Media Integration Section */}
 
       {/* All Amazing Features Section */}
-      <Section background="white" className="bg-gradient-to-b from-blue-50 to-white">
+      <Section className="pb-12">
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
@@ -923,54 +927,63 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              'eCommerce Platform',
-              'Facebook Page Marketing',
-              'Facebook Live Video',
-              'Messenger Chatbot',
-              'Messenger Marketing',
-              'Instagram Direct',
-              'Instagram Chatbot',
-              'QR Code Food Ordering',
-              'Reservations/Bookings',
-              'Other Social Media Marketing',
-              'SMS Marketing',
-              'Email Marketing'
+              { name: 'eCommerce Platform', icon: ShoppingCartIcon },
+              { name: 'Facebook Page Marketing', icon: ChatBubbleLeftRightIcon },
+              { name: 'Facebook Live Video', icon: VideoCameraIcon },
+              { name: 'Messenger Chatbot', icon: ChatBubbleLeftRightIcon },
+              { name: 'Messenger Marketing', icon: ChatBubbleLeftRightIcon },
+              { name: 'Instagram Direct', icon: CameraIcon },
+              { name: 'Instagram Chatbot', icon: CameraIcon },
+              { name: 'QR Code Food Ordering', icon: QrCodeIcon },
+              { name: 'Reservations/Bookings', icon: CalendarIcon },
+              { name: 'Other Social Media Marketing', icon: GlobeAltIcon },
+              { name: 'SMS Marketing', icon: DevicePhoneMobileIcon },
+              { name: 'Email Marketing', icon: EnvelopeIcon }
             ].map((feature, index) => (
-              <button
+              <div
                 key={index}
-                className="group relative px-4 py-3 bg-white border-2 border-blue-600 rounded-lg text-blue-600 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700 hover:text-white hover:shadow-md transition-all duration-300 text-sm font-medium overflow-hidden"
+                className="group relative bg-white border-2 border-blue-100 rounded-2xl p-6 hover:border-blue-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <span className="relative z-10">{feature}</span>
-              </button>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                    <feature.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {feature.name}
+                    </h3>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </Container>
       </Section>
 
       {/* CTA Section */}
-      <Section background="gray" className="py-24 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 relative overflow-hidden">
+      <Section className="pt-12 pb-24 relative overflow-hidden">
         {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-10 left-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-200 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-300 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-200 rounded-full blur-3xl animate-pulse animation-delay-4000"></div>
         </div>
 
         <Container size="lg" className="relative z-10">
           <div className="text-center">
             {/* Glass Card */}
-            <div className="relative backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-12 shadow-2xl hover:bg-white/15 transition-all duration-500">
+            <div className="relative backdrop-blur-xl bg-white/80 border-2 border-blue-200 rounded-3xl p-12 shadow-2xl hover:bg-white/90 hover:border-blue-300 transition-all duration-500">
               {/* Glass Shine Effect */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/20 to-transparent opacity-50"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-50/30 to-transparent opacity-50"></div>
               
               {/* Content */}
               <div className="relative z-10">
-                <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+                <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-700 text-transparent bg-clip-text">
                   Start Your 1 Week Free Trial Today!
                 </h2>
-                <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                <p className="text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed">
                   Try Rocket Flow for 1 Week - no commitment, no credit card needed and risk-free. 
                   Get the feel of our powerful software and decide which package is suitable for 
                   you and your brand.
@@ -978,18 +991,18 @@ export default function LandingPage() {
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                   <Link href="/get-started">
-                    <Button size="lg" className="px-5 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-all font-semibold hover:shadow-lg">
+                    <Button size="lg" className="px-5 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white border-2 border-blue-600 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all font-semibold shadow-lg hover:shadow-xl">
                       Get Started Now
                     </Button>
                   </Link>
                   
                   <div className="flex items-center gap-3">
                     <div className="flex gap-3">
-                      <button className="px-5 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-all font-semibold hover:shadow-lg">
+                      <button className="px-5 py-3 bg-white text-gray-900 border-2 border-blue-200 rounded-xl hover:bg-blue-50 hover:border-blue-300 transition-all font-semibold hover:shadow-lg">
                         Month
                       </button>
-                      <button className="px-5 py-3 bg-white text-gray-900 rounded-xl hover:bg-gray-50 transition-all flex items-center gap-2 font-bold shadow-lg hover:shadow-xl">
-                        Year <span className="text-xs bg-gray-900 text-white px-2 py-1 rounded-full font-bold">15% Off</span>
+                      <button className="px-5 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all flex items-center gap-2 font-bold shadow-lg hover:shadow-xl">
+                        Year <span className="text-xs bg-white text-blue-600 px-2 py-1 rounded-full font-bold">15% Off</span>
                       </button>
                     </div>
                   </div>
@@ -1001,7 +1014,7 @@ export default function LandingPage() {
       </Section>
 
       {/* FAQ Section */}
-      <Section background="white" className="bg-gradient-to-b from-white to-blue-50">
+      <Section className="">
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
