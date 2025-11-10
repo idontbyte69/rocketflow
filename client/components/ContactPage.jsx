@@ -119,27 +119,27 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <Navbar />
       
       {/* Hero Section */}
-      <Section className="pt-32 pb-16 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+      <Section className="pt-32 pb-16 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-blue-600 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
         </div>
 
         <Container className="relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center px-5 py-2 bg-primary-100 rounded-full mb-6 border border-primary-200">
-              <ChatBubbleLeftRightIcon className="w-5 h-5 text-primary-600 mr-2" />
-              <span className="text-primary-900 font-semibold text-sm">We're Here to Help</span>
+            <div className="inline-flex items-center px-5 py-2 bg-blue-100 rounded-full mb-6 border border-blue-200">
+              <ChatBubbleLeftRightIcon className="w-5 h-5 text-blue-600 mr-2" />
+              <span className="text-blue-900 font-semibold text-sm">We're Here to Help</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
               <span className="text-gray-900">Get in</span>
               <br />
-              <span className="text-primary">Touch</span>
+              <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-transparent bg-clip-text">Touch</span>
             </h1>
             
             <p className="text-xl text-gray-600 mb-10 leading-relaxed">
@@ -150,21 +150,21 @@ export default function ContactPage() {
       </Section>
 
       {/* Contact Info Cards */}
-      <Section className="py-20 bg-gray-50">
+      <Section className="py-20 bg-gradient-to-b from-white to-blue-50">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
                 animationDelay={index * 0.1}
-                className="border-2 border-gray-200 hover:border-primary-200 transition-all duration-300 text-center"
+                className="border-2 border-blue-100 hover:border-blue-300 hover:shadow-xl transition-all duration-300 text-center bg-white"
               >
-                <div className={`w-16 h-16 bg-${info.color}-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+                <div className={`w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-200`}>
                   <info.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{info.title}</h3>
                 {info.link !== '#' ? (
-                  <a href={info.link} className="text-gray-600 hover:text-primary transition-colors">
+                  <a href={info.link} className="text-gray-600 hover:text-blue-600 transition-colors">
                     {info.content}
                   </a>
                 ) : (
@@ -177,17 +177,17 @@ export default function ContactPage() {
           {/* Main Contact Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card className="border-2 border-gray-200" padding="lg">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <Card className="border-2 border-blue-100 bg-white shadow-lg" padding="lg">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 text-transparent bg-clip-text mb-6">
                 Send us a Message
               </h2>
               
               {submitSuccess && (
-                <div className="mb-6 p-4 bg-green-50 border-2 border-green-200 rounded-xl flex items-start gap-3">
-                  <CheckCircleIcon className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                <div className="mb-6 p-4 bg-blue-50 border-2 border-blue-200 rounded-xl flex items-start gap-3">
+                  <CheckCircleIcon className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-green-900 mb-1">Message Sent Successfully!</h4>
-                    <p className="text-sm text-green-700">We'll get back to you within 24 hours.</p>
+                    <h4 className="font-bold text-blue-900 mb-1">Message Sent Successfully!</h4>
+                    <p className="text-sm text-blue-700">We'll get back to you within 24 hours.</p>
                   </div>
                 </div>
               )}
@@ -204,7 +204,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:border-blue-600 focus:outline-none transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
@@ -218,7 +218,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:border-blue-600 focus:outline-none transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -234,7 +234,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:border-blue-600 focus:outline-none transition-colors"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
@@ -247,7 +247,7 @@ export default function ContactPage() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:border-blue-600 focus:outline-none transition-colors"
                       placeholder="Your Company"
                     />
                   </div>
@@ -263,7 +263,7 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:border-blue-600 focus:outline-none transition-colors"
                     placeholder="How can we help you?"
                   />
                 </div>
@@ -278,7 +278,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows="6"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:border-blue-600 focus:outline-none transition-colors resize-none"
                     placeholder="Tell us more about your inquiry..."
                   ></textarea>
                 </div>
@@ -289,7 +289,7 @@ export default function ContactPage() {
                   className={`w-full py-4 rounded-xl font-bold text-lg transition-all duration-300 ${
                     isSubmitting
                       ? 'bg-gray-400 cursor-not-allowed'
-                      : 'bg-primary hover:bg-primary-700 text-white shadow-xl hover:shadow-2xl transform hover:scale-105'
+                      : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-xl shadow-blue-200 hover:shadow-2xl hover:shadow-blue-300 transform hover:scale-105'
                   }`}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -300,10 +300,10 @@ export default function ContactPage() {
             {/* Additional Info */}
             <div className="space-y-8">
               {/* Map or Image */}
-              <Card className="border-2 border-gray-200 overflow-hidden" padding="none">
-                <div className="h-64 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
+              <Card className="border-2 border-blue-100 bg-white shadow-lg overflow-hidden" padding="none">
+                <div className="h-64 bg-gradient-to-br from-blue-50 via-white to-blue-100 flex items-center justify-center">
                   <div className="text-center">
-                    <MapPinIcon className="w-16 h-16 text-primary mx-auto mb-4" />
+                    <MapPinIcon className="w-16 h-16 text-blue-600 mx-auto mb-4" />
                     <h3 className="text-xl font-bold text-gray-900">Visit Our Office</h3>
                     <p className="text-gray-600 mt-2">123 Business Street</p>
                     <p className="text-gray-600">Tech City, TC 12345</p>
@@ -312,8 +312,8 @@ export default function ContactPage() {
               </Card>
 
               {/* Social Media */}
-              <Card className="border-2 border-gray-200" padding="lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <Card className="border-2 border-blue-100 bg-white shadow-lg" padding="lg">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 text-transparent bg-clip-text mb-6">
                   Connect With Us
                 </h3>
                 <div className="flex gap-4">
@@ -321,7 +321,7 @@ export default function ContactPage() {
                     <a
                       key={index}
                       href={social.url}
-                      className={`w-12 h-12 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-all duration-300 hover:scale-110 ${social.color}`}
+                      className={`w-12 h-12 rounded-xl bg-blue-50 hover:bg-blue-100 flex items-center justify-center transition-all duration-300 hover:scale-110 ${social.color}`}
                       title={social.name}
                     >
                       <social.icon className="w-6 h-6" />
@@ -331,8 +331,8 @@ export default function ContactPage() {
               </Card>
 
               {/* FAQ Quick Links */}
-              <Card className="border-2 border-gray-200" padding="lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <Card className="border-2 border-blue-100 bg-white shadow-lg" padding="lg">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 text-transparent bg-clip-text mb-6">
                   Quick Questions
                 </h3>
                 <div className="space-y-4">
@@ -350,7 +350,7 @@ export default function ContactPage() {
       </Section>
 
       {/* CTA Section */}
-      <Section className="py-24 bg-primary relative overflow-hidden">
+      <Section className="py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full">
             <div className="absolute top-20 left-20 w-64 h-64 border-4 border-white transform rotate-45 animate-pulse"></div>
@@ -369,10 +369,10 @@ export default function ContactPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button className="bg-gradient-to-r from-red-600 via-rose-600 to-pink-600 hover:from-red-700 hover:via-rose-700 hover:to-pink-700 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-red-500/50 transform hover:scale-105 transition-all duration-300">
+              <Button className="bg-white text-gray-900 px-10 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-white/50 transform hover:scale-105 transition-all duration-300">
                 Start Free Trial
               </Button>
-              <Button className="bg-gradient-to-r from-red-600 via-rose-600 to-pink-600 hover:from-red-700 hover:via-rose-700 hover:to-pink-700 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-red-500/50 transform hover:scale-105 transition-all duration-300">
+              <Button className="bg-white text-gray-900 px-10 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-white/50 transform hover:scale-105 transition-all duration-300">
                 View Pricing
               </Button>
             </div>
