@@ -84,7 +84,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-blue-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -109,8 +109,8 @@ const Navbar = () => {
                         href={item.href}
                         className={`px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center ${
                           pathname === item.href 
-                            ? 'text-coral-500 border-b-2 border-coral-500' 
-                            : 'text-gray-600 hover:text-coral-500'
+                            ? 'text-blue-600 border-b-2 border-blue-600' 
+                            : 'text-gray-700 hover:text-blue-600'
                         }`}
                       >
                         {item.name}
@@ -134,7 +134,7 @@ const Navbar = () => {
                           <div className="fixed left-0 right-0 h-1 z-40" style={{ top: '4rem' }} />
                           
                           <div 
-                            className="fixed left-0 right-0 bg-white shadow-2xl border-t border-gray-200 z-50" 
+                            className="fixed left-0 right-0 bg-gradient-to-b from-white to-blue-50 shadow-2xl border-t border-blue-200 z-50" 
                             style={{ top: '4rem' }}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
@@ -145,10 +145,10 @@ const Navbar = () => {
                               {item.dropdownColumns.map((column, columnIndex) => (
                                 <div 
                                   key={column.title} 
-                                  className={`space-y-2 ${columnIndex < item.dropdownColumns.length - 1 ? 'border-r border-gray-200 pr-8' : ''}`}
+                                  className={`space-y-2 ${columnIndex < item.dropdownColumns.length - 1 ? 'border-r border-blue-200 pr-8' : ''}`}
                                   style={{ gridColumn: `span ${column.colSpan || 1}` }}
                                 >
-                                  <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 pb-2 border-b border-gray-200">
+                                  <h3 className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 pb-2 border-b border-blue-200">
                                     {column.title}
                                   </h3>
                                   <div className={column.colSpan > 1 ? 'grid grid-cols-2 gap-x-8 gap-y-0.5' : 'space-y-0.5'}>
@@ -156,7 +156,7 @@ const Navbar = () => {
                                       <a
                                         key={dropdownItem.name}
                                         href={dropdownItem.href}
-                                        className="block px-3 py-1.5 text-base font-semibold text-gray-900 hover:text-coral-500 hover:bg-gray-50 rounded-md transition-colors duration-200 leading-snug"
+                                        className="block px-3 py-1.5 text-base font-semibold text-gray-800 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors duration-200 leading-snug"
                                       >
                                         {dropdownItem.name}
                                       </a>
@@ -188,8 +188,8 @@ const Navbar = () => {
                       href={item.href}
                       className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                         pathname === item.href 
-                          ? 'text-coral-500 border-b-2 border-coral-500' 
-                          : 'text-gray-600 hover:text-coral-500'
+                          ? 'text-blue-600 border-b-2 border-blue-600' 
+                          : 'text-gray-700 hover:text-blue-600'
                       }`}
                     >
                       {item.name}
@@ -207,8 +207,8 @@ const Navbar = () => {
               <button
                 className={`group relative px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-105
                   ${pathname === '/signup'
-                    ? 'text-white bg-coral-500 shadow-lg ring-2 ring-coral-400 ring-opacity-50 scale-105'
-                    : 'text-white bg-coral-500  hover:from-coral-600 hover:to-red-500 shadow-lg hover:shadow-xl'}`}
+                    ? 'text-white bg-blue-600 shadow-lg ring-2 ring-blue-400 ring-opacity-50 scale-105'
+                    : 'text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl'}`}
               >
                 <span className="relative z-10 flex items-center">
                   Get Started
@@ -224,7 +224,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-coral-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-coral-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"
             >
               <span className="sr-only">Open main menu</span>
               {!isMenuOpen ? (
@@ -244,13 +244,13 @@ const Navbar = () => {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-b border-gray-200">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-b border-blue-200">
             {navItems.map((item) => (
               <div key={item.name}>
                 {item.hasDropdown ? (
                   <div>
                     <button
-                      className="w-full text-left text-gray-600 hover:text-coral-500 px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center justify-between"
+                      className="w-full text-left text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center justify-between"
                       onClick={() => {
                         if (item.name === 'Industries') setIsIndustriesDropdownOpen(!isIndustriesDropdownOpen);
                       }}
@@ -274,14 +274,14 @@ const Navbar = () => {
                           // Multi-column layout for mobile (stacked vertically)
                           item.dropdownColumns.map((column) => (
                             <div key={column.title} className="mt-2">
-                              <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-3">
+                              <h3 className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2 px-3">
                                 {column.title}
                               </h3>
                               {column.items.map((dropdownItem) => (
                                 <a
                                   key={dropdownItem.name}
                                   href={dropdownItem.href}
-                                  className="block text-gray-500 hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                                  className="block text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
                                   onClick={() => setIsMenuOpen(false)}
                                 >
                                   {dropdownItem.name}
@@ -295,7 +295,7 @@ const Navbar = () => {
                             <a
                               key={dropdownItem.name}
                               href={dropdownItem.href}
-                              className="block text-gray-500 hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                              className="block text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
                               onClick={() => setIsMenuOpen(false)}
                             >
                               {dropdownItem.name}
@@ -310,8 +310,8 @@ const Navbar = () => {
                     href={item.href}
                     className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
                       pathname === item.href 
-                        ? 'text-coral-500 bg-coral-50 border-l-4 border-coral-500' 
-                        : 'text-gray-600 hover:text-coral-500 hover:bg-gray-50'
+                        ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600' 
+                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -325,8 +325,8 @@ const Navbar = () => {
                 <button 
                   className={`w-full px-4 py-3 text-base font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-[1.02]
                     ${pathname === '/signin'
-                      ? 'text-white bg-coral-500 shadow-lg ring-2 ring-coral-400 ring-opacity-50'
-                      : 'text-coral-600 bg-white border-2 border-coral-500 hover:bg-coral-500 hover:text-white hover:shadow-md'}`}
+                      ? 'text-white bg-blue-600 shadow-lg ring-2 ring-blue-400 ring-opacity-50'
+                      : 'text-blue-600 bg-white border-2 border-blue-600 hover:bg-blue-600 hover:text-white hover:shadow-md'}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span className="flex items-center justify-center">
@@ -338,8 +338,8 @@ const Navbar = () => {
                 <button 
                   className={`w-full px-4 py-3 text-base font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-[1.02]
                     ${pathname === '/signup'
-                      ? 'text-white bg-gradient-to-r from-coral-600 to-red-500 shadow-xl ring-2 ring-coral-400 ring-opacity-50'
-                      : 'text-white bg-gradient-to-r from-coral-500 to-red-400 hover:from-coral-600 hover:to-red-500 shadow-lg hover:shadow-xl'}`}
+                      ? 'text-white bg-gradient-to-r from-blue-700 to-blue-800 shadow-xl ring-2 ring-blue-400 ring-opacity-50'
+                      : 'text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl'}`}
                   onClick={() => setIsMenuOpen(false)}
                     >
                       <span className="flex items-center justify-center">
