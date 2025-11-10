@@ -7,37 +7,37 @@ const Footer = () => {
     services: {
       title: 'Services',
       links: [
-        { name: 'AI Chatbots', href: '#' },
-        { name: 'Auto Reply Systems', href: '#' },
-        { name: 'Website Development', href: '#' },
-        { name: 'Mobile Applications', href: '#' },
+        { name: 'AI Chatbots', href: '/tutorial' },
+        { name: 'Auto Reply Systems', href: '/corporate-office' },
+        { name: 'Website Development', href: '/corporate-office' },
+        { name: 'Mobile Applications', href: '/corporate-office' },
       ]
     },
     industries: {
       title: 'Industries',
       links: [
-        { name: 'Photography', href: '#' },
-        { name: 'Education', href: '#' },
-        { name: 'Hotels & Resorts', href: '#' },
-        { name: 'E-commerce', href: '#' },
+        { name: 'Photography', href: '/photography' },
+        { name: 'Education', href: '/education' },
+        { name: 'Hotels & Resorts', href: '/hotel-and-resort' },
+        { name: 'E-commerce', href: '/ecommerce' },
       ]
     },
     company: {
       title: 'Company',
       links: [
-        { name: 'About Us', href: '#' },
-        { name: 'Our Team', href: '#' },
-        { name: 'Careers', href: '#' },
-        { name: 'Blog', href: '#' },
+        { name: 'About Us', href: '/corporate-office' },
+        { name: 'Our Team', href: '/corporate-office' },
+        { name: 'Careers', href: '/corporate-office' },
+        { name: 'Blog', href: '/blog' },
       ]
     },
     support: {
       title: 'Support',
       links: [
-        { name: 'Help Center', href: '#' },
-        { name: 'Contact Us', href: '#' },
-        { name: 'Documentation', href: '#' },
-        { name: 'API Reference', href: '#' },
+        { name: 'Help Center', href: '/tutorial' },
+        { name: 'Contact Us', href: '/contact' },
+        { name: 'Documentation', href: '/tutorial' },
+        { name: 'API Reference', href: '/tutorial' },
       ]
     }
   };
