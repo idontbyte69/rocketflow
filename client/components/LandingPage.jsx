@@ -408,7 +408,7 @@ export default function LandingPage() {
         </Container>
       </Section>
 
-      {/* Stats Section */}
+      {/* Integration Section */}
       <Section className="py-20 relative overflow-hidden" padding="lg">
         {/* Decorative Elements */}
         <div className="absolute inset-0 opacity-20">
@@ -417,61 +417,244 @@ export default function LandingPage() {
         </div>
         
         <Container className="relative z-10">
-          {/* Stats Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {/* Stat 1 */}
-            <div className="text-center group">
-              <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-blue-100 hover:border-blue-300 hover:-translate-y-2">
-                <div className="text-6xl font-black bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-3">635+</div>
-                <div className="text-gray-600 text-sm font-semibold uppercase tracking-widest">Active Users</div>
-              </div>
-            </div>
-            
-            {/* Stat 2 */}
-            <div className="text-center group">
-              <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-blue-100 hover:border-blue-300 hover:-translate-y-2">
-                <div className="text-6xl font-black bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-3">55+</div>
-                <div className="text-gray-600 text-sm font-semibold uppercase tracking-widest">Countries</div>
-              </div>
-            </div>
-            
-            {/* Stat 3 */}
-            <div className="text-center group">
-              <div className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-blue-100 hover:border-blue-300 hover:-translate-y-2">
-                <div className="text-6xl font-black bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-3">99.9%</div>
-                <div className="text-gray-600 text-sm font-semibold uppercase tracking-widest">Satisfaction</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Tagline */}
-          <div className="text-center mb-14">
-            <p className="text-gray-700 text-xl font-medium max-w-3xl mx-auto leading-relaxed">
-              Trusted by businesses worldwide to drive customer engagement, inspire brand loyalty, and accelerate growth
-            </p>
-          </div>
-            
           {/* Integration Logos */}
-          <div className="border-t border-gray-200 pt-10">
-            <p className="text-center text-gray-500 text-xs uppercase tracking-widest mb-8 font-semibold">Seamlessly Integrated With</p>
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              <div className="flex items-center justify-center bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-100">
-                <FaFacebook className="w-7 h-7 text-blue-600" />
+          <div className="border-t border-gray-200 pt-16">
+            <p className="text-center text-gray-500 text-xs uppercase tracking-widest mb-12 font-semibold">Seamlessly Integrated With</p>
+            
+            {/* Integration Hub - Centered Design with Rope-like Connections */}
+            <div className="relative max-w-5xl mx-auto h-[550px] flex items-center justify-center">
+              {/* Rope-like Connection Network using SVG */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+                {/* Main rope connecting all platforms in a circular flow */}
+                {/* Outer circular rope binding all platforms */}
+                <path 
+                  d="M 20% 12% Q 10% 30%, 8% 50% T 20% 88% Q 50% 95%, 80% 88% T 92% 50% Q 90% 30%, 80% 12% Q 50% 5%, 20% 12%" 
+                  stroke="url(#ropeGradient)" 
+                  strokeWidth="2" 
+                  fill="none" 
+                  strokeDasharray="12,6" 
+                  className="opacity-30"
+                  style={{ filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.4))' }}
+                />
+                
+                {/* Inner connection ropes from center to each platform */}
+                {/* Top Left - Facebook */}
+                <path d="M 50% 50% Q 35% 30%, 20% 12%" stroke="url(#blueGradient)" strokeWidth="3" fill="none" strokeDasharray="8,4" className="animate-pulse opacity-70" />
+                <path d="M 50% 50% Q 37% 32%, 20% 12%" stroke="url(#blueGradient)" strokeWidth="1.5" fill="none" strokeDasharray="4,2" className="animate-pulse opacity-40" style={{ animationDelay: '0.2s' }} />
+                
+                {/* Top Right - Instagram */}
+                <path d="M 50% 50% Q 65% 30%, 80% 12%" stroke="url(#pinkGradient)" strokeWidth="3" fill="none" strokeDasharray="8,4" className="animate-pulse opacity-70" style={{ animationDelay: '0.3s' }} />
+                <path d="M 50% 50% Q 63% 32%, 80% 12%" stroke="url(#pinkGradient)" strokeWidth="1.5" fill="none" strokeDasharray="4,2" className="animate-pulse opacity-40" style={{ animationDelay: '0.5s' }} />
+                
+                {/* Middle Left - Messenger */}
+                <path d="M 50% 50% Q 25% 50%, 8% 50%" stroke="url(#blueGradient)" strokeWidth="3" fill="none" strokeDasharray="8,4" className="animate-pulse opacity-70" style={{ animationDelay: '0.6s' }} />
+                <path d="M 50% 50% Q 27% 48%, 8% 50%" stroke="url(#blueGradient)" strokeWidth="1.5" fill="none" strokeDasharray="4,2" className="animate-pulse opacity-40" style={{ animationDelay: '0.8s' }} />
+                
+                {/* Middle Right - LinkedIn */}
+                <path d="M 50% 50% Q 75% 50%, 92% 50%" stroke="url(#linkedinGradient)" strokeWidth="3" fill="none" strokeDasharray="8,4" className="animate-pulse opacity-70" style={{ animationDelay: '0.9s' }} />
+                <path d="M 50% 50% Q 73% 48%, 92% 50%" stroke="url(#linkedinGradient)" strokeWidth="1.5" fill="none" strokeDasharray="4,2" className="animate-pulse opacity-40" style={{ animationDelay: '1.1s' }} />
+                
+                {/* Bottom Left - WordPress */}
+                <path d="M 50% 50% Q 35% 70%, 20% 88%" stroke="url(#wpGradient)" strokeWidth="3" fill="none" strokeDasharray="8,4" className="animate-pulse opacity-70" style={{ animationDelay: '1.2s' }} />
+                <path d="M 50% 50% Q 37% 68%, 20% 88%" stroke="url(#wpGradient)" strokeWidth="1.5" fill="none" strokeDasharray="4,2" className="animate-pulse opacity-40" style={{ animationDelay: '1.4s' }} />
+                
+                {/* Bottom Right - Google */}
+                <path d="M 50% 50% Q 65% 70%, 80% 88%" stroke="url(#googleGradient)" strokeWidth="3" fill="none" strokeDasharray="8,4" className="animate-pulse opacity-70" style={{ animationDelay: '1.5s' }} />
+                <path d="M 50% 50% Q 63% 68%, 80% 88%" stroke="url(#googleGradient)" strokeWidth="1.5" fill="none" strokeDasharray="4,2" className="animate-pulse opacity-40" style={{ animationDelay: '1.7s' }} />
+                
+                {/* Connecting lines between adjacent platforms (rope network) */}
+                {/* Facebook to Instagram */}
+                <path d="M 20% 12% Q 50% 5%, 80% 12%" stroke="url(#connectionGradient)" strokeWidth="2.5" fill="none" strokeDasharray="6,3" className="opacity-25" />
+                
+                {/* Instagram to LinkedIn */}
+                <path d="M 80% 12% Q 95% 30%, 92% 50%" stroke="url(#connectionGradient)" strokeWidth="2.5" fill="none" strokeDasharray="6,3" className="opacity-25" />
+                
+                {/* LinkedIn to Google */}
+                <path d="M 92% 50% Q 90% 70%, 80% 88%" stroke="url(#connectionGradient)" strokeWidth="2.5" fill="none" strokeDasharray="6,3" className="opacity-25" />
+                
+                {/* Google to WordPress */}
+                <path d="M 80% 88% Q 50% 95%, 20% 88%" stroke="url(#connectionGradient)" strokeWidth="2.5" fill="none" strokeDasharray="6,3" className="opacity-25" />
+                
+                {/* WordPress to Messenger */}
+                <path d="M 20% 88% Q 5% 70%, 8% 50%" stroke="url(#connectionGradient)" strokeWidth="2.5" fill="none" strokeDasharray="6,3" className="opacity-25" />
+                
+                {/* Messenger to Facebook */}
+                <path d="M 8% 50% Q 10% 30%, 20% 12%" stroke="url(#connectionGradient)" strokeWidth="2.5" fill="none" strokeDasharray="6,3" className="opacity-25" />
+                
+                {/* Gradient definitions */}
+                <defs>
+                  <linearGradient id="blueGradient" x1="50%" y1="50%" x2="0%" y2="0%">
+                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.9" />
+                    <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.2" />
+                  </linearGradient>
+                  <linearGradient id="pinkGradient" x1="50%" y1="50%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#ec4899" stopOpacity="0.9" />
+                    <stop offset="50%" stopColor="#ec4899" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#ec4899" stopOpacity="0.2" />
+                  </linearGradient>
+                  <linearGradient id="linkedinGradient" x1="50%" y1="50%" x2="100%" y2="50%">
+                    <stop offset="0%" stopColor="#0a66c2" stopOpacity="0.9" />
+                    <stop offset="50%" stopColor="#0a66c2" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#0a66c2" stopOpacity="0.2" />
+                  </linearGradient>
+                  <linearGradient id="wpGradient" x1="50%" y1="50%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#21759b" stopOpacity="0.9" />
+                    <stop offset="50%" stopColor="#21759b" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#21759b" stopOpacity="0.2" />
+                  </linearGradient>
+                  <linearGradient id="googleGradient" x1="50%" y1="50%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#ea4335" stopOpacity="0.9" />
+                    <stop offset="50%" stopColor="#ea4335" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#ea4335" stopOpacity="0.2" />
+                  </linearGradient>
+                  <linearGradient id="ropeGradient">
+                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.6" />
+                    <stop offset="25%" stopColor="#ec4899" stopOpacity="0.6" />
+                    <stop offset="50%" stopColor="#0a66c2" stopOpacity="0.6" />
+                    <stop offset="75%" stopColor="#21759b" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.6" />
+                  </linearGradient>
+                  <linearGradient id="connectionGradient">
+                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.5" />
+                    <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#ec4899" stopOpacity="0.5" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+              {/* Decorative rings around center */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-2 border-blue-200 rounded-full opacity-20"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 border-2 border-blue-300 border-dashed rounded-full opacity-10 animate-spin" style={{ animationDuration: '30s' }}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-blue-100 rounded-full opacity-10"></div>
+
+              {/* Center - RocketFlow Logo with wave effect */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                <div className="relative">
+                  {/* Multiple glowing rings with different animations */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-300 to-blue-400 rounded-full blur-xl opacity-30" style={{ animation: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}></div>
+                  
+                  {/* Logo container with unique border */}
+                  <div className="relative bg-gradient-to-br from-white to-blue-50 rounded-full p-10 shadow-2xl border-4 border-blue-300">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100/50 to-transparent"></div>
+                    <img src="/logo.png" alt="RocketFlow" className="w-36 h-36 object-contain relative z-10" />
+                  </div>
+                  
+                  {/* Rotating orbital ring */}
+                  <div className="absolute inset-0 border-2 border-blue-400 border-dashed rounded-full animate-spin opacity-40" style={{ animationDuration: '25s' }}>
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-blue-500 rounded-full shadow-lg"></div>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center justify-center bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-100">
-                <FaFacebookMessenger className="w-7 h-7 text-blue-600" />
+
+              {/* Platform Icons with unique card design */}
+              
+              {/* Top Left - Facebook */}
+              <div className="absolute top-[8%] left-[12%] z-10 group">
+                <div className="relative">
+                  {/* Glowing effect on hover */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+                  
+                  {/* Hexagon-style card */}
+                  <div className="relative bg-white rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 border-2 border-blue-100 group-hover:border-blue-400 hover:-translate-y-2">
+                    <div className="absolute top-0 right-0 w-8 h-8 bg-blue-100 rounded-bl-2xl"></div>
+                    <FaFacebook className="w-10 h-10 text-blue-600 transition-transform duration-500 group-hover:rotate-12" />
+                  </div>
+                </div>
+                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-xs font-bold text-blue-600 bg-white px-3 py-1.5 rounded-full shadow-lg border border-blue-200">Facebook</span>
+                </div>
               </div>
-              <div className="flex items-center justify-center bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-100">
-                <FaInstagram className="w-7 h-7 text-pink-600" />
+
+              {/* Top Right - Instagram */}
+              <div className="absolute top-[8%] right-[12%] z-10 group">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-pink-400 to-purple-500 rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+                  <div className="relative bg-white rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 border-2 border-pink-100 group-hover:border-pink-400 hover:-translate-y-2">
+                    <div className="absolute top-0 left-0 w-8 h-8 bg-pink-100 rounded-br-2xl"></div>
+                    <FaInstagram className="w-10 h-10 text-pink-600 transition-transform duration-500 group-hover:rotate-12" />
+                  </div>
+                </div>
+                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-xs font-bold text-pink-600 bg-white px-3 py-1.5 rounded-full shadow-lg border border-pink-200">Instagram</span>
+                </div>
               </div>
-              <div className="flex items-center justify-center bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-100">
-                <FaWordpress className="w-7 h-7 text-blue-700" />
+
+              {/* Middle Left - Messenger */}
+              <div className="absolute top-1/2 left-[2%] transform -translate-y-1/2 z-10 group">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+                  <div className="relative bg-white rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 border-2 border-blue-100 group-hover:border-blue-400 hover:-translate-x-2">
+                    <div className="absolute bottom-0 right-0 w-8 h-8 bg-blue-100 rounded-tl-2xl"></div>
+                    <FaFacebookMessenger className="w-10 h-10 text-blue-600 transition-transform duration-500 group-hover:rotate-12" />
+                  </div>
+                </div>
+                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-xs font-bold text-blue-600 bg-white px-3 py-1.5 rounded-full shadow-lg border border-blue-200">Messenger</span>
+                </div>
               </div>
-              <div className="flex items-center justify-center bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-100">
-                <FaGoogle className="w-7 h-7 text-red-600" />
+
+              {/* Middle Right - LinkedIn */}
+              <div className="absolute top-1/2 right-[2%] transform -translate-y-1/2 z-10 group">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+                  <div className="relative bg-white rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 border-2 border-blue-100 group-hover:border-blue-600 hover:translate-x-2">
+                    <div className="absolute bottom-0 left-0 w-8 h-8 bg-blue-100 rounded-tr-2xl"></div>
+                    <FaLinkedin className="w-10 h-10 text-blue-700 transition-transform duration-500 group-hover:rotate-12" />
+                  </div>
+                </div>
+                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-xs font-bold text-blue-700 bg-white px-3 py-1.5 rounded-full shadow-lg border border-blue-200">LinkedIn</span>
+                </div>
               </div>
-              <div className="flex items-center justify-center bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-100">
-                <FaLinkedin className="w-7 h-7 text-blue-700" />
+
+              {/* Bottom Left - WordPress */}
+              <div className="absolute bottom-[8%] left-[12%] z-10 group">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-blue-700 rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+                  <div className="relative bg-white rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 border-2 border-blue-100 group-hover:border-blue-500 hover:translate-y-2">
+                    <div className="absolute bottom-0 right-0 w-8 h-8 bg-blue-100 rounded-tl-2xl"></div>
+                    <FaWordpress className="w-10 h-10 text-blue-700 transition-transform duration-500 group-hover:rotate-12" />
+                  </div>
+                </div>
+                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-xs font-bold text-blue-700 bg-white px-3 py-1.5 rounded-full shadow-lg border border-blue-200">WordPress</span>
+                </div>
+              </div>
+
+              {/* Bottom Right - Google */}
+              <div className="absolute bottom-[8%] right-[12%] z-10 group">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-red-400 to-red-600 rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+                  <div className="relative bg-white rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 border-2 border-red-100 group-hover:border-red-400 hover:translate-y-2">
+                    <div className="absolute bottom-0 left-0 w-8 h-8 bg-red-100 rounded-tr-2xl"></div>
+                    <FaGoogle className="w-10 h-10 text-red-600 transition-transform duration-500 group-hover:rotate-12" />
+                  </div>
+                </div>
+                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-xs font-bold text-red-600 bg-white px-3 py-1.5 rounded-full shadow-lg border border-red-200">Google</span>
+                </div>
+              </div>
+
+              {/* Floating particles with wave motion */}
+              <div className="absolute top-[25%] left-[28%] w-3 h-3 bg-blue-400 rounded-full" style={{ animation: 'float 4s ease-in-out infinite' }}></div>
+              <div className="absolute top-[65%] right-[22%] w-2 h-2 bg-pink-400 rounded-full" style={{ animation: 'float 5s ease-in-out infinite', animationDelay: '1s' }}></div>
+              <div className="absolute bottom-[35%] left-[18%] w-2.5 h-2.5 bg-blue-300 rounded-full" style={{ animation: 'float 6s ease-in-out infinite', animationDelay: '2s' }}></div>
+              <div className="absolute top-[40%] right-[30%] w-2 h-2 bg-blue-500 rounded-full" style={{ animation: 'float 4.5s ease-in-out infinite', animationDelay: '0.5s' }}></div>
+            </div>
+
+            {/* Integration description with enhanced styling */}
+            <div className="text-center mt-20">
+              <div className="max-w-3xl mx-auto">
+                <div className="relative inline-block">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-10"></div>
+                  <p className="relative text-gray-700 text-lg font-medium leading-relaxed bg-white px-6 py-3 rounded-lg">
+                    <span className="text-blue-600 font-bold">Powerful Integration Hub:</span> Connect with all major platforms seamlessly. 
+                    RocketFlow serves as your central automation command center, linking your favorite social media and business tools 
+                    for a <span className="text-blue-600 font-semibold">unified experience</span>.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
