@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Output standalone for production deployment
+  output: 'standalone',
+  
   // Enable experimental features for better SEO
   experimental: {
     // Disable CSS optimization temporarily due to critters dependency issue

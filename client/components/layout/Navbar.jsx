@@ -90,7 +90,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <img src="/logo.png" alt="RocketFlow Logo" className="h-7 w-auto" />
+              <img src="/RF-Long-logo.webp" alt="RocketFlow Logo" className="h-7 w-auto" />
             </Link>
           </div>
 
