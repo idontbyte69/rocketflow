@@ -84,13 +84,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-7xl">
-      <div className="backdrop-blur-2xl bg-white/30 border border-white/40 shadow-2xl rounded-full px-6">
-        <div className="flex justify-between items-center h-14 gap-4">
+    <nav className="fixed top-2 sm:top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-7xl px-2 sm:px-0">
+      <div className="backdrop-blur-2xl bg-blue-50/40 border border-blue-100/50 shadow-2xl rounded-full px-3 sm:px-6">
+        <div className="flex justify-between items-center h-12 sm:h-14 gap-2 sm:gap-4">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <img src="/RF-Long-logo.webp" alt="RocketFlow Logo" className="h-7 w-auto" />
+              <img src="/RF-Long-logo.webp" alt="RocketFlow Logo" className="h-6 sm:h-7 w-auto" />
             </Link>
           </div>
 
@@ -243,14 +243,14 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="lg:hidden mt-2 w-screen max-w-sm mx-auto">
-          <div className="px-4 pt-3 pb-4 space-y-2 backdrop-blur-2xl bg-white/30 border border-white/40 shadow-2xl rounded-3xl">
+        <div className="lg:hidden mt-2">
+          <div className="px-4 pt-3 pb-4 space-y-2 backdrop-blur-2xl bg-blue-50/40 border border-blue-100/50 shadow-2xl rounded-3xl max-h-[calc(100vh-6rem)] overflow-y-auto">
             {navItems.map((item) => (
               <div key={item.name}>
                 {item.hasDropdown ? (
                   <div>
                     <button
-                      className="w-full text-left text-gray-800 hover:text-blue-600 hover:bg-white/40 px-3 py-2 text-base font-semibold rounded-xl transition-all duration-200 flex items-center justify-between"
+                      className="w-full text-left text-gray-800 hover:text-blue-600 hover:bg-white/40 px-3 py-2 text-sm sm:text-base font-semibold rounded-xl transition-all duration-200 flex items-center justify-between"
                       onClick={() => {
                         if (item.name === 'Industries') setIsIndustriesDropdownOpen(!isIndustriesDropdownOpen);
                       }}
@@ -269,24 +269,26 @@ const Navbar = () => {
                       </svg>
                     </button>
                     {(item.name === 'Industries' && isIndustriesDropdownOpen) && (
-                      <div className="pl-6 space-y-1">
+                      <div className="pl-4 sm:pl-6 space-y-3 max-h-96 overflow-y-auto">
                         {item.dropdownColumns ? (
-                          // Multi-column layout for mobile (stacked vertically)
+                          // Multi-column layout for mobile
                           item.dropdownColumns.map((column) => (
                             <div key={column.title} className="mt-2">
                               <h3 className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2 px-3">
                                 {column.title}
                               </h3>
-                              {column.items.map((dropdownItem) => (
-                                <a
-                                  key={dropdownItem.name}
-                                  href={dropdownItem.href}
-                                  className="block text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
-                                  onClick={() => setIsMenuOpen(false)}
-                                >
-                                  {dropdownItem.name}
-                                </a>
-                              ))}
+                              <div className="grid grid-cols-2 gap-1">
+                                {column.items.map((dropdownItem) => (
+                                  <a
+                                    key={dropdownItem.name}
+                                    href={dropdownItem.href}
+                                    className="block text-gray-600 hover:text-blue-600 hover:bg-white/40 px-2 py-2 text-xs sm:text-sm font-medium transition-colors duration-200 rounded-lg"
+                                    onClick={() => setIsMenuOpen(false)}
+                                  >
+                                    {dropdownItem.name}
+                                  </a>
+                                ))}
+                              </div>
                             </div>
                           ))
                         ) : (
@@ -308,7 +310,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`block px-3 py-2 text-base font-semibold rounded-xl transition-all duration-200 ${
+                    className={`block px-3 py-2 text-sm sm:text-base font-semibold rounded-xl transition-all duration-200 ${
                       pathname === item.href 
                         ? 'text-blue-600 bg-white/60' 
                         : 'text-gray-800 hover:text-blue-600 hover:bg-white/40'
@@ -320,36 +322,20 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <div className="pt-4 pb-2 space-y-3">
-              <Link href="/signin" className="block">
+            <div className="pt-4 pb-2">
+              <Link href="https://rocketflow.biz/create_account/selected_package" className="block">
                 <button 
-                  className={`w-full px-4 py-3 text-base font-semibold rounded-full transition-all duration-300 ease-out transform hover:scale-[1.02]
-                    ${pathname === '/signin'
-                      ? 'text-white bg-blue-600 shadow-lg ring-2 ring-blue-400 ring-opacity-50'
-                      : 'text-blue-600 bg-white/60 border-2 border-blue-600 hover:bg-blue-600 hover:text-white hover:shadow-md'}`}
+                  className="w-full px-4 py-2.5 sm:py-3 text-sm sm:text-base font-semibold rounded-full transition-all duration-300 ease-out transform hover:scale-[1.02] text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span className="flex items-center justify-center">
-                    Sign In
+                    Get Started
+                    <svg className="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </span>
                 </button>
               </Link>
-              <Link href="/signup" className="block">
-                <button 
-                  className={`w-full px-4 py-3 text-base font-semibold rounded-full transition-all duration-300 ease-out transform hover:scale-[1.02]
-                    ${pathname === '/signup'
-                      ? 'text-white bg-gradient-to-r from-blue-700 to-blue-800 shadow-xl ring-2 ring-blue-400 ring-opacity-50'
-                      : 'text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl'}`}
-                  onClick={() => setIsMenuOpen(false)}
-                    >
-                      <span className="flex items-center justify-center">
-                        Sign Up
-                        <svg className="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </span>
-                    </button>
-                  </Link>
             </div>
           </div>
         </div>
