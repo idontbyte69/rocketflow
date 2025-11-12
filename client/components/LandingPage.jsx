@@ -43,6 +43,19 @@ export default function LandingPage() {
   const [hoveredSector, setHoveredSector] = useState(null);
   const [activeChannel, setActiveChannel] = useState('facebook');
   const [activeDashboard, setActiveDashboard] = useState(0);
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if mobile on mount and resize
+  useState(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640); // 640px is sm breakpoint
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Auto-rotate dashboards
   useState(() => {
@@ -238,73 +251,89 @@ export default function LandingPage() {
       </div>
 
       {/* Hero Section */}
-      <Section className="min-h-screen flex items-center justify-center pt-20 pb-16" padding="md">
+      <Section className="min-h-screen flex items-center justify-center pt-20 sm:pt-20 pb-8 sm:pb-16" padding="md">
         <Container>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
             {/* Left Side - Text and Buttons */}
-            <div className="text-left flex flex-col justify-center">
-              <div className="mb-8">
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+            <div className="text-center sm:text-left flex flex-col justify-center px-4 sm:px-0">
+              {/* Badge - Mobile Only */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-4 sm:mb-6 mx-auto sm:mx-0 w-fit">
+                <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+                <span className="text-xs sm:text-sm font-semibold text-blue-600">Welcome to RocketFlow</span>
+              </div>
+
+              <div className="mb-5 sm:mb-6 lg:mb-8">
+                <h1 className="text-[2rem] leading-[2.5rem] sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 lg:mb-6">
                   <span className="text-gray-900">One Solution To{' '}</span>
-                  <span className="text-blue-600">Optimize</span>
-                  <br />
-                  <span className="text-gray-900">Your</span>{' '}
-                  <span className="text-blue-600">Social Media</span>
+                  <span className="bg-gradient-to-r from-blue-600 via-blue-600 to-blue-700 bg-clip-text text-transparent">Optimize</span>
+                  <br className="hidden sm:block" />
+                  <span className="text-gray-900"> Your </span>
+                  <span className="bg-gradient-to-r from-blue-600 via-blue-600 to-blue-700 bg-clip-text text-transparent">Social Media</span>
                 </h1>
-                <p className="text-lg sm:text-xl text-gray-600 font-light max-w-xl leading-relaxed">
+                <p className="text-sm leading-relaxed sm:text-base lg:text-xl text-gray-600 max-w-xl mx-auto sm:mx-0">
                   Level up your campaigns, business, marketing and social reach using our 
                   cutting-edge features and ultimately turn your audiences into valued customers.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 items-start">
-                <Link href="/tutorial">
-                  <Button size="lg" className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl transition-all">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-start mb-5 sm:mb-0">
+                <Link href="/tutorial" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl transition-all py-3 sm:py-3 text-sm sm:text-base font-semibold rounded-xl">
                     <PlayIcon className="w-5 h-5 text-white" />
                     How It Works
                   </Button>
                 </Link>
                 
-                <Link href="/pricing">
-                  <button className="px-6 py-3 bg-white text-blue-600 font-semibold hover:bg-blue-50 border-2 border-blue-600 rounded-lg transition-all hover:shadow-md">
+                <Link href="/pricing" className="w-full sm:w-auto">
+                  <button className="w-full px-6 py-3 bg-white text-blue-600 font-semibold hover:bg-blue-50 border-2 border-blue-600 rounded-xl transition-all hover:shadow-md text-sm sm:text-base">
                     Try It For Free →
                   </button>
                 </Link>
               </div>
 
-              {/* Quick Stats */}
-              <div className="mt-12 grid grid-cols-3 gap-6">
-                <div>
-                  <div className="text-3xl font-bold text-blue-600">635+</div>
-                  <div className="text-sm text-gray-600 mt-1">Active Users</div>
+              {/* Quick Stats - Redesigned for mobile */}
+              <div className="mt-6 sm:mt-8 lg:mt-12 grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 bg-white sm:bg-transparent p-4 sm:p-0 rounded-2xl sm:rounded-none shadow-md sm:shadow-none border sm:border-0 border-blue-100">
+                <div className="text-center sm:text-left">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600">635+</div>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-600 mt-0.5 sm:mt-1">Active Users</div>
                 </div>
-                <div>
-                  <div className="text-3xl font-bold text-blue-600">55+</div>
-                  <div className="text-sm text-gray-600 mt-1">Countries</div>
+                <div className="text-center sm:text-left border-l border-r sm:border-0 border-blue-100">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600">55+</div>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-600 mt-0.5 sm:mt-1">Countries</div>
                 </div>
-                <div>
-                  <div className="text-3xl font-bold text-blue-600">99.9%</div>
-                  <div className="text-sm text-gray-600 mt-1">Satisfaction</div>
+                <div className="text-center sm:text-left">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600">99.9%</div>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-gray-600 mt-0.5 sm:mt-1">Satisfaction</div>
                 </div>
               </div>
             </div>
 
             {/* Right Side - Rotating Dashboard Cards */}
-            <div className="relative h-[600px] flex items-center justify-start pl-12">
+            <div className="relative h-[350px] sm:h-[450px] lg:h-[600px] flex items-center justify-center lg:justify-start lg:pl-12 mt-8 lg:mt-0 overflow-hidden lg:overflow-visible">
               {/* Circular rotating container */}
               <div className="relative w-full h-full flex items-center justify-center">
                 {/* Background decorative circles */}
-                <div className="absolute top-[55%] left-[55%] transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border-2 border-blue-100 rounded-full opacity-20"></div>
-                <div className="absolute top-[55%] left-[55%] transform -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] border-2 border-blue-200 rounded-full opacity-30"></div>
+                <div className="absolute top-1/2 left-1/2 lg:top-[55%] lg:left-[55%] transform -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[360px] lg:w-[500px] h-[240px] sm:h-[360px] lg:h-[500px] border border-blue-100 rounded-full opacity-20"></div>
+                <div className="absolute top-1/2 left-1/2 lg:top-[55%] lg:left-[55%] transform -translate-x-1/2 -translate-y-1/2 w-[200px] sm:w-[300px] lg:w-[420px] h-[200px] sm:h-[300px] lg:h-[420px] border border-blue-200 rounded-full opacity-30"></div>
 
                 {/* Rotating Dashboard Cards */}
                 {dashboards.map((dashboard, index) => {
                   const rotation = (index - activeDashboard) * 120; // 120 degrees apart
                   const isActive = index === activeDashboard;
-                  const radius = 140;
+                  const radius = typeof window !== 'undefined' 
+                    ? (window.innerWidth < 640 ? 70 : window.innerWidth < 1024 ? 100 : 140)
+                    : 140;
                   const angle = (rotation * Math.PI) / 180;
                   const x = Math.sin(angle) * radius;
                   const y = -Math.cos(angle) * radius;
+                  
+                  // Use centered position on mobile, offset position on desktop
+                  const topPosition = typeof window !== 'undefined' 
+                    ? (window.innerWidth < 1024 ? '50%' : '55%')
+                    : '55%';
+                  const leftPosition = typeof window !== 'undefined' 
+                    ? (window.innerWidth < 1024 ? '50%' : '55%')
+                    : '55%';
 
                   return (
                     <div
@@ -313,32 +342,32 @@ export default function LandingPage() {
                         isActive ? 'scale-100 opacity-100 z-20' : 'scale-75 opacity-40 z-10'
                       }`}
                       style={{
-                        top: '55%',
-                        left: '55%',
+                        top: topPosition,
+                        left: leftPosition,
                         transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) ${
                           isActive ? 'scale(1)' : 'scale(0.75)'
                         }`,
                       }}
                     >
-                      <div className={`bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-2xl p-8 w-96 border-2 ${
+                      <div className={`bg-gradient-to-br from-white to-blue-50 rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8 w-64 sm:w-80 lg:w-96 border border-blue-100 sm:border-2 ${
                         isActive ? 'border-blue-300' : 'border-blue-100'
                       }`}>
                         {/* Dashboard Header */}
-                        <div className="flex items-center justify-between mb-4">
-                          <h3 className="text-lg font-bold text-gray-900">{dashboard.title}</h3>
+                        <div className="flex items-center justify-between mb-3 sm:mb-4">
+                          <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{dashboard.title}</h3>
                           <div className="flex gap-1">
-                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                            <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full"></div>
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-500 rounded-full"></div>
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full"></div>
                           </div>
                         </div>
 
                         {/* Stats */}
-                        <div className="space-y-3 mb-4">
+                        <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4">
                           {dashboard.stats.map((stat, idx) => (
                             <div key={idx} className="flex items-center justify-between">
-                              <span className="text-sm text-gray-600">{stat.label}</span>
-                              <div className={`text-lg font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                              <span className="text-xs sm:text-sm text-gray-600">{stat.label}</span>
+                              <div className={`text-base sm:text-lg font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
                                 {stat.value}
                               </div>
                             </div>
@@ -346,8 +375,8 @@ export default function LandingPage() {
                         </div>
 
                         {/* Mini Chart */}
-                        <div className="border-t border-gray-200 pt-4">
-                          <div className="flex items-end justify-between h-16 gap-1">
+                        <div className="border-t border-gray-200 pt-3 sm:pt-4">
+                          <div className="flex items-end justify-between h-12 sm:h-16 gap-0.5 sm:gap-1">
                             {dashboard.chart.map((height, idx) => (
                               <div
                                 key={idx}
@@ -356,7 +385,7 @@ export default function LandingPage() {
                               ></div>
                             ))}
                           </div>
-                          <div className="text-xs text-gray-500 text-center mt-2">Activity Trend</div>
+                          <div className="text-[10px] sm:text-xs text-gray-500 text-center mt-2">Activity Trend</div>
                         </div>
                       </div>
                     </div>
@@ -666,16 +695,16 @@ export default function LandingPage() {
       {/* Services Section */}
       <Section id="services" className="">
         <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
               Our <span className="text-blue-600">Services</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive digital solutions designed to accelerate your business growth
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {/* Multi-Channel Marketing Card */}
             <Card
               className="group relative h-full flex flex-col hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-blue-200"
@@ -683,10 +712,10 @@ export default function LandingPage() {
               onMouseLeave={() => setHoveredService(null)}
               padding="lg"
             >
-              <div className="w-16 h-16 rounded-lg bg-blue-600 flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
-                <ChatBubbleLeftRightIcon className="w-8 h-8" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-lg bg-blue-600 flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                <ChatBubbleLeftRightIcon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Multi-Channel Marketing</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900">Multi-Channel Marketing</h3>
               <p className="text-gray-600 text-sm leading-relaxed flex-grow">Automated campaigns across Facebook, Messenger, Instagram, SMS, and Email to reach your audience everywhere</p>
             </Card>
 
@@ -697,10 +726,10 @@ export default function LandingPage() {
               onMouseLeave={() => setHoveredService(null)}
               padding="lg"
             >
-              <div className="w-16 h-16 rounded-lg bg-gray-800 flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
-                <BoltIcon className="w-8 h-8" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-lg bg-gray-800 flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                <BoltIcon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Automated Workflows</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900">Automated Workflows</h3>
               <p className="text-gray-600 text-sm leading-relaxed flex-grow">Pre-built workflows for growing followers, collecting emails, responding to comments, and sending automated DMs</p>
             </Card>
 
@@ -711,10 +740,10 @@ export default function LandingPage() {
               onMouseLeave={() => setHoveredService(null)}
               padding="lg"
             >
-              <div className="w-16 h-16 rounded-lg bg-blue-600 flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
-                <GlobeAltIcon className="w-8 h-8" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-lg bg-blue-600 flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                <GlobeAltIcon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Industry-Specific Solutions</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900">Industry-Specific Solutions</h3>
               <p className="text-gray-600 text-sm leading-relaxed flex-grow">Customized marketing automation for 12+ industries including photography, education, hospitality, e-commerce, and more</p>
             </Card>
 
@@ -725,20 +754,20 @@ export default function LandingPage() {
               onMouseLeave={() => setHoveredService(null)}
               padding="lg"
             >
-              <div className="w-16 h-16 rounded-lg bg-gray-800 flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform">
-                <DevicePhoneMobileIcon className="w-8 h-8" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-lg bg-gray-800 flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                <DevicePhoneMobileIcon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Customer Engagement</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gray-900">Customer Engagement</h3>
               <p className="text-gray-600 text-sm leading-relaxed flex-grow">Intelligent tools to boost engagement, request follows, collect leads, and convert audiences into valued customers</p>
             </Card>
           </div>
         </Container>
       </Section>
 {/* Reach Your Audiences Section */}
-      <Section id="channels" className="py-12">
+      <Section id="channels" className="py-8 sm:py-10 lg:py-12">
         <Container>
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-900">
+          <div className="text-center mb-6 sm:mb-8 px-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 text-gray-900">
               <span className="text-blue-600">📡</span> Reach Your Audiences <span className="text-blue-600">With Ease</span>
             </h2>
             <p className="text-base text-gray-600 max-w-2xl mx-auto">
@@ -747,15 +776,15 @@ export default function LandingPage() {
           </div>
 
           {/* Channel Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 px-4">
             {Object.values(channels).map((channel) => (
               <button
                 key={channel.id}
                 onClick={() => setActiveChannel(channel.id)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                   activeChannel === channel.id
                     ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg scale-105'
-                    : 'bg-white text-blue-600 hover:bg-blue-50 border-2 border-blue-600 hover:border-blue-700'
+                    : 'bg-white text-blue-600 hover:bg-blue-50 border border-blue-600 sm:border-2 hover:border-blue-700'
                 }`}
               >
                 {channel.icon} {channel.name}
@@ -764,20 +793,20 @@ export default function LandingPage() {
           </div>
 
           {/* Channel Content */}
-          <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center max-w-5xl mx-auto px-4">
             {/* Left Side - Phone Mockup with Real Images */}
-            <div className="relative flex justify-center">
-              <div className="relative w-full max-w-xs">
+            <div className="relative flex justify-center order-2 md:order-1">
+              <div className="relative w-full max-w-[280px] sm:max-w-xs mx-auto">
                 {/* iPhone Frame */}
-                <div className="relative bg-black rounded-[2.5rem] p-2 shadow-xl">
-                  <div className="bg-white rounded-[2rem] overflow-hidden">
+                <div className="relative bg-black rounded-[2rem] sm:rounded-[2.5rem] p-1.5 sm:p-2 shadow-xl">
+                  <div className="bg-white rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden">
                     {/* Notch */}
-                    <div className="relative h-6 bg-black">
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-5 bg-black rounded-b-2xl"></div>
+                    <div className="relative h-5 sm:h-6 bg-black">
+                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-4 sm:h-5 bg-black rounded-b-2xl"></div>
                     </div>
                     
                     {/* Content - Using Real Images/Videos */}
-                    <div className="relative h-[570px] w-[305px] bg-white flex items-center justify-center overflow-hidden">
+                    <div className="relative h-[480px] sm:h-[570px] w-full bg-white flex items-center justify-center overflow-hidden">
                       {activeChannel === 'facebook' && channels.facebook.image && (
                         <img 
                           src={channels.facebook.image} 
@@ -828,22 +857,22 @@ export default function LandingPage() {
             </div>
 
             {/* Right Side - Content */}
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900">
+            <div className="order-1 md:order-2">
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-gray-900">
                 <span className="text-blue-600">»</span> {channels[activeChannel].title}
               </h3>
-              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+              <p className="text-gray-600 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
                 {channels[activeChannel].description}
               </p>
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
                 {channels[activeChannel].features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <span className="text-blue-600 mt-0.5 text-sm">⊗</span>
-                    <span className="text-gray-600 text-sm">{feature}</span>
+                    <span className="text-gray-600 text-xs sm:text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
-              <button className="px-5 py-2.5 bg-white text-blue-600 font-semibold flex items-center gap-2 transition-all text-sm border-2 border-blue-600 rounded-lg hover:bg-blue-50 hover:shadow-md">
+              <button className="w-full sm:w-auto px-4 sm:px-5 py-2 sm:py-2.5 bg-white text-blue-600 font-semibold flex items-center justify-center gap-2 transition-all text-sm border-2 border-blue-600 rounded-lg hover:bg-blue-50 hover:shadow-md">
                 Try It Now <span>›</span>
               </button>
             </div>
@@ -935,16 +964,16 @@ export default function LandingPage() {
       {/* Target Sectors Section */}
       <Section id="industries" className="">
         <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
               Industries We <span className="text-blue-600">Serve</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
               Tailored solutions for diverse business sectors
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-6 px-4">
             {sectors.map((sector, index) => (
               <div
                 key={sector.name}
@@ -954,23 +983,23 @@ export default function LandingPage() {
               >
                 {sector.name === 'Education' ? (
                   <a href="/education" className="block">
-                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer`}>
                       <div className="text-center">
-                        <div className="w-8 h-8 mx-auto mb-3 text-blue-600">
+                        <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 mx-auto mb-2 sm:mb-3 text-blue-600">
                           <sector.icon className="w-full h-full" />
                         </div>
-                        <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                        <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                       </div>
                     </div>
                   </a>
                 ) : sector.name === 'Photography' ? (
                   <Link href="/photography" className="block">
-                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer`}>
                       <div className="text-center">
-                        <div className="w-8 h-8 mx-auto mb-3 text-gray-800">
+                        <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 mx-auto mb-2 sm:mb-3 text-gray-800">
                           <sector.icon className="w-full h-full" />
                         </div>
-                        <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                        <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                       </div>
                     </div>
                   </Link>
@@ -1098,19 +1127,19 @@ export default function LandingPage() {
       {/* Social Media Integration Section */}
 
       {/* All Amazing Features Section */}
-      <Section className="pb-12">
+      <Section className="pb-8 sm:pb-12">
         <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+          <div className="text-center mb-8 sm:mb-12 px-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-gray-900">
               <span className="text-blue-600">»</span> All Amazing Features We Provide
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto">
               Take a quick peek on our major features which we are so proud of. Try us for 
               free and find out why Rocket Flow is the right choice for you.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 px-4">
             {[
               { name: 'eCommerce Platform', icon: ShoppingCartIcon },
               { name: 'Facebook Page Marketing', icon: ChatBubbleLeftRightIcon },
@@ -1124,23 +1153,41 @@ export default function LandingPage() {
               { name: 'Other Social Media Marketing', icon: GlobeAltIcon },
               { name: 'SMS Marketing', icon: DevicePhoneMobileIcon },
               { name: 'Email Marketing', icon: EnvelopeIcon }
-            ].map((feature, index) => (
+            ].slice(0, (isMobile && !showAllFeatures) ? 4 : undefined).map((feature, index) => (
               <div
                 key={index}
-                className="group relative bg-white border-2 border-blue-100 rounded-2xl p-6 hover:border-blue-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="group relative bg-white border-2 border-blue-100 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:border-blue-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
-                    <feature.icon className="w-6 h-6 text-white" />
+                <div className="flex items-start gap-2 sm:gap-3 lg:gap-4">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                    <feature.icon className="w-5 h-5 sm:w-5.5 sm:h-5.5 lg:w-6 lg:h-6 text-white" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight">
                       {feature.name}
                     </h3>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Explore All Button - Only visible on mobile */}
+          <div className="text-center mt-6 sm:mt-8 sm:hidden">
+            <button
+              onClick={() => setShowAllFeatures(!showAllFeatures)}
+              className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all shadow-md hover:shadow-lg flex items-center gap-2 mx-auto text-sm"
+            >
+              {showAllFeatures ? (
+                <>
+                  Show Less <span className="text-lg">↑</span>
+                </>
+              ) : (
+                <>
+                  Explore All Features <span className="text-lg">↓</span>
+                </>
+              )}
+            </button>
           </div>
         </Container>
       </Section>
