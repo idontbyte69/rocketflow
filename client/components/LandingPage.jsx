@@ -310,19 +310,19 @@ export default function LandingPage() {
             </div>
 
             {/* Right Side - Rotating Dashboard Cards */}
-            <div className="relative h-[350px] sm:h-[450px] lg:h-[600px] flex items-center justify-center lg:justify-start lg:pl-12 mt-8 lg:mt-0 overflow-hidden lg:overflow-visible">
+            <div className="relative h-[320px] sm:h-[450px] lg:h-[600px] flex items-center justify-center lg:justify-start lg:pl-12 mt-6 sm:mt-8 lg:mt-0 overflow-visible">
               {/* Circular rotating container */}
               <div className="relative w-full h-full flex items-center justify-center">
                 {/* Background decorative circles */}
-                <div className="absolute top-1/2 left-1/2 lg:top-[55%] lg:left-[55%] transform -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[360px] lg:w-[500px] h-[240px] sm:h-[360px] lg:h-[500px] border border-blue-100 rounded-full opacity-20"></div>
-                <div className="absolute top-1/2 left-1/2 lg:top-[55%] lg:left-[55%] transform -translate-x-1/2 -translate-y-1/2 w-[200px] sm:w-[300px] lg:w-[420px] h-[200px] sm:h-[300px] lg:h-[420px] border border-blue-200 rounded-full opacity-30"></div>
+                <div className="absolute top-1/2 left-1/2 lg:top-[55%] lg:left-[55%] transform -translate-x-1/2 -translate-y-1/2 w-[200px] sm:w-[360px] lg:w-[500px] h-[200px] sm:h-[360px] lg:h-[500px] border border-blue-100 rounded-full opacity-20"></div>
+                <div className="absolute top-1/2 left-1/2 lg:top-[55%] lg:left-[55%] transform -translate-x-1/2 -translate-y-1/2 w-[160px] sm:w-[300px] lg:w-[420px] h-[160px] sm:h-[300px] lg:h-[420px] border border-blue-200 rounded-full opacity-30"></div>
 
                 {/* Rotating Dashboard Cards */}
                 {dashboards.map((dashboard, index) => {
                   const rotation = (index - activeDashboard) * 120; // 120 degrees apart
                   const isActive = index === activeDashboard;
                   const radius = typeof window !== 'undefined' 
-                    ? (window.innerWidth < 640 ? 70 : window.innerWidth < 1024 ? 100 : 140)
+                    ? (window.innerWidth < 640 ? 55 : window.innerWidth < 1024 ? 100 : 140)
                     : 140;
                   const angle = (rotation * Math.PI) / 180;
                   const x = Math.sin(angle) * radius;
@@ -350,25 +350,25 @@ export default function LandingPage() {
                         }`,
                       }}
                     >
-                      <div className={`bg-gradient-to-br from-white to-blue-50 rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8 w-64 sm:w-80 lg:w-96 border border-blue-100 sm:border-2 ${
+                      <div className={`bg-gradient-to-br from-white to-blue-50 rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-2xl p-3 sm:p-5 lg:p-8 w-52 sm:w-80 lg:w-96 border border-blue-100 sm:border-2 ${
                         isActive ? 'border-blue-300' : 'border-blue-100'
                       }`}>
                         {/* Dashboard Header */}
-                        <div className="flex items-center justify-between mb-3 sm:mb-4">
-                          <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{dashboard.title}</h3>
-                          <div className="flex gap-1">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full"></div>
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-500 rounded-full"></div>
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full"></div>
+                        <div className="flex items-center justify-between mb-2 sm:mb-3 lg:mb-4">
+                          <h3 className="text-xs sm:text-base lg:text-lg font-bold text-gray-900">{dashboard.title}</h3>
+                          <div className="flex gap-0.5 sm:gap-1">
+                            <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 bg-green-500 rounded-full"></div>
+                            <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 bg-yellow-500 rounded-full"></div>
+                            <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 bg-red-500 rounded-full"></div>
                           </div>
                         </div>
 
                         {/* Stats */}
-                        <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4">
+                        <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 mb-2 sm:mb-3 lg:mb-4">
                           {dashboard.stats.map((stat, idx) => (
                             <div key={idx} className="flex items-center justify-between">
-                              <span className="text-xs sm:text-sm text-gray-600">{stat.label}</span>
-                              <div className={`text-base sm:text-lg font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                              <span className="text-[10px] sm:text-sm lg:text-sm text-gray-600">{stat.label}</span>
+                              <div className={`text-sm sm:text-base lg:text-lg font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
                                 {stat.value}
                               </div>
                             </div>
@@ -376,8 +376,8 @@ export default function LandingPage() {
                         </div>
 
                         {/* Mini Chart */}
-                        <div className="border-t border-gray-200 pt-3 sm:pt-4">
-                          <div className="flex items-end justify-between h-12 sm:h-16 gap-0.5 sm:gap-1">
+                        <div className="border-t border-gray-200 pt-2 sm:pt-3 lg:pt-4">
+                          <div className="flex items-end justify-between h-8 sm:h-12 lg:h-16 gap-0.5 sm:gap-1">
                             {dashboard.chart.map((height, idx) => (
                               <div
                                 key={idx}
@@ -386,7 +386,7 @@ export default function LandingPage() {
                               ></div>
                             ))}
                           </div>
-                          <div className="text-[10px] sm:text-xs text-gray-500 text-center mt-2">Activity Trend</div>
+                          <div className="text-[9px] sm:text-[10px] lg:text-xs text-gray-500 text-center mt-1 sm:mt-2">Activity Trend</div>
                         </div>
                       </div>
                     </div>
@@ -409,25 +409,25 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              {/* Floating Side Cards */}
-              <div className="absolute top-0 -right-35 w-40 bg-white rounded-2xl shadow-xl p-3 border border-blue-100 animate-float">
+              {/* Floating Side Cards - Hidden on mobile, visible on desktop */}
+              <div className="hidden sm:block absolute top-0 -right-35 w-40 bg-white rounded-2xl shadow-xl p-3 border border-blue-100 animate-float">
                 <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
                     <ChatBubbleLeftRightIcon className="w-5 h-5 text-white" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-xs text-gray-500">Messages</div>
                     <div className="text-sm font-bold text-gray-900">12.5K</div>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute bottom-0 left-0 w-40 bg-white rounded-2xl shadow-xl p-3 border border-blue-100 animate-float animation-delay-2000">
+              <div className="hidden sm:block absolute bottom-0 left-0 w-40 bg-white rounded-2xl shadow-xl p-3 border border-blue-100 animate-float animation-delay-2000">
                 <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
                     <BoltIcon className="w-5 h-5 text-white" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-xs text-gray-500">Growth</div>
                     <div className="text-sm font-bold text-gray-900">+45%</div>
                   </div>
