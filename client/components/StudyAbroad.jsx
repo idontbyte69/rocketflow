@@ -316,92 +316,6 @@ export default function StudyAbroad() {
         </Container>
       </Section>
 
-      {/* Enhanced Statistics Section with Better Vibe */}
-      <Section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 border border-white rounded-full"></div>
-          <div className="absolute bottom-10 right-10 w-24 h-24 border border-white rounded-full"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-white rounded-full"></div>
-        </div>
-        
-        <Container className="relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Trusted by Study Abroad Experts Worldwide
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Join the growing community of consultancies that have transformed their services with our digital solutions
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center group">
-              <div className="relative">
-                <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  100+
-                </div>
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
-              </div>
-              <div className="text-gray-300 text-lg">Consultancies</div>
-              <div className="text-gray-400 text-sm mt-1">Across 30+ Countries</div>
-            </div>
-            
-            <div className="text-center group">
-              <div className="relative">
-                <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  10K+
-                </div>
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
-              </div>
-              <div className="text-gray-300 text-lg">Students Assisted</div>
-              <div className="text-gray-400 text-sm mt-1">And Growing Daily</div>
-            </div>
-            
-            <div className="text-center group">
-              <div className="relative">
-                <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  98%
-                </div>
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
-              </div>
-              <div className="text-gray-300 text-lg">Satisfaction Rate</div>
-              <div className="text-gray-400 text-sm mt-1">Client Happiness Score</div>
-            </div>
-            
-            <div className="text-center group">
-              <div className="relative">
-                <div className="text-5xl md:text-6xl font-bold text-white mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                  24/7
-                </div>
-
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full"></div>
-              </div>
-              <div className="text-gray-300 text-lg">Support Available</div>
-              <div className="text-gray-400 text-sm mt-1">Round-the-Clock Care</div>
-            </div>
-          </div>
-          
-          {/* Additional trust indicators */}
-          <div className="mt-16 text-center">
-            <div className="inline-flex flex-wrap items-center justify-center space-x-8 text-gray-400">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">ISO Certified</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">GDPR Compliant</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">Award Winning</span>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
       {/* Study Abroad Solutions Section */}
       <Section className="py-24 bg-white">
         <Container>
@@ -640,63 +554,6 @@ export default function StudyAbroad() {
         </Container>
       </Section>
 
-      {/* Benefits Section */}
-      <Section className="py-24 bg-white relative overflow-hidden">
-        {/* Geometric Pattern Background */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
-          <div className="absolute top-0 right-0 w-96 h-96 border-4 border-blue-100 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 border-4 border-indigo-100 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
-        </div>
-        
-        <Container className="relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-6">
-              <span className="text-blue-700 font-semibold text-sm">Why Choose Us</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-              Enterprise Benefits for
-              <br />
-              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                Study Abroad Consultancies
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our solutions deliver measurable improvements in student placements, operational efficiency, 
-              and consultancy growth.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {studyAbroadBenefits.map((benefit, index) => (
-              <Card
-                key={index}
-                className={`p-8 rounded-2xl bg-white border-2 hover:shadow-2xl transition-all duration-500 transform ${
-                  hoveredBenefit === index ? 'shadow-2xl border-indigo-200 scale-[1.02]' : 'border-gray-100 hover:-translate-y-1'
-                }`}
-                onMouseEnter={() => setHoveredBenefit(index)}
-                onMouseLeave={() => setHoveredBenefit(null)}
-              >
-                <div className="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-lg mx-auto md:mx-0 flex-shrink-0">
-                    <benefit.icon className="w-8 h-8" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center md:text-left">{benefit.title}</h3>
-                    <p className="text-gray-600 mb-5 text-lg text-center md:text-left leading-relaxed">{benefit.description}</p>
-                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-xl p-4">
-                      <span className="text-base font-bold text-indigo-700 flex justify-center md:justify-start items-center">
-                        <span className="w-3 h-3 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full mr-2"></span>
-                        {benefit.metrics}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
       {/* Service Categories Section */}
       <Section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
         <Container>
@@ -730,6 +587,114 @@ export default function StudyAbroad() {
                 <p className="text-gray-600">{category.description}</p>
               </Card>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Benefits Section - Enterprise Benefits for Study Abroad Consultancies */}
+      <Section className="py-20 bg-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-blue-300 rounded-full"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 border border-indigo-300 rounded-full"></div>
+        </div>
+        
+        <Container className="relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-6">
+              <span className="text-blue-700 font-semibold text-sm">Why Choose Us</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+              Enterprise Benefits for
+              <br />
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                Study Abroad Consultancies
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our solutions deliver measurable improvements in student placements, operational efficiency, 
+              and consultancy growth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+            {/* Enhanced Student Experience */}
+            <Card className="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 h-full flex flex-col hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white mb-5 shadow-md">
+                <StarIcon className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Enhanced Student Experience</h3>
+              <p className="text-gray-700 text-sm mb-4 flex-grow">24/7 support and personalized guidance throughout the entire application process</p>
+              <div className="mt-auto pt-4 border-t-2 border-blue-200">
+                <div className="text-2xl font-bold text-blue-600">95%</div>
+                <div className="text-xs text-gray-600 font-medium">increase in satisfaction</div>
+              </div>
+            </Card>
+
+            {/* Operational Efficiency */}
+            <Card className="p-6 rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100 border-2 border-teal-200 h-full flex flex-col hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center text-white mb-5 shadow-md">
+                <BoltIcon className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Operational Efficiency</h3>
+              <p className="text-gray-700 text-sm mb-4 flex-grow">Automate repetitive tasks, reduce manual workload, and streamline application processing</p>
+              <div className="mt-auto pt-4 border-t-2 border-teal-200">
+                <div className="text-2xl font-bold text-teal-600">60%</div>
+                <div className="text-xs text-gray-600 font-medium">reduction in processing time</div>
+              </div>
+            </Card>
+
+            {/* Improved Communication */}
+            <Card className="p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-200 h-full flex flex-col hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white mb-5 shadow-md">
+                <ChatBubbleOvalLeftIcon className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Improved Communication</h3>
+              <p className="text-gray-700 text-sm mb-4 flex-grow">Keep students informed at every stage with automatic updates and instant responses</p>
+              <div className="mt-auto pt-4 border-t-2 border-purple-200">
+                <div className="text-2xl font-bold text-purple-600">80%</div>
+                <div className="text-xs text-gray-600 font-medium">faster response times</div>
+              </div>
+            </Card>
+
+            {/* Data-Driven Insights */}
+            <Card className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 border-2 border-indigo-200 h-full flex flex-col hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center text-white mb-5 shadow-md">
+                <ChartBarIcon className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Data-Driven Insights</h3>
+              <p className="text-gray-700 text-sm mb-4 flex-grow">Gain valuable insights into student preferences, trends, and success rates</p>
+              <div className="mt-auto pt-4 border-t-2 border-indigo-200">
+                <div className="text-2xl font-bold text-indigo-600">40%</div>
+                <div className="text-xs text-gray-600 font-medium">improvement in placement success</div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Additional Stats Section */}
+          <div className="mt-16 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-12 shadow-2xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-5xl font-bold text-white mb-2">100+</div>
+                <div className="text-blue-100 font-semibold">Consultancies</div>
+                <div className="text-blue-200 text-sm">Across 30+ Countries</div>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl font-bold text-white mb-2">10K+</div>
+                <div className="text-blue-100 font-semibold">Students Assisted</div>
+                <div className="text-blue-200 text-sm">And Growing Daily</div>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl font-bold text-white mb-2">98%</div>
+                <div className="text-blue-100 font-semibold">Satisfaction Rate</div>
+                <div className="text-blue-200 text-sm">Client Happiness Score</div>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl font-bold text-white mb-2">24/7</div>
+                <div className="text-blue-100 font-semibold">Support Available</div>
+                <div className="text-blue-200 text-sm">Round-the-Clock Care</div>
+              </div>
+            </div>
           </div>
         </Container>
       </Section>
