@@ -32,6 +32,7 @@ export default function EventPage() {
   const [hoveredSolution, setHoveredSolution] = useState(null);
   const [hoveredBenefit, setHoveredBenefit] = useState(null);
   const [hoveredAutomation, setHoveredAutomation] = useState(null);
+  const [showAllBenefits, setShowAllBenefits] = useState(false);
 
   const automationServices = [
     {
@@ -475,19 +476,196 @@ export default function EventPage() {
       {/* Service Impact Table Section */}
       <Section className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <Container>
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 sm:mb-16">
             <ShinyText className="text-red-600 font-semibold text-sm uppercase tracking-wider">
               Complete Solution Overview
             </ShinyText>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-4 px-4">
               Transform Every Challenge into <span className="text-red-500">Growth Opportunity</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-4">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mt-4 px-4">
               See how RocketFlow solves the biggest challenges facing event managers in today's dynamic market
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl shadow-xl">
+          {/* Mobile Card View */}
+          <div className="block lg:hidden space-y-4 px-4">
+            {/* Lead Management Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-red-500 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <InboxIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Lead Management</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Drowning in "Price?" DMs & inquiries</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">Instant Inquiry Response & Brochure Delivery</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">Saves hours per week</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Client Conversion Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <UserGroupIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Client Conversion</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Leads "ghosting" after getting prices</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">Automated Nurturing & Follow-Up Sequences</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">Higher booking rates</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Remaining cards - shown only when expanded */}
+            {showAllBenefits && (
+              <>
+            {/* Client Experience Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <SparklesIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Client Experience</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Inconsistent communication & manual work</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">Automated Client Workflow from Booking to Delivery</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">Professional service</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Financials Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <CurrencyDollarIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Financials</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Awkwardly chasing late payments</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">Automated Payment Reminders</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">Improved cash flow</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Scheduling Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-orange-600 to-amber-600 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <ClockIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Scheduling</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Client no-shows for sessions</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">Automated SMS & Email Session Reminders</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">Reduced no-shows</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Marketing & Growth Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-pink-600 to-rose-600 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MegaphoneIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Marketing & Growth</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Difficulty booking during off-seasons</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">Targeted Mini-Session & Offer Campaigns</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">Accelerated growth</p>
+                </div>
+              </div>
+            </div>
+              </>
+            )}
+
+            {/* See More Button */}
+            {!showAllBenefits && (
+              <div className="text-center pt-2">
+                <button
+                  onClick={() => setShowAllBenefits(true)}
+                  className="px-6 py-3 bg-red-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  See More Benefits
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Desktop Table View */}
+          <div className="hidden lg:block overflow-x-auto rounded-2xl shadow-xl">
             <table className="w-full bg-white">
               <thead className="bg-red-500">
                 <tr>

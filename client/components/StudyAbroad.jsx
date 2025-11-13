@@ -22,6 +22,7 @@ import {
 export default function StudyAbroad() {
   const [hoveredSolution, setHoveredSolution] = useState(null);
   const [hoveredBenefit, setHoveredBenefit] = useState(null);
+  const [showAllBenefits, setShowAllBenefits] = useState(false);
 
   // Function to render study abroad service icon
   const renderSolutionIcon = (solutionId) => {
@@ -736,10 +737,188 @@ export default function StudyAbroad() {
       {/* BENEFITS SUMMARY TABLE */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
             Benefits Summary
           </h2>
-          <div className="overflow-x-auto">
+
+          {/* Mobile Card View */}
+          <div className="block lg:hidden space-y-4">
+            {/* Lead Management Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <UserGroupIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Lead Management</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Too many inquiries to handle manually</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">Automated replies & tagging</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">Faster response, more leads</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Follow-Up Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <ChatBubbleLeftRightIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Follow-Up</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Students don't reply after the first message</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">Multi-channel sequence automation (Messenger, Email, SMS)</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">Re-engages cold leads</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Remaining cards - shown only when expanded */}
+            {showAllBenefits && (
+              <>
+            {/* Campaign Targeting Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <GlobeAltIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Campaign Targeting</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Same message to all</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">Smart segmentation for multi-channel broadcasts</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">Higher engagement & reach</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Data Handling Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <DocumentTextIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Data Handling</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Scattered info across platforms</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">Integrated forms & sheets with unified communication logs</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">Organized lead tracking</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Counselor Productivity Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <BoltIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Counselor Productivity</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Repetitive tasks and reminders</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">AI chat assistant & automated Email/SMS alerts</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">50% less manual work</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Conversion Rate Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+              <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <ChartBarIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold text-white text-lg">Conversion Rate</h4>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                  <p className="text-gray-700 text-sm">Lost leads in the pipeline</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                  <p className="text-gray-700 text-sm font-medium">Smart, multi-channel broadcasting & follow-ups</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                  <p className="text-green-600 text-sm font-bold">Up to 3x conversion growth</p>
+                </div>
+              </div>
+            </div>
+              </>
+            )}
+
+            {/* See More Button */}
+            {!showAllBenefits && (
+              <div className="text-center pt-2">
+                <button
+                  onClick={() => setShowAllBenefits(true)}
+                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  See More Benefits
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Desktop Table View */}
+          <div className="hidden lg:block overflow-x-auto">
             <table className="min-w-full bg-white shadow-lg rounded-lg overflow-hidden">
               <thead>
                 <tr className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white">

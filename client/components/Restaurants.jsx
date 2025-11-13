@@ -24,6 +24,7 @@ import {
 export default function Restaurants() {
   const [activeFeature, setActiveFeature] = useState(0);
   const [hoveredService, setHoveredService] = useState(null);
+  const [showAllBenefits, setShowAllBenefits] = useState(false);
 
   const features = [
     {
@@ -499,15 +500,191 @@ export default function Restaurants() {
 
           {/* Summary of Benefits */}
           <div className="mt-20">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
                 Transform Every <span className="text-primary">Challenge</span>
               </h3>
-              <p className="text-lg text-gray-600">See exactly how we solve your biggest challenges</p>
+              <p className="text-base sm:text-lg text-gray-600 px-4">See exactly how we solve your biggest challenges</p>
             </div>
 
-            {/* Table */}
-            <div className="overflow-x-auto">
+            {/* Mobile Card View */}
+            <div className="block lg:hidden space-y-4 px-4">
+              {/* Revenue & Orders Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-primary p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <ShoppingCartIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Revenue & Orders</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">High commissions from delivery apps</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Automated Direct Ordering via Messenger</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Increased profit margins</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reservations Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-secondary p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <CalendarIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Reservations</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Costly no-shows</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Automated SMS Reminders with Confirmation</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Slashes no-show rates</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Remaining cards - shown only when expanded */}
+              {showAllBenefits && (
+                <>
+              {/* Customer Service Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <ChatBubbleLeftRightIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Customer Service</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Staff overwhelmed with calls/DMs</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">24/7 AI-Powered Assistant</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Frees up staff</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Marketing Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <SparklesIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Marketing</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Empty tables on slow weekdays</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Targeted Midweek Promotions</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Drives footfall during off-peak</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Customer Loyalty Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-red-600 to-rose-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <HeartIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Customer Loyalty</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Low rate of repeat visits</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Automated Post-Dining Feedback & Offers</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Increases retention & LTV</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* High-Value Bookings Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-amber-600 to-orange-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <ShoppingBagIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">High-Value Bookings</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Disorganized party/catering inquiries</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Streamlined Forms for Events</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Captures more high-ticket events</p>
+                  </div>
+                </div>
+              </div>
+                </>
+              )}
+
+              {/* See More Button */}
+              {!showAllBenefits && (
+                <div className="text-center pt-2">
+                  <button
+                    onClick={() => setShowAllBenefits(true)}
+                    className="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  >
+                    See More Benefits
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Desktop Table View */}
+            <div className="hidden lg:block overflow-x-auto">
               <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden">
                 <thead>
                   <tr className="bg-primary">

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navbar, Footer, Button, Card, Section, Container } from '.';
 import Link from 'next/link';
 import {
@@ -48,7 +48,7 @@ export default function LandingPage() {
   const [isMobile, setIsMobile] = useState(false);
 
   // Check if mobile on mount and resize
-  useState(() => {
+  useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 640); // 640px is sm breakpoint
     };
@@ -59,7 +59,7 @@ export default function LandingPage() {
   }, []);
 
   // Auto-rotate dashboards
-  useState(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setActiveDashboard((prev) => (prev + 1) % 3);
     }, 4000);
@@ -926,9 +926,9 @@ export default function LandingPage() {
               >
                 {sector.name === 'Education' ? (
                   <a href="/education" className="block">
-                    <div className={`relative p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative h-24 sm:h-auto p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 mx-auto mb-2 sm:mb-3 text-blue-600">
+                        <div className="w-8 h-8 sm:w-7 sm:h-7 lg:w-8 lg:h-8 mx-auto mb-2 sm:mb-3 text-blue-600">
                           <sector.icon className="w-full h-full" />
                         </div>
                         <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
@@ -937,9 +937,9 @@ export default function LandingPage() {
                   </a>
                 ) : sector.name === 'Photography' ? (
                   <Link href="/photography" className="block">
-                    <div className={`relative p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative h-24 sm:h-auto p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 mx-auto mb-2 sm:mb-3 text-gray-800">
+                        <div className="w-8 h-8 sm:w-7 sm:h-7 lg:w-8 lg:h-8 mx-auto mb-2 sm:mb-3 text-gray-800">
                           <sector.icon className="w-full h-full" />
                         </div>
                         <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
@@ -948,23 +948,23 @@ export default function LandingPage() {
                   </Link>
                 ) : sector.name === 'Study Abroad' ? (
                   <a href="/study-abroad" className="block">
-                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative h-24 sm:h-auto p-4 sm:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-8 h-8 mx-auto mb-3 text-blue-600">
+                        <div className="w-8 h-8 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-blue-600">
                           <sector.icon className="w-full h-full" />
                         </div>
-                        <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                        <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                       </div>
                     </div>
                   </a>
                 ) : sector.name === 'Hotels & Resorts' ? (
                   <a href="/hotel-and-resort" className="block">
-                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative h-24 sm:h-auto p-4 sm:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-8 h-8 mx-auto mb-3 text-gray-700">
+                        <div className="w-8 h-8 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-gray-700">
                           <sector.icon className="w-full h-full" />
                         </div>
-                        <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                        <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                       </div>
                     </div>
                   </a>
@@ -972,46 +972,46 @@ export default function LandingPage() {
                 ) : sector.name === 'Organic Products' ? (
                   <a href="/organic-products" className="block">
 
-                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative h-24 sm:h-auto p-4 sm:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-8 h-8 mx-auto mb-3 text-blue-600">
+                        <div className="w-8 h-8 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-blue-600">
                           <sector.icon className="w-full h-full" />
                         </div>
-                        <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                        <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                       </div>
                     </div>
 
                   </a>
                 ) : sector.name === 'Travel Booking' ? (
                   <a href="/travel-booking" className="block">
-                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative h-24 sm:h-auto p-4 sm:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-8 h-8 mx-auto mb-3 text-gray-700">
+                        <div className="w-8 h-8 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-gray-700">
                           <sector.icon className="w-full h-full" />
                         </div>
-                        <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                        <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                       </div>
                     </div>
                   </a>
                 ) : sector.name === 'Corporate Office' ? (
                   <a href="/corporate-office" className="block">
-                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative h-24 sm:h-auto p-4 sm:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-8 h-8 mx-auto mb-3 text-blue-600">
+                        <div className="w-8 h-8 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-blue-600">
                           <sector.icon className="w-full h-full" />
                         </div>
-                        <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                        <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                       </div>
                     </div>
                   </a>
                 ) : sector.name === 'Gadget Shops' ? (
                   <a href="/gadget-shop" className="block">
-                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative h-24 sm:h-auto p-4 sm:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-8 h-8 mx-auto mb-3 text-blue-600">
+                        <div className="w-8 h-8 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-blue-600">
                           <sector.icon className="w-full h-full" />
                         </div>
-                        <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                        <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                       </div>
                     </div>
                   </a>
@@ -1019,45 +1019,45 @@ export default function LandingPage() {
 
                 ) : sector.name === 'Salon & Parlor' ? (
                   <a href="/salon" className="block">
-                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative h-24 sm:h-auto p-4 sm:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-8 h-8 mx-auto mb-3 text-gray-700">
+                        <div className="w-8 h-8 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-gray-700">
                           <sector.icon className="w-full h-full" />
                         </div>
-                        <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                        <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                       </div>
                     </div>
                   </a>
 
                 ) : sector.name === 'E-commerce' ? (
                   <a href="/ecommerce" className="block">
-                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative h-24 sm:h-auto p-4 sm:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-8 h-8 mx-auto mb-3 text-gray-700">
+                        <div className="w-8 h-8 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-gray-700">
                           <sector.icon className="w-full h-full" />
                         </div>
-                        <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                        <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                       </div>
                     </div>
                   </a>
                 ) : sector.name === 'Restaurants' ? (
                   <a href="/restaurants" className="block">
-                    <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                    <div className={`relative h-24 sm:h-auto p-4 sm:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                       <div className="text-center">
-                        <div className="w-8 h-8 mx-auto mb-3 text-blue-600">
+                        <div className="w-8 h-8 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-blue-600">
                           <sector.icon className="w-full h-full" />
                         </div>
-                        <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                        <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                       </div>
                     </div>
                   </a>
                 ) : (
-                  <div className={`relative p-6 rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}>
+                  <div className={`relative h-24 sm:h-auto p-4 sm:p-6 rounded-xl sm:rounded-2xl ${sector.color} shadow-md border border-gray-200 transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-lg cursor-pointer flex items-center justify-center`}>
                     <div className="text-center">
-                      <div className="w-8 h-8 mx-auto mb-3 text-gray-700">
+                      <div className="w-8 h-8 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-gray-700">
                         <sector.icon className="w-full h-full" />
                       </div>
-                      <h3 className="text-sm font-semibold text-gray-800">{sector.name}</h3>
+                      <h3 className="text-xs sm:text-sm font-semibold text-gray-800">{sector.name}</h3>
                     </div>
                   </div>
                 )}
