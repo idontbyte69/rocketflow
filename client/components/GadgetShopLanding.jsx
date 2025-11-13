@@ -135,7 +135,7 @@ export default function GadgetShopLanding() {
       name: 'TechZone Store',
       result: '400% Revenue Growth',
       timeframe: 'In 6 Months',
-      image: '/logo-red-bg.jpg',
+      image: '/RF-Long-logo.webp',
       rating: 4.9,
       reviews: 'Client Success',
       badge: 'Success Story',

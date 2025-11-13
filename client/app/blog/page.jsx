@@ -14,9 +14,9 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/logo-red-bg.jpg',
-        width: 1200,
-        height: 630,
+        url: '/RF-Long-logo.webp',
+        width: 700,
+        height: 110,
         alt: 'RocketFlow Blog',
       },
     ],
@@ -26,7 +26,7 @@ export const metadata = {
     title: 'Blog | RocketFlow',
     description:
       'RocketFlow blog — insights, case studies and product updates about marketing automation for gadget shops and other industries in Bangladesh.',
-    images: ['/logo-red-bg.jpg'],
+    images: ['/RF-Long-logo.webp'],
   },
 }
 

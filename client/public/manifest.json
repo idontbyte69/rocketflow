@@ -28,9 +28,9 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/logo-red-bg.jpg",
+      "src": "/RF-small-logo.webp",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/webp",
       "purpose": "any"
     }
   ],
