@@ -24,6 +24,7 @@ import {
 export default function EcommercePage() {
   const [activeTab, setActiveTab] = useState('all');
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [showAllBenefits, setShowAllBenefits] = useState(false);
 
   const solutions = [
     {
@@ -492,15 +493,191 @@ export default function EcommercePage() {
 
           {/* Summary of Benefits */}
           <div className="mt-20">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
                 Summary of <span className="bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">Benefits</span>
               </h3>
-              <p className="text-lg text-gray-600">Transform your e-commerce business with automation</p>
+              <p className="text-base sm:text-lg text-gray-600 px-4">Transform your e-commerce business with automation</p>
             </div>
 
-            {/* Table */}
-            <div className="overflow-x-auto">
+            {/* Mobile Card View */}
+            <div className="block lg:hidden space-y-4 px-4">
+              {/* Sales Conversion Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-red-600 to-rose-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <ShoppingCartIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Sales Conversion</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">High cart abandonment rate</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Automated Multi-Channel Cart Recovery Sequences</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Recovers 20-30% lost sales</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Media Sales Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-pink-600 to-rose-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <ChatBubbleLeftRightIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Social Media Sales</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Manual, slow order taking from comments/DMs</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Automated "Comment-to-Cart" & Messenger Ordering</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Instant social conversions</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Remaining cards - shown only when expanded */}
+              {showAllBenefits && (
+                <>
+              {/* Customer Loyalty Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <SparklesIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Customer Loyalty</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Low rate of repeat purchases (low LTV)</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Automated Win-Back, Upsell & Re-order Campaigns</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Higher LTV & repeats</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Customer Support Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-blue-600 to-cyan-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <ChatBubbleLeftRightIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Customer Support</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Staff overwhelmed by repetitive questions</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">24/7 AI-Powered Assistant for FAQs & Order Tracking</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Less tickets, happier customers</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Operations Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <TruckIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Operations</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Manual order and shipping notifications</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Proactive, Automated Order Status Updates via SMS/Email</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Builds trust, fewer calls</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Marketing Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-orange-600 to-red-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <ChartBarIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Marketing</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Low engagement on generic marketing blasts</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Hyper-Segmentation for Targeted Promotions & Flash Sales</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Higher ROI & conversions</p>
+                  </div>
+                </div>
+              </div>
+                </>
+              )}
+
+              {/* See More Button */}
+              {!showAllBenefits && (
+                <div className="text-center pt-2">
+                  <button
+                    onClick={() => setShowAllBenefits(true)}
+                    className="px-6 py-3 bg-gradient-to-r from-red-600 to-rose-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  >
+                    See More Benefits
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Desktop Table View */}
+            <div className="hidden lg:block overflow-x-auto">
               <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden">
                 <thead>
                   <tr className="bg-gradient-to-r from-red-600 via-rose-600 to-pink-600">

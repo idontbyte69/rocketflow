@@ -24,6 +24,7 @@ import {
 export default function CorporateOfficePage() {
   const [activeFeature, setActiveFeature] = useState(0);
   const [hoveredService, setHoveredService] = useState(null);
+  const [showAllBenefits, setShowAllBenefits] = useState(false);
 
   const solutions = [
     {
@@ -481,15 +482,191 @@ export default function CorporateOfficePage() {
 
           {/* Summary of Benefits */}
           <div className="mt-20">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-8 sm:mb-12">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
                 Summary of <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Benefits</span>
               </h3>
-              <p className="text-lg text-gray-600">How Rocket Flow transforms corporate operations</p>
+              <p className="text-base sm:text-lg text-gray-600 px-4">How Rocket Flow transforms corporate operations</p>
             </div>
 
-            {/* Table */}
-            <div className="overflow-x-auto">
+            {/* Mobile Card View */}
+            <div className="block lg:hidden space-y-4 px-4">
+              {/* Lead Generation Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <BriefcaseIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Lead Generation</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Inconsistent or low-quality lead flow</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Automated Lead Magnet Delivery & Inquiry Qualification</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Consistent pre-qualified leads</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sales Cycle Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <ChartBarIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Sales Cycle</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Leads going cold during the long nurturing process</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Automated, Value-Driven Email Nurturing Sequences</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Higher conversion rates</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Remaining cards - shown only when expanded */}
+              {showAllBenefits && (
+                <>
+              {/* Client Management Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <UsersIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Client Management</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Manual, time-consuming client onboarding process</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Automated Onboarding & Communication Workflows</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Better client satisfaction</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project Management Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-cyan-600 to-blue-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <ClipboardDocumentCheckIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Project Management</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Chasing clients for feedback and approvals</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Automated Client Deadline & Meeting Reminders</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Better project timelines</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Marketing Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-violet-600 to-purple-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <PresentationChartLineIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Marketing</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Generic marketing messages to all prospects</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">Smart Segmentation for Targeted Content Distribution</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Better lead quality</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Efficiency Card */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <BoltIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">Efficiency</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">Expert staff bogged down by admin tasks</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">AI Assistant for FAQs & Automated Scheduling</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">Focus on strategic work</p>
+                  </div>
+                </div>
+              </div>
+                </>
+              )}
+
+              {/* See More Button */}
+              {!showAllBenefits && (
+                <div className="text-center pt-2">
+                  <button
+                    onClick={() => setShowAllBenefits(true)}
+                    className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  >
+                    See More Benefits
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Desktop Table View */}
+            <div className="hidden lg:block overflow-x-auto">
               <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden">
                 <thead>
                   <tr className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">

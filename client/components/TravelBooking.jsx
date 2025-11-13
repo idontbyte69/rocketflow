@@ -36,6 +36,7 @@ import {
 export default function TravelBookingPage() {
   const [activeFeature, setActiveFeature] = useState(0);
   const [hoveredService, setHoveredService] = useState(null);
+  const [showAllBenefits, setShowAllBenefits] = useState(false);
 
   // Travel Solutions
   const solutions = [
@@ -624,20 +625,102 @@ export default function TravelBookingPage() {
       {/* Summary of Benefits */}
       <Section className="py-20 bg-gray-50">
         <Container>
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
               Summary of{" "}
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Benefits
               </span>
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-base sm:text-lg text-gray-600 px-4">
               How Rocket Flow transforms travel operations
             </p>
           </div>
 
-          {/* Table */}
-          <div className="overflow-x-auto">
+          {/* Mobile Card View */}
+          <div className="block lg:hidden space-y-4 px-4">
+            {benefits.slice(0, 2).map((benefit, idx) => (
+              <div key={idx} className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className={`bg-gradient-to-r from-${benefit.color}-600 to-${benefit.color}-700 p-4`}>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <benefit.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">{benefit.title}</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">{benefit.description}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">{benefit.metric}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">
+                      {benefit.title.includes("Efficiency")
+                        ? "Faster operations"
+                        : benefit.title.includes("Security") || benefit.title.includes("Safe")
+                        ? "Data protected"
+                        : "Enhanced experience"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Remaining cards - shown only when expanded */}
+            {showAllBenefits && benefits.slice(2).map((benefit, idx) => (
+              <div key={idx + 2} className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div className={`bg-gradient-to-r from-${benefit.color}-600 to-${benefit.color}-700 p-4`}>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <benefit.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-bold text-white text-lg">{benefit.title}</h4>
+                  </div>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Problem</p>
+                    <p className="text-gray-700 text-sm">{benefit.description}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Rocket Flow Solution</p>
+                    <p className="text-gray-700 text-sm font-medium">{benefit.metric}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Impact</p>
+                    <p className="text-green-600 text-sm font-bold">
+                      {benefit.title.includes("Efficiency")
+                        ? "Faster operations"
+                        : benefit.title.includes("Security") || benefit.title.includes("Safe")
+                        ? "Data protected"
+                        : "Enhanced experience"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* See More Button */}
+            {!showAllBenefits && benefits.length > 2 && (
+              <div className="text-center pt-2">
+                <button
+                  onClick={() => setShowAllBenefits(true)}
+                  className="px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  See More Benefits
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Desktop Table View */}
+          <div className="hidden lg:block overflow-x-auto">
             <table className="w-full border-collapse bg-white rounded-2xl shadow-xl overflow-hidden">
               <thead>
                 <tr className="bg-gradient-to-r from-teal-500 via-cyan-600 to-blue-600">
