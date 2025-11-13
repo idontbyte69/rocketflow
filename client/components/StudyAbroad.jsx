@@ -928,7 +928,7 @@ export default function StudyAbroad() {
                   </div>
                   <div>
                     <div className="font-bold text-xl text-gray-900">John Davis</div>
-                    <div className="text-gray-600">Director, Global Study Solutions</div>
+                    <div className="text-gray-600">Director, Global Study Solutions </div>
                   </div>
                 </div>
                 <div className="relative">
